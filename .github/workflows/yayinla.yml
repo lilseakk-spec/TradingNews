@@ -6,6 +6,13 @@ name: Yayınla
 on:
   push:
     branches: [main]
+  # Veri güncelleme iş akışı commit attığında siteyi yenile.
+  # GitHub, GITHUB_TOKEN ile atılan push'lardan iş akışı tetiklemiyor
+  # (sonsuz döngü koruması), bu yüzden push tetikleyicisi o commit'i
+  # görmüyor. workflow_run bu boşluğu kapatıyor.
+  workflow_run:
+    workflows: ["Veri güncelleme"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -20,6 +27,10 @@ concurrency:
 jobs:
   kur:
     runs-on: ubuntu-latest
+    # Veri güncelleme düştüyse yayınlanacak yeni bir şey yok.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     steps:
       - uses: actions/checkout@v4
 
