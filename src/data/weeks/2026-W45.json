@@ -3,54 +3,54 @@
   "label": "1 – 7 Kasım 2026",
   "start": "2026-11-01",
   "end": "2026-11-07",
-  "updatedAt": "2026-11-07T19:27:29.881Z",
+  "updatedAt": "2026-11-07T20:27:56.942Z",
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-07T18:50:28.300Z"
+    "fetchedAt": "2026-11-07T20:26:40.109Z"
   },
   "ai": {
-    "headline": "haftanın yükü cumaya yığılmış, ortası konuşmacı trafiği",
-    "thesis": "Haftanın tek gerçek makro çıpası cuma 16:30'daki ABD istihdam paketi; beklenti 65K, önceki 29K, yani zayıf bir aydan toparlanma fiyatlanıyor. Pazartesiden perşembeye kadar takvimde sert veri yok, bunun yerine BoC, SNB, ECB ve BoJ başkanlarının üst üste bindiği bir konuşmacı trafiği var; bu tür haftalarda yön veriden değil, söylemdeki ton kaymasından gelir ve hareket dar ama ani olur. Kripto ve endeks tarafında bu, cuma öncesi düşük hacimli ve aralık içi bir seyir, cuma 16:30'da tek seferlik bir genişleme anlamına gelir. Salı akşamı ABD ara seçimleri bu düzenin tek kırılma noktası: sonuç beklentiden farklı okunursa US100 ve BTCUSD, makro takvime bakmadan risk iştahı kanalından hareket eder.",
+    "headline": "ara seçim ve nfp dolar yönünü belirliyor, rba ve boe artırımda",
+    "thesis": "Haftanın merkezinde Salı'daki ABD ara seçimi ve Cuma'daki NFP var: seçim Kongre dağılımı ve maliye beklentisi üzerinden US10Y'ye, NFP ise Fed yolu üzerinden US02Y'ye geçer; ikisi de DXY ve USDJPY'yi yönlendirir. NFP beklentisi 65K, önceki 29K; ISM endeksleri 54-55 bandında genişleme gösteriyor, istihdam ise zayıf seyrediyor. Bu yüzden beklenti altı bir rakam ve sakin ücretler US02Y'yi aşağı çeker, US100 ve BTCUSD'ye faiz kanalından yukarı tepki olarak geçer. RBA ve BoE'deki artırım fiyatlaması dolar dışı sıkılaşma yaratarak AUDUSD ve GBPUSD'yi DXY'den ayrıştırabilir; Cuma 19:00'daki Ueda konuşması ise NFP tepkisini USDJPY ve yen fonlamalı pozisyonlar üzerinden aynı gün tersine çevirebilir.",
     "regime": {
-      "label": "Veri boşluğunda konuşmacı riski taşıyan, cuma akşamı tek noktada boşalan bir hafta.",
+      "label": "ABD anketleri güçlü, istihdam zayıf ve seçim belirsizliği açık olduğu için dolar yönü Cuma'ya kadar netleşmez",
       "tone": "karisik"
     },
     "scenarios": [
       {
-        "name": "İstihdam toparlanması",
-        "trigger": "Cuma tarım dışı istihdam 65K beklentisinin belirgin üzerinde, saatlik kazanç da yukarı.",
-        "reaction": "DXY ve US02Y yukarı, XAUUSD baskılanır; US100 ve BTCUSD önce faiz kanalından satılır, kapanışa doğru büyüme okumasıyla ayrışır.",
+        "name": "zayıf istihdam rallisi",
+        "trigger": "NFP 65K beklentisinin altında gelir, saatlik kazanç sakin kalır ve seçim sonucu Çarşamba'ya kadar netleşir.",
+        "reaction": "US02Y ve DXY geriler, EURUSD ve XAUUSD yükselir, US100 ile BTCUSD faiz kanalından yukarı tepki verir.",
         "bias": "yukari"
       },
       {
-        "name": "İkinci zayıf ay",
-        "trigger": "İstihdam 29K'lık önceki okumaya yakın kalır ya da altına düşer.",
-        "reaction": "DXY ve tahvil faizleri geri çekilir, XAUUSD ve BTCUSD gevşeyen finansal koşullardan destek alır; US100 kazanç beklentisi tartışması açılana kadar yukarı tepki verir.",
+        "name": "güçlü veri ve ücret baskısı",
+        "trigger": "NFP beklentiyi belirgin aşar ve saatlik kazanç hızlanır ya da seçim sonucu tartışmalı kalır.",
+        "reaction": "US02Y ve DXY yükselir, USDJPY yukarı gider, XAUUSD baskılanır, US100 ve BTCUSD'de değerleme sıkışması satışa döner.",
         "bias": "asagi"
       },
       {
-        "name": "Beklentiye yakın",
-        "trigger": "İstihdam bandın içinde, BoE oy dağılımı 7-0-2 beklentisini doğrular.",
-        "reaction": "Haftanın hareketi GBPUSD ve USDJPY çaprazlarında kalır, DXY yatay; endeks ve kripto cuma kapanışına kadar aralığını korur.",
+        "name": "beklenti içi veri",
+        "trigger": "NFP ve ISM verileri beklenti civarında gelir, seçim sonucu önceden fiyatlanmış olur.",
+        "reaction": "DXY yatay kalır, hareket AUDUSD ve GBPUSD'deki artırım rehberliğine ve Ueda sonrası USDJPY'ye kayar, US100 ile BTCUSD aralıkta kalır.",
         "bias": "notr"
       }
     ],
     "watchlist": [
       "DXY",
+      "US02Y",
       "US100",
       "BTCUSD",
-      "GBPUSD",
-      "XAUUSD",
-      "USDJPY"
+      "USDJPY",
+      "XAUUSD"
     ],
     "risks": [
-      "Salı akşamı ABD ara seçim sonucu takvimdeki her şeyi gölgeleyebilir; o gece oluşan risk iştahı cuma verisine kadar fiyatta kalır.",
-      "Dört merkez bankası başkanı üç gün içinde konuşuyor; hazırlıksız bir ton değişimi, takvimde yüksek etkili veri olmadan DXY'de gün içi kırılma yaratır.",
-      "BoE oy dağılımı 3-0-6'dan 7-0-2'ye beklenen kaymayı doğrulamazsa, perşembe 15:00'te GBPUSD'deki hareket haftanın en sert tek adımı olur."
+      "Seçim sonucunun gecikmesi ya da itiraz edilmesi belirsizlik primini haftaya yayar, US10Y'yi oynatır, XAUUSD ve VIX'i yükseltir ve NFP sinyalini gölgeler.",
+      "Ueda'nın normalleşme sinyali yen fonlamalı pozisyonları çözerek NFP'nin yönünden bağımsız olarak US100 ve BTCUSD satışını tetikleyebilir.",
+      "RBA ya da BoE'nin fiyatlı artırımı yapmaması veya güvercin bir artırım, AUDUSD ve GBPUSD'deki dolar dışı sıkılaşma tezini bozar."
     ],
-    "generatedBy": "claude-opus-5 (elle işlendi)",
-    "generatedAt": "2026-11-07T18:03:36.393Z"
+    "generatedBy": "claude-opus-5-5",
+    "generatedAt": "2026-11-07T20:27:56.942Z"
   },
   "days": [
     {
@@ -63,7 +63,7 @@
       "key": "pazartesi",
       "label": "PAZARTESİ",
       "date": "2026-11-02",
-      "focus": "Tek veri ISM imalat PMI; beklenti önceki okumanın aynısı, yani haftaya sürpriz beklentisi olmadan giriliyor.",
+      "focus": "ISM imalat seçim öncesi tek ABD verisi; DXY ve US10Y'nin seçime hangi konumla girdiği netleşir.",
       "events": [
         {
           "id": "2026-11-02-USD-ism-manufacturing-pmi",
@@ -118,7 +118,7 @@
               "strength": 2
             }
           ],
-          "ai": "Beklenti önceki ile aynı (54.5); sapma olmadıkça fiyatlamaya girmez, sapma olursa cuma istihdam beklentisini öne çeker."
+          "ai": "Beklenti ve önceki 54.5; sapma US10Y üzerinden DXY ve USDJPY'ye geçer, seçim öncesi pozisyonlanmanın ilk testi EURUSD'de izlenir."
         }
       ]
     },
@@ -126,7 +126,7 @@
       "key": "sali",
       "label": "SALI",
       "date": "2026-11-03",
-      "focus": "RBA karar paketi Asya seansını, ABD ara seçimleri ise akşamı belirliyor; ikisi arasında İsviçre TÜFE'si dışında boşluk var.",
+      "focus": "Asya'da RBA artırımıyla AUDUSD, akşam ABD ara seçimiyle DXY, US10Y ve XAUUSD öne çıkar; gece sonuç akışının ilk göstergesi BTCUSD olur.",
       "events": [
         {
           "id": "2026-11-03-AUD-cash-rate",
@@ -160,7 +160,7 @@
             "RBA para politikası metni",
             "RBA basın toplantısı"
           ],
-          "ai": "Karar, politika metni ve basın toplantısı tek pakette; AUDUSD'nin tepkisi faizden çok basın toplantısındaki tondan gelir."
+          "ai": "4.60'tan 4.85'e artırım fiyatlı; asıl sinyal metin ve basın toplantısındaki devam rehberliğinde, AUDUSD'de izlenir, NZDUSD'ye sınırlı taşar."
         },
         {
           "id": "2026-11-03-CHF-cpi-m-m",
@@ -190,7 +190,7 @@
               "strength": 1
             }
           ],
-          "ai": "Beklenti ve önceki sıfır; İsviçre enflasyonu bu seviyede SNB'ye alan açmaz, USDCHF tepkisi sınırlı kalır."
+          "ai": "Beklenti ve önceki %0.0; sıfır enflasyon SNB'nin gevşek kalma alanını korur, pozitif sürpriz frangı güçlendirir, USDCHF'de izlenir."
         },
         {
           "id": "2026-11-03-USD-congressional-elections",
@@ -248,7 +248,7 @@
               "strength": 2
             }
           ],
-          "ai": "Takvimdeki tek siyasi olay ve haftanın en öngörülemez kalemi; sonuç gecesi oluşan risk iştahı US100 ve BTCUSD'de cuma verisine kadar taşınır."
+          "ai": "Kongre dağılımı maliye beklentisi ve US10Y üzerinden DXY'ye geçer; sonuç akışı gece boyu sürer, XAUUSD ve BTCUSD'de gap riski izlenir."
         },
         {
           "id": "2026-11-03-CAD-boc-gov-macklem-speaks",
@@ -286,7 +286,7 @@
               "strength": 2
             }
           ],
-          "ai": "Haftanın iki Macklem konuşmasından ilki; USDCAD için petrol tarafıyla birlikte izlenir, tek başına yön vermez."
+          "ai": "Seçim saatine denk gelen konuşma; faiz yolu sinyali USDCAD'de izlenir, ABD sonuç akışı CAD tepkisini bastırabilir."
         }
       ]
     },
@@ -294,7 +294,7 @@
       "key": "carsamba",
       "label": "ÇARŞAMBA",
       "date": "2026-11-04",
-      "focus": "Üç orta ölçekli veri arka arkaya; hiçbiri tek başına yön vermez ama ISM hizmet, cuma istihdamı öncesi son aktivite okuması.",
+      "focus": "Seçim sonucunun ilk tam seans fiyatlaması yapılır; ISM hizmet ve Euro Bölgesi TÜFE, DXY'deki yeni fiyatlamayı teyit eder ya da bozar.",
       "events": [
         {
           "id": "2026-11-04-NZD-unemployment-rate",
@@ -327,7 +327,7 @@
           "also": [
             "İstihdam değişimi (çeyreklik)"
           ],
-          "ai": "İşsizlik ve çeyreklik istihdam aynı anda; 5.6'dan 5.5'e iyileşme bekleniyor, NZDUSD Asya seansında dar bir pencerede hareket eder."
+          "ai": "Beklenti %5.5, önceki %5.6; düşüş RBNZ gevşeme beklentisini azaltır, NZDUSD'de izlenir, ABD seçim sonuç akışıyla aynı saate denk gelir."
         },
         {
           "id": "2026-11-04-EUR-core-cpi-flash-estimate-y-y",
@@ -370,7 +370,7 @@
           "also": [
             "TÜFE (yıllık)"
           ],
-          "ai": "Çekirdek ve manşet TÜFE birlikte; beklenti öncekiyle aynı (2.5%), ECB'nin söylemini değiştirecek bir sapma olmadıkça EURUSD'de etkisi kısa sürer."
+          "ai": "Beklenti ve önceki %2.5; yukarı sapma DE10Y üzerinden EURUSD'yi destekler, aynı gün seçim kaynaklı dolar hareketi bu tepkiyi örtebilir."
         },
         {
           "id": "2026-11-04-USD-ism-services-pmi",
@@ -425,7 +425,7 @@
               "strength": 2
             }
           ],
-          "ai": "Cuma istihdamı öncesi son ABD aktivite okuması; hizmet tarafındaki zayıflama istihdam beklentisini aşağı çeker, DXY'de erken fiyatlama başlatır."
+          "ai": "Beklenti 54.8, önceki 54.9; seçim sonrası ilk ABD verisi, US10Y ve DXY'nin yeni fiyatlamayı teyit edip etmediğini gösterir."
         }
       ]
     },
@@ -433,7 +433,7 @@
       "key": "persembe",
       "label": "PERŞEMBE",
       "date": "2026-11-05",
-      "focus": "BoE'nin oy dağılımı ve dört ayrı merkez bankası konuşması; haftanın söylem riski bu güne sıkışmış.",
+      "focus": "BoE artırımı ve Bailey ile GBPUSD izlenir; ardından gelen SNB, BoC ve Lagarde konuşmalarıyla gün dolar dışı merkez bankalarına ayrılır.",
       "events": [
         {
           "id": "2026-11-05-GBP-official-bank-rate",
@@ -479,7 +479,7 @@
             "BoE faiz oylaması",
             "BoE Başkanı Bailey konuşması"
           ],
-          "ai": "Haftanın en bilgi yoğun tek kalemi: oy dağılımı, politika raporu ve Bailey aynı saatte. Beklenen 7-0-2 ile önceki 3-0-6 arasındaki fark doğrulanmazsa GBPUSD'de haftanın en sert adımı buradan gelir."
+          "ai": "3.75'ten 4.00'a artırım fiyatlı; oy dağılımı ve Bailey'nin tonu belirleyici, GBPUSD'de izlenir, küresel faiz kanalından US100 ve BTCUSD'ye taşar."
         },
         {
           "id": "2026-11-05-CHF-snb-chairman-schlegel-speaks",
@@ -517,7 +517,7 @@
               "strength": 1
             }
           ],
-          "ai": "Sıfır enflasyon okumasının ardından geliyor; USDCHF'de yön değil, güvenli liman talebinin ölçüsü için izlenir."
+          "ai": "BoE'den 40 dakika sonra; frank güçlüğüne karşı müdahale ya da faiz indirimi imaları USDCHF'de izlenir, XAUUSD'ye sınırlı taşar."
         },
         {
           "id": "2026-11-05-CAD-boc-gov-macklem-speaks",
@@ -555,7 +555,7 @@
               "strength": 2
             }
           ],
-          "ai": "İki gün içindeki ikinci konuşma; iki konuşma arasındaki ton farkı USDCAD için asıl sinyal."
+          "ai": "Haftanın ikinci Macklem konuşması; Salı'daki mesajın tekrarı USDCAD'de izlenir, Cuma istihdamı öncesi CAD pozisyonlanmasını şekillendirir."
         },
         {
           "id": "2026-11-05-EUR-ecb-president-lagarde-speaks",
@@ -603,7 +603,7 @@
               "strength": 2
             }
           ],
-          "ai": "Çarşamba TÜFE'sinin ardından ilk ECB yorumu; enflasyonun yerinde saymasına verdiği tepki EURUSD ve DE10Y'de okunur."
+          "ai": "Avrupa kapanışı sonrası; çekirdek TÜFE yorumu DE10Y ve EURUSD'de izlenir, NFP öncesi ince likiditede EURJPY'ye taşar."
         }
       ]
     },
@@ -611,7 +611,7 @@
       "key": "cuma",
       "label": "CUMA",
       "date": "2026-11-06",
-      "focus": "16:30'da ABD istihdam paketi haftanın tek yüksek etkili verisi; 19:00'da Ueda ile JPY tarafında ikinci bir pencere açılıyor.",
+      "focus": "16:30'da NFP ve Kanada istihdamı aynı anda, 19:00'da Ueda konuşuyor; US02Y, USDJPY, US100 ve BTCUSD'de çift şok penceresi açılır.",
       "events": [
         {
           "id": "2026-11-06-USD-non-farm-employment-change",
@@ -675,7 +675,7 @@
             "Ortalama saatlik kazanç (aylık)",
             "İşsizlik oranı"
           ],
-          "ai": "Haftanın çıpası. İstihdam, saatlik kazanç ve işsizlik oranı aynı anda; 29K'lık zayıf aydan 65K'ya toparlanma bekleniyor. Sapma yönü DXY, US02Y, XAUUSD ve BTCUSD'de tek seferde fiyatlanır."
+          "ai": "Beklenti 65K, önceki 29K; ücretlerle birlikte US02Y üzerinden DXY, US100 ve BTCUSD'ye geçer, haftanın en yüksek oynaklıklı olayı."
         },
         {
           "id": "2026-11-06-CAD-unemployment-rate",
@@ -708,7 +708,7 @@
           "also": [
             "İstihdam değişimi"
           ],
-          "ai": "ABD istihdamıyla aynı dakikada; USDCAD'de iki veri üst üste bindiği için ilk tepki genellikle ABD tarafından gelir, Kanada verisi ikinci dalgada okunur."
+          "ai": "NFP ile aynı saatte; beklenti ve önceki %6.5, USDCAD'de iki verinin farkı fiyatlanır, sapmalar aynı yöndeyse hareket büyür."
         },
         {
           "id": "2026-11-06-JPY-boj-gov-ueda-speaks",
@@ -751,7 +751,7 @@
               "strength": 2
             }
           ],
-          "ai": "Haftanın kapanışında JPY penceresi; ABD istihdamı sonrası tahvil faizleri hareketliyken gelen bir Ueda tonu USDJPY'de hafta sonu riskine girmeden önce son hareketi yaratır."
+          "ai": "NFP'den 2.5 saat sonra; normalleşme sinyali USDJPY'yi aşağı iter, yen fonlamalı pozisyonların çözülmesi US100 ve BTCUSD'ye baskı yapar."
         }
       ]
     },
@@ -759,7 +759,7 @@
       "key": "cumartesi",
       "label": "CUMARTESİ",
       "date": "2026-11-07",
-      "focus": "Takvimin tek hafta sonu kalemi: Yeni Zelanda seçimi, pazar açılışına fiyatlanmamış bir başlık bırakıyor.",
+      "focus": "Yeni Zelanda seçimi piyasa kapalıyken yapılıyor; NZDUSD ve AUDUSD pozisyonları Pazar açılışında gap riski taşır.",
       "events": [
         {
           "id": "2026-11-07-NZD-parliamentary-elections",
@@ -807,7 +807,7 @@
               "strength": 1
             }
           ],
-          "ai": "Yeni Zelanda genel seçimi TRT ile cumartesiye düşüyor; sonuç pazar açılışında NZDUSD ve AUDUSD'de boşluklu başlangıç riski taşır."
+          "ai": "Piyasa kapalıyken yapılıyor; sonuç NZDUSD'de Pazar açılışında gap olarak fiyatlanır, Cuma kapanışında taşınan pozisyonlar için risk oluşturur."
         }
       ]
     }
