@@ -3,11 +3,11 @@
   "label": "1 – 7 Kasım 2026",
   "start": "2026-11-01",
   "end": "2026-11-07",
-  "updatedAt": "2026-11-07T18:03:36.394Z",
+  "updatedAt": "2026-11-07T18:49:52.429Z",
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-07T17:36:06.166Z"
+    "fetchedAt": "2026-11-07T18:49:51.403Z"
   },
   "ai": {
     "headline": "haftanın yükü cumaya yığılmış, ortası konuşmacı trafiği",
@@ -744,6 +744,7 @@
       "key": "cumartesi",
       "label": "CUMARTESİ",
       "date": "2026-11-07",
+      "focus": "Takvimin tek hafta sonu kalemi: Yeni Zelanda seçimi, pazar açılışına fiyatlanmamış bir başlık bırakıyor.",
       "events": [
         {
           "id": "2026-11-07-NZD-parliamentary-elections",
@@ -792,8 +793,7 @@
           ],
           "ai": "Yeni Zelanda genel seçimi TRT ile cumartesiye düşüyor; sonuç pazar açılışında NZDUSD ve AUDUSD'de boşluklu başlangıç riski taşır."
         }
-      ],
-      "focus": "Takvimin tek hafta sonu kalemi: Yeni Zelanda seçimi, pazar açılışına fiyatlanmamış bir başlık bırakıyor."
+      ]
     }
   ]
 }

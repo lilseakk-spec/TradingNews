@@ -83,11 +83,48 @@ vermemesi, mekanizmayı yazması için kısıtlanmıştır.
 | Katman | Kaynak | Kapsam |
 | --- | --- | --- |
 | Makro takvim | Forex Factory haftalık JSON feed'i (ücretsiz, anahtarsız) | Faiz kararları, enflasyon, istihdam, PMI, petrol stokları |
-| Elle giriş | `src/data/manual/<hafta>.json` | Kripto olayları, bilançolar, jeopolitik, ETF akışları |
+| Kripto takvimi | OKX açık API'si (ücretsiz, anahtarsız) | BTC ve ETH opsiyon vadeleri, açık pozisyon ağırlığıyla |
+| Elle giriş | `src/data/manual/<hafta>.json` | ETF akışları, token unlock, bilançolar, jeopolitik |
 | Yorum | Anthropic API | Hafta tezi, senaryolar, gün odakları, haber yorumları |
 
-Feed kripto olayı taşımaz. Kripto tarafı iki kanaldan gelir: makro haberlerin
-kriptoya eşlenmesi (TÜFE → BTCUSD gibi) ve elle giriş katmanı.
+Ekonomik takvim feed'i kripto olayı taşımaz. Kripto tarafı üç kanaldan gelir:
+makro haberlerin kriptoya eşlenmesi (TÜFE → BTCUSD gibi), otomatik opsiyon
+vadesi kaynağı ve elle giriş katmanı.
+
+### Opsiyon vadeleri
+
+Kriptoda tarihi önceden belli, gerçekten oynaklık yaratan olayların başında
+opsiyon vadeleri gelir: vade öncesi fiyat en büyük açık pozisyonun olduğu
+seviyeye yapışır, vadeden sonra o baskı kalkar.
+
+`src/lib/crypto-events.ts` OKX'in açık API'sinden BTC ve ETH opsiyon
+vadelerini açık pozisyonlarıyla birlikte çeker. Açık pozisyon payı vadeyi
+ağırlıklandırır — küçük bir günlük vade ile çeyreklik vade aynı muameleyi
+görmez:
+
+| Tip | Taban oynaklık | Etki |
+| --- | --- | --- |
+| Çeyreklik (Mart/Haziran/Eylül/Aralık son cuma) | 74 | yüksek |
+| Aylık (ayın son cuması) | 66 | yüksek |
+| Haftalık (diğer cumalar) | 48 | orta |
+
+Takvimi kalabalıklaştırmamak için yalnızca cuma vadeleri listeye girer; cuma
+dışı bir vade ancak açık pozisyon payı %12'yi geçerse eklenir. Tipik sonuç
+haftada tek satır.
+
+Kaynak erişilemezse hafta yine üretilir, sadece uyarı düşer. Tamamen atlamak
+için `node scripts/new-week.ts --no-crypto`.
+
+> Deribit en büyük opsiyon borsası ama Türkiye'den erişilemiyor. Aylık ve
+> çeyreklik vadeler bütün borsalarda aynı gün ve saatte (son cuma 08:00 UTC =
+> 11:00 TRT) olduğu için OKX aynı takvimi veriyor.
+
+### Otomatikleştirilemeyen kısım
+
+Token unlock ve ETF akışı için ücretsiz, anahtarsız ve birincil bir kaynak
+bulunamadı. DefiLlama'nın unlock uçları Pro katmanına taşınmış (402 döner),
+CoinGecko'nun etkinlik ucu kaldırılmış, geri kalan araçlar da DefiLlama'nın
+ücretli verisini yeniden paketliyor. Bunlar elle giriş katmanında kalıyor.
 
 ### Elle giriş katmanı
 

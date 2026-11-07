@@ -45,6 +45,8 @@ export interface NewsEvent {
   forecast?: string;
   previous?: string;
   actual?: string;
+  /** Olaya ozgu tek olcu: "açık pozisyon" / "4,2 mlr $" gibi. */
+  metric?: { label: string; value: string };
   source?: { label: string; url?: string };
   affected: AffectedInstrument[];
   /** Tek cumlelik AI yorumu. */

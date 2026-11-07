@@ -44,8 +44,14 @@ export default function EventRow({ event }: { event: NewsEvent }) {
             </p>
           )}
 
-          {(event.forecast || event.previous || event.actual) && (
+          {(event.forecast || event.previous || event.actual || event.metric) && (
             <dl className="t-num mt-1.5 flex flex-wrap items-baseline gap-x-4 gap-y-0.5 text-[0.75rem] text-[var(--text-dim)]">
+              {event.metric && (
+                <div className="flex items-baseline gap-1.5">
+                  <dt className="t-label">{event.metric.label}</dt>
+                  <dd className="text-[var(--text)]">{event.metric.value}</dd>
+                </div>
+              )}
               {event.actual && (
                 <div className="flex items-baseline gap-1.5">
                   <dt className="t-label">gerçekleşen</dt>

@@ -16,6 +16,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ingest, type IngestStats } from "../src/lib/calendar.ts";
+import { cryptoEvents } from "../src/lib/crypto-events.ts";
 import { classify } from "../src/lib/impact.ts";
 import { isTracked } from "../src/lib/instruments.ts";
 import {
@@ -35,6 +36,7 @@ const MANUAL_DIR = path.join(process.cwd(), "src", "data", "manual");
 
 const args = process.argv.slice(2);
 const offline = args.includes("--offline");
+const noCrypto = args.includes("--no-crypto") || offline;
 const idArg = valueOf("--id");
 
 function valueOf(flag: string): string | undefined {
@@ -171,11 +173,31 @@ function resolveById(id: string) {
 
 console.log(`Hafta: ${range.id}  (${range.label})`);
 
-// ── 3. Gunlere dagit ────────────────────────────────────────────
+// ── 3. Otomatik kripto olaylari ─────────────────────────────────
+// Ekonomik takvim kripto tasimaz; opsiyon vadeleri OKX'ten gelir.
+// Kaynak erisilemezse hafta yine uretilir, yalnizca uyari dusulur.
+
+let crypto: NewsEvent[] = [];
+if (!noCrypto) {
+  try {
+    crypto = await cryptoEvents(range.start, addDays(range.start, 6));
+    console.log(
+      crypto.length > 0
+        ? `Kripto: ${crypto.length} opsiyon vadesi eklendi.`
+        : "Kripto: bu haftaya dusen opsiyon vadesi yok.",
+    );
+  } catch (err) {
+    console.warn(`  uyari: kripto kaynagi alinamadi — ${(err as Error).message}`);
+  }
+}
+
+const feedEvents = [...events, ...crypto];
+
+// ── 4. Gunlere dagit ────────────────────────────────────────────
 
 const byDate = new Map<string, NewsEvent[]>();
 let outside = 0;
-for (const event of events) {
+for (const event of feedEvents) {
   const dateISO = event.date ?? event.id.slice(0, 10);
   if (dateISO < range.start || dateISO > addDays(range.start, 6)) {
     outside++;
@@ -263,7 +285,7 @@ const label = end === range.end ? range.label : rangeLabel(range.start, end);
 
 // Guvenlik agi: ayiklamadan gecen her olay bir gune yerlesmis olmali.
 const placed = days.reduce((n, d) => n + d.events.length, 0);
-const expected = events.filter((e) => {
+const expected = feedEvents.filter((e) => {
   const d = e.date ?? e.id.slice(0, 10);
   return d >= range.start && d <= addDays(range.start, 6);
 }).length;
