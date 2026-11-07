@@ -75,6 +75,22 @@ export function trMinutesNow(): number {
 }
 
 /**
+ * Kalan sureyi okunur hale getirir: "2g 04:12" ya da "04:12:33".
+ * Gecmis olaylarda null doner, boylece cagiran taraf ayirabilir.
+ */
+export function formatCountdown(ms: number): string | null {
+  if (ms <= 0) return null;
+  const total = Math.floor(ms / 1000);
+  const d = Math.floor(total / 86400);
+  const h = Math.floor((total % 86400) / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  const pad = (n: number) => String(n).padStart(2, "0");
+  if (d > 0) return `${d}g ${pad(h)}:${pad(m)}`;
+  return `${pad(h)}:${pad(m)}:${pad(s)}`;
+}
+
+/**
  * New York ile TRT arasindaki fark, saat. Kisin -8, yazin -7.
  * Etikette "NY (-8sa)" gibi gostermek icin.
  */

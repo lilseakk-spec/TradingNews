@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { NewsEvent } from "@/lib/types";
 import { impactColor, DIRECTION_GLYPH } from "@/lib/labels";
-import { nyTime } from "@/lib/clock";
+import { formatCountdown, nyTime } from "@/lib/clock";
 import { DAY_META, dayOfWeek, shortDate } from "@/lib/weeks";
 
 /**
@@ -40,19 +40,13 @@ function dayLabel(dateISO?: string): string {
   return meta ? meta.short : "";
 }
 
-function countdown(ms: number): string {
-  if (ms <= 0) return "şimdi";
-  const total = Math.floor(ms / 1000);
-  const d = Math.floor(total / 86400);
-  const h = Math.floor((total % 86400) / 3600);
-  const m = Math.floor((total % 3600) / 60);
-  const s = total % 60;
-  const pad = (n: number) => String(n).padStart(2, "0");
-  if (d > 0) return `${d}g ${pad(h)}:${pad(m)}`;
-  return `${pad(h)}:${pad(m)}:${pad(s)}`;
-}
-
-export default function UpcomingAlerts({ events }: { events: NewsEvent[] }) {
+export default function UpcomingAlerts({
+  events,
+  onOpen,
+}: {
+  events: NewsEvent[];
+  onOpen?: (id: string) => void;
+}) {
   const [now, setNow] = useState<number | null>(null);
   const [alertsOn, setAlertsOn] = useState(false);
   const [lead, setLead] = useState(15);
@@ -167,11 +161,21 @@ export default function UpcomingAlerts({ events }: { events: NewsEvent[] }) {
               className="t-num text-[clamp(2rem,8vw,3.25rem)] leading-none"
               style={{ color: impactColor(next.event.impact) }}
             >
-              {now === null ? "--:--:--" : countdown(next.at - now)}
+              {now === null ? "--:--:--" : (formatCountdown(next.at - now) ?? "şimdi")}
             </div>
-            <h2 className="t-display mt-2.5 text-[1.125rem] text-[var(--text)] sm:text-[1.375rem]">
-              {next.event.title}
-            </h2>
+            {onOpen ? (
+              <button
+                type="button"
+                onClick={() => onOpen(next.event.id)}
+                className="t-display mt-2.5 block text-left text-[1.125rem] text-[var(--text)] underline-offset-4 transition-colors hover:underline sm:text-[1.375rem]"
+              >
+                {next.event.title}
+              </button>
+            ) : (
+              <h2 className="t-display mt-2.5 text-[1.125rem] text-[var(--text)] sm:text-[1.375rem]">
+                {next.event.title}
+              </h2>
+            )}
             <p className="t-num mt-1.5 text-[0.8125rem] text-[var(--text-dim)]">
               {dayLabel(next.event.date)} {next.event.date ? shortDate(next.event.date) : ""}
               {" · "}

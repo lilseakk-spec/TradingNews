@@ -225,13 +225,29 @@ Yeni bir kural eklemek `RULES` dizisine bir nesne yazmaktır; sıra önemlidir,
 
 ## Ekran
 
-Sayfanın üstündeki **sismograf** haftanın tamamını tek grafikte gösterir.
-Dört yatay şerit dört varlık grubudur, yatay eksen haftanın zamanıdır, her tik
-bir haberin o gruba etkisidir. Tik yüksekliği beklenen oynaklık, rengi etki
-şiddeti. Tike tıklamak aşağıdaki habere gider. Kesikli dikey çizgi şu anki TRT
-saatidir.
+Ekran yukarıdan aşağıya: ani haber şeridi, sıradaki haber kartı, görünüm
+sekmeleri, sonra liste.
 
-Altında yapay zeka yorumu, sonra grup filtreleri ve gün gün haber listesi.
+**Sıradaki haber** canlı geri sayımla en yakın olayı gösterir. "Uyarıları aç"
+düğmesi tarayıcı bildirimini açar; kaç dakika önce uyarılacağı seçilebilir
+(5 / 15 / 30 / 60). Süre gelince hem tarayıcı bildirimi gider hem sağ altta
+bir kart çıkar.
+
+**Bugün · Yarın · Hafta** sekmeleri listeyi daraltır. Varsayılan içinde
+bulunulan gündür; arşiv haftalarında yalnızca "Hafta" görünür.
+
+**Gün şeridi** (Hafta görünümünde) yedi kolonda haftanın şeklini verir: her
+olay bir nokta, rengi etki şiddeti. Bir kolona tıklamak o güne filtreler.
+
+**Liste ve detay** iki panellidir. Soldaki satırlarda yalnızca taramak için
+gerekenler var: saat (TRT ve NY), başlık, bölge, en güçlü üç parite. Bir satıra
+tıklayınca sağda detay açılır — tüm etkilenen pariteler yön yön gruplanmış ve
+tam isimleriyle, beklenti ve önceki değerler, aynı anda açıklanan diğer
+başlıklar, oynaklık çubuğu, yapay zeka yorumu ve kaynak.
+
+Klavyeyle de gezilir: `↑` `↓` (ya da `k` `j`) haberler arasında, `Esc` detayı
+kapatır. Dar ekranda detay alttan açılan bir sayfa olarak gelir.
+
 `Arşiv` geçmiş haftaları, `Pariteler` takip evrenini listeler.
 
 ## Dosya düzeni
@@ -239,13 +255,15 @@ Altında yapay zeka yorumu, sonra grup filtreleri ve gün gün haber listesi.
 ```
 src/
   app/                 sayfalar: ana ekran, hafta/[id], arsiv, pariteler
-  components/          sismograf, haber kartı, yorum paneli, filtreler
+  components/          gün şeridi, haber satırı, detay paneli, uyarılar
   lib/
     types.ts           veri modeli
     instruments.ts     takip evreni
     impact.ts          haber → parite kuralları ve gürültü filtresi
     calendar.ts        feed ingest, Türkçeleştirme, kümeleme
     weeks.ts           hafta matematiği ve tarih biçimleri
+    clock.ts           TRT ve New York saatleri, geri sayım
+    breaking.ts        ani haber kaynakları
     labels.ts          etiketler ve renk eşlemesi
     store.ts           hafta dosyalarını okuma
   data/

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import type { AssetGroup, DayBlock, WeekData } from "@/lib/types";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { AssetGroup, DayBlock, NewsEvent, WeekData } from "@/lib/types";
 import { GROUPS, groupOf } from "@/lib/instruments";
 import { impactColor } from "@/lib/labels";
 import { addDays, longDate, trTodayISO } from "@/lib/weeks";
@@ -10,6 +10,7 @@ import BreakingWatch from "./BreakingWatch";
 import UpcomingAlerts from "./UpcomingAlerts";
 import AiPanel from "./AiPanel";
 import EventRow from "./EventRow";
+import EventDetail from "./EventDetail";
 
 const ALL_GROUPS = GROUPS.map((g) => g.id);
 
@@ -21,8 +22,9 @@ export default function WeekView({ week }: { week: WeekData }) {
   const [view, setView] = useState<View>("hafta");
   const [todayISO, setTodayISO] = useState("");
   const [picked, setPicked] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const listRef = useRef<HTMLDivElement>(null);
 
-  // Statik site: "bugun" tarayicida belirlenir.
   useEffect(() => {
     const today = trTodayISO();
     setTodayISO(today);
@@ -57,13 +59,49 @@ export default function WeekView({ week }: { week: WeekData }) {
     return filtered;
   }, [filtered, view, todayISO, tomorrowISO, picked]);
 
-  const shown = visible.reduce((n, d) => n + d.events.length, 0);
+  /** Klavye gezintisi icin duz liste. */
+  const flat = useMemo(() => visible.flatMap((d) => d.events), [visible]);
+  const shown = flat.length;
   const weekTotal = week.days.reduce((n, d) => n + d.events.length, 0);
+  const allEvents = useMemo(() => week.days.flatMap((d) => d.events), [week.days]);
 
-  const upcoming = useMemo(
-    () => week.days.flatMap((d) => d.events),
-    [week.days],
+  const selected: NewsEvent | null =
+    allEvents.find((e) => e.id === selectedId) ?? null;
+
+  const move = useCallback(
+    (step: number) => {
+      if (flat.length === 0) return;
+      const at = flat.findIndex((e) => e.id === selectedId);
+      const next = at < 0 ? 0 : Math.min(flat.length - 1, Math.max(0, at + step));
+      const target = flat[next];
+      setSelectedId(target.id);
+      document.getElementById(target.id)?.scrollIntoView({ block: "nearest" });
+    },
+    [flat, selectedId],
   );
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement | null;
+      if (el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      if (e.key === "ArrowDown" || e.key === "j") {
+        e.preventDefault();
+        move(1);
+      } else if (e.key === "ArrowUp" || e.key === "k") {
+        e.preventDefault();
+        move(-1);
+      } else if (e.key === "Escape") {
+        setSelectedId(null);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [move]);
+
+  // Filtre degisince secili haber listeden dusmus olabilir.
+  useEffect(() => {
+    if (selectedId && !flat.some((e) => e.id === selectedId)) setSelectedId(null);
+  }, [flat, selectedId]);
 
   function toggleGroup(id: AssetGroup) {
     setActive((prev) =>
@@ -85,7 +123,7 @@ export default function WeekView({ week }: { week: WeekData }) {
     <div className="space-y-6">
       <BreakingWatch />
 
-      <UpcomingAlerts events={upcoming} />
+      <UpcomingAlerts events={allEvents} onOpen={setSelectedId} />
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3 border-b border-[var(--hairline)] pb-3">
         <div className="flex items-center gap-1">
@@ -172,61 +210,114 @@ export default function WeekView({ week }: { week: WeekData }) {
         </>
       )}
 
-      <div>
-        {visible.map((day) => (
-          <DaySection key={day.key} day={day} isToday={day.date === todayISO} />
-        ))}
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:items-start lg:gap-6">
+        <div ref={listRef}>
+          {visible.map((day) => (
+            <DaySection
+              key={day.key}
+              day={day}
+              isToday={day.date === todayISO}
+              selectedId={selectedId}
+              onSelect={setSelectedId}
+            />
+          ))}
 
-        {shown === 0 && (
-          <p className="border-t border-[var(--hairline)] py-12 text-center text-[0.875rem] text-[var(--text-dim)]">
-            {view === "bugun" && "Bugün takvimde haber yok. Sakin bir gün."}
-            {view === "yarin" && "Yarın takvimde haber yok."}
-            {view === "hafta" &&
-              (weekTotal === 0
-                ? "Bu hafta için veri yok."
-                : "Bu filtrede haber yok. Bir grup ekle ya da yüksek etki filtresini kaldır.")}
-          </p>
-        )}
+          {shown === 0 && (
+            <p className="border-t border-[var(--hairline)] py-12 text-center text-[0.875rem] text-[var(--text-dim)]">
+              {view === "bugun" && "Bugün takvimde haber yok. Sakin bir gün."}
+              {view === "yarin" && "Yarın takvimde haber yok."}
+              {view === "hafta" &&
+                (weekTotal === 0
+                  ? "Bu hafta için veri yok."
+                  : "Bu filtrede haber yok. Bir grup ekle ya da yüksek etki filtresini kaldır.")}
+            </p>
+          )}
+        </div>
+
+        <aside className="sticky top-4 hidden max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-sm border border-[var(--hairline)] bg-[var(--bg-surface)] lg:block">
+          {selected ? (
+            <EventDetail event={selected} onClose={() => setSelectedId(null)} />
+          ) : (
+            <div className="px-4 py-8">
+              <p className="text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
+                Bir habere tıkla, detayı burada açılsın: tüm etkilenen pariteler,
+                beklenti ve önceki değerler, yapay zeka yorumu.
+              </p>
+              <p className="mt-3 text-[0.75rem] text-[var(--text-faint)]">
+                Klavyeyle de gezebilirsin: ↑ ↓ ile haberler arasında, Esc ile kapat.
+              </p>
+            </div>
+          )}
+        </aside>
       </div>
+
+      {selected && (
+        <div className="fixed inset-0 z-40 lg:hidden">
+          <button
+            type="button"
+            aria-label="Detayı kapat"
+            onClick={() => setSelectedId(null)}
+            className="absolute inset-0 bg-black/55"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-[82dvh] overflow-y-auto rounded-t-lg border-t border-[var(--hairline)] bg-[var(--bg-surface)]">
+            <EventDetail event={selected} onClose={() => setSelectedId(null)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-function DaySection({ day, isToday }: { day: DayBlock; isToday: boolean }) {
+function DaySection({
+  day,
+  isToday,
+  selectedId,
+  onSelect,
+}: {
+  day: DayBlock;
+  isToday: boolean;
+  selectedId: string | null;
+  onSelect: (id: string) => void;
+}) {
   if (day.events.length === 0) return null;
   const high = day.events.filter((e) => e.impact === 3).length;
 
   return (
-    <section className="tape-in mb-7">
-      <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pb-1.5">
-        <h2 className="text-[0.9375rem] font-medium text-[var(--text)]">
+    <section className="tape-in mb-6">
+      <header className="sticky top-0 z-10 flex flex-wrap items-baseline gap-x-3 gap-y-1 bg-[var(--bg)]/92 py-1.5 backdrop-blur">
+        <h2 className="text-[0.875rem] font-medium text-[var(--text)]">
           {longDate(day.date)}
         </h2>
         {isToday && (
           <span
-            className="rounded-sm px-1.5 py-0.5 text-[0.6875rem] font-medium"
+            className="rounded-sm px-1.5 py-0.5 text-[0.625rem] font-medium"
             style={{ background: "var(--amber)", color: "#0f1626" }}
           >
             bugün
           </span>
         )}
-        <span className="ml-auto text-[0.75rem] text-[var(--text-faint)]">
+        <span className="ml-auto text-[0.6875rem] text-[var(--text-faint)]">
           {day.events.length} haber
           {high > 0 && (
-            <span style={{ color: impactColor(3) }}> · {high} yüksek etki</span>
+            <span style={{ color: impactColor(3) }}> · {high} yüksek</span>
           )}
         </span>
       </header>
 
       {day.focus && (
-        <p className="mb-1.5 max-w-[80ch] text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
+        <p className="mb-1 max-w-[80ch] text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
           {day.focus}
         </p>
       )}
 
       <div>
         {day.events.map((e) => (
-          <EventRow key={e.id} event={e} />
+          <EventRow
+            key={e.id}
+            event={e}
+            selected={selectedId === e.id}
+            onSelect={() => onSelect(e.id)}
+          />
         ))}
       </div>
     </section>
