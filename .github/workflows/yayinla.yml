@@ -30,12 +30,10 @@ jobs:
 
       - run: npm ci
 
-      # Depoda Pages kapaliysa kendisi acar ve kaynagi GitHub Actions yapar,
-      # boylece ayarlardan elle secmek gerekmez.
-      - name: Pages'i etkinleştir
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      # Not: Pages'in depo ayarlarindan bir kez acilmasi gerekir
+      # (Settings > Pages > Source: GitHub Actions). GITHUB_TOKEN bunu
+      # kendisi yapamiyor, configure-pages enablement denendi ve
+      # "Resource not accessible by integration" ile dustu.
 
       - name: Taban yolunu hesapla
         id: taban
