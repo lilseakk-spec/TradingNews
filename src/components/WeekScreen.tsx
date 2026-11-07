@@ -57,7 +57,8 @@ export default function WeekScreen({
             <>
               {" · en yoğun gün "}
               <span className="text-[var(--text)]">
-                {stats.peak.label.charAt(0) + stats.peak.label.slice(1).toLowerCase()}
+                {stats.peak.label.charAt(0) +
+                  stats.peak.label.slice(1).toLocaleLowerCase("tr")}
               </span>
             </>
           )}

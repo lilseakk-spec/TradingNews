@@ -146,7 +146,11 @@ export function rangeLabel(startISO: string, endISO: string): string {
 export function longDate(iso: string): string {
   const { y, m, d } = parseISO(iso);
   const meta = DAY_META.find((x) => x.dow === dayOfWeek(iso));
-  const dayName = meta ? meta.label.charAt(0) + meta.label.slice(1).toLowerCase() : "";
+  // Turkce kuralla kucult: "CUMARTESİ" -> "Cumartesi". Varsayilan
+  // toLowerCase, I harfini noktali bir i'ye cevirip "Cumartesi̇" uretiyor.
+  const dayName = meta
+    ? meta.label.charAt(0) + meta.label.slice(1).toLocaleLowerCase("tr")
+    : "";
   return `${d} ${MONTHS_TR[m]} ${y} ${dayName}`;
 }
 
