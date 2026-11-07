@@ -129,7 +129,7 @@ Bu takvime bakarak asagidaki JSON'u uret:
   ],
   "watchlist": ["Haftanin en kritik 4-6 sembolu, yalnizca parite sozlugunden"],
   "risks": ["Tezi bozacak 2-3 risk, her biri tek cumle"],
-  "dayFocus": { "gun_anahtari": "O gunun tek cumlelik odagi. Olaysiz gunler icin bu anahtari hic yazma." },
+  "dayFocus": { "gun_anahtari": "O gunun odagi, 1-2 cumle. Ilk cumle o gunu neyin belirledigini soylesin, ikincisi hangi paritede ne izlenecegini. Gunun kendi hikayesi olsun, hafta tezini tekrarlamasin. Olaysiz gunler icin bu anahtari hic yazma." },
   "eventNotes": { "olay_id": "O haber icin tek cumlelik yorum: neden onemli ve hangi paritede izlenir. En fazla 180 karakter." }
 }
 

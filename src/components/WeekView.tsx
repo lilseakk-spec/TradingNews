@@ -11,6 +11,7 @@ import UpcomingAlerts from "./UpcomingAlerts";
 import AiPanel from "./AiPanel";
 import EventRow from "./EventRow";
 import EventDetail from "./EventDetail";
+import DayNote from "./DayNote";
 
 const ALL_GROUPS = GROUPS.map((g) => g.id);
 
@@ -217,6 +218,13 @@ export default function WeekView({ week }: { week: WeekData }) {
               key={day.key}
               day={day}
               isToday={day.date === todayISO}
+              noteLabel={
+                view === "bugun"
+                  ? "Bugünün odağı"
+                  : view === "yarin"
+                    ? "Yarının odağı"
+                    : null
+              }
               selectedId={selectedId}
               onSelect={setSelectedId}
             />
@@ -271,11 +279,14 @@ export default function WeekView({ week }: { week: WeekData }) {
 function DaySection({
   day,
   isToday,
+  noteLabel,
   selectedId,
   onSelect,
 }: {
   day: DayBlock;
   isToday: boolean;
+  /** Gun gorunumlerinde odak kendi karti olur; hafta listesinde sessiz satir. */
+  noteLabel: string | null;
   selectedId: string | null;
   onSelect: (id: string) => void;
 }) {
@@ -304,11 +315,14 @@ function DaySection({
         </span>
       </header>
 
-      {day.focus && (
-        <p className="mb-1 max-w-[80ch] text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
-          {day.focus}
-        </p>
-      )}
+      {day.focus &&
+        (noteLabel ? (
+          <DayNote text={day.focus} label={noteLabel} />
+        ) : (
+          <p className="mb-1 max-w-[80ch] text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
+            {day.focus}
+          </p>
+        ))}
 
       <div>
         {day.events.map((e) => (
