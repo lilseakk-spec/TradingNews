@@ -30,6 +30,13 @@ jobs:
 
       - run: npm ci
 
+      # Depoda Pages kapaliysa kendisi acar ve kaynagi GitHub Actions yapar,
+      # boylece ayarlardan elle secmek gerekmez.
+      - name: Pages'i etkinleştir
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Taban yolunu hesapla
         id: taban
         run: |
