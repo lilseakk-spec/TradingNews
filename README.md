@@ -119,6 +119,30 @@ için `node scripts/new-week.ts --no-crypto`.
 > çeyreklik vadeler bütün borsalarda aynı gün ve saatte (son cuma 08:00 UTC =
 > 11:00 TRT) olduğu için OKX aynı takvimi veriyor.
 
+### Ani haberler
+
+Takvim önceden bilinen olayları taşır. Takvimde olmayan, aniden olan şeyler
+için `src/lib/breaking.ts` iki kaynağı tarayıcıdan doğrudan yoklar — ikisi de
+ücretsiz, anahtarsız ve CORS'a açık:
+
+| Kaynak | Ne verir | Gecikme | Yoklama |
+| --- | --- | --- | --- |
+| DefiLlama hack listesi | İsimli güvenlik ihlali, zincir, dolar tutarı | Saatler | 15 dk |
+| Coinpaprika fiyat değişimi | BTC/ETH 1 saatlik sert hareket | Anlık | 2 dk |
+
+Hack kaydı kurumsal ve doğrulanmış ama saatler içinde giriliyor: "oldu"
+bilgisi kesin, "şu anda oluyor" değil. Fiyat şoku ise gerçekten anlık — kriz
+çoğu zaman haber yazılmadan önce fiyatta görünür. İkisi birlikte hem hızı hem
+doğrulamayı veriyor.
+
+Eşikler: ihlal 100 mn $ üstü kritik, 10 mn $ üstü yüksek, borsa kaynaklı olay
+tutar bilinmese de yüksek. Fiyat şoku 1 saatte %5 kritik, %3 yüksek, 24 saatte
+%10 yüksek. Yalnızca yüksek ve kritik olanlar bildirim gönderir; görülen her
+olay tarayıcıda saklanır, aynı şey iki kez bildirilmez.
+
+Sayfa açıkken çalışır. Sekme kapalıyken bildirim için sunucu tarafında push
+gerekir — GitHub Pages bunu yapamaz.
+
 ### Otomatikleştirilemeyen kısım
 
 Token unlock ve ETF akışı için ücretsiz, anahtarsız ve birincil bir kaynak

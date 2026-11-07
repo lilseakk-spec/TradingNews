@@ -6,6 +6,7 @@ import { GROUPS, groupOf } from "@/lib/instruments";
 import { impactColor } from "@/lib/labels";
 import { addDays, longDate, trTodayISO } from "@/lib/weeks";
 import DayStrip from "./DayStrip";
+import BreakingWatch from "./BreakingWatch";
 import UpcomingAlerts from "./UpcomingAlerts";
 import AiPanel from "./AiPanel";
 import EventRow from "./EventRow";
@@ -82,6 +83,8 @@ export default function WeekView({ week }: { week: WeekData }) {
 
   return (
     <div className="space-y-6">
+      <BreakingWatch />
+
       <UpcomingAlerts events={upcoming} />
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3 border-b border-[var(--hairline)] pb-3">
