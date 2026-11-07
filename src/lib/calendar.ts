@@ -1,8 +1,8 @@
 import type { AffectedInstrument, Impact, NewsEvent } from "./types.ts";
 import { classify } from "./impact.ts";
+import { TR_TZ, dateKeyIn, timeIn } from "./clock.ts";
 
-/** Uygulamanin tek saat dilimi. Takvimdeki her saat TRT. */
-export const TR_TZ = "Europe/Istanbul";
+export { TR_TZ };
 
 /** Ucretsiz, anahtarsiz haftalik ekonomik takvim feed'i. */
 export const DEFAULT_FEED = "https://nfs.faireconomy.media/ff_calendar_thisweek.json";
@@ -186,9 +186,12 @@ const TERMS: [RegExp, string][] = [
   [/^federal budget balance$/i, "Federal bütçe dengesi"],
 
   // Siyaset
-  [/^congressional elections$/i, "ABD ara seçimleri"],
-  [/^presidential election$/i, "Başkanlık seçimi"],
-  [/^parliamentary election$/i, "Parlamento seçimi"],
+  [/^congressional elections?$/i, "ABD ara seçimleri"],
+  [/^presidential elections?$/i, "Başkanlık seçimi"],
+  [/^parliamentary elections?$/i, "Parlamento seçimi"],
+  [/^general elections?$/i, "Genel seçim"],
+  [/^federal elections?$/i, "Federal seçim"],
+  [/^referendum$/i, "Referandum"],
 ];
 
 const SPEAKER = /^(.+?)\s+(speaks|speech|testifies)$/i;
@@ -276,34 +279,16 @@ export function impactFromFeed(raw: string): Impact {
   return 1;
 }
 
-const fmtTime = new Intl.DateTimeFormat("tr-TR", {
-  timeZone: TR_TZ,
-  hour: "2-digit",
-  minute: "2-digit",
-  hour12: false,
-});
-
-const fmtDateKey = new Intl.DateTimeFormat("en-CA", {
-  timeZone: TR_TZ,
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-});
-
 /** Feed tarihini TRT saatine cevirir. Saat belirsizse null. */
 export function trTime(iso: string): string | null {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return null;
   // Feed, saati belirsiz olaylari gun basina sabitler.
-  const hhmm = fmtTime.format(d);
+  const hhmm = timeIn(iso, TR_TZ);
   return hhmm === "00:00" ? null : hhmm;
 }
 
 /** Feed tarihinin TRT gunu, YYYY-MM-DD. */
 export function trDateKey(iso: string): string {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "";
-  return fmtDateKey.format(d);
+  return dateKeyIn(iso, TR_TZ);
 }
 
 export interface IngestStats {
@@ -387,6 +372,7 @@ export function ingest(items: RawFeedItem[], opts: IngestOptions = {}): NewsEven
       id,
       time,
       date,
+      utc: new Date(item.date).toISOString(),
       title: localizeTitle(item.title),
       region: regionName(currency),
       currency,

@@ -194,6 +194,7 @@ export function expiryEvents(
       id: `okx-opsiyon-vadesi-${date}`,
       time: trTime(iso),
       date,
+      utc: iso,
       title: `${label} ${kindWord}opsiyon vadesi`,
       region: "Kripto",
       category: "kripto",

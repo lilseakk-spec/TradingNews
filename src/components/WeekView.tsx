@@ -2,47 +2,67 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { AssetGroup, DayBlock, WeekData } from "@/lib/types";
-import { volatilityLabel } from "@/lib/types";
 import { GROUPS, groupOf } from "@/lib/instruments";
-import { volatilityColor } from "@/lib/labels";
-import { shortDate, trTodayISO } from "@/lib/weeks";
-import VolatilityRibbon from "./VolatilityRibbon";
+import { impactColor } from "@/lib/labels";
+import { addDays, longDate, trTodayISO } from "@/lib/weeks";
+import DayStrip from "./DayStrip";
+import UpcomingAlerts from "./UpcomingAlerts";
 import AiPanel from "./AiPanel";
 import EventRow from "./EventRow";
 
 const ALL_GROUPS = GROUPS.map((g) => g.id);
 
+type View = "bugun" | "yarin" | "hafta";
+
 export default function WeekView({ week }: { week: WeekData }) {
   const [active, setActive] = useState<AssetGroup[]>(ALL_GROUPS);
   const [onlyHigh, setOnlyHigh] = useState(false);
-  // Site statik kuruldugu icin "bugun" tarayicida belirlenir; ilk boyamada
-  // bos kalir, sunucu ciktisiyla ayni olur, sonra yerine oturur.
+  const [view, setView] = useState<View>("hafta");
   const [todayISO, setTodayISO] = useState("");
+  const [picked, setPicked] = useState<string | null>(null);
 
+  // Statik site: "bugun" tarayicida belirlenir.
   useEffect(() => {
-    setTodayISO(trTodayISO());
+    const today = trTodayISO();
+    setTodayISO(today);
+    if (today >= week.start && today <= week.end) setView("bugun");
     const id = setInterval(() => setTodayISO(trTodayISO()), 10 * 60_000);
     return () => clearInterval(id);
-  }, []);
+  }, [week.start, week.end]);
 
-  const filtered = useMemo<DayBlock[]>(() => {
-    return week.days.map((day) => ({
-      ...day,
-      events: day.events.filter((e) => {
-        if (onlyHigh && e.impact !== 3) return false;
-        const groups = e.affected
-          .map((a) => groupOf(a.symbol))
-          .filter((g): g is AssetGroup => g !== undefined);
-        // Takip evrenine denk gelen paritesi kalmamis bir olay hicbir
-        // filtrede gizlenmesin; gorunur kalsin ki sessizce kaybolmasin.
-        if (groups.length === 0) return true;
-        return groups.some((g) => active.includes(g));
-      }),
-    }));
-  }, [week.days, active, onlyHigh]);
+  const inWeek = todayISO >= week.start && todayISO <= week.end;
+  const tomorrowISO = todayISO ? addDays(todayISO, 1) : "";
 
-  const shown = filtered.reduce((n, d) => n + d.events.length, 0);
-  const total = week.days.reduce((n, d) => n + d.events.length, 0);
+  const filtered = useMemo<DayBlock[]>(
+    () =>
+      week.days.map((day) => ({
+        ...day,
+        events: day.events.filter((e) => {
+          if (onlyHigh && e.impact !== 3) return false;
+          const groups = e.affected
+            .map((a) => groupOf(a.symbol))
+            .filter((g): g is AssetGroup => g !== undefined);
+          if (groups.length === 0) return true;
+          return groups.some((g) => active.includes(g));
+        }),
+      })),
+    [week.days, active, onlyHigh],
+  );
+
+  const visible = useMemo<DayBlock[]>(() => {
+    if (view === "bugun") return filtered.filter((d) => d.date === todayISO);
+    if (view === "yarin") return filtered.filter((d) => d.date === tomorrowISO);
+    if (picked) return filtered.filter((d) => d.key === picked);
+    return filtered;
+  }, [filtered, view, todayISO, tomorrowISO, picked]);
+
+  const shown = visible.reduce((n, d) => n + d.events.length, 0);
+  const weekTotal = week.days.reduce((n, d) => n + d.events.length, 0);
+
+  const upcoming = useMemo(
+    () => week.days.flatMap((d) => d.events),
+    [week.days],
+  );
 
   function toggleGroup(id: AssetGroup) {
     setActive((prev) =>
@@ -54,16 +74,43 @@ export default function WeekView({ week }: { week: WeekData }) {
     );
   }
 
+  const tabs: { id: View; label: string; show: boolean }[] = [
+    { id: "bugun", label: "Bugün", show: inWeek },
+    { id: "yarin", label: "Yarın", show: inWeek && tomorrowISO <= week.end },
+    { id: "hafta", label: "Hafta", show: true },
+  ];
+
   return (
-    <div className="space-y-8">
-      <VolatilityRibbon days={week.days} activeGroups={active} todayISO={todayISO} />
+    <div className="space-y-6">
+      <UpcomingAlerts events={upcoming} />
 
-      <AiPanel ai={week.ai} />
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 border-b border-[var(--hairline)] pb-3">
+        <div className="flex items-center gap-1">
+          {tabs
+            .filter((t) => t.show)
+            .map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                onClick={() => {
+                  setView(t.id);
+                  setPicked(null);
+                }}
+                aria-pressed={view === t.id}
+                className={[
+                  "rounded-sm px-3 py-1.5 text-[0.875rem] transition-colors",
+                  view === t.id
+                    ? "bg-[var(--bg-raise)] font-medium text-[var(--text)]"
+                    : "text-[var(--text-faint)] hover:text-[var(--text-dim)]",
+                ].join(" ")}
+              >
+                {t.label}
+              </button>
+            ))}
+        </div>
 
-      <div className="sticky top-0 z-20 -mx-4 border-b border-[var(--hairline)] bg-[var(--bg)]/92 px-4 py-2.5 backdrop-blur sm:-mx-6 sm:px-6">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <div className="ml-auto flex flex-wrap items-center gap-x-3 gap-y-2">
           <div className="flex items-center gap-1">
-            <span className="t-label mr-1">grup</span>
             {GROUPS.map((g) => {
               const on = active.includes(g.id);
               return (
@@ -72,47 +119,69 @@ export default function WeekView({ week }: { week: WeekData }) {
                   type="button"
                   onClick={() => toggleGroup(g.id)}
                   aria-pressed={on}
+                  title={g.label}
                   className={[
-                    "t-num rounded-sm border px-2 py-1 text-[0.6875rem] transition-colors",
+                    "t-num rounded-sm px-1.5 py-1 text-[0.6875rem] transition-colors",
                     on
-                      ? "border-[var(--hairline)] bg-[var(--bg-raise)] text-[var(--text)]"
-                      : "border-transparent text-[var(--text-faint)] hover:text-[var(--text-dim)]",
+                      ? "bg-[var(--bg-raise)] text-[var(--text)]"
+                      : "text-[var(--text-faint)] hover:text-[var(--text-dim)]",
                   ].join(" ")}
                 >
-                  {g.label}
+                  {g.code}
                 </button>
               );
             })}
           </div>
-
           <button
             type="button"
             onClick={() => setOnlyHigh((v) => !v)}
             aria-pressed={onlyHigh}
             className={[
-              "t-num rounded-sm border px-2 py-1 text-[0.6875rem] transition-colors",
+              "rounded-sm px-2 py-1 text-[0.75rem] transition-colors",
               onlyHigh
-                ? "border-[var(--verm)] text-[var(--verm)]"
-                : "border-transparent text-[var(--text-faint)] hover:text-[var(--text-dim)]",
+                ? "text-[var(--verm)]"
+                : "text-[var(--text-faint)] hover:text-[var(--text-dim)]",
             ].join(" ")}
           >
             sadece yüksek etki
           </button>
-
-          <span className="t-label ml-auto">
-            {shown === total ? `${total} haber` : `${shown} / ${total} haber`}
-          </span>
         </div>
       </div>
 
+      {view === "hafta" && (
+        <>
+          <DayStrip
+            days={filtered}
+            todayISO={todayISO}
+            selected={picked ?? undefined}
+            onSelect={(key) => setPicked((p) => (p === key ? null : key))}
+          />
+          {picked && (
+            <button
+              type="button"
+              onClick={() => setPicked(null)}
+              className="text-[0.75rem] text-[var(--text-faint)] underline-offset-2 hover:text-[var(--text-dim)] hover:underline"
+            >
+              tüm haftayı göster
+            </button>
+          )}
+          <AiPanel ai={week.ai} />
+        </>
+      )}
+
       <div>
-        {filtered.map((day) => (
+        {visible.map((day) => (
           <DaySection key={day.key} day={day} isToday={day.date === todayISO} />
         ))}
 
         {shown === 0 && (
-          <p className="border-t border-[var(--hairline)] py-10 text-center text-[0.875rem] text-[var(--text-dim)]">
-            Bu filtrede haber yok. Bir grup ekle ya da yüksek etki filtresini kaldır.
+          <p className="border-t border-[var(--hairline)] py-12 text-center text-[0.875rem] text-[var(--text-dim)]">
+            {view === "bugun" && "Bugün takvimde haber yok. Sakin bir gün."}
+            {view === "yarin" && "Yarın takvimde haber yok."}
+            {view === "hafta" &&
+              (weekTotal === 0
+                ? "Bu hafta için veri yok."
+                : "Bu filtrede haber yok. Bir grup ekle ya da yüksek etki filtresini kaldır.")}
           </p>
         )}
       </div>
@@ -122,39 +191,32 @@ export default function WeekView({ week }: { week: WeekData }) {
 
 function DaySection({ day, isToday }: { day: DayBlock; isToday: boolean }) {
   if (day.events.length === 0) return null;
-  const peak = day.events.reduce((m, e) => Math.max(m, e.volatility), 0);
+  const high = day.events.filter((e) => e.impact === 3).length;
 
   return (
-    <section className="tape-in mb-8">
-      <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pb-2">
-        <h2 className="t-display text-[1.125rem] text-[var(--text)]">{day.label}</h2>
-        <span className="t-num text-[0.75rem] text-[var(--text-faint)]">
-          {shortDate(day.date)}
-        </span>
+    <section className="tape-in mb-7">
+      <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pb-1.5">
+        <h2 className="text-[0.9375rem] font-medium text-[var(--text)]">
+          {longDate(day.date)}
+        </h2>
         {isToday && (
           <span
-            className="t-label rounded-sm px-1.5 py-0.5"
+            className="rounded-sm px-1.5 py-0.5 text-[0.6875rem] font-medium"
             style={{ background: "var(--amber)", color: "#0f1626" }}
           >
             bugün
           </span>
         )}
-        <span className="t-label ml-auto flex items-center gap-2">
-          <span>{day.events.length} haber</span>
-          <span className="flex items-center gap-1">
-            zirve
-            <span
-              className="inline-block h-2.5 w-[3px]"
-              style={{ background: volatilityColor(peak) }}
-              aria-hidden
-            />
-            <span style={{ color: volatilityColor(peak) }}>{volatilityLabel(peak)}</span>
-          </span>
+        <span className="ml-auto text-[0.75rem] text-[var(--text-faint)]">
+          {day.events.length} haber
+          {high > 0 && (
+            <span style={{ color: impactColor(3) }}> · {high} yüksek etki</span>
+          )}
         </span>
       </header>
 
       {day.focus && (
-        <p className="mb-1 max-w-[80ch] border-l-2 border-l-[var(--hairline)] pl-3 text-[0.8125rem] leading-relaxed text-[var(--text-dim)] sm:pl-4">
+        <p className="mb-1.5 max-w-[80ch] text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
           {day.focus}
         </p>
       )}

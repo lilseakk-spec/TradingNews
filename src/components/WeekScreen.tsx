@@ -1,8 +1,7 @@
 import Link from "next/link";
 import type { WeekData } from "@/lib/types";
 import { weekStats } from "@/lib/weeks";
-import { instrumentName } from "@/lib/instruments";
-import { volatilityColor } from "@/lib/labels";
+import { impactColor } from "@/lib/labels";
 import WeekView from "./WeekView";
 
 export default function WeekScreen({
@@ -15,85 +14,63 @@ export default function WeekScreen({
   next?: { id: string; label: string };
 }) {
   const stats = weekStats(week);
-  const [year, weekNo] = week.id.split("-W");
 
   return (
     <>
-      <header className="border-b border-[var(--hairline)] pb-5 pt-8 sm:pt-10">
-        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-          <p className="t-eyebrow">
-            {year} · {Number(weekNo)}. hafta
-          </p>
-          <nav className="ml-auto flex items-center gap-1">
+      <header className="pb-5 pt-7 sm:pt-9">
+        <div className="flex items-center justify-between gap-4">
+          <h1 className="t-display text-[clamp(1.5rem,5vw,2.5rem)] text-[var(--text)]">
+            {week.label}
+          </h1>
+          <nav className="flex shrink-0 items-center gap-1 text-[0.75rem]">
             {prev ? (
               <Link
                 href={`/hafta/${prev.id}`}
-                className="t-label rounded px-2 py-1 transition-colors hover:bg-[var(--bg-raise)] hover:text-[var(--text)]"
+                className="rounded px-2 py-1 text-[var(--text-faint)] transition-colors hover:bg-[var(--bg-raise)] hover:text-[var(--text)]"
               >
                 ← {prev.label}
               </Link>
-            ) : (
-              <span className="t-label px-2 py-1 opacity-40">← önceki yok</span>
-            )}
+            ) : null}
             {next ? (
               <Link
                 href={`/hafta/${next.id}`}
-                className="t-label rounded px-2 py-1 transition-colors hover:bg-[var(--bg-raise)] hover:text-[var(--text)]"
+                className="rounded px-2 py-1 text-[var(--text-faint)] transition-colors hover:bg-[var(--bg-raise)] hover:text-[var(--text)]"
               >
                 {next.label} →
               </Link>
-            ) : (
-              <span className="t-label px-2 py-1 opacity-40">sonraki yok</span>
-            )}
+            ) : null}
           </nav>
         </div>
 
-        <h1 className="t-display mt-1.5 text-[clamp(1.75rem,6vw,3rem)] text-[var(--text)]">
-          {week.label}
-        </h1>
-
-        <dl className="t-num mt-4 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-[0.8125rem] text-[var(--text-dim)]">
-          <div className="flex items-baseline gap-1.5">
-            <dt className="t-label">haber</dt>
-            <dd className="text-[var(--text)]">{stats.total}</dd>
-          </div>
-          <div className="flex items-baseline gap-1.5">
-            <dt className="t-label">yüksek etki</dt>
-            <dd style={{ color: "var(--verm)" }}>{stats.high}</dd>
-          </div>
-          {stats.peak && (
-            <div className="flex items-baseline gap-1.5">
-              <dt className="t-label">en yoğun gün</dt>
-              <dd className="text-[var(--text)]">
-                {stats.peak.label}
-                <span
-                  className="ml-1.5 inline-block h-2.5 w-[3px] align-middle"
-                  style={{ background: volatilityColor(stats.peak.score) }}
-                  aria-hidden
-                />
-              </dd>
-            </div>
+        <p className="mt-1.5 text-[0.8125rem] text-[var(--text-dim)]">
+          <span className="t-num text-[var(--text)]">{stats.total}</span> haber
+          {stats.high > 0 && (
+            <>
+              {" · "}
+              <span className="t-num" style={{ color: impactColor(3) }}>
+                {stats.high}
+              </span>{" "}
+              yüksek etki
+            </>
           )}
-          <div className="flex min-w-0 items-baseline gap-2">
-            <dt className="t-label shrink-0">en sıcak</dt>
-            <dd className="flex flex-wrap gap-1">
-              {stats.hottest.map((h) => (
-                <span
-                  key={h.symbol}
-                  title={`${instrumentName(h.symbol)} — hafta boyu etki skoru ${h.score}`}
-                  className="rounded-sm border border-[var(--hairline)] px-1.5 py-0.5 text-[0.6875rem] text-[var(--text)]"
-                >
-                  {h.symbol}
-                </span>
-              ))}
-            </dd>
-          </div>
-        </dl>
+          {stats.peak && stats.peak.count > 0 && (
+            <>
+              {" · en yoğun gün "}
+              <span className="text-[var(--text)]">
+                {stats.peak.label.charAt(0) + stats.peak.label.slice(1).toLowerCase()}
+              </span>
+            </>
+          )}
+        </p>
+
+        {stats.hottest.length > 0 && (
+          <p className="t-num mt-1 text-[0.75rem] text-[var(--text-faint)]">
+            en çok dokunulan: {stats.hottest.map((h) => h.symbol).join("  ")}
+          </p>
+        )}
       </header>
 
-      <div className="pt-6">
-        <WeekView week={week} />
-      </div>
+      <WeekView week={week} />
     </>
   );
 }

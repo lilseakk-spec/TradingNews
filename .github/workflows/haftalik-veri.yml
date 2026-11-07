@@ -1,4 +1,4 @@
-name: Haftalık veri
+name: Veri güncelleme
 
 # Pazar sabahı takvimi çeker, hafta dosyasını üretir ve commit eder.
 # Commit push edilince "Yayınla" iş akışı siteyi yeniler.
@@ -10,8 +10,12 @@ name: Haftalık veri
 
 on:
   schedule:
-    # Her pazar 06:00 UTC = 09:00 TRT. Feed o sabah yeni haftaya döner.
+    # Pazar 06:00 UTC = 09:00 TRT: feed yeni haftaya döner, hafta kurulur
+    # ve yapay zeka yorumu üretilir.
     - cron: "0 6 * * 0"
+    # Diğer günler 05:00 UTC = 08:00 TRT: takvim tazelenir. Hafta içinde
+    # saatler kayar, beklentiler güncellenir, yeni olay eklenir.
+    - cron: "0 5 * * 1-6"
   workflow_dispatch:
 
 permissions:
@@ -35,8 +39,13 @@ jobs:
       - name: Takvimi çek ve haftayı üret
         run: node scripts/new-week.ts
 
+      # Yorum yalnızca pazar kurulumunda ve elle çalıştırmada üretilir;
+      # hafta içi tazelemede mevcut yorum korunur.
       - name: Yapay zeka yorumu
-        if: env.ANTHROPIC_API_KEY != ''
+        if: >-
+          env.ANTHROPIC_API_KEY != '' &&
+          (github.event_name == 'workflow_dispatch' ||
+           github.event.schedule == '0 6 * * 0')
         run: node scripts/ai-commentary.ts
 
       - name: Değişiklikleri işle
@@ -47,6 +56,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Yeni veri yok."
           else
-            git commit -m "Haftalık takvim güncellemesi"
+            git commit -m "Takvim güncellemesi"
             git push
           fi

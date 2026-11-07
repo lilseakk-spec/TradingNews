@@ -1,4 +1,7 @@
 import type { DayBlock, WeekData } from "./types.ts";
+import { trTodayISO } from "./clock.ts";
+
+export { trTodayISO };
 
 /**
  * Islem haftasi PAZAR gunu baslar, CUMA gunu kapanir.
@@ -47,19 +50,6 @@ const MONTHS_TR = [
   "Kasım",
   "Aralık",
 ];
-
-/**
- * Bugunun TRT tarihi. Statik site oldugu icin "bugun" isaretleri
- * tarayicida hesaplanir; kurulum anindaki tarihe sabitlenmez.
- */
-export function trTodayISO(): string {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Europe/Istanbul",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date());
-}
 
 /** YYYY-MM-DD dizgisini saat dilimi kaymasi olmadan parcalar. */
 export function parseISO(iso: string): { y: number; m: number; d: number } {

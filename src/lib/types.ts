@@ -31,8 +31,10 @@ export interface NewsEvent {
   id: string;
   /** TRT, "15:30". null ise saat belirsiz / gun ici. */
   time: string | null;
-  /** ISO tarih. Gun blogunun tarihiyle ayni. */
+  /** ISO tarih (TRT). Gun blogunun tarihiyle ayni. */
   date?: string;
+  /** Olayin kesin ani, UTC ISO. New York saati ve geri sayim bundan turer. */
+  utc?: string;
   title: string;
   /** Ayni anda aciklanan ve bu satira katlanan diger basliklar. */
   also?: string[];

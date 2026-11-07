@@ -25,7 +25,6 @@
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 
-  --radius-pip: 1px;
 }
 
 :root {
@@ -150,32 +149,6 @@ body::before {
   letter-spacing: -0.01em;
 }
 
-/* ── Etki pipleri ────────────────────────────────────────────── */
-
-.pip {
-  display: inline-block;
-  width: 5px;
-  height: 11px;
-  border: 1px solid currentColor;
-  border-radius: 1px;
-}
-.pip--on {
-  background: currentColor;
-}
-
-/* ── Serit (sismograf) ──────────────────────────────────────── */
-
-.ribbon-tick {
-  transition: opacity 140ms ease, transform 140ms ease;
-  transform-origin: bottom center;
-}
-.ribbon:hover .ribbon-tick:not(:hover) {
-  opacity: 0.32;
-}
-.ribbon-tick:hover {
-  transform: scaleX(2.2);
-}
-
 /* ── Kart girisi ─────────────────────────────────────────────── */
 
 @keyframes tape-in {
@@ -200,8 +173,5 @@ body::before {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  .ribbon-tick:hover {
-    transform: none;
   }
 }
