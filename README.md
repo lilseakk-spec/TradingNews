@@ -1,7 +1,9 @@
 # Sismograf — haftalık volatilite takvimi
 
 Haftanın piyasa hareketi yaratacak haberlerini, her haberin etkilediği pariteleri
-ve yapay zeka yorumunu tek ekranda toplayan yerel bir web uygulaması.
+ve yapay zeka yorumunu tek ekranda toplayan web uygulaması.
+
+**Canlı:** https://lilseakk-spec.github.io/TradingNews/
 
 İşlem haftası **pazar** açılışından **cuma** kapanışına kadar beş kolon olarak
 dizilir (PAZAR · SALI · ÇARŞAMBA · PERŞEMBE · CUMA). Takvimde pazartesi ya da
