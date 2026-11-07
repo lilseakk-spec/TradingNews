@@ -1,0 +1,799 @@
+{
+  "id": "2026-W45",
+  "label": "1 – 7 Kasım 2026",
+  "start": "2026-11-01",
+  "end": "2026-11-07",
+  "updatedAt": "2026-11-07T18:03:36.394Z",
+  "calendarSource": {
+    "label": "Forex Factory haftalik takvim",
+    "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
+    "fetchedAt": "2026-11-07T17:36:06.166Z"
+  },
+  "ai": {
+    "headline": "haftanın yükü cumaya yığılmış, ortası konuşmacı trafiği",
+    "thesis": "Haftanın tek gerçek makro çıpası cuma 16:30'daki ABD istihdam paketi; beklenti 65K, önceki 29K, yani zayıf bir aydan toparlanma fiyatlanıyor. Pazartesiden perşembeye kadar takvimde sert veri yok, bunun yerine BoC, SNB, ECB ve BoJ başkanlarının üst üste bindiği bir konuşmacı trafiği var; bu tür haftalarda yön veriden değil, söylemdeki ton kaymasından gelir ve hareket dar ama ani olur. Kripto ve endeks tarafında bu, cuma öncesi düşük hacimli ve aralık içi bir seyir, cuma 16:30'da tek seferlik bir genişleme anlamına gelir. Salı akşamı ABD ara seçimleri bu düzenin tek kırılma noktası: sonuç beklentiden farklı okunursa US100 ve BTCUSD, makro takvime bakmadan risk iştahı kanalından hareket eder.",
+    "regime": {
+      "label": "Veri boşluğunda konuşmacı riski taşıyan, cuma akşamı tek noktada boşalan bir hafta.",
+      "tone": "karisik"
+    },
+    "scenarios": [
+      {
+        "name": "İstihdam toparlanması",
+        "trigger": "Cuma tarım dışı istihdam 65K beklentisinin belirgin üzerinde, saatlik kazanç da yukarı.",
+        "reaction": "DXY ve US02Y yukarı, XAUUSD baskılanır; US100 ve BTCUSD önce faiz kanalından satılır, kapanışa doğru büyüme okumasıyla ayrışır.",
+        "bias": "yukari"
+      },
+      {
+        "name": "İkinci zayıf ay",
+        "trigger": "İstihdam 29K'lık önceki okumaya yakın kalır ya da altına düşer.",
+        "reaction": "DXY ve tahvil faizleri geri çekilir, XAUUSD ve BTCUSD gevşeyen finansal koşullardan destek alır; US100 kazanç beklentisi tartışması açılana kadar yukarı tepki verir.",
+        "bias": "asagi"
+      },
+      {
+        "name": "Beklentiye yakın",
+        "trigger": "İstihdam bandın içinde, BoE oy dağılımı 7-0-2 beklentisini doğrular.",
+        "reaction": "Haftanın hareketi GBPUSD ve USDJPY çaprazlarında kalır, DXY yatay; endeks ve kripto cuma kapanışına kadar aralığını korur.",
+        "bias": "notr"
+      }
+    ],
+    "watchlist": [
+      "DXY",
+      "US100",
+      "BTCUSD",
+      "GBPUSD",
+      "XAUUSD",
+      "USDJPY"
+    ],
+    "risks": [
+      "Salı akşamı ABD ara seçim sonucu takvimdeki her şeyi gölgeleyebilir; o gece oluşan risk iştahı cuma verisine kadar fiyatta kalır.",
+      "Dört merkez bankası başkanı üç gün içinde konuşuyor; hazırlıksız bir ton değişimi, takvimde yüksek etkili veri olmadan DXY'de gün içi kırılma yaratır.",
+      "BoE oy dağılımı 3-0-6'dan 7-0-2'ye beklenen kaymayı doğrulamazsa, perşembe 15:00'te GBPUSD'deki hareket haftanın en sert tek adımı olur."
+    ],
+    "generatedBy": "claude-opus-5 (elle işlendi)",
+    "generatedAt": "2026-11-07T18:03:36.393Z"
+  },
+  "days": [
+    {
+      "key": "pazar",
+      "label": "PAZAR",
+      "date": "2026-11-01",
+      "events": []
+    },
+    {
+      "key": "pazartesi",
+      "label": "PAZARTESİ",
+      "date": "2026-11-02",
+      "focus": "Tek veri ISM imalat PMI; beklenti önceki okumanın aynısı, yani haftaya sürpriz beklentisi olmadan giriliyor.",
+      "events": [
+        {
+          "id": "2026-11-02-USD-ism-manufacturing-pmi",
+          "time": "18:00",
+          "date": "2026-11-02",
+          "title": "ISM imalat PMI",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "buyume",
+          "impact": 2,
+          "volatility": 51,
+          "forecast": "54.5",
+          "previous": "54.5",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "ai": "Beklenti önceki ile aynı (54.5); sapma olmadıkça fiyatlamaya girmez, sapma olursa cuma istihdam beklentisini öne çeker."
+        }
+      ]
+    },
+    {
+      "key": "sali",
+      "label": "SALI",
+      "date": "2026-11-03",
+      "focus": "RBA karar paketi Asya seansını, ABD ara seçimleri ise akşamı belirliyor; ikisi arasında İsviçre TÜFE'si dışında boşluk var.",
+      "events": [
+        {
+          "id": "2026-11-03-AUD-cash-rate",
+          "time": "06:30",
+          "date": "2026-11-03",
+          "title": "RBA politika faizi",
+          "region": "Avustralya",
+          "currency": "AUD",
+          "category": "merkez-banka",
+          "impact": 3,
+          "volatility": 74,
+          "forecast": "4.85%",
+          "previous": "4.60%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "AUDUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "NZDUSD",
+              "direction": "yukari",
+              "strength": 1
+            }
+          ],
+          "also": [
+            "RBA para politikası metni",
+            "RBA basın toplantısı"
+          ],
+          "ai": "Karar, politika metni ve basın toplantısı tek pakette; AUDUSD'nin tepkisi faizden çok basın toplantısındaki tondan gelir."
+        },
+        {
+          "id": "2026-11-03-CHF-cpi-m-m",
+          "time": "10:30",
+          "date": "2026-11-03",
+          "title": "TÜFE (aylık)",
+          "region": "İsviçre",
+          "currency": "CHF",
+          "category": "enflasyon",
+          "impact": 2,
+          "volatility": 54,
+          "forecast": "0.0%",
+          "previous": "0.0%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDCHF",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "volatil",
+              "strength": 1
+            }
+          ],
+          "ai": "Beklenti ve önceki sıfır; İsviçre enflasyonu bu seviyede SNB'ye alan açmaz, USDCHF tepkisi sınırlı kalır."
+        },
+        {
+          "id": "2026-11-03-USD-congressional-elections",
+          "time": "18:16",
+          "date": "2026-11-03",
+          "title": "ABD ara seçimleri",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "jeopolitik",
+          "impact": 3,
+          "volatility": 66,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "ai": "Takvimdeki tek siyasi olay ve haftanın en öngörülemez kalemi; sonuç gecesi oluşan risk iştahı US100 ve BTCUSD'de cuma verisine kadar taşınır."
+        },
+        {
+          "id": "2026-11-03-CAD-boc-gov-macklem-speaks",
+          "time": "19:00",
+          "date": "2026-11-03",
+          "title": "BoC Başkanı Macklem konuşması",
+          "region": "Kanada",
+          "currency": "CAD",
+          "category": "merkez-banka",
+          "impact": 2,
+          "volatility": 61,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDCAD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "ai": "Haftanın iki Macklem konuşmasından ilki; USDCAD için petrol tarafıyla birlikte izlenir, tek başına yön vermez."
+        }
+      ]
+    },
+    {
+      "key": "carsamba",
+      "label": "ÇARŞAMBA",
+      "date": "2026-11-04",
+      "focus": "Üç orta ölçekli veri arka arkaya; hiçbiri tek başına yön vermez ama ISM hizmet, cuma istihdamı öncesi son aktivite okuması.",
+      "events": [
+        {
+          "id": "2026-11-04-NZD-unemployment-rate",
+          "time": "00:45",
+          "date": "2026-11-04",
+          "title": "İşsizlik oranı",
+          "region": "Yeni Zelanda",
+          "currency": "NZD",
+          "category": "istihdam",
+          "impact": 3,
+          "volatility": 64,
+          "forecast": "5.5%",
+          "previous": "5.6%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "NZDUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "AUDUSD",
+              "direction": "volatil",
+              "strength": 1
+            }
+          ],
+          "also": [
+            "İstihdam değişimi (çeyreklik)"
+          ],
+          "ai": "İşsizlik ve çeyreklik istihdam aynı anda; 5.6'dan 5.5'e iyileşme bekleniyor, NZDUSD Asya seansında dar bir pencerede hareket eder."
+        },
+        {
+          "id": "2026-11-04-EUR-core-cpi-flash-estimate-y-y",
+          "time": "13:00",
+          "date": "2026-11-04",
+          "title": "Çekirdek TÜFE (yıllık)",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "enflasyon",
+          "impact": 2,
+          "volatility": 54,
+          "forecast": "2.5%",
+          "previous": "2.5%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "TÜFE (yıllık)"
+          ],
+          "ai": "Çekirdek ve manşet TÜFE birlikte; beklenti öncekiyle aynı (2.5%), ECB'nin söylemini değiştirecek bir sapma olmadıkça EURUSD'de etkisi kısa sürer."
+        },
+        {
+          "id": "2026-11-04-USD-ism-services-pmi",
+          "time": "18:00",
+          "date": "2026-11-04",
+          "title": "ISM hizmet PMI",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "buyume",
+          "impact": 2,
+          "volatility": 51,
+          "forecast": "54.8",
+          "previous": "54.9",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "ai": "Cuma istihdamı öncesi son ABD aktivite okuması; hizmet tarafındaki zayıflama istihdam beklentisini aşağı çeker, DXY'de erken fiyatlama başlatır."
+        }
+      ]
+    },
+    {
+      "key": "persembe",
+      "label": "PERŞEMBE",
+      "date": "2026-11-05",
+      "focus": "BoE'nin oy dağılımı ve dört ayrı merkez bankası konuşması; haftanın söylem riski bu güne sıkışmış.",
+      "events": [
+        {
+          "id": "2026-11-05-GBP-official-bank-rate",
+          "time": "15:00",
+          "date": "2026-11-05",
+          "title": "BoE politika faizi",
+          "region": "İngiltere",
+          "currency": "GBP",
+          "category": "merkez-banka",
+          "impact": 3,
+          "volatility": 76,
+          "forecast": "4.00%",
+          "previous": "3.75%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "GBPUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "FTSE100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "BoE para politikası raporu",
+            "Para politikası özeti",
+            "BoE faiz oylaması",
+            "BoE Başkanı Bailey konuşması"
+          ],
+          "ai": "Haftanın en bilgi yoğun tek kalemi: oy dağılımı, politika raporu ve Bailey aynı saatte. Beklenen 7-0-2 ile önceki 3-0-6 arasındaki fark doğrulanmazsa GBPUSD'de haftanın en sert adımı buradan gelir."
+        },
+        {
+          "id": "2026-11-05-CHF-snb-chairman-schlegel-speaks",
+          "time": "15:40",
+          "date": "2026-11-05",
+          "title": "SNB Başkanı Schlegel konuşması",
+          "region": "İsviçre",
+          "currency": "CHF",
+          "category": "merkez-banka",
+          "impact": 2,
+          "volatility": 61,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDCHF",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "volatil",
+              "strength": 1
+            }
+          ],
+          "ai": "Sıfır enflasyon okumasının ardından geliyor; USDCHF'de yön değil, güvenli liman talebinin ölçüsü için izlenir."
+        },
+        {
+          "id": "2026-11-05-CAD-boc-gov-macklem-speaks",
+          "time": "18:30",
+          "date": "2026-11-05",
+          "title": "BoC Başkanı Macklem konuşması",
+          "region": "Kanada",
+          "currency": "CAD",
+          "category": "merkez-banka",
+          "impact": 2,
+          "volatility": 61,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDCAD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "ai": "İki gün içindeki ikinci konuşma; iki konuşma arasındaki ton farkı USDCAD için asıl sinyal."
+        },
+        {
+          "id": "2026-11-05-EUR-ecb-president-lagarde-speaks",
+          "time": "21:00",
+          "date": "2026-11-05",
+          "title": "ECB Başkanı Lagarde konuşması",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "merkez-banka",
+          "impact": 2,
+          "volatility": 61,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "ai": "Çarşamba TÜFE'sinin ardından ilk ECB yorumu; enflasyonun yerinde saymasına verdiği tepki EURUSD ve DE10Y'de okunur."
+        }
+      ]
+    },
+    {
+      "key": "cuma",
+      "label": "CUMA",
+      "date": "2026-11-06",
+      "focus": "16:30'da ABD istihdam paketi haftanın tek yüksek etkili verisi; 19:00'da Ueda ile JPY tarafında ikinci bir pencere açılıyor.",
+      "events": [
+        {
+          "id": "2026-11-06-USD-non-farm-employment-change",
+          "time": "16:30",
+          "date": "2026-11-06",
+          "title": "Tarım dışı istihdam",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "istihdam",
+          "impact": 3,
+          "volatility": 92,
+          "forecast": "65K",
+          "previous": "29K",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "US02Y",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "Ortalama saatlik kazanç (aylık)",
+            "İşsizlik oranı"
+          ],
+          "ai": "Haftanın çıpası. İstihdam, saatlik kazanç ve işsizlik oranı aynı anda; 29K'lık zayıf aydan 65K'ya toparlanma bekleniyor. Sapma yönü DXY, US02Y, XAUUSD ve BTCUSD'de tek seferde fiyatlanır."
+        },
+        {
+          "id": "2026-11-06-CAD-unemployment-rate",
+          "time": "16:30",
+          "date": "2026-11-06",
+          "title": "İşsizlik oranı",
+          "region": "Kanada",
+          "currency": "CAD",
+          "category": "istihdam",
+          "impact": 3,
+          "volatility": 64,
+          "forecast": "6.5%",
+          "previous": "6.5%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDCAD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "İstihdam değişimi"
+          ],
+          "ai": "ABD istihdamıyla aynı dakikada; USDCAD'de iki veri üst üste bindiği için ilk tepki genellikle ABD tarafından gelir, Kanada verisi ikinci dalgada okunur."
+        },
+        {
+          "id": "2026-11-06-JPY-boj-gov-ueda-speaks",
+          "time": "19:00",
+          "date": "2026-11-06",
+          "title": "BoJ Başkanı Ueda konuşması",
+          "region": "Japonya",
+          "currency": "JPY",
+          "category": "merkez-banka",
+          "impact": 3,
+          "volatility": 72,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDJPY",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "NIKKEI225",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "ai": "Haftanın kapanışında JPY penceresi; ABD istihdamı sonrası tahvil faizleri hareketliyken gelen bir Ueda tonu USDJPY'de hafta sonu riskine girmeden önce son hareketi yaratır."
+        }
+      ]
+    },
+    {
+      "key": "cumartesi",
+      "label": "CUMARTESİ",
+      "date": "2026-11-07",
+      "events": [
+        {
+          "id": "2026-11-07-NZD-parliamentary-elections",
+          "time": "00:45",
+          "date": "2026-11-07",
+          "title": "Parliamentary Elections",
+          "region": "Yeni Zelanda",
+          "currency": "NZD",
+          "category": "jeopolitik",
+          "impact": 3,
+          "volatility": 66,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "NZDUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "VIX",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "AUDUSD",
+              "direction": "volatil",
+              "strength": 1
+            },
+            {
+              "symbol": "USDCHF",
+              "direction": "volatil",
+              "strength": 1
+            }
+          ],
+          "ai": "Yeni Zelanda genel seçimi TRT ile cumartesiye düşüyor; sonuç pazar açılışında NZDUSD ve AUDUSD'de boşluklu başlangıç riski taşır."
+        }
+      ],
+      "focus": "Takvimin tek hafta sonu kalemi: Yeni Zelanda seçimi, pazar açılışına fiyatlanmamış bir başlık bırakıyor."
+    }
+  ]
+}

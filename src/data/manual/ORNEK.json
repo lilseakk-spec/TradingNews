@@ -1,0 +1,79 @@
+{
+  "_aciklama": [
+    "Elle eklenen olay katmani. Ekonomik takvim feed'i kripto, bilanco ve",
+    "jeopolitik olaylari tasimaz; onlar buraya yazilir.",
+    "",
+    "Kullanim: bu dosyayi hafta kimligiyle kopyala, ornegin 2026-W46.json.",
+    "Sonra 'npm run new-week' calistir; buradaki olaylar takvimle birlesir.",
+    "Bu ORNEK.json dosyasi hicbir haftaya karismaz, yalnizca sablondur.",
+    "",
+    "Zorunlu alan yalnizca title. Bos birakilan alanlar kurallardan",
+    "tamamlanir: kategori, oynaklik ve etkilenen pariteler impact.ts",
+    "kurallarindan gelir. symbols yazarsan pariteleri sen belirlersin.",
+    "",
+    "Alanlar:",
+    "  key        pazar | pazartesi | sali | carsamba | persembe | cuma",
+    "  focus      gunun tek cumlelik odagi (istege bagli)",
+    "  title      olayin basligi",
+    "  time       TRT saati, 'HH:MM'. Saat belirsizse alani yaz ya da null birak",
+    "  region     ABD, Kripto, Kuresel gibi",
+    "  currency   USD, EUR ... (para birimi haritasini tetikler)",
+    "  category   merkez-banka | enflasyon | istihdam | buyume | kripto |",
+    "             bilanco | enerji | jeopolitik | likidite",
+    "  impact     1 dusuk, 2 orta, 3 yuksek",
+    "  volatility 0-100 beklenen oynaklik; seritte tik yuksekligi",
+    "  symbols    ['BTCUSD','ETHUSD'] kisa yol; hepsi iki yonlu oynak sayilir",
+    "  affected   tam denetim: [{symbol, direction: yukari|asagi|volatil, strength: 1-3}]",
+    "  forecast   beklenti",
+    "  previous   onceki",
+    "  ai         tek cumlelik yorum; bos birakirsan 'npm run ai' doldurur"
+  ],
+  "days": [
+    {
+      "key": "carsamba",
+      "focus": "Kripto tarafinda arz kilidi acilisi ile ETF akisi ayni gune dusuyor.",
+      "events": [
+        {
+          "title": "Spot Bitcoin ETF haftalik net akis raporu",
+          "time": "23:00",
+          "region": "Kripto",
+          "category": "kripto",
+          "impact": 3,
+          "volatility": 68,
+          "symbols": ["BTCUSD", "ETHUSD", "TOTAL", "BTC.D"]
+        },
+        {
+          "title": "SOL token unlock",
+          "time": null,
+          "region": "Kripto",
+          "category": "kripto",
+          "impact": 2,
+          "affected": [
+            { "symbol": "SOLUSD", "direction": "asagi", "strength": 3 },
+            { "symbol": "TOTAL3", "direction": "asagi", "strength": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "persembe",
+      "events": [
+        {
+          "title": "NVIDIA ceyreklik bilanco",
+          "time": "00:20",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "bilanco",
+          "impact": 3,
+          "volatility": 74,
+          "affected": [
+            { "symbol": "US100", "direction": "volatil", "strength": 3 },
+            { "symbol": "US500", "direction": "volatil", "strength": 2 },
+            { "symbol": "VIX", "direction": "volatil", "strength": 2 },
+            { "symbol": "BTCUSD", "direction": "volatil", "strength": 2, "note": "risk istahi kanali" }
+          ]
+        }
+      ]
+    }
+  ]
+}

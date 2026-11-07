@@ -1,0 +1,63 @@
+name: Yayınla
+
+# Her push'ta siteyi yeniden kurar ve GitHub Pages'e gönderir.
+# Haftalık akış: veri dosyasını commit et, push et, site güncellenir.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  kur:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Taban yolunu hesapla
+        id: taban
+        run: |
+          repo="${{ github.event.repository.name }}"
+          if [[ "$repo" == *.github.io ]]; then
+            echo "path=" >> "$GITHUB_OUTPUT"
+          else
+            echo "path=/$repo" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Siteyi kur
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.taban.outputs.path }}
+
+      # _next klasoru Jekyll tarafindan atlanmasin.
+      - run: touch out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  yayinla:
+    needs: kur
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4
