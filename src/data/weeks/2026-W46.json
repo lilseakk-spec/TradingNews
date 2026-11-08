@@ -1,0 +1,378 @@
+{
+  "id": "2026-W46",
+  "label": "8 – 13 Kasım 2026",
+  "start": "2026-11-08",
+  "end": "2026-11-13",
+  "updatedAt": "2026-11-08T12:34:40.279Z",
+  "calendarSource": {
+    "label": "Forex Factory haftalik takvim",
+    "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
+    "fetchedAt": "2026-11-08T12:33:48.028Z"
+  },
+  "ai": {
+    "headline": "abd çekirdek tüfe haftanın ekseni, cuma üfe ve opsiyon vadesi",
+    "thesis": "Haftanın merkezinde salı 16:30'da açıklanacak ABD çekirdek TÜFE var: beklenti %0,2, önceki %0,3. Sapma önce US02Y üzerinden Fed fiyatlamasına, oradan DXY, EURUSD ve XAUUSD'ye geçer. Faize en duyarlı uçta duran US100 ve BTCUSD bu hareketi kaldıraçlı taşır. Cuma 11:00'deki opsiyon vadesi ve 16:30'daki ÜFE aynı güne denk geldiği için salı oluşan yön kripto tarafında cuma yeniden test edilir.",
+    "regime": {
+      "label": "Yönü ABD enflasyon verilerinin US02Y'deki fiyatlaması belirliyor, veri öncesinde bekleme hâkim",
+      "tone": "karisik"
+    },
+    "scenarios": [
+      {
+        "name": "Soğuyan enflasyon",
+        "trigger": "Çekirdek TÜFE beklenen %0,2'nin altında gelir ve cuma ÜFE önceki %0,7'den belirgin geri çekilmeyi teyit eder.",
+        "reaction": "US02Y ve DXY geriler; EURUSD ve XAUUSD toparlanır, US100 ile BTCUSD faiz baskısından kurtulur.",
+        "bias": "yukari"
+      },
+      {
+        "name": "Yapışkan enflasyon",
+        "trigger": "Çekirdek TÜFE önceki %0,3 seviyesinde ya da üzerinde gelir ve ÜFE de beklentiyi aşar.",
+        "reaction": "US02Y, DXY ve USDJPY yükselir; EURUSD, XAUUSD, US100 ve BTCUSD baskı altına girer.",
+        "bias": "asagi"
+      },
+      {
+        "name": "Beklentiye paralel",
+        "trigger": "Çekirdek TÜFE %0,2'de gelir ve yön arayışı cumaya devredilir.",
+        "reaction": "US02Y ve DXY dar bantta kalır, BTCUSD ve ETHUSD opsiyon vadesine kadar sıkışır, belirleyici hareket cuma 16:30 ÜFE'ye ertelenir.",
+        "bias": "notr"
+      }
+    ],
+    "watchlist": [
+      "US02Y",
+      "DXY",
+      "BTCUSD",
+      "US100",
+      "EURUSD",
+      "XAUUSD"
+    ],
+    "risks": [
+      "Manşet ve çekirdek TÜFE aynı anda açıklanacak; ikisi ayrışırsa ilk tepki manşete gidip çekirdeğe döner ve iki yönlü fitil oluşur.",
+      "Cuma ÜFE'de önceki %0,7'ye yakın bir okuma, salı TÜFE ile oluşan yönü US10Y ve DXY üzerinden tersine çevirebilir.",
+      "Lagarde'nin 22:30'daki konuşması ince likiditede EURUSD'yi oynatarak DXY'de ABD verisinden bağımsız bir hareket yaratabilir."
+    ],
+    "generatedBy": "claude-opus-5-5",
+    "generatedAt": "2026-11-08T12:34:40.279Z"
+  },
+  "days": [
+    {
+      "key": "pazar",
+      "label": "PAZAR",
+      "date": "2026-11-08",
+      "events": []
+    },
+    {
+      "key": "pazartesi",
+      "label": "PAZARTESİ",
+      "date": "2026-11-09",
+      "events": [
+        {
+          "id": "2026-11-09-GBP-boe-gov-bailey-speaks",
+          "time": "20:25",
+          "date": "2026-11-09",
+          "utc": "2026-11-09T17:25:00.000Z",
+          "title": "BoE Başkanı Bailey konuşması",
+          "region": "İngiltere",
+          "currency": "GBP",
+          "category": "merkez-banka",
+          "impact": 2,
+          "volatility": 61,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "GBPUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "FTSE100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "ai": "Perşembe GSYH öncesinde BoE faiz yolu tonunu belirler; GBPUSD birincil, ABD seansına denk geldiği için US100 ve BTCUSD ikincil izlenir."
+        }
+      ],
+      "focus": "Günü 20:25'teki Bailey konuşması belirliyor ve haftanın ilk katalizörü sterlin tarafında. GBPUSD'de BoE faiz yoluna dair ton, FTSE100'de ise sterlin hareketinin ihracatçılara yansıması izlenecek."
+    },
+    {
+      "key": "sali",
+      "label": "SALI",
+      "date": "2026-11-10",
+      "events": [
+        {
+          "id": "2026-11-10-USD-core-cpi-m-m",
+          "time": "16:30",
+          "date": "2026-11-10",
+          "utc": "2026-11-10T13:30:00.000Z",
+          "title": "Çekirdek TÜFE (aylık)",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "enflasyon",
+          "impact": 3,
+          "volatility": 90,
+          "forecast": "0.2%",
+          "previous": "0.3%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "US02Y",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "TÜFE (aylık)"
+          ],
+          "ai": "Haftanın ana verisi (beklenti %0,2, önceki %0,3); sapma önce US02Y ve DXY'ye, oradan US100, BTCUSD ve XAUUSD'ye geçer."
+        }
+      ],
+      "focus": "Günü 16:30'da manşet ve çekirdek TÜFE'nin birlikte açıklanması belirliyor. İlk dakikalarda US02Y'nin yönü, ardından US100 ve BTCUSD'nin bu hareketi izleyip izlemediği takip edilecek."
+    },
+    {
+      "key": "carsamba",
+      "label": "ÇARŞAMBA",
+      "date": "2026-11-11",
+      "events": []
+    },
+    {
+      "key": "persembe",
+      "label": "PERŞEMBE",
+      "date": "2026-11-12",
+      "events": [
+        {
+          "id": "2026-11-12-GBP-gdp-m-m",
+          "time": "10:00",
+          "date": "2026-11-12",
+          "utc": "2026-11-12T07:00:00.000Z",
+          "title": "GSYH büyümesi (aylık)",
+          "region": "İngiltere",
+          "currency": "GBP",
+          "category": "buyume",
+          "impact": 3,
+          "volatility": 64,
+          "forecast": "0.0%",
+          "previous": "0.1%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "GBPUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "FTSE100",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "Öncü gSYH büyümesi (çeyreklik)"
+          ],
+          "ai": "%0,0 aylık beklenti durgunluğa işaret ediyor; zayıf okuma BoE indirim fiyatlamasını artırarak GBPUSD'yi baskılar, FTSE100 zayıf sterlinden destek alabilir."
+        },
+        {
+          "id": "2026-11-12-EUR-ecb-president-lagarde-speaks",
+          "time": "22:30",
+          "date": "2026-11-12",
+          "utc": "2026-11-12T19:30:00.000Z",
+          "title": "ECB Başkanı Lagarde konuşması",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "merkez-banka",
+          "impact": 2,
+          "volatility": 61,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "ai": "ABD kapanışından sonra 22:30'da, ince likiditede; ECB faiz yolu sinyali önce DE10Y ve EURUSD'ye, oradan EURJPY ve DAX40'a geçer."
+        }
+      ],
+      "focus": "Gün iki ucunda Avrupa kaynaklı: 10:00'da İngiltere GSYH, 22:30'da Lagarde. Sabah GBPUSD'de durgunluk teyidi, gece ise ABD kapanışı sonrası ince likiditede EURUSD ve EURJPY izlenecek."
+    },
+    {
+      "key": "cuma",
+      "label": "CUMA",
+      "date": "2026-11-13",
+      "events": [
+        {
+          "id": "okx-opsiyon-vadesi-2026-11-13",
+          "time": "11:00",
+          "date": "2026-11-13",
+          "utc": "2026-11-13T08:00:00.000Z",
+          "title": "BTC ve ETH haftalık opsiyon vadesi",
+          "region": "Kripto",
+          "category": "kripto",
+          "impact": 2,
+          "volatility": 61,
+          "metric": {
+            "label": "vadesi dolan açık pozisyon",
+            "value": "497,5 mn $ · BTC %12,9 · ETH %12,9"
+          },
+          "source": {
+            "label": "OKX opsiyon verisi",
+            "url": "https://www.okx.com"
+          },
+          "affected": [
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "ETHUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "TOTAL",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "ai": "Büyük strike'lardaki pin etkisi vade öncesinde BTCUSD ve ETHUSD'yi sıkıştırır; vade sonrası çözülen hedge'ler 16:30 ÜFE tepkisini büyütebilir."
+        },
+        {
+          "id": "2026-11-13-USD-core-ppi-m-m",
+          "time": "16:30",
+          "date": "2026-11-13",
+          "utc": "2026-11-13T13:30:00.000Z",
+          "title": "Çekirdek ÜFE (aylık)",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "enflasyon",
+          "impact": 3,
+          "volatility": 52,
+          "forecast": "0.3%",
+          "previous": "0.7%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "ÜFE (aylık)"
+          ],
+          "ai": "Önceki %0,7'den %0,3 beklentisine geçiş; sürpriz, TÜFE yönünü US10Y ve DXY üzerinden teyit eder ya da bozar, etki XAUUSD ve BTCUSD'ye yansır."
+        }
+      ],
+      "focus": "Günü 11:00 BTC/ETH opsiyon vadesi ile 16:30 ÜFE'nin art arda gelmesi belirliyor. Vade öncesinde BTCUSD ve ETHUSD'nin büyük strike'lara yapışması, vade sonrasında ise çözülen hedge'lerin ÜFE tepkisini büyütüp büyütmediği izlenecek."
+    }
+  ]
+}
