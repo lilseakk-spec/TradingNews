@@ -3,11 +3,11 @@
   "label": "8 – 13 Kasım 2026",
   "start": "2026-11-08",
   "end": "2026-11-13",
-  "updatedAt": "2026-11-08T12:34:40.279Z",
+  "updatedAt": "2026-11-09T13:26:59.190Z",
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-08T12:33:48.028Z"
+    "fetchedAt": "2026-11-09T13:26:58.641Z"
   },
   "ai": {
     "headline": "abd çekirdek tüfe haftanın ekseni, cuma üfe ve opsiyon vadesi",
@@ -63,6 +63,7 @@
       "key": "pazartesi",
       "label": "PAZARTESİ",
       "date": "2026-11-09",
+      "focus": "Günü 20:25'teki Bailey konuşması belirliyor ve haftanın ilk katalizörü sterlin tarafında. GBPUSD'de BoE faiz yoluna dair ton, FTSE100'de ise sterlin hareketinin ihracatçılara yansıması izlenecek.",
       "events": [
         {
           "id": "2026-11-09-GBP-boe-gov-bailey-speaks",
@@ -102,13 +103,13 @@
           ],
           "ai": "Perşembe GSYH öncesinde BoE faiz yolu tonunu belirler; GBPUSD birincil, ABD seansına denk geldiği için US100 ve BTCUSD ikincil izlenir."
         }
-      ],
-      "focus": "Günü 20:25'teki Bailey konuşması belirliyor ve haftanın ilk katalizörü sterlin tarafında. GBPUSD'de BoE faiz yoluna dair ton, FTSE100'de ise sterlin hareketinin ihracatçılara yansıması izlenecek."
+      ]
     },
     {
       "key": "sali",
       "label": "SALI",
       "date": "2026-11-10",
+      "focus": "Günü 16:30'da manşet ve çekirdek TÜFE'nin birlikte açıklanması belirliyor. İlk dakikalarda US02Y'nin yönü, ardından US100 ve BTCUSD'nin bu hareketi izleyip izlemediği takip edilecek.",
       "events": [
         {
           "id": "2026-11-10-USD-core-cpi-m-m",
@@ -173,8 +174,7 @@
           ],
           "ai": "Haftanın ana verisi (beklenti %0,2, önceki %0,3); sapma önce US02Y ve DXY'ye, oradan US100, BTCUSD ve XAUUSD'ye geçer."
         }
-      ],
-      "focus": "Günü 16:30'da manşet ve çekirdek TÜFE'nin birlikte açıklanması belirliyor. İlk dakikalarda US02Y'nin yönü, ardından US100 ve BTCUSD'nin bu hareketi izleyip izlemediği takip edilecek."
+      ]
     },
     {
       "key": "carsamba",
@@ -186,6 +186,7 @@
       "key": "persembe",
       "label": "PERŞEMBE",
       "date": "2026-11-12",
+      "focus": "Gün iki ucunda Avrupa kaynaklı: 10:00'da İngiltere GSYH, 22:30'da Lagarde. Sabah GBPUSD'de durgunluk teyidi, gece ise ABD kapanışı sonrası ince likiditede EURUSD ve EURJPY izlenecek.",
       "events": [
         {
           "id": "2026-11-12-GBP-gdp-m-m",
@@ -268,13 +269,13 @@
           ],
           "ai": "ABD kapanışından sonra 22:30'da, ince likiditede; ECB faiz yolu sinyali önce DE10Y ve EURUSD'ye, oradan EURJPY ve DAX40'a geçer."
         }
-      ],
-      "focus": "Gün iki ucunda Avrupa kaynaklı: 10:00'da İngiltere GSYH, 22:30'da Lagarde. Sabah GBPUSD'de durgunluk teyidi, gece ise ABD kapanışı sonrası ince likiditede EURUSD ve EURJPY izlenecek."
+      ]
     },
     {
       "key": "cuma",
       "label": "CUMA",
       "date": "2026-11-13",
+      "focus": "Günü 11:00 BTC/ETH opsiyon vadesi ile 16:30 ÜFE'nin art arda gelmesi belirliyor. Vade öncesinde BTCUSD ve ETHUSD'nin büyük strike'lara yapışması, vade sonrasında ise çözülen hedge'lerin ÜFE tepkisini büyütüp büyütmediği izlenecek.",
       "events": [
         {
           "id": "okx-opsiyon-vadesi-2026-11-13",
@@ -288,7 +289,7 @@
           "volatility": 61,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "497,5 mn $ · BTC %12,9 · ETH %12,9"
+            "value": "540,6 mn $ · BTC %13,4 · ETH %12,9"
           },
           "source": {
             "label": "OKX opsiyon verisi",
@@ -371,8 +372,7 @@
           ],
           "ai": "Önceki %0,7'den %0,3 beklentisine geçiş; sürpriz, TÜFE yönünü US10Y ve DXY üzerinden teyit eder ya da bozar, etki XAUUSD ve BTCUSD'ye yansır."
         }
-      ],
-      "focus": "Günü 11:00 BTC/ETH opsiyon vadesi ile 16:30 ÜFE'nin art arda gelmesi belirliyor. Vade öncesinde BTCUSD ve ETHUSD'nin büyük strike'lara yapışması, vade sonrasında ise çözülen hedge'lerin ÜFE tepkisini büyütüp büyütmediği izlenecek."
+      ]
     }
   ]
 }
