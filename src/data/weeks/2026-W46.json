@@ -3,11 +3,11 @@
   "label": "8 – 13 Kasım 2026",
   "start": "2026-11-08",
   "end": "2026-11-13",
-  "updatedAt": "2026-11-09T13:26:59.190Z",
+  "updatedAt": "2026-11-10T13:06:05.849Z",
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-09T13:26:58.641Z"
+    "fetchedAt": "2026-11-10T13:06:05.315Z"
   },
   "ai": {
     "headline": "abd çekirdek tüfe haftanın ekseni, cuma üfe ve opsiyon vadesi",
@@ -180,7 +180,55 @@
       "key": "carsamba",
       "label": "ÇARŞAMBA",
       "date": "2026-11-11",
-      "events": []
+      "events": [
+        {
+          "id": "2026-11-11-EUR-ecb-president-lagarde-speaks",
+          "time": "12:45",
+          "date": "2026-11-11",
+          "utc": "2026-11-11T09:45:00.000Z",
+          "title": "ECB Başkanı Lagarde konuşması",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "merkez-banka",
+          "impact": 2,
+          "volatility": 61,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ]
+        }
+      ]
     },
     {
       "key": "persembe",
@@ -286,10 +334,10 @@
           "region": "Kripto",
           "category": "kripto",
           "impact": 2,
-          "volatility": 61,
+          "volatility": 63,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "540,6 mn $ · BTC %13,4 · ETH %12,9"
+            "value": "598,4 mn $ · BTC %14,9 · ETH %14,6"
           },
           "source": {
             "label": "OKX opsiyon verisi",
