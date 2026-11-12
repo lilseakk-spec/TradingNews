@@ -1,11 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import type { CotEntry } from "@/lib/cot";
 
 /**
- * Klasik COT grafigi: buyuk spekulator ve ticari taraf, son bir yil.
+ * Klasik COT grafigi: uc taraf da ayni panelde, son bir yil.
  *
- * Iki seri sifir cizgisinin iki yanina duser ve genelde birbirinin
- * ayna goruntusudur — biri uzunlanirken digeri kisalir. Ayrismanin
- * ne zaman basladigi ve ucun ne kadar acildigi tek bakista gorunur.
+ * Spekulator ve ticari taraf sifir cizgisinin iki yaninda durur ve
+ * genelde birbirinin ayna goruntusudur; ucuncu cizgi kucuk yatirimci.
+ * Uc netin toplami her zaman sifirdir — her uzunun karsisinda bir kisa
+ * vardir. Ayrismanin nerede basladigi ve ucun ne kadar acildigi tek
+ * bakista gorunur.
  *
  * Burada yalnizca CFTC'nin raporladigi pozisyonlar var; hesaplanmis
  * bir gosterge, ortalama ya da fiyat verisi yok.
@@ -25,12 +30,26 @@ const kisa = (v: number) => {
   return String(v);
 };
 
+/**
+ * COT haftalik yayinlanir, o yuzden "zaman dilimi" burada mum boyu
+ * degil geriye bakis penceresidir: kac haftayi gosterdigimiz.
+ */
+const WINDOWS: { label: string; weeks: number }[] = [
+  { label: "3 ay", weeks: 13 },
+  { label: "6 ay", weeks: 26 },
+  { label: "1 yıl", weeks: 52 },
+  { label: "3 yıl", weeks: 156 },
+];
+
 export default function CotChart({ entry }: { entry: CotEntry }) {
-  const spec = entry.history ?? [];
-  const comm = entry.commHistory ?? [];
+  const [weeks, setWeeks] = useState(52);
+  const cut = (a: number[] | undefined) => (a ?? []).slice(-weeks);
+  const spec = cut(entry.history);
+  const comm = cut(entry.commHistory);
+  const small = cut(entry.smallHistory);
   if (spec.length < 4) return null;
 
-  const all = [...spec, ...comm, 0];
+  const all = [...spec, ...comm, ...small, 0];
   const max = Math.max(...all);
   const min = Math.min(...all);
   const span = max - min || 1;
@@ -56,6 +75,24 @@ export default function CotChart({ entry }: { entry: CotEntry }) {
         <span className="text-[0.75rem] text-[var(--text-faint)]">
           Net pozisyon, son {spec.length} hafta
         </span>
+        <span className="flex items-center gap-0.5">
+          {WINDOWS.filter((w) => (entry.history?.length ?? 0) >= w.weeks * 0.6).map((w) => (
+            <button
+              key={w.weeks}
+              type="button"
+              onClick={() => setWeeks(w.weeks)}
+              aria-pressed={weeks === w.weeks}
+              className={[
+                "rounded-sm px-1.5 py-0.5 text-[0.625rem] transition-colors",
+                weeks === w.weeks
+                  ? "bg-[var(--bg-raise)] text-[var(--text)]"
+                  : "text-[var(--text-faint)] hover:text-[var(--text-dim)]",
+              ].join(" ")}
+            >
+              {w.label}
+            </button>
+          ))}
+        </span>
         <span className="flex items-center gap-3 text-[0.6875rem]">
           <span className="flex items-center gap-1.5" style={{ color: specColor }}>
             <span className="inline-block h-[2px] w-3.5" style={{ background: specColor }} />
@@ -65,6 +102,12 @@ export default function CotChart({ entry }: { entry: CotEntry }) {
             <span className="flex items-center gap-1.5 text-[var(--amber)]">
               <span className="inline-block h-[2px] w-3.5 bg-[var(--amber)]" />
               ticari
+            </span>
+          )}
+          {small.length > 0 && (
+            <span className="flex items-center gap-1.5 text-[var(--text-dim)]">
+              <span className="inline-block h-[2px] w-3.5 bg-[var(--text-dim)]" />
+              küçük
             </span>
           )}
         </span>
@@ -87,6 +130,17 @@ export default function CotChart({ entry }: { entry: CotEntry }) {
           strokeWidth={0.6}
           strokeDasharray="3 3"
         />
+
+        {small.length > 0 && (
+          <path
+            d={path(small)}
+            fill="none"
+            stroke="var(--text-dim)"
+            strokeWidth={0.9}
+            opacity={0.7}
+            strokeLinejoin="round"
+          />
+        )}
 
         {comm.length > 0 && (
           <path

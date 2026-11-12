@@ -45,8 +45,11 @@ if (symbolArg) {
   }
 }
 
-const targets = report.entries.filter((e) => watch.includes(e.symbol));
-const missing = watch.filter((s) => !report.entries.some((e) => e.symbol === s));
+const all = watch.includes("*");
+const targets = all ? report.entries : report.entries.filter((e) => watch.includes(e.symbol));
+const missing = all
+  ? []
+  : watch.filter((s) => !report.entries.some((e) => e.symbol === s));
 for (const s of missing) console.warn(`  uyari: ${s} COT raporunda yok, atlandi.`);
 
 if (targets.length === 0) {
@@ -56,18 +59,22 @@ if (targets.length === 0) {
 
 // ── Istek metni ─────────────────────────────────────────────────
 
-const SYSTEM = `Sen COT (Commitments of Traders) raporunu okuyan bir piyasa yapisi analistisin. Turkiye'deki aktif trader'lar icin yaziyorsun; okuyucun ICT yaklasimina asina, kurumsal pozisyonlanmayi takip ediyor.
+const SYSTEM = `Sen COT (Commitments of Traders) raporunu okuyan bir piyasa yapisi analistisin. Okuyucun gun ici islem yapan bir trader; ICT yaklasimina asina.
+
+COT haftalik bir veridir: o haftanin SALI kapanisini gosterir, cuma yayinlanir. Gun ici sinyal degildir ama haftanin kurumsal yaslanmasini verir.
+
+Her parite icin IKI SEVIYE birden yaz:
+1. HAFTALIK TABLO: buyuk spekulator ve ticari taraf ne yapti, haftalik degisim neyi gosteriyor, ikisi ayrisiyor mu, pozisyon donem araliginin neresinde.
+2. GUN ICI KARSILIGI: bu yaslanma gun ici islemde hangi yondeki kurulumun arkasinda akinti oldugunu soyluyor ve neyin bu okumayi bozacagi.
 
 Kurallar:
-- Turkce yaz. Kisa, somut, teknik. Dolgu cumle yok.
-- Yalnizca sana verilen sayilara dayan. Fiyat seviyesi, grafik formasyonu ya da sana verilmeyen bir veri uydurma.
-- Fiyat hedefi ve al/sat onerisi verme. Pozisyonlanmanin ne anlattigini ve neyin bu okumayi bozacagini yaz.
-- Ticari olmayan (buyuk spekulator) ile ticari (hedge eden) taraflar arasindaki ayrismaya bak; ikisi ters yonde ayrisiyorsa bunu soyle.
-- Donem endeksi 85 ustu ya da 15 alti ise bunun kalabalik pozisyon anlamina geldigini ve ters hareket riskini an.
-- Raporun o haftanin SALI kapanisini gosterdigini, cuma yayinlandigini unutma; arada fiyat degismis olabilir.
-- Ters okumali enstrumanlarda (yen, frank, kanada dolari, tahvil) yonu enstrumana cevirerek yaz, vadeli islemdeki ham yonu degil.
+- Turkce yaz. HER PARITE ICIN EN FAZLA UC CUMLE. Kisa ve dolu tut.
+- Yalnizca verilen sayilara dayan. Fiyat seviyesi, formasyon ya da verilmeyen veri uydurma.
+- Fiyat hedefi, giris-cikis seviyesi ve al/sat onerisi verme.
+- Donem endeksi 85 ustu ya da 15 alti ise kalabalik pozisyon ve ters hareket riskini an.
+- Ters okumali enstrumanlarda (yen, frank, kanada dolari, tahvil) yonu enstrumana cevirerek yaz.
 
-Her parite icin 2-3 cumle. Cikti yalnizca gecerli JSON olsun: { "SEMBOL": "yorum" }. JSON disinda hicbir metin yazma.`;
+Cikti yalnizca gecerli JSON: { "SEMBOL": "yorum" }. JSON disinda hicbir metin yazma.`;
 
 function describe(e: CotEntry): string {
   const raw = stance(e);
@@ -106,7 +113,7 @@ const client = new Anthropic();
 
 const request = {
   model: MODEL,
-  max_tokens: 8000,
+  max_tokens: 16000,
   system: SYSTEM,
   thinking: { type: "adaptive" as const },
   output_config: { effort: "high" as const },

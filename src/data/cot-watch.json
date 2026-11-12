@@ -1,14 +1,11 @@
 {
   "_aciklama": [
     "COT yorumu uretilecek pariteler.",
-    "Yapay zeka yalnizca buradaki sembolleri yorumlar; liste kisa tutuldukca",
-    "maliyet duser. Sembolu listeden cikarmak yorumu durdurur, eklemek",
-    "sonraki cuma raporunda yorum uretir.",
-    "",
-    "Gecerli semboller src/lib/cot.ts icindeki COT_MARKETS listesindedir:",
-    "EURUSD USDJPY GBPUSD USDCHF AUDUSD NZDUSD USDCAD DXY EURJPY",
-    "US500 US100 VIX NIKKEI225 XAUUSD WTI BRENT US10Y US02Y",
-    "BTCUSD ETHUSD XRPUSD"
+    "\"*\" yazarsan rapordaki butun pariteler yorumlanir (tek cagri).",
+    "Liste yazarsan yalnizca onlar yorumlanir ve maliyet duser.",
+    "Gecerli semboller src/lib/cot.ts icindeki COT_MARKETS listesindedir."
   ],
-  "symbols": ["BTCUSD", "XAUUSD", "DXY", "US100"]
+  "symbols": [
+    "*"
+  ]
 }

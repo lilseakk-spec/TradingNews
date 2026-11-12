@@ -118,13 +118,15 @@ export interface CotEntry {
   /** Kac haftalik veriyle hesaplandi. */
   weeks: number;
   /**
-   * Ticari olmayan (buyuk spekulator) netin son bir yili, eskiden yeniye.
-   * Dosyayi sismemek icin 52 hafta.
+   * Ticari olmayan (buyuk spekulator) net, eskiden yeniye.
+   * Uc yil saklanir; ekranda istenen pencereye kirpilir.
    */
   history: number[];
   /** Ayni donemde ticari (hedge eden) net. Klasik COT grafiginde
    *  spekulatorun ayna goruntusudur. */
   commHistory: number[];
+  /** Kucuk yatirimci (raporlanmayan) net. Klasik grafigin ucuncu cizgisi. */
+  smallHistory: number[];
   /** Secili pariteler icin uretilen yorum. */
   ai?: string;
 }
@@ -263,10 +265,14 @@ export async function fetchCot(
       ),
       index,
       weeks: hist.length,
-      history: nets.slice(0, 52).reverse(),
+      history: nets.slice(0, 156).reverse(),
       commHistory: hist
-        .slice(0, 52)
+        .slice(0, 156)
         .map((h) => n(h.comm_positions_long_all) - n(h.comm_positions_short_all))
+        .reverse(),
+      smallHistory: hist
+        .slice(0, 156)
+        .map((h) => n(h.nonrept_positions_long_all) - n(h.nonrept_positions_short_all))
         .reverse(),
     });
   }
