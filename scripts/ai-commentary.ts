@@ -16,6 +16,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
+import { logUsage } from "./log-usage.ts";
 import type { AiCommentary, WeekData } from "../src/lib/types.ts";
 import { CATEGORY_TR } from "../src/lib/labels.ts";
 import { instrumentName } from "../src/lib/instruments.ts";
@@ -48,6 +49,8 @@ if (!fs.existsSync(weekFile)) {
 }
 
 const week = JSON.parse(fs.readFileSync(weekFile, "utf8")) as WeekData;
+/** On izleme haftasi ayri kalemde izlenir. */
+const weekJob = week.preliminary ? "on-izleme" : "hafta";
 
 // ── Istek metni ─────────────────────────────────────────────────
 
@@ -259,6 +262,6 @@ console.log(`  rejim    : ${ai.regime.tone} — ${ai.regime.label}`);
 console.log(`  senaryo  : ${ai.scenarios.length}`);
 console.log(`  gun odagi: ${focused}/${week.days.filter((d) => d.events.length > 0).length}`);
 console.log(`  olay notu: ${noted}/${refs.length}`);
-console.log(
-  `  token    : ${usage.input_tokens} giris, ${usage.output_tokens} cikis`,
-);
+const logged = logUsage(weekJob, message.model ?? MODEL, usage.input_tokens, usage.output_tokens, refs.length);
+console.log(`  token    : ${usage.input_tokens} giris, ${usage.output_tokens} cikis`);
+console.log(`  maliyet  : ${logged.cost.toFixed(4)} $`);

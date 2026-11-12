@@ -170,9 +170,8 @@ function Detail({ entry }: { entry: CotEntry }) {
         </section>
       ) : (
         <p className="mt-4 text-[0.75rem] leading-relaxed text-[var(--text-faint)]">
-          Bu parite yorum listesinde değil. Yorum almak için
-          <code className="t-num mx-1">src/data/cot-watch.json</code>
-          dosyasına sembolü ekle.
+          Yorum henüz üretilmedi. CFTC yeni raporu cuma akşamı yayınlar;
+          cumartesi sabahki çalışma onu alıp tüm pariteleri yorumlar.
         </p>
       )}
     </div>

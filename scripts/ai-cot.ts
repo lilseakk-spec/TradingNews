@@ -14,6 +14,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
+import { logUsage } from "./log-usage.ts";
 import { instrumentBias, stance, type CotEntry, type CotReport } from "../src/lib/cot.ts";
 import { instrumentName } from "../src/lib/instruments.ts";
 
@@ -189,4 +190,6 @@ fs.writeFileSync(COT_FILE, JSON.stringify(report, null, 2) + "\n", "utf8");
 
 console.log(`\nYazildi: ${path.relative(process.cwd(), COT_FILE)}`);
 console.log(`  ${written}/${targets.length} parite yorumlandi`);
+const logged = logUsage("cot", message.model ?? MODEL, message.usage.input_tokens, message.usage.output_tokens, targets.length);
 console.log(`  token: ${message.usage.input_tokens} giris, ${message.usage.output_tokens} cikis`);
+console.log(`  maliyet: ${logged.cost.toFixed(4)} $`);

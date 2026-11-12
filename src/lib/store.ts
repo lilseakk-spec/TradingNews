@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { WeekData } from "./types.ts";
 import type { CotReport } from "./cot.ts";
+import type { UsageLog } from "./usage.ts";
 import { activeWeekRange, trTodayISO } from "./weeks.ts";
 
 /** Haftalik veri dosyalari. Her hafta tek JSON. */
@@ -103,5 +104,17 @@ export function cotWatchlist(): string[] {
     return Array.isArray(parsed.symbols) ? parsed.symbols : [];
   } catch {
     return [];
+  }
+}
+
+/** Yapay zeka kullanim kayitlari. Henuz cagri yapilmadiysa bos. */
+export function loadUsage(): UsageLog {
+  const file = path.join(process.cwd(), "src", "data", "ai-usage.json");
+  if (!fs.existsSync(file)) return { entries: [] };
+  try {
+    const parsed = JSON.parse(fs.readFileSync(file, "utf8")) as UsageLog;
+    return Array.isArray(parsed.entries) ? parsed : { entries: [] };
+  } catch {
+    return { entries: [] };
   }
 }
