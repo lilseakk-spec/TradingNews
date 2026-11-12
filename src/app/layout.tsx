@@ -57,6 +57,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </Link>
               <nav className="ml-auto flex items-center gap-1">
                 <Link
+                  href="/defter"
+                  className="t-label rounded border border-[var(--hairline)] px-2.5 py-1.5 transition-colors hover:border-[var(--amber)] hover:bg-[var(--bg-raise)] hover:text-[var(--text)]"
+                >
+                  Defter
+                </Link>
+                <Link
                   href="/arsiv"
                   className="t-label rounded px-2.5 py-1.5 transition-colors hover:bg-[var(--bg-raise)] hover:text-[var(--text)]"
                 >

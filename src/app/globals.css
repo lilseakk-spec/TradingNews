@@ -175,3 +175,238 @@ body::before {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Defter — trade gunlugu katmani
+   Ayni olcu aleti dili, kagit defter dokusuyla: ince cetvel
+   cizgileri, tablo rakamlari, R degerleri yatay tik olarak.
+   ────────────────────────────────────────────────────────────── */
+
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  position: relative;
+}
+
+.panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.panel-body {
+  padding: 1rem;
+}
+
+/* Hesap kartinin sol kenarindaki renk serisi */
+.edge {
+  border-left: 3px solid var(--edge, var(--hairline));
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.92;
+}
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  color: var(--text-dim);
+  background: transparent;
+  transition: background-color 140ms, color 140ms, border-color 140ms;
+  white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--bg-raise);
+  color: var(--text);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: #0f1626;
+  font-weight: 600;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--amber) 85%, #fff);
+  border-color: color-mix(in srgb, var(--amber) 85%, #fff);
+  color: #0f1626;
+}
+
+.btn-danger:hover:not(:disabled) {
+  border-color: var(--verm);
+  color: var(--verm);
+  background: color-mix(in srgb, var(--verm) 12%, transparent);
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  color: var(--text-dim);
+  background: transparent;
+  transition: background-color 120ms, color 120ms, border-color 120ms;
+}
+
+.chip-on {
+  background: color-mix(in srgb, var(--amber) 18%, transparent);
+  border-color: var(--amber);
+  color: var(--text);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  padding: 0.5rem 0.625rem;
+  font-size: 0.875rem;
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+.input.t-num,
+.select.t-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.textarea {
+  min-height: 5.5rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--amber);
+  outline: none;
+}
+
+.select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-faint) 50%),
+    linear-gradient(135deg, var(--text-faint) 50%, transparent 50%);
+  background-position: calc(100% - 14px) 52%, calc(100% - 9px) 52%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 1.75rem;
+}
+
+/* Olcek cubugu: kural doluluk gostergesi */
+.meter {
+  height: 4px;
+  background: var(--bg-raise);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  transition: width 320ms cubic-bezier(0.22, 0.8, 0.26, 1);
+}
+
+/* Defter kagidi: panel icinde yatay cetvel cizgileri */
+.ruled {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    var(--grid) 27px,
+    var(--grid) 28px
+  );
+}
+
+.sticky-head {
+  position: sticky;
+  top: 0;
+  background: var(--bg-surface);
+  z-index: 2;
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sheet-in {
+  animation: sheet-in 220ms cubic-bezier(0.22, 0.8, 0.26, 1) both;
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, #06090f 72%, transparent);
+  backdrop-filter: blur(3px);
+}
+
+/* Markdown rapor govdesi */
+.report h2 {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 1.5rem 0 0.5rem;
+}
+
+.report h2:first-child {
+  margin-top: 0;
+}
+
+.report p {
+  margin: 0.5rem 0;
+  line-height: 1.65;
+  font-size: 0.9375rem;
+}
+
+.report ul {
+  margin: 0.5rem 0;
+  padding-left: 1.1rem;
+  list-style: square;
+}
+
+.report li {
+  margin: 0.25rem 0;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
+.report strong {
+  color: var(--text);
+  font-weight: 600;
+}

@@ -5,6 +5,10 @@ ve yapay zeka yorumunu tek ekranda toplayan web uygulaması.
 
 **Canlı:** https://lilseakk-spec.github.io/TradingNews/
 
+Sitenin ikinci bölümü **Defter**: trade günlüğü, fon hesapları, görsel
+playbook ve yapay zeka analizi — `/defter` adresinde, verisi tarayıcıda
+duran ayrı bir uygulama. Ayrıntı için [Defter bölümü](#defter).
+
 İşlem haftası **pazar** açılışından **cuma** kapanışına kadar beş kolon olarak
 dizilir (PAZAR · SALI · ÇARŞAMBA · PERŞEMBE · CUMA). Takvimde pazartesi ya da
 cumartesi olay varsa o günler de kendiliğinden eklenir, hiçbir haber düşmez.
@@ -274,12 +278,97 @@ kapatır. Dar ekranda detay alttan açılan bir sayfa olarak gelir.
 
 `Arşiv` geçmiş haftaları, `Pariteler` takip evrenini listeler.
 
+## Defter
+
+`/defter` altındaki ikinci uygulama: trade günlüğü, fon hesapları ve kasa
+muhasebesi. Takvim haftayı önden okur, defter haftayı geriye dönük hesaba
+çeker.
+
+**Veri tarayıcıda durur.** Sunucu yok, hesap yok, kayıt dışarı çıkmaz. Kayıtlar
+IndexedDB'de tutulur, ekran görüntüleri Blob olarak saklanır. Tek istisna yapay
+zeka analizidir: yalnızca düğmeye basıldığında, kullanıcının kendi anahtarıyla,
+doğrudan tarayıcıdan Anthropic'e gider.
+
+### Ekranlar
+
+| Bölüm | Ne yapar |
+| --- | --- |
+| **Kokpit** | Toplam özkaynak, ay/hafta kâr-zararı, cebe giren gerçek para, haftalık kota halkaları, disiplin skoru, özkaynak eğrisi, bugün riske atılabilecek azami tutar ve takvimden gelen risk penceresi. |
+| **Hesaplar** | Fon fon hesap kartları: bakiye, getiri, kural ölçerleri (günlük zarar, düşüş, kâr hedefi, işlem günü, süre, tutarlılık) ve kasa defteri. |
+| **İşlemler** | Süzgeçli işlem listesi, R dağılımı, hafta özeti; her satırdan tek işlem incelemesi. |
+| **Playbook** | Görsel kurulum kütüphanesi — işlem alınsın alınmasın her örnek: MMXM, dönüş, FVG tepkisi, kalite notu ve sonucuyla. |
+| **Notlar** | Gün gün market defteri: dönüş, gözlem, ders, tez, hata. |
+| **Analiz** | Haftalık ve aylık döküm, disiplin kırılımı, hata maliyeti, modele / seansa / güne göre dağılım, hafta kapanış değerlendirmesi ve yapay zeka raporu. |
+| **Ayarlar** | Kotalar, risk kuralları, API anahtarı, model ve ton seçimi, yedek al / yükle. |
+
+### Kurallar ölçüttür
+
+Haftalık kota (varsayılan: 1 endeks + 1 kripto), 1R risk ve en az 2R hedef
+Ayarlar'dan değiştirilir. Kota doluyken işlem kaydedilirse kayıt engellenmez —
+**kota aşımı** olarak işaretlenir ve disiplin skorunu düşürür. Defterin işi
+gerçeği tutmak, gerçeği güzelleştirmek değil.
+
+Disiplin skoru 100 üzerinden altı başlıktan toplanır: kota uyumu (30), plan
+uyumu (20), hedef disiplini (15), risk disiplini (15), kayıt disiplini (10),
+kontrol listesi (10). Kârlı ama kuralsız bir hafta düşük skor alır.
+
+### Kasa muhasebesi
+
+Her para hareketi iki ayrı sütunu etkiler: **hesap bakiyesi** ve **cebe giren
+gerçek para**.
+
+| Hareket | Bakiye | Cep |
+| --- | --- | --- |
+| Para yatırma | artar | azalır |
+| Para çekme · payout | azalır | artar |
+| Challenge ücreti | değişmez | azalır |
+| Ücret iadesi | değişmez | artar |
+| Bonus | artar | değişmez |
+
+Böylece "kâğıt üstünde ne kadar kazandım" ile "cebime ne girdi" ayrı durur —
+challenge ücretleri dahil.
+
+### Yapay zeka
+
+Analiz Anthropic API'siyle çalışır. Anahtar Ayarlar'dan girilir, yalnızca o
+tarayıcıda saklanır ve yedek dosyasına yazılmaz. Model seçilebilir
+(`claude-opus-5-5` varsayılan), ton **dobra** ya da **dengeli**.
+
+Dobra tonda sistem istemi açıktır: övgü yalnızca sayıyla kanıtlanıyorsa
+yazılır, hata yumuşatılmaz, genel geçer tavsiye yasaktır, veride olmayan
+uydurulmaz. Fiyat tahmini ve yatırım tavsiyesi her iki tonda da yasaktır.
+
+Üç analiz tipi var:
+
+- **Haftalık** — o haftanın işlemleri, disiplin skoru, hata etiketleri, hesap
+  durumları, notlar ve traderın kendi değerlendirmesi gider. Rapor: hüküm,
+  sayılar, disiplin, tekrarlayan hata, en kötü karar, üç kural, bir soru.
+- **Aylık** — hafta hafta seyir, modele / seansa / güne göre performans, kasa
+  hareketleri. Rapor: ayın hükmü, para gerçeği, ne işe yarıyor, ne yaramıyor,
+  tek değişiklik, ölçüt.
+- **Tek işlem** — ekli grafik görselleriyle birlikte gider; kurulum, giriş,
+  stop, yönetim ve tek cümlelik hüküm döner.
+
+### Kısayollar
+
+`Y` yeni işlem · `Ctrl+V` form açıkken panodaki ekran görüntüsünü ekler ·
+`Esc` pencereyi kapatır · `← →` görsel görüntüleyicide gezinir.
+
+### Yedek
+
+Veri bu tarayıcının deposunda olduğu için yedek kullanıcının sorumluluğunda.
+Ayarlar → **Yedek indir** her şeyi tek JSON dosyasına yazar (görseller base64
+olarak dahil, API anahtarı hariç). **Yedekten yükle** mevcut defterin yerine
+geçer.
+
 ## Dosya düzeni
 
 ```
 src/
   app/                 sayfalar: ana ekran, hafta/[id], arsiv, pariteler
+    defter/            kokpit, hesaplar, islemler, playbook, notlar, analiz
   components/          gün şeridi, haber satırı, detay paneli, uyarılar
+    defter/            kabuk, işlem formu, hesap kartı, grafikler, görsel alanı
   lib/
     types.ts           veri modeli
     instruments.ts     takip evreni
@@ -291,6 +380,15 @@ src/
     biquote.ts         ileriye dönük takvim (ön izleme)
     labels.ts          etiketler ve renk eşlemesi
     store.ts           hafta dosyalarını okuma
+    defter/
+      types.ts         defter veri modeli
+      db.ts            IndexedDB sarmalayıcısı
+      store.tsx        React veri katmanı
+      calc.ts          kâr/zarar, R istatistiği, fon kuralları, disiplin
+      ai.ts            yapay zeka istemleri ve Anthropic çağrısı
+      images.ts        ekran görüntüsü deposu
+      taxonomy.ts      model, hata ve etiket sözlüğü
+      defaults.ts      boş kayıt iskeletleri
   data/
     weeks/             haftalık veri, hafta başına bir JSON
     manual/            elle girilen olaylar
