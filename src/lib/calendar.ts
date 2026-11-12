@@ -13,6 +13,8 @@ export interface RawFeedItem {
   country: string;
   date: string;
   impact: string;
+  /** Forex Factory bu alani hic vermiyor; biquote veriyor. */
+  actual?: string;
   forecast?: string;
   previous?: string;
 }
@@ -39,6 +41,9 @@ export function regionName(currency: string): string {
 
 /** "... m/m" gibi donem ekleri. */
 const PERIOD: [RegExp, string][] = [
+  [/\s+mom$/i, " (aylık)"],
+  [/\s+qoq$/i, " (çeyreklik)"],
+  [/\s+yoy$/i, " (yıllık)"],
   [/\s+m\/m$/i, " (aylık)"],
   [/\s+y\/y$/i, " (yıllık)"],
   [/\s+q\/q$/i, " (çeyreklik)"],
@@ -145,6 +150,11 @@ const TERMS: [RegExp, string][] = [
   [/^unemployment rate$/i, "İşsizlik oranı"],
   [/^unemployment claims$/i, "Haftalık işsizlik başvuruları"],
   [/^jolts job openings$/i, "JOLTS açık iş sayısı"],
+  [/^initial jobless claims$/i, "Haftalık işsizlik başvuruları"],
+  [/^continuing jobless claims$/i, "Süregelen işsizlik başvuruları"],
+  [/^employment change 3-?months?$/i, "İstihdam değişimi (3 aylık)"],
+  [/^full-?time employment change$/i, "Tam zamanlı istihdam değişimi"],
+  [/^average weekly earnings.*$/i, "Ortalama haftalık kazanç"],
   [/^average hourly earnings$/i, "Ortalama saatlik kazanç"],
   [/^average cash earnings$/i, "Ortalama nakit kazanç"],
   [/^labor cost index$/i, "İşgücü maliyeti endeksi"],
@@ -154,6 +164,12 @@ const TERMS: [RegExp, string][] = [
 
   // Buyume ve aktivite
   [/^gdp$/i, "GSYH büyümesi"],
+  [/^gdp growth rate$/i, "GSYH büyümesi"],
+  [/^inflation rate$/i, "Enflasyon oranı"],
+  [/^core inflation rate$/i, "Çekirdek enflasyon oranı"],
+  [/^cpi excl\.? food and energy$/i, "Çekirdek TÜFE (gıda ve enerji hariç)"],
+  [/^philadelphia fed manufacturing index$/i, "Philadelphia Fed imalat endeksi"],
+  [/^empire state manufacturing index$/i, "Empire State imalat endeksi"],
   [/^gdp price index$/i, "GSYH fiyat endeksi"],
   [/^ism manufacturing pmi$/i, "ISM imalat PMI"],
   [/^ism services pmi$/i, "ISM hizmet PMI"],
@@ -181,6 +197,8 @@ const TERMS: [RegExp, string][] = [
 
   // Enerji ve likidite
   [/^crude oil inventories$/i, "Ham petrol stokları"],
+  [/^eia crude oil stocks change$/i, "Ham petrol stokları"],
+  [/^crude oil stocks change$/i, "Ham petrol stokları"],
   [/^natural gas storage$/i, "Doğalgaz stokları"],
   [/^\d+-?(year|yr) (bond|note|bill) auction$/i, "Tahvil ihalesi"],
   [/^federal budget balance$/i, "Federal bütçe dengesi"],
@@ -379,6 +397,7 @@ export function ingest(items: RawFeedItem[], opts: IngestOptions = {}): NewsEven
       category: match.category,
       impact,
       volatility: match.volatility,
+      actual: clean(item.actual),
       forecast: clean(item.forecast),
       previous: clean(item.previous),
       source: { label: "Forex Factory takvimi" },

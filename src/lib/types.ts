@@ -93,6 +93,8 @@ export interface WeekData {
   /** Cuma, ISO tarih. */
   end: string;
   updatedAt: string;
+  /** Gelecek hafta on izlemesi: takvim henuz kesinlesmedi. */
+  preliminary?: boolean;
   calendarSource?: { label: string; url?: string; fetchedAt?: string };
   ai: AiCommentary;
   days: DayBlock[];

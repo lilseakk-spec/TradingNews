@@ -15,16 +15,19 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { ingest, type IngestStats } from "../src/lib/calendar.ts";
+import { ingest, type IngestStats, type RawFeedItem } from "../src/lib/calendar.ts";
+import { BIQUOTE_URL, fetchRange } from "../src/lib/biquote.ts";
 import { cryptoEvents } from "../src/lib/crypto-events.ts";
 import { classify } from "../src/lib/impact.ts";
 import { isTracked } from "../src/lib/instruments.ts";
 import {
   DAY_META,
   PRIMARY_DAYS,
+  activeWeekRange,
   addDays,
   dayOfWeek,
   rangeLabel,
+  trTodayISO,
   weekRange,
   weekStart,
 } from "../src/lib/weeks.ts";
@@ -37,6 +40,8 @@ const MANUAL_DIR = path.join(process.cwd(), "src", "data", "manual");
 const args = process.argv.slice(2);
 const offline = args.includes("--offline");
 const noCrypto = args.includes("--no-crypto") || offline;
+/** Gelecek hafta on izlemesi: ileriye donuk kaynaktan uretilir. */
+const nextWeek = args.includes("--next");
 const idArg = valueOf("--id");
 
 function valueOf(flag: string): string | undefined {
@@ -120,14 +125,35 @@ function normalizeManual(raw: ManualEvent, dateISO: string): NewsEvent | null {
 }
 
 // ── 1. Takvimi al ───────────────────────────────────────────────
+// Varsayilan: Forex Factory, yalnizca icinde bulunulan hafta.
+// --next: ileriye donuk kaynak, gelecek haftanin araligi sorgulanir.
 
-let cache;
-if (offline) {
-  cache = readCache();
+let items: RawFeedItem[];
+let sourceLabel: string;
+let sourceUrl: string | undefined;
+let previewRange: { id: string; label: string; start: string; end: string } | undefined;
+
+if (nextWeek) {
+  const base = idArg ? resolveById(idArg) : weekRange(addDays(activeWeekRange(trTodayISO()).start, 7));
+  previewRange = base;
+  const from = base.start;
+  const to = addDays(base.start, 6);
+  items = await fetchRange(from, to);
+  sourceLabel = "biquote ekonomik takvim (on izleme)";
+  sourceUrl = BIQUOTE_URL;
+  console.log(`On izleme: ${base.id} (${from} .. ${to}) — ${items.length} satir alindi.`);
+} else if (offline) {
+  const cache = readCache();
+  items = cache.items;
+  sourceLabel = "Forex Factory haftalik takvim";
+  sourceUrl = cache.url;
   console.log(`Onbellek kullaniliyor (${cache.fetchedAt.slice(0, 16).replace("T", " ")}).`);
 } else {
-  cache = await fetchFeed();
+  const cache = await fetchFeed();
   writeCache(cache);
+  items = cache.items;
+  sourceLabel = "Forex Factory haftalik takvim";
+  sourceUrl = cache.url;
   console.log(`Takvim indirildi: ${cache.items.length} satir.`);
 }
 
@@ -139,7 +165,7 @@ const stats: IngestStats = {
   clustered: 0,
   kept: 0,
 };
-const events = ingest(cache.items, { stats });
+const events = ingest(items, { stats });
 console.log(
   `Ayiklama: ${stats.total} satir -> ${stats.kept} haber ` +
     `(${stats.skipped} tatil/yinelenen, ${stats.lowImpact} dusuk etki, ` +
@@ -152,11 +178,11 @@ if (events.length === 0 && !idArg) {
 
 // ── 2. Haftayi belirle ──────────────────────────────────────────
 
-const feedDates = [...new Set(cache.items.map((i) => i.date.slice(0, 10)))].sort();
-const inferredStart = weekStart(feedDates[0] ?? new Date().toISOString().slice(0, 10));
-const range = idArg
-  ? resolveById(idArg)
-  : { ...weekRange(inferredStart), start: inferredStart };
+const feedDates = [...new Set(items.map((i) => i.date.slice(0, 10)))].sort();
+const inferredStart = weekStart(feedDates[0] ?? trTodayISO());
+const range =
+  previewRange ??
+  (idArg ? resolveById(idArg) : { ...weekRange(inferredStart), start: inferredStart });
 
 function resolveById(id: string) {
   const match = /^(\d{4})-W(\d{2})$/.exec(id);
@@ -301,10 +327,11 @@ const week: WeekData = {
   start: range.start,
   end,
   updatedAt: new Date().toISOString(),
+  preliminary: nextWeek,
   calendarSource: {
-    label: "Forex Factory haftalik takvim",
-    url: cache.url,
-    fetchedAt: cache.fetchedAt,
+    label: sourceLabel,
+    url: sourceUrl,
+    fetchedAt: new Date().toISOString(),
   },
   ai:
     existing?.ai ??

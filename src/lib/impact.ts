@@ -287,6 +287,12 @@ export const RULES: ImpactRule[] = [
     keep: true,
   },
   {
+    id: "regional-fed",
+    match: /(philadelphia fed|empire state|richmond fed|dallas fed|kansas city fed|chicago pmi)/i,
+    category: "buyume",
+    volatility: 46,
+  },
+  {
     id: "pmi",
     match: /\bpmi\b/i,
     category: "buyume",
@@ -323,7 +329,7 @@ export const RULES: ImpactRule[] = [
   },
   {
     id: "oil-inventories",
-    match: /(crude oil inventories|petrol stoklari)/i,
+    match: /(crude oil (inventories|stocks)|petrol stoklari)/i,
     category: "enerji",
     volatility: 46,
     affected: [vol("WTI", 3), vol("BRENT", 3), vol("USDCAD", 1), vol("US500", 1)],
@@ -425,7 +431,11 @@ export function classify(
       (!r.currencies || r.currencies.includes(cur)),
   );
 
-  const base = CURRENCY_MAP[cur] ?? CURRENCY_MAP.ALL;
+  // Takip etmedigimiz bir para biriminin verisi (THB, IDR, MYR, ZAR ...)
+  // varsayilan olarak US500/BTCUSD'ye baglanmamali. Boyle olaylarda taban
+  // bos kalir; geriye yalnizca kuralin kendi pariteleri kalir, hicbiri
+  // yoksa olay listeye hic girmez.
+  const base = cur ? (CURRENCY_MAP[cur] ?? []) : CURRENCY_MAP.ALL;
   let affected: A[] = rule?.affected ? [...rule.affected] : [...base];
   if (rule?.extra) affected = dedupe([...affected, ...rule.extra]);
   // Takip evreninden cikarilan semboller eslemeden duser. instruments.ts
