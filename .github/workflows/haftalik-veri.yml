@@ -57,10 +57,13 @@ jobs:
         continue-on-error: true
         run: node scripts/fetch-cot.ts
 
+      # Yeni rapor geldiğinde kendiliğinden; elle çalıştırmada her zaman,
+      # böylece beklemeden deneyebilirsin.
       - name: Yorum — COT
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
-          steps.cot.outputs.cot_new == 'true'
+          (github.event_name == 'workflow_dispatch' ||
+           steps.cot.outputs.cot_new == 'true')
         run: node scripts/ai-cot.ts
 
       # Bu haftanın yorumu yalnızca pazar kurulumunda ve elle çalıştırmada.
