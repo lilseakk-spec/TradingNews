@@ -1,6 +1,6 @@
 {
   "date": "2026-11-03",
-  "fetchedAt": "2026-11-12T20:53:44.677Z",
+  "fetchedAt": "2026-11-12T21:15:25.216Z",
   "source": {
     "label": "CFTC Commitments of Traders (Legacy, futures only)",
     "url": "https://publicreporting.cftc.gov/resource/6dca-aqww.json"
@@ -502,7 +502,8 @@
         12367,
         17080,
         16774
-      ]
+      ],
+      "ai": "Büyük spekülatör net -129457 ile son 3 yılın en kısa noktasında (0/100) ve haftada 1142 kontrat daha kısa ekledi; ticari taraf +1448 ile karşı yönde uzun biriktiriyor, açık pozisyon da 3591 arttı. Gün içinde akıntı satış yönlü kurulumların arkasında, ancak pozisyon aşırı kalabalık olduğu için ani kısa kapatmalarla sert yukarı hareket riski yüksek. Sonraki raporlarda spekülatörün kısa azaltmaya başlaması bu okumayı bozar."
     },
     {
       "symbol": "BRENT",
@@ -1000,7 +1001,8 @@
         5127,
         5302,
         7729
-      ]
+      ],
+      "ai": "Spekülatör net -31538 ile kısa ve haftada 2978 kısa ekledi, ticari taraf hafif uzun artırdı; açık pozisyonun 26676 düşmesi yeni para girişinden çok pozisyon çözülmesine işaret ediyor. Endeks 29/100 ile aralığın alt yarısında; gün içi akıntı satış yönlü kurulumları destekliyor ama katılım zayıf. Açık pozisyon artarken spekülatörün kısa kapatmaya dönmesi bu okumayı bozar."
     },
     {
       "symbol": "BTCUSD",
@@ -1498,7 +1500,8 @@
         307,
         160,
         -107
-      ]
+      ],
+      "ai": "Spekülatör net +2230 ile dengeye yakın bir uzunda, haftada 490 azalttı ve açık pozisyon 3264 düştü; tablo yeni kısa açılmasından çok uzun tasfiyesine benziyor. Endeks 74/100 ile aralığın üst kısmında; gün içi akıntı alım kurulumlarına hafif destek veriyor ama haftalık ivme zayıflıyor. Açık pozisyon düşüşü sürer ve net uzun erimeye devam ederse alım yönlü okuma gücünü kaybeder."
     },
     {
       "symbol": "DXY",
@@ -1996,7 +1999,8 @@
         1970,
         1967,
         2224
-      ]
+      ],
+      "ai": "Spekülatör net +14190 ile belirgin uzun, haftalık değişim +69 ile yatay; ticari taraf karşı yönde kısa ve kısayı hafifçe artırıyor. Endeks 79/100 ile aralığın üst bölgesinde, kalabalık eşiğine yaklaşıyor. Gün içi akıntı dolar alımı yönlü kurulumların arkasında; EURUSD ve AUDUSD'deki dönem rekoru kısaların kapanmaya başlaması bu okumayı bozar."
     },
     {
       "symbol": "ETHUSD",
@@ -2494,7 +2498,8 @@
         280,
         188,
         29
-      ]
+      ],
+      "ai": "Spekülatör net +1189 ile dengeli, haftada 588 azalttı; açık pozisyonun 5199 düşmesi belirgin bir pozisyon çözülmesi gösteriyor. Endeks 40/100 ile aralığın ortasında, kurumsal yaslanma gün içi için net bir yön vermiyor. Açık pozisyon artışıyla birlikte netin bir yöne açılması tabloyu değiştirir; o zamana kadar yön için fiyat yapısı öncelikli."
     },
     {
       "symbol": "EURJPY",
@@ -2746,7 +2751,8 @@
         3214,
         2877,
         2741
-      ]
+      ],
+      "ai": "Spekülatör net +1872 ile uzun, haftalık değişim -22 ile yatay; ticari taraf karşı yönde kısa. Endeks 1 yıllık aralıkta 67/100, kalabalık değil ama uzun yaslanma sürüyor ve gün içi akıntı alım yönlü kurulumları hafifçe destekliyor. Piyasa küçük olduğu için sinyal zayıf (açık pozisyon 20557); spekülatörün uzun azaltmaya başlaması bu okumayı bozar."
     },
     {
       "symbol": "EURUSD",
@@ -3244,7 +3250,8 @@
         29629,
         29410,
         32940
-      ]
+      ],
+      "ai": "Spekülatör net -157791 ile son 3 yılın en kısa noktasında (0/100) ve haftada 13897 kısa ekledi; ticari taraf +10367 ile karşı yönde uzun artırıyor, açık pozisyon da 7934 yükseldi. Gün içinde akıntı satış yönlü kurulumların arkasında, ancak pozisyon aşırı kalabalık olduğu için kısa sıkışmasıyla sert yukarı hareket riski yüksek. Spekülatörün kısa eklemeyi bırakıp kapatmaya geçmesi bu okumayı bozar."
     },
     {
       "symbol": "GBPUSD",
@@ -3742,7 +3749,8 @@
         -15088,
         -10484,
         -9178
-      ]
+      ],
+      "ai": "Spekülatör net -59821 ile kısada ama haftada 19593 kontrat kısa kapattı; ticari taraf 20899 azalttı ve açık pozisyonun 8347 düşmesi hareketin kısa kapatma olduğunu doğruluyor. Endeks 19/100 ile alt bölgede, kalabalık eşiğinden yeni uzaklaştı; gün içi akıntı alım yönlü kurulumlara dönüyor. Spekülatörün yeniden kısa eklemeye başlaması bu okumayı bozar."
     },
     {
       "symbol": "NIKKEI225",
@@ -4240,7 +4248,8 @@
         -7808,
         -8961,
         -8904
-      ]
+      ],
+      "ai": "Spekülatör net +2519 ile uzun ve haftada 242 ekledi; ticari taraf da +6385 ile uzun, yani iki taraf ayrışmıyor, karşı tarafta küçük yatırımcı -8904 ile kısa. Endeks 27/100 ile uzun yaslanma dönem ölçüsünde hafif kalıyor; gün içi akıntı alım yönlü kurulumları destekliyor. Ticari taraftaki uzun azaltımının (-299) hızlanması bu okumayı bozar."
     },
     {
       "symbol": "NZDUSD",
@@ -4738,7 +4747,8 @@
         -2273,
         -1856,
         -2714
-      ]
+      ],
+      "ai": "Spekülatör net -60015 ile güçlü kısa ve haftada 2325 daha ekledi; ticari taraf +3183 ile karşı yönde uzun biriktiriyor, açık pozisyon 3497 arttı. Endeks 5/100 ile dönemin en kısa bölgesinde; kalabalık kısa nedeniyle ters hareket riski yüksek. Gün içi akıntı satış yönlü kurulumların arkasında; spekülatörün kısa kapatmaya geçmesi bu okumayı bozar."
     },
     {
       "symbol": "US02Y",
@@ -5237,7 +5247,8 @@
         41128,
         32427,
         38632
-      ]
+      ],
+      "ai": "Spekülatör tahvil vadelisinde net -1002544 ile güçlü kısa, bu da faiz için yukarı yaslanma demek; haftada 6932 kısa kapattı, ticari taraf 13137 azalttı ve açık pozisyon 60265 düştü. Vadeli endeks 78/100'de, yani spekülatör kısası dönem ölçüsünde hafif ve faizdeki yukarı yaslanma kalabalık değil. Gün içi akıntı 2 yıllık faizde yükseliş yönünü destekliyor; kısa kapatmanın hızlanıp faize aşağı baskı yaratması bu okumayı bozar."
     },
     {
       "symbol": "US100",
@@ -5735,7 +5746,8 @@
         16313,
         15300,
         19457
-      ]
+      ],
+      "ai": "Spekülatör net +45216 ile uzun ama haftada 1336 azalttı; küçük yatırımcı +4157 ile ekledi ve açık pozisyon 26267 arttı, ticari taraf ise kısada. Endeks 91/100 ile kalabalık uzun bölgesinde, ters hareket riski belirgin. Gün içi akıntı hâlâ alım yönlü kurulumların arkasında, ancak spekülatör azaltırken küçük yatırımcının eklemesi kırılganlık işareti; uzun azaltımının hızlanması bu okumayı bozar."
     },
     {
       "symbol": "US10Y",
@@ -6234,7 +6246,8 @@
         33474,
         23577,
         35117
-      ]
+      ],
+      "ai": "Spekülatör tahvil vadelisinde net -962359 ile güçlü kısa, bu da faiz için yukarı yaslanma demek; haftada 19179 kısa kapattı, ticari taraf 30719 azalttı ve açık pozisyon 65845 arttı. Endeks 22/100 ile spekülatör kısası dönemin alt bölgesine yakın, faizdeki yukarı yaslanma kalabalığa yaklaşıyor. Gün içi akıntı 10 yıllık faizde yükseliş yönünü destekliyor; haftalık kısa kapatmanın sürmesi faizde aşağı dönüşle bu okumayı bozar."
     },
     {
       "symbol": "US500",
@@ -6732,7 +6745,8 @@
         108591,
         116684,
         121245
-      ]
+      ],
+      "ai": "Spekülatör net -122362 ile kısada ama haftada 10299 kapattı; ticari taraf 14860 azaltarak dengeye geldi, küçük yatırımcı +121245 ile uzun ve açık pozisyon 35262 arttı. Endeks 31/100 ile alt-orta bölgede; gün içi akıntı alım yönlü kurulumlara doğru dönüyor. Spekülatörün yeniden kısa eklemesi bu okumayı bozar."
     },
     {
       "symbol": "USDCAD",
@@ -7231,7 +7245,8 @@
         -12139,
         -7836,
         -7609
-      ]
+      ],
+      "ai": "Kanada doları vadelisinde spekülatör net -41775 ile kısa, bu da USDCAD için yukarı yaslanma demek; ancak haftada 24649 kısa kapattı, ticari taraf 24876 azalttı ve açık pozisyon 12281 düştü. Bu kısa kapatma USDCAD'de aşağı yönlü baskı yaratıyor; endeks 66/100 ile CAD kısası dönem ölçüsünde hafif. Yapısal yaslanma USDCAD alımı yönünde olsa da haftalık ivme gün içinde satış yönlü kurulumları destekliyor; CAD kısalarının yeniden artması bu okumayı bozar."
     },
     {
       "symbol": "USDCHF",
@@ -7730,7 +7745,8 @@
         -15867,
         -13584,
         -13203
-      ]
+      ],
+      "ai": "Frank vadelisinde spekülatör net -16589 ile kısa, bu da USDCHF için yukarı yaslanma demek; haftada 3460 kısa kapattı, ticari taraf karşı yönde 3841 azalttı. Endeks 72/100 ile frank kısası dönem ölçüsünde hafif kalıyor. Gün içi akıntı USDCHF alım yönlü kurulumların arkasında ama zayıflıyor; frank kısalarının kapanmasının sürmesi bu okumayı bozar."
     },
     {
       "symbol": "USDJPY",
@@ -8229,7 +8245,8 @@
         1209,
         3499,
         846
-      ]
+      ],
+      "ai": "Yen vadelisinde spekülatör net +102321 ile uzun, bu da USDJPY için aşağı yaslanma demek; haftalık +730 ile yatay, ticari taraf karşı yönde kısa. Endeks 79/100 ile yen uzunu kalabalık eşiğine yaklaşıyor. Gün içi akıntı USDJPY'de satış yönlü kurulumların arkasında; yen uzunlarının çözülmesi USDJPY'de sert yukarı hareketle bu okumayı bozar."
     },
     {
       "symbol": "VIX",
@@ -8727,7 +8744,8 @@
         -2068,
         -1583,
         -508
-      ]
+      ],
+      "ai": "Spekülatör net -76916 ile oynaklıkta kısa, haftalık +550 ile yatay; ticari taraf karşı yönde uzun ve açık pozisyon 7150 düştü. Endeks 33/100 ile kısa yaslanma aşırı değil; sakin oynaklık beklentisi gün içinde risk alımı yönlü kurulumları destekliyor. Oynaklık kısalarının hızla kapatılması bu okumayı bozar."
     },
     {
       "symbol": "WTI",
@@ -9225,7 +9243,8 @@
         215,
         1811,
         716
-      ]
+      ],
+      "ai": "Spekülatör net -25151 ile kısada ama haftada 2044 kapattı; ticari taraf hafif azalttı, açık pozisyon yatay. Endeks 15/100 ile kalabalık kısa eşiğinde, ters hareket riski artıyor; Brent'te kısa eklenirken burada kapatılması bir ayrışma. Gün içi akıntı hâlâ satış yönlü kurulumların arkasında; kısa kapatmanın hızlanması yukarı yönlü sıçramayla bu okumayı bozar."
     },
     {
       "symbol": "XAGUSD",
@@ -9723,7 +9742,8 @@
         17381,
         15984,
         13505
-      ]
+      ],
+      "ai": "Spekülatör net +21251 ile güçlü uzun ve haftada 1548 ekledi; ticari taraf karşı yönde kısa, küçük yatırımcı 2479 azalttı. Endeks 16/100 ile net uzun dönemin alt bölgesine yakın, yani uzun yaslanma kalabalık değil. Gün içi akıntı alım yönlü kurulumların arkasında; spekülatörün uzun azaltmaya dönmesi bu okumayı bozar."
     },
     {
       "symbol": "XAUUSD",
@@ -10221,7 +10241,8 @@
         35717,
         29173,
         25354
-      ]
+      ],
+      "ai": "Spekülatör net +179548 ile güçlü uzun ama haftada 6903 azalttı; ticari taraf 10722 kısa kapatarak karşı yönde hareket etti. Endeks 26/100 ile uzun yaslanma dönem ölçüsünde hafif. Yapısal akıntı gün içinde alım yönünde ama haftalık uzun azaltımı nedeniyle güç kaybediyor; azaltımın sürmesi bu okumayı bozar."
     },
     {
       "symbol": "XRPUSD",
@@ -10449,7 +10470,34 @@
         -18,
         -11,
         -143
-      ]
+      ],
+      "ai": "Spekülatör net +1465 ile uzun ve haftada 185 ekledi; açık pozisyon ise 845 düştü. Endeks 1 yıllık aralıkta 96/100 ile kalabalık uzun bölgesinde, ters hareket riski yüksek. Gün içi akıntı alım yönlü kurulumların arkasında ama piyasa küçük ve kalabalık; açık pozisyon düşerken uzun azaltımının başlaması bu okumayı bozar."
     }
-  ]
+  ],
+  "aiSymbols": [
+    "AUDUSD",
+    "BRENT",
+    "BTCUSD",
+    "DXY",
+    "ETHUSD",
+    "EURJPY",
+    "EURUSD",
+    "GBPUSD",
+    "NIKKEI225",
+    "NZDUSD",
+    "US02Y",
+    "US100",
+    "US10Y",
+    "US500",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY",
+    "VIX",
+    "WTI",
+    "XAGUSD",
+    "XAUUSD",
+    "XRPUSD"
+  ],
+  "aiGeneratedBy": "claude-opus-5-5",
+  "aiGeneratedAt": "2026-11-12T21:16:55.577Z"
 }

@@ -3,12 +3,12 @@
   "label": "8 – 13 Kasım 2026",
   "start": "2026-11-08",
   "end": "2026-11-13",
-  "updatedAt": "2026-11-12T14:45:58.035Z",
+  "updatedAt": "2026-11-12T21:15:20.350Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-12T14:45:58.035Z"
+    "fetchedAt": "2026-11-12T21:15:20.350Z"
   },
   "ai": {
     "headline": "abd çekirdek tüfe haftanın ekseni, cuma üfe ve opsiyon vadesi",
@@ -338,7 +338,7 @@
           "volatility": 69,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "867,4 mn $ · BTC %19,4 · ETH %23,1"
+            "value": "882,4 mn $ · BTC %19,4 · ETH %23"
           },
           "source": {
             "label": "OKX opsiyon verisi",
@@ -414,6 +414,11 @@
               "symbol": "US10Y",
               "direction": "yukari",
               "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
             }
           ],
           "also": [

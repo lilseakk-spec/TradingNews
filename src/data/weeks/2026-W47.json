@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-12T14:51:59.244Z",
+  "updatedAt": "2026-11-12T21:15:21.966Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-12T14:51:59.244Z"
+    "fetchedAt": "2026-11-12T21:15:21.966Z"
   },
   "ai": {
     "headline": "Takvim ön izlemesi",
@@ -21,7 +21,7 @@
     "watchlist": [],
     "risks": [],
     "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-12T14:51:59.244Z"
+    "generatedAt": "2026-11-12T21:15:21.966Z"
   },
   "days": [
     {
@@ -287,6 +287,11 @@
               "symbol": "US10Y",
               "direction": "yukari",
               "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
             }
           ],
           "also": [
@@ -385,6 +390,8 @@
           "category": "enerji",
           "impact": 3,
           "volatility": 46,
+          "forecast": "-0.309M",
+          "previous": "4.657M",
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -544,6 +551,11 @@
               "symbol": "US10Y",
               "direction": "yukari",
               "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
             }
           ]
         },
@@ -596,6 +608,11 @@
               "symbol": "US10Y",
               "direction": "yukari",
               "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
             }
           ]
         }
@@ -685,7 +702,7 @@
           "volatility": 57,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "452,6 mn $ · BTC %11,5 · ETH %6,7"
+            "value": "463,4 mn $ · BTC %11,6 · ETH %6,8"
           },
           "source": {
             "label": "OKX opsiyon verisi",
