@@ -19,6 +19,14 @@ on:
     # Diğer günler 05:00 UTC = 08:00 TRT: takvim tazelenir.
     - cron: "0 5 * * 1-4,6"
   workflow_dispatch:
+  # Elle tetikleme yolu: ayar dosyasi ya da is akisinin kendisi
+  # degistiginde veri ve yorumlar yeniden uretilir. Hangi paritelerin
+  # yorumlanacagini degistirince yorumun tazelenmesi zaten dogru olan.
+  push:
+    branches: [main]
+    paths:
+      - "src/data/cot-watch.json"
+      - ".github/workflows/haftalik-veri.yml"
 
 permissions:
   contents: write
@@ -63,6 +71,7 @@ jobs:
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
           (github.event_name == 'workflow_dispatch' ||
+           github.event_name == 'push' ||
            steps.cot.outputs.cot_new == 'true')
         run: node scripts/ai-cot.ts
 
