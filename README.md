@@ -92,7 +92,8 @@ vermemesi, mekanizmayı yazması için kısıtlanmıştır.
 | Gelecek hafta | biquote.io (ücretsiz, anahtarsız) | Aynı kapsam, tarih aralığı sorgulanabilir — ön izleme için |
 | Kripto takvimi | OKX açık API'si (ücretsiz, anahtarsız) | BTC ve ETH opsiyon vadeleri, açık pozisyon ağırlığıyla |
 | Elle giriş | `src/data/manual/<hafta>.json` | ETF akışları, token unlock, bilançolar, jeopolitik |
-| Yorum | Anthropic API | Hafta tezi, senaryolar, gün odakları, haber yorumları |
+| COT | CFTC açık veri ucu (ücretsiz, anahtarsız) | Kurumsal pozisyonlanma, 21 piyasa, 3 yıllık aralık endeksi |
+| Yorum | Anthropic API | Hafta tezi, senaryolar, gün odakları, haber yorumları, COT yorumu |
 
 Ekonomik takvim feed'i kripto olayı taşımaz. Kripto tarafı üç kanaldan gelir:
 makro haberlerin kriptoya eşlenmesi (TÜFE → BTCUSD gibi), otomatik opsiyon
@@ -403,6 +404,58 @@ scripts/
 
 Scriptler Node 24'ün yerleşik TypeScript desteğiyle doğrudan çalışır, derleme
 adımı yok.
+
+## COT
+
+`/cot` sayfası CFTC'nin haftalık Commitments of Traders raporunu gösterir:
+büyük spekülatörler, ticari (hedge eden) kurumlar ve küçük yatırımcı
+pozisyonları, haftalık değişimleriyle.
+
+```bash
+npm run cot        # raporu çek
+npm run ai-cot     # seçili pariteleri yorumlat
+```
+
+Rapor her **cuma 23:30 TRT**'de yayınlanır ve o haftanın **salı kapanışındaki**
+pozisyonu gösterir. Üç günlük gecikme raporun doğasıdır, eksiklik değil.
+Cumartesi sabahki çalışma yeni raporu yakalar.
+
+### Ters okunan enstrümanlar
+
+CFTC vadeli işlemleri yabancı para birimi üzerinden raporlar. Yen vadelisinde
+net uzun olmak **USDJPY'nin düşmesi** demektir; tahvil vadelisinde net uzun
+olmak **faizin düşmesi** demektir. Bu enstrümanlar `inverse` işaretlidir ve
+ekranda hem ham duruş hem enstrüman için çevrilmiş okuma gösterilir:
+
+| Enstrüman | CFTC piyasası | Ters |
+| --- | --- | --- |
+| USDJPY | JAPANESE YEN | evet |
+| USDCHF | SWISS FRANC | evet |
+| USDCAD | CANADIAN DOLLAR | evet |
+| US10Y, US02Y | UST NOTE | evet (fiyat → faiz) |
+
+### Aralık endeksi
+
+Her parite için net pozisyonun son 3 yıldaki yeri 0–100 arası hesaplanır.
+0 dönemin en kısa, 100 en uzun pozisyonudur. 15 altı ve 85 üstü "uç bölge"
+olarak işaretlenir — kalabalık pozisyon, ters hareket riski.
+
+### Yorum bütçesi
+
+Yapay zeka **tüm pariteleri değil**, yalnızca seçilenleri yorumlar ve hepsini
+tek çağrıda işler. Seçim `src/data/cot-watch.json` dosyasından yapılır:
+
+```json
+{ "symbols": ["BTCUSD", "XAUUSD", "DXY", "US100"] }
+```
+
+Sembol çıkarmak yorumu durdurur, eklemek sonraki raporda yorum üretir. Yorum
+yalnızca **yeni rapor geldiğinde** üretilir; aynı rapor tekrar çekilirse
+mevcut yorumlar korunur. Yorumlu pariteler listede mor noktayla işaretlidir.
+
+Tüm pariteler sayfada görünür ve verisi olan her biri tıklanabilir — yorum
+olmaması veriyi gizlemez. CFTC'de karşılığı olmayanlar (DAX40, FTSE100,
+TOTAL, BTC.D) "veri yok" olarak sönük durur.
 
 ## Yayın
 

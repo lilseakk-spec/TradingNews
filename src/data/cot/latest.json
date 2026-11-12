@@ -1,0 +1,582 @@
+{
+  "date": "2026-11-03",
+  "fetchedAt": "2026-11-12T17:07:21.418Z",
+  "source": {
+    "label": "CFTC Commitments of Traders (Legacy, futures only)",
+    "url": "https://publicreporting.cftc.gov/resource/6dca-aqww.json"
+  },
+  "entries": [
+    {
+      "symbol": "AUDUSD",
+      "market": "AUSTRALIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 328599,
+      "openInterestChange": 3591,
+      "noncomm": {
+        "long": 101093,
+        "short": 230550,
+        "net": -129457,
+        "change": -1142
+      },
+      "comm": {
+        "long": 192945,
+        "short": 80262,
+        "net": 112683,
+        "change": 1448
+      },
+      "small": {
+        "long": 33285,
+        "short": 16511,
+        "net": 16774,
+        "change": -306
+      },
+      "index": 0,
+      "weeks": 155
+    },
+    {
+      "symbol": "BRENT",
+      "market": "BRENT LAST DAY - NEW YORK MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 207607,
+      "openInterestChange": -26676,
+      "noncomm": {
+        "long": 30658,
+        "short": 62196,
+        "net": -31538,
+        "change": -2978
+      },
+      "comm": {
+        "long": 82962,
+        "short": 59153,
+        "net": 23809,
+        "change": 551
+      },
+      "small": {
+        "long": 14574,
+        "short": 6845,
+        "net": 7729,
+        "change": 2427
+      },
+      "index": 29,
+      "weeks": 155
+    },
+    {
+      "symbol": "BTCUSD",
+      "market": "BITCOIN - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 17527,
+      "openInterestChange": -3264,
+      "noncomm": {
+        "long": 15644,
+        "short": 13414,
+        "net": 2230,
+        "change": -490
+      },
+      "comm": {
+        "long": 0,
+        "short": 2123,
+        "net": -2123,
+        "change": 757
+      },
+      "small": {
+        "long": 762,
+        "short": 869,
+        "net": -107,
+        "change": -267
+      },
+      "index": 74,
+      "weeks": 155
+    },
+    {
+      "symbol": "DXY",
+      "market": "USD INDEX - ICE FUTURES U.S.",
+      "inverse": false,
+      "openInterest": 49091,
+      "openInterestChange": 828,
+      "noncomm": {
+        "long": 33054,
+        "short": 18864,
+        "net": 14190,
+        "change": 69
+      },
+      "comm": {
+        "long": 11048,
+        "short": 27462,
+        "net": -16414,
+        "change": -326
+      },
+      "small": {
+        "long": 3728,
+        "short": 1504,
+        "net": 2224,
+        "change": 257
+      },
+      "index": 79,
+      "weeks": 155
+    },
+    {
+      "symbol": "ETHUSD",
+      "market": "ETHER CASH SETTLED - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 22869,
+      "openInterestChange": -5199,
+      "noncomm": {
+        "long": 19788,
+        "short": 18599,
+        "net": 1189,
+        "change": -588
+      },
+      "comm": {
+        "long": 1171,
+        "short": 2389,
+        "net": -1218,
+        "change": 747
+      },
+      "small": {
+        "long": 612,
+        "short": 583,
+        "net": 29,
+        "change": -159
+      },
+      "index": 40,
+      "weeks": 155
+    },
+    {
+      "symbol": "EURJPY",
+      "market": "EURO FX/JAPANESE YEN XRATE - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 20557,
+      "openInterestChange": 275,
+      "noncomm": {
+        "long": 4645,
+        "short": 2773,
+        "net": 1872,
+        "change": -22
+      },
+      "comm": {
+        "long": 7420,
+        "short": 12033,
+        "net": -4613,
+        "change": 158
+      },
+      "small": {
+        "long": 7960,
+        "short": 5219,
+        "net": 2741,
+        "change": -136
+      },
+      "index": 67,
+      "weeks": 73
+    },
+    {
+      "symbol": "EURUSD",
+      "market": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 876122,
+      "openInterestChange": 7934,
+      "noncomm": {
+        "long": 229383,
+        "short": 387174,
+        "net": -157791,
+        "change": -13897
+      },
+      "comm": {
+        "long": 507069,
+        "short": 382218,
+        "net": 124851,
+        "change": 10367
+      },
+      "small": {
+        "long": 85612,
+        "short": 52672,
+        "net": 32940,
+        "change": 3530
+      },
+      "index": 0,
+      "weeks": 155
+    },
+    {
+      "symbol": "GBPUSD",
+      "market": "BRITISH POUND - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 245590,
+      "openInterestChange": -8347,
+      "noncomm": {
+        "long": 63780,
+        "short": 123601,
+        "net": -59821,
+        "change": 19593
+      },
+      "comm": {
+        "long": 152021,
+        "short": 83022,
+        "net": 68999,
+        "change": -20899
+      },
+      "small": {
+        "long": 25230,
+        "short": 34408,
+        "net": -9178,
+        "change": 1306
+      },
+      "index": 19,
+      "weeks": 155
+    },
+    {
+      "symbol": "NIKKEI225",
+      "market": "NIKKEI STOCK AVERAGE YEN DENOM - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 26231,
+      "openInterestChange": 1298,
+      "noncomm": {
+        "long": 7048,
+        "short": 4529,
+        "net": 2519,
+        "change": 242
+      },
+      "comm": {
+        "long": 14248,
+        "short": 7863,
+        "net": 6385,
+        "change": -299
+      },
+      "small": {
+        "long": 4893,
+        "short": 13797,
+        "net": -8904,
+        "change": 57
+      },
+      "index": 27,
+      "weeks": 155
+    },
+    {
+      "symbol": "NZDUSD",
+      "market": "NZ DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 132550,
+      "openInterestChange": 3497,
+      "noncomm": {
+        "long": 18469,
+        "short": 78484,
+        "net": -60015,
+        "change": -2325
+      },
+      "comm": {
+        "long": 109563,
+        "short": 46834,
+        "net": 62729,
+        "change": 3183
+      },
+      "small": {
+        "long": 4055,
+        "short": 6769,
+        "net": -2714,
+        "change": -858
+      },
+      "index": 5,
+      "weeks": 155
+    },
+    {
+      "symbol": "US02Y",
+      "market": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "inverse": true,
+      "inverseNote": "Tahvil vadelisinde net uzun = faiz aşağı",
+      "openInterest": 4464182,
+      "openInterestChange": -60265,
+      "noncomm": {
+        "long": 657036,
+        "short": 1659580,
+        "net": -1002544,
+        "change": 6932
+      },
+      "comm": {
+        "long": 3461067,
+        "short": 2497155,
+        "net": 963912,
+        "change": -13137
+      },
+      "small": {
+        "long": 208075,
+        "short": 169443,
+        "net": 38632,
+        "change": 6205
+      },
+      "index": 78,
+      "weeks": 155
+    },
+    {
+      "symbol": "US100",
+      "market": "NASDAQ-100 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 307936,
+      "openInterestChange": 26267,
+      "noncomm": {
+        "long": 86695,
+        "short": 41479,
+        "net": 45216,
+        "change": -1336
+      },
+      "comm": {
+        "long": 151894,
+        "short": 216568,
+        "net": -64674,
+        "change": -2821
+      },
+      "small": {
+        "long": 54873,
+        "short": 35416,
+        "net": 19457,
+        "change": 4157
+      },
+      "index": 91,
+      "weeks": 155
+    },
+    {
+      "symbol": "US10Y",
+      "market": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "inverse": true,
+      "inverseNote": "Tahvil vadelisinde net uzun = faiz aşağı",
+      "openInterest": 5947433,
+      "openInterestChange": 65845,
+      "noncomm": {
+        "long": 713247,
+        "short": 1675606,
+        "net": -962359,
+        "change": 19179
+      },
+      "comm": {
+        "long": 4686271,
+        "short": 3759029,
+        "net": 927242,
+        "change": -30719
+      },
+      "small": {
+        "long": 418251,
+        "short": 383134,
+        "net": 35117,
+        "change": 11540
+      },
+      "index": 22,
+      "weeks": 155
+    },
+    {
+      "symbol": "US500",
+      "market": "S&P 500 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 2013852,
+      "openInterestChange": 35262,
+      "noncomm": {
+        "long": 228154,
+        "short": 350516,
+        "net": -122362,
+        "change": 10299
+      },
+      "comm": {
+        "long": 1447347,
+        "short": 1446229,
+        "net": 1118,
+        "change": -14860
+      },
+      "small": {
+        "long": 269119,
+        "short": 147874,
+        "net": 121245,
+        "change": 4561
+      },
+      "index": 31,
+      "weeks": 155
+    },
+    {
+      "symbol": "USDCAD",
+      "market": "CANADIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": true,
+      "inverseNote": "Kanada doları vadelisinde net uzun = USDCAD aşağı",
+      "openInterest": 348660,
+      "openInterestChange": -12281,
+      "noncomm": {
+        "long": 99234,
+        "short": 141009,
+        "net": -41775,
+        "change": 24649
+      },
+      "comm": {
+        "long": 219508,
+        "short": 170124,
+        "net": 49384,
+        "change": -24876
+      },
+      "small": {
+        "long": 26239,
+        "short": 33848,
+        "net": -7609,
+        "change": 227
+      },
+      "index": 66,
+      "weeks": 155
+    },
+    {
+      "symbol": "USDCHF",
+      "market": "SWISS FRANC - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": true,
+      "inverseNote": "Frank vadelisinde net uzun = USDCHF aşağı",
+      "openInterest": 133162,
+      "openInterestChange": -2327,
+      "noncomm": {
+        "long": 29482,
+        "short": 46071,
+        "net": -16589,
+        "change": 3460
+      },
+      "comm": {
+        "long": 85043,
+        "short": 55251,
+        "net": 29792,
+        "change": -3841
+      },
+      "small": {
+        "long": 9986,
+        "short": 23189,
+        "net": -13203,
+        "change": 381
+      },
+      "index": 72,
+      "weeks": 155
+    },
+    {
+      "symbol": "USDJPY",
+      "market": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": true,
+      "inverseNote": "Yen vadelisinde net uzun = USDJPY aşağı",
+      "openInterest": 380641,
+      "openInterestChange": 6615,
+      "noncomm": {
+        "long": 227198,
+        "short": 124877,
+        "net": 102321,
+        "change": 730
+      },
+      "comm": {
+        "long": 113315,
+        "short": 216482,
+        "net": -103167,
+        "change": 1923
+      },
+      "small": {
+        "long": 35976,
+        "short": 35130,
+        "net": 846,
+        "change": -2653
+      },
+      "index": 79,
+      "weeks": 155
+    },
+    {
+      "symbol": "VIX",
+      "market": "VIX FUTURES - CBOE FUTURES EXCHANGE",
+      "inverse": false,
+      "openInterest": 371222,
+      "openInterestChange": -7150,
+      "noncomm": {
+        "long": 90757,
+        "short": 167673,
+        "net": -76916,
+        "change": 550
+      },
+      "comm": {
+        "long": 183438,
+        "short": 106014,
+        "net": 77424,
+        "change": -1625
+      },
+      "small": {
+        "long": 23778,
+        "short": 24286,
+        "net": -508,
+        "change": 1075
+      },
+      "index": 33,
+      "weeks": 155
+    },
+    {
+      "symbol": "WTI",
+      "market": "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE",
+      "inverse": false,
+      "openInterest": 769009,
+      "openInterestChange": -1538,
+      "noncomm": {
+        "long": 56797,
+        "short": 81948,
+        "net": -25151,
+        "change": 2044
+      },
+      "comm": {
+        "long": 523518,
+        "short": 499083,
+        "net": 24435,
+        "change": -949
+      },
+      "small": {
+        "long": 13896,
+        "short": 13180,
+        "net": 716,
+        "change": -1095
+      },
+      "index": 15,
+      "weeks": 155
+    },
+    {
+      "symbol": "XAUUSD",
+      "market": "GOLD - COMMODITY EXCHANGE INC.",
+      "inverse": false,
+      "openInterest": 399169,
+      "openInterestChange": 2359,
+      "noncomm": {
+        "long": 220530,
+        "short": 40982,
+        "net": 179548,
+        "change": -6903
+      },
+      "comm": {
+        "long": 64326,
+        "short": 269228,
+        "net": -204902,
+        "change": 10722
+      },
+      "small": {
+        "long": 46024,
+        "short": 20670,
+        "net": 25354,
+        "change": -3819
+      },
+      "index": 26,
+      "weeks": 155
+    },
+    {
+      "symbol": "XRPUSD",
+      "market": "XRP - CHICAGO MERCANTILE EXCHANGE",
+      "inverse": false,
+      "openInterest": 7216,
+      "openInterestChange": -845,
+      "noncomm": {
+        "long": 7011,
+        "short": 5546,
+        "net": 1465,
+        "change": 185
+      },
+      "comm": {
+        "long": 61,
+        "short": 1383,
+        "net": -1322,
+        "change": -53
+      },
+      "small": {
+        "long": 84,
+        "short": 227,
+        "net": -143,
+        "change": -132
+      },
+      "index": 96,
+      "weeks": 65
+    }
+  ]
+}
