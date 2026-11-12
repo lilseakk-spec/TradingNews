@@ -1,21 +1,23 @@
 name: Veri güncelleme
 
-# Pazar sabahı takvimi çeker, hafta dosyasını üretir ve commit eder.
-# Commit push edilince "Yayınla" iş akışı siteyi yeniler.
+# Takvimi çeker, hafta dosyalarını üretir ve commit eder.
+# Commit "Yayınla" iş akışını tetikler, site yenilenir.
 #
 # Yapay zeka yorumu için depo ayarlarından bir secret ekle:
 #   Settings > Secrets and variables > Actions > New repository secret
 #   Ad: ANTHROPIC_API_KEY
-# Secret yoksa o adım atlanır, takvim yine güncellenir.
+# Secret yoksa yorum adımları atlanır, takvim yine güncellenir.
 
 on:
   schedule:
     # Pazar 06:00 UTC = 09:00 TRT: feed yeni haftaya döner, hafta kurulur
     # ve yapay zeka yorumu üretilir.
     - cron: "0 6 * * 0"
-    # Diğer günler 05:00 UTC = 08:00 TRT: takvim tazelenir. Hafta içinde
-    # saatler kayar, beklentiler güncellenir, yeni olay eklenir.
-    - cron: "0 5 * * 1-6"
+    # Cuma 05:00 UTC = 08:00 TRT: gelecek haftanın ön izlemesine yorum
+    # eklenir, böylece hafta sonu analizinde hazır olur.
+    - cron: "0 5 * * 5"
+    # Diğer günler 05:00 UTC = 08:00 TRT: takvim tazelenir.
+    - cron: "0 5 * * 1-4,6"
   workflow_dispatch:
 
 permissions:
@@ -36,17 +38,34 @@ jobs:
 
       - run: npm ci
 
-      - name: Takvimi çek ve haftayı üret
+      - name: Bu haftayı üret
+        id: hafta
         run: node scripts/new-week.ts
 
-      # Yorum yalnızca pazar kurulumunda ve elle çalıştırmada üretilir;
-      # hafta içi tazelemede mevcut yorum korunur.
-      - name: Yapay zeka yorumu
+      # Gelecek hafta ileriye dönük kaynaktan gelir. Kaynak düşerse
+      # bu haftanın güncellemesi etkilenmesin.
+      - name: Gelecek hafta ön izlemesi
+        id: onizleme
+        continue-on-error: true
+        run: node scripts/new-week.ts --next
+
+      # Bu haftanın yorumu yalnızca pazar kurulumunda ve elle çalıştırmada.
+      - name: Yorum — bu hafta
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
+          steps.hafta.outputs.week_id != '' &&
           (github.event_name == 'workflow_dispatch' ||
            github.event.schedule == '0 6 * * 0')
-        run: node scripts/ai-commentary.ts
+        run: node scripts/ai-commentary.ts --id ${{ steps.hafta.outputs.week_id }}
+
+      # Ön izlemenin yorumu cuma günü üretilir: hafta sonu analizinde hazır.
+      - name: Yorum — gelecek hafta
+        if: >-
+          env.ANTHROPIC_API_KEY != '' &&
+          steps.onizleme.outputs.week_id != '' &&
+          (github.event_name == 'workflow_dispatch' ||
+           github.event.schedule == '0 5 * * 5')
+        run: node scripts/ai-commentary.ts --id ${{ steps.onizleme.outputs.week_id }}
 
       - name: Değişiklikleri işle
         run: |

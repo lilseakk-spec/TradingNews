@@ -3,16 +3,16 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-12T14:44:04.035Z",
+  "updatedAt": "2026-11-12T14:51:59.244Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-12T14:44:04.035Z"
+    "fetchedAt": "2026-11-12T14:51:59.244Z"
   },
   "ai": {
-    "headline": "Yorum bekleniyor",
-    "thesis": "Bu hafta icin yapay zeka yorumu henuz uretilmedi. 'npm run ai' ile uret.",
+    "headline": "Takvim ön izlemesi",
+    "thesis": "Gelecek haftanın takvimi şimdiden görülebilsin diye erken çekildi. Saatler kayabilir, haber eklenip çıkabilir. Yorum cuma günü üretilir, kesin takvim pazar sabahı yerine oturur.",
     "regime": {
       "label": "belirlenmedi",
       "tone": "karisik"
@@ -21,7 +21,7 @@
     "watchlist": [],
     "risks": [],
     "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-12T14:42:33.764Z"
+    "generatedAt": "2026-11-12T14:51:59.244Z"
   },
   "days": [
     {
@@ -685,7 +685,7 @@
           "volatility": 57,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "451,9 mn $ · BTC %11,5 · ETH %6,7"
+            "value": "452,6 mn $ · BTC %11,5 · ETH %6,7"
           },
           "source": {
             "label": "OKX opsiyon verisi",

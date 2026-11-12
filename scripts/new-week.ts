@@ -333,12 +333,15 @@ const week: WeekData = {
     url: sourceUrl,
     fetchedAt: new Date().toISOString(),
   },
+  // Gercek bir yorum varsa korunur; bayat yer tutucu yenilenir.
   ai:
-    existing?.ai ??
-    {
-      headline: "Yorum bekleniyor",
-      thesis:
-        "Bu hafta icin yapay zeka yorumu henuz uretilmedi. 'npm run ai' ile uret.",
+    (existing?.ai && existing.ai.generatedBy !== "bekliyor"
+      ? existing.ai
+      : undefined) ?? {
+      headline: nextWeek ? "Takvim ön izlemesi" : "Yorum bekleniyor",
+      thesis: nextWeek
+        ? "Gelecek haftanın takvimi şimdiden görülebilsin diye erken çekildi. Saatler kayabilir, haber eklenip çıkabilir. Yorum cuma günü üretilir, kesin takvim pazar sabahı yerine oturur."
+        : "Bu hafta icin yapay zeka yorumu henuz uretilmedi. 'npm run ai' ile uret.",
       regime: { label: "belirlenmedi", tone: "karisik" },
       scenarios: [],
       watchlist: [],
@@ -354,6 +357,12 @@ fs.writeFileSync(outFile, JSON.stringify(week, null, 2) + "\n", "utf8");
 
 const total = days.reduce((n, d) => n + d.events.length, 0);
 const high = days.flatMap((d) => d.events).filter((e) => e.impact === 3).length;
+
+// Is akisinin hangi haftanin uretildigini bilmesi icin; yoksa yorum
+// adimi yanlis haftayi hedefleyebilir (on izleme en yeni dosya olur).
+if (process.env.GITHUB_OUTPUT) {
+  fs.appendFileSync(process.env.GITHUB_OUTPUT, `week_id=${week.id}\n`);
+}
 
 console.log(`\nYazildi: ${path.relative(process.cwd(), outFile)}`);
 console.log(`  ${week.id} — ${week.label}`);

@@ -42,6 +42,19 @@ export default function WeekScreen({
           </nav>
         </div>
 
+        {week.preliminary && (
+          <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.75rem] text-[var(--text-dim)]">
+            <span
+              className="rounded-sm px-1.5 py-0.5 text-[0.6875rem] font-medium"
+              style={{ background: "var(--violet)", color: "#0f1626" }}
+            >
+              ön izleme
+            </span>
+            Takvim henüz kesinleşmedi: saatler kayabilir, haber eklenip
+            çıkabilir. Pazar sabahı kesin haliyle yenilenir.
+          </p>
+        )}
+
         <p className="mt-1.5 text-[0.8125rem] text-[var(--text-dim)]">
           <span className="t-num text-[var(--text)]">{stats.total}</span> haber
           {stats.high > 0 && (

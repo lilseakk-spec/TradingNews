@@ -41,6 +41,14 @@ export default function ArchivePage() {
                         {w.label}
                       </span>
                       <CurrentWeekBadge start={w.start} end={w.end} />
+                      {w.preliminary && (
+                        <span
+                          className="rounded-sm px-1.5 py-0.5 text-[0.625rem] font-medium"
+                          style={{ background: "var(--violet)", color: "#0f1626" }}
+                        >
+                          ön izleme
+                        </span>
+                      )}
                       <span className="t-label ml-auto">
                         {w.eventCount} haber
                         <span className="mx-1.5 text-[var(--text-faint)]">/</span>

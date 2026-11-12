@@ -84,7 +84,8 @@ vermemesi, mekanizmayı yazması için kısıtlanmıştır.
 
 | Katman | Kaynak | Kapsam |
 | --- | --- | --- |
-| Makro takvim | Forex Factory haftalık JSON feed'i (ücretsiz, anahtarsız) | Faiz kararları, enflasyon, istihdam, PMI, petrol stokları |
+| Makro takvim | Forex Factory haftalık JSON feed'i (ücretsiz, anahtarsız) | Faiz kararları, enflasyon, istihdam, PMI, petrol stokları — yalnızca bu hafta |
+| Gelecek hafta | biquote.io (ücretsiz, anahtarsız) | Aynı kapsam, tarih aralığı sorgulanabilir — ön izleme için |
 | Kripto takvimi | OKX açık API'si (ücretsiz, anahtarsız) | BTC ve ETH opsiyon vadeleri, açık pozisyon ağırlığıyla |
 | Elle giriş | `src/data/manual/<hafta>.json` | ETF akışları, token unlock, bilançolar, jeopolitik |
 | Yorum | Anthropic API | Hafta tezi, senaryolar, gün odakları, haber yorumları |
@@ -92,6 +93,29 @@ vermemesi, mekanizmayı yazması için kısıtlanmıştır.
 Ekonomik takvim feed'i kripto olayı taşımaz. Kripto tarafı üç kanaldan gelir:
 makro haberlerin kriptoya eşlenmesi (TÜFE → BTCUSD gibi), otomatik opsiyon
 vadesi kaynağı ve elle giriş katmanı.
+
+### Gelecek hafta ön izlemesi
+
+Forex Factory feed'i yalnızca içinde bulunulan haftayı verir — `nextweek`
+ucu yok (404). Hafta ortasında gelecek haftaya bakabilmek için tarih aralığı
+sorgulanabilen ikinci bir kaynak kullanılıyor: **biquote.io**, anahtarsız,
+UTC zamanlı, önem seviyeli.
+
+```bash
+node scripts/new-week.ts --next
+```
+
+Çıktı Forex Factory satır biçimine çevrildiği için aynı ayıklama hattından
+geçer: sınıflandırma, Türkçeleştirme, kümeleme ve gürültü filtresi aynen
+çalışır.
+
+Ön izleme haftası `preliminary: true` işaretlenir; ekranda mor bir **ön
+izleme** rozeti ve "takvim henüz kesinleşmedi" uyarısı görünür. Pazar sabahı
+Forex Factory'den kesin hali üretilince işaret kalkar.
+
+Yapay zeka yorumu ön izleme için **cuma sabahı** üretilir, böylece hafta sonu
+analizinde hazır olur. Hafta içi ön izleme her gün tazelenir ama yorumsuz
+kalır — takvim değişirken yorum üretmenin anlamı yok.
 
 ### Opsiyon vadeleri
 
@@ -264,6 +288,7 @@ src/
     weeks.ts           hafta matematiği ve tarih biçimleri
     clock.ts           TRT ve New York saatleri, geri sayım
     breaking.ts        ani haber kaynakları
+    biquote.ts         ileriye dönük takvim (ön izleme)
     labels.ts          etiketler ve renk eşlemesi
     store.ts           hafta dosyalarını okuma
   data/
@@ -292,7 +317,7 @@ anında oluşur.
 | Dosya | Ne yapar |
 | --- | --- |
 | `.github/workflows/yayinla.yml` | `main`'e her push'ta siteyi kurar ve Pages'e gönderir. Taban yolunu depo adından kendi hesaplar. |
-| `.github/workflows/haftalik-veri.yml` | Her pazar 09:00 TRT'de takvimi çeker, hafta dosyasını üretir ve commit eder. Bu commit de yayını tetikler. |
+| `.github/workflows/haftalik-veri.yml` | Her gün 08:00 TRT'de takvimi ve gelecek hafta ön izlemesini tazeler. Pazar 09:00'da yeni hafta kurulur ve yorumlanır, cuma 08:00'da ön izleme yorumlanır. Her commit yayını tetikler. |
 
 Haftalık veri iş akışının yapay zeka adımı için depoya bir secret ekle:
 **Settings → Secrets and variables → Actions → New repository secret**, ad

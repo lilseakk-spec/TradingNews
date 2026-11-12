@@ -14,6 +14,7 @@ export interface WeekIndexEntry {
   updatedAt: string;
   eventCount: number;
   highImpact: number;
+  preliminary: boolean;
 }
 
 function readDir(): string[] {
@@ -52,6 +53,7 @@ export function weekIndex(): WeekIndexEntry[] {
         updatedAt: w.updatedAt,
         eventCount: events.length,
         highImpact: events.filter((e) => e.impact === 3).length,
+        preliminary: Boolean(w.preliminary),
       };
     });
 }
