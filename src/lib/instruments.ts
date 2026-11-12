@@ -62,6 +62,7 @@ export const INSTRUMENTS: Instrument[] = [
 
   // ── Emtia & tahvil ────────────────────────────────────────
   { symbol: "XAUUSD", name: "Altın", group: "emtia" },
+  { symbol: "XAGUSD", name: "Gümüş", group: "emtia" },
   { symbol: "WTI", name: "WTI petrol", group: "emtia" },
   { symbol: "BRENT", name: "Brent petrol", group: "emtia" },
   { symbol: "US10Y", name: "ABD 10 yıllık tahvil faizi", group: "emtia" },

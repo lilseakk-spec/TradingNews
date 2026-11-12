@@ -45,6 +45,7 @@ export const CURRENCY_MAP: Record<string, A[]> = {
     down("EURUSD", 3),
     up("USDJPY", 2),
     down("XAUUSD", 2),
+    down("XAGUSD", 1),
     vol("US500", 2),
     vol("BTCUSD", 2),
     up("US10Y", 2),
@@ -403,7 +404,7 @@ export const RULES: ImpactRule[] = [
       /(tarife|tariff|sanction|yaptirim|election|secim|summit|zirve|savas|\bwar\b|referendum)/i,
     category: "jeopolitik",
     volatility: 66,
-    extra: [vol("XAUUSD", 3), vol("WTI", 2), vol("VIX", 2), vol("USDCHF", 1)],
+    extra: [vol("XAUUSD", 3), vol("XAGUSD", 2), vol("WTI", 2), vol("VIX", 2), vol("USDCHF", 1)],
     always: true,
   },
 ];

@@ -67,6 +67,7 @@ export const COT_MARKETS: CotMarket[] = [
 
   // Emtia ve tahvil
   { symbol: "XAUUSD", market: "GOLD - COMMODITY EXCHANGE INC.", inverse: false },
+  { symbol: "XAGUSD", market: "SILVER - COMMODITY EXCHANGE INC.", inverse: false },
   { symbol: "WTI", market: "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE", inverse: false },
   { symbol: "BRENT", market: "BRENT LAST DAY - NEW YORK MERCANTILE EXCHANGE", inverse: false },
   {
@@ -116,6 +117,14 @@ export interface CotEntry {
   index: number | null;
   /** Kac haftalik veriyle hesaplandi. */
   weeks: number;
+  /**
+   * Ticari olmayan (buyuk spekulator) netin son bir yili, eskiden yeniye.
+   * Dosyayi sismemek icin 52 hafta.
+   */
+  history: number[];
+  /** Ayni donemde ticari (hedge eden) net. Klasik COT grafiginde
+   *  spekulatorun ayna goruntusudur. */
+  commHistory: number[];
   /** Secili pariteler icin uretilen yorum. */
   ai?: string;
 }
@@ -254,6 +263,11 @@ export async function fetchCot(
       ),
       index,
       weeks: hist.length,
+      history: nets.slice(0, 52).reverse(),
+      commHistory: hist
+        .slice(0, 52)
+        .map((h) => n(h.comm_positions_long_all) - n(h.comm_positions_short_all))
+        .reverse(),
     });
   }
 

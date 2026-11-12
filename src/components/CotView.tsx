@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { CotEntry, CotReport, CotSide } from "@/lib/cot";
 import { instrumentBias, stance } from "@/lib/cot";
 import { GROUPS, INSTRUMENTS, instrumentName } from "@/lib/instruments";
+import CotChart from "./CotChart";
 
 /**
  * COT ekrani.
@@ -104,6 +105,8 @@ function Detail({ entry }: { entry: CotEntry }) {
           </p>
         )}
       </div>
+
+      <CotChart entry={entry} />
 
       {entry.index !== null && (
         <div className="mt-4">
