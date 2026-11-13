@@ -25,7 +25,6 @@ on:
   push:
     branches: [main]
     paths:
-      - "src/data/cot-watch.json"
       - ".github/workflows/haftalik-veri.yml"
 
 permissions:
@@ -57,23 +56,20 @@ jobs:
         continue-on-error: true
         run: node scripts/new-week.ts --next
 
-      # COT cuma 23:30 TRT'de yayınlanır; cumartesi sabahki çalışma
-      # yeni raporu yakalar. Script yeni rapor geldiğini çıktı olarak
-      # bildirir, yorum yalnızca o zaman üretilir.
-      - name: COT raporu
-        id: cot
+      # Açıklanan değerleri çek: geçmiş olaylara "ne geldi" bilgisi.
+      - name: Haber sonuçları
+        id: sonuc
         continue-on-error: true
-        run: node scripts/fetch-cot.ts
+        run: node scripts/fetch-outcomes.ts
 
-      # Yeni rapor geldiğinde kendiliğinden; elle çalıştırmada her zaman,
-      # böylece beklemeden deneyebilirsin.
-      - name: Yorum — COT
+      # Yeni sonuç geldiğinde yorumla: ne bekleniyordu, ne çıktı.
+      - name: Yorum — haber sonrası
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
           (github.event_name == 'workflow_dispatch' ||
            github.event_name == 'push' ||
-           steps.cot.outputs.cot_new == 'true')
-        run: node scripts/ai-cot.ts
+           steps.sonuc.outputs.results_new == 'true')
+        run: node scripts/ai-outcomes.ts
 
       # Bu haftanın yorumu yalnızca pazar kurulumunda ve elle çalıştırmada.
       - name: Yorum — bu hafta
@@ -97,10 +93,10 @@ jobs:
         run: |
           git config user.name "sismograf"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/weeks src/data/cot src/data/ai-usage.json
+          git add src/data/weeks src/data/ai-usage.json
           if git diff --staged --quiet; then
             echo "Yeni veri yok."
           else
-            git commit -m "Takvim ve COT güncellemesi"
+            git commit -m "Takvim güncellemesi"
             git push
           fi

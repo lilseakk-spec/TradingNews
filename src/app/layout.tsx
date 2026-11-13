@@ -69,12 +69,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   Arşiv
                 </Link>
                 <Link
-                  href="/cot"
-                  className="t-label rounded px-2.5 py-1.5 transition-colors hover:bg-[var(--bg-raise)] hover:text-[var(--text)]"
-                >
-                  COT
-                </Link>
-                <Link
                   href="/maliyet"
                   className="t-label rounded px-2.5 py-1.5 transition-colors hover:bg-[var(--bg-raise)] hover:text-[var(--text)]"
                 >

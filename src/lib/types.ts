@@ -1,3 +1,4 @@
+import type { EventResult } from "./outcomes.ts";
 /** Varlik gruplari — seritteki serit/lane sirasi da budur. */
 export type AssetGroup = "kripto" | "endeks" | "forex" | "emtia";
 
@@ -47,12 +48,16 @@ export interface NewsEvent {
   forecast?: string;
   previous?: string;
   actual?: string;
+  /** Aciklandiktan sonra gelen olculer: ne bekleniyordu, ne geldi. */
+  results?: EventResult[];
   /** Olaya ozgu tek olcu: "açık pozisyon" / "4,2 mlr $" gibi. */
   metric?: { label: string; value: string };
   source?: { label: string; url?: string };
   affected: AffectedInstrument[];
-  /** Tek cumlelik AI yorumu. */
+  /** Tek cumlelik AI yorumu — olay oncesi, ne beklenmeli. */
   ai?: string;
+  /** Olay SONRASI yorum: ne bekleniyordu, ne geldi, ne anlama geliyor. */
+  aiResult?: string;
 }
 
 export interface DayBlock {

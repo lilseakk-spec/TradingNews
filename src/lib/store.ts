@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { WeekData } from "./types.ts";
-import type { CotReport } from "./cot.ts";
 import type { UsageLog } from "./usage.ts";
 import { activeWeekRange, trTodayISO } from "./weeks.ts";
 
@@ -82,29 +81,6 @@ export function currentWeek(todayISO: string): WeekData | null {
  */
 export function todayISO(): string {
   return trTodayISO();
-}
-
-/** COT raporu. Henuz cekilmediyse null. */
-export function loadCot(): CotReport | null {
-  const file = path.join(process.cwd(), "src", "data", "cot", "latest.json");
-  if (!fs.existsSync(file)) return null;
-  try {
-    return JSON.parse(fs.readFileSync(file, "utf8")) as CotReport;
-  } catch {
-    return null;
-  }
-}
-
-/** Yorum uretilecek pariteler. Depodan elle duzenlenebilir. */
-export function cotWatchlist(): string[] {
-  const file = path.join(process.cwd(), "src", "data", "cot-watch.json");
-  if (!fs.existsSync(file)) return [];
-  try {
-    const parsed = JSON.parse(fs.readFileSync(file, "utf8")) as { symbols?: string[] };
-    return Array.isArray(parsed.symbols) ? parsed.symbols : [];
-  } catch {
-    return [];
-  }
 }
 
 /** Yapay zeka kullanim kayitlari. Henuz cagri yapilmadiysa bos. */

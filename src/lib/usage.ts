@@ -30,7 +30,7 @@ export function priceOf(model: string): ModelPrice {
 
 export interface UsageEntry {
   at: string;
-  /** Hangi is: "hafta", "on-izleme", "cot". */
+  /** Hangi is: "hafta", "on-izleme". */
   job: string;
   model: string;
   inputTokens: number;
@@ -97,5 +97,7 @@ export function summarize(log: UsageLog): UsageSummary {
 export const JOB_LABEL: Record<string, string> = {
   hafta: "Hafta yorumu",
   "on-izleme": "Gelecek hafta ön izlemesi",
-  cot: "COT yorumu",
+  sonuc: "Haber sonrası yorum",
+  // COT kaldirildi; gecmis kayitlar okunakli kalsin diye etiket duruyor.
+  cot: "COT yorumu (kaldırıldı)",
 };

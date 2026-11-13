@@ -5,6 +5,7 @@ import type { AffectedInstrument, Direction, NewsEvent } from "@/lib/types";
 import { volatilityLabel } from "@/lib/types";
 import { CATEGORY_TR, DIRECTION_GLYPH, impactColor } from "@/lib/labels";
 import { instrumentName } from "@/lib/instruments";
+import { surpriseLabel } from "@/lib/outcomes";
 import { formatCountdown, nyTime } from "@/lib/clock";
 import { longDate } from "@/lib/weeks";
 
@@ -71,7 +72,6 @@ export default function EventDetail({
   })).filter((g) => g.items.length > 0);
 
   const numbers: [string, string][] = [];
-  if (event.actual) numbers.push(["gerçekleşen", event.actual]);
   if (event.forecast) numbers.push(["beklenti", event.forecast]);
   if (event.previous) numbers.push(["önceki", event.previous]);
   if (event.metric) numbers.push([event.metric.label, event.metric.value]);
@@ -137,6 +137,42 @@ export default function EventDetail({
               </div>
             ))}
           </dl>
+        )}
+
+        {event.results && event.results.length > 0 && (
+          <section className="mt-5">
+            <h3 className="text-[0.75rem] text-[var(--text-faint)]">Ne geldi</h3>
+            <ul className="mt-1.5 space-y-2">
+              {event.results.map((r) => {
+                const yon = surpriseLabel(r);
+                const renk =
+                  yon === "üstünde"
+                    ? "var(--sage)"
+                    : yon === "altında"
+                      ? "var(--verm)"
+                      : "var(--text-dim)";
+                return (
+                  <li key={r.name} className="leading-snug">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="min-w-0 text-[0.8125rem] text-[var(--text-dim)]">
+                        {r.name}
+                      </span>
+                      <span className="t-num shrink-0 text-[0.9375rem]" style={{ color: renk }}>
+                        {r.actual}
+                      </span>
+                    </div>
+                    {(r.forecast || r.previous) && (
+                      <div className="t-num mt-0.5 text-[0.6875rem] text-[var(--text-faint)]">
+                        {r.forecast ? `beklenti ${r.forecast}` : null}
+                        {r.forecast && yon ? ` · ${yon}` : null}
+                        {r.previous ? `${r.forecast ? " · " : ""}önceki ${r.previous}` : null}
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
         )}
 
         {event.also && event.also.length > 0 && (

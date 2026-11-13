@@ -12,8 +12,8 @@
     "ai": "node scripts/ai-commentary.ts",
     "apply-ai": "node scripts/apply-commentary.ts",
     "check": "node scripts/check-universe.ts",
-    "cot": "node scripts/fetch-cot.ts",
-    "ai-cot": "node scripts/ai-cot.ts"
+    "sonuc": "node scripts/fetch-outcomes.ts",
+    "ai-sonuc": "node scripts/ai-outcomes.ts"
   },
   "dependencies": {
     "next": "^16.4.5",

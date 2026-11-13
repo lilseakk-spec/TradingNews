@@ -29,8 +29,8 @@ export default function CostPage() {
             Henüz kayıt yok — ilk yapay zeka çağrısından sonra burası dolar.
           </p>
           <p className="mt-3 text-[0.8125rem] leading-relaxed text-[var(--text-faint)]">
-            Beklenen: haftada üç çağrı (pazar hafta yorumu, cuma ön izleme,
-            cumartesi COT), toplam 0,25–0,46 $. Yılda 13–24 $ bandı.
+            Beklenen: haftada iki çağrı — pazar hafta yorumu ve cuma ön
+            izlemesi.
           </p>
         </div>
       ) : (
