@@ -3,7 +3,7 @@
   "label": "8 – 13 Kasım 2026",
   "start": "2026-11-08",
   "end": "2026-11-13",
-  "updatedAt": "2026-11-13T12:46:39.343Z",
+  "updatedAt": "2026-11-13T14:11:12.644Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
@@ -173,7 +173,41 @@
           "also": [
             "TÜFE (aylık)"
           ],
-          "ai": "Haftanın ana verisi (beklenti %0,2, önceki %0,3); sapma önce US02Y ve DXY'ye, oradan US100, BTCUSD ve XAUUSD'ye geçer."
+          "ai": "Haftanın ana verisi (beklenti %0,2, önceki %0,3); sapma önce US02Y ve DXY'ye, oradan US100, BTCUSD ve XAUUSD'ye geçer.",
+          "results": [
+            {
+              "name": "Core CPI m/m",
+              "actual": "0.3",
+              "forecast": "0.2",
+              "previous": "0.3",
+              "surprise": 0.1
+            },
+            {
+              "name": "Core CPI n.s.a. m/m",
+              "actual": "0.2",
+              "previous": "0.4"
+            },
+            {
+              "name": "Core CPI",
+              "actual": "339.9",
+              "forecast": "339.796",
+              "previous": "338.896",
+              "surprise": 0.104
+            },
+            {
+              "name": "Core CPI n.s.a.",
+              "actual": "339.921",
+              "previous": "339.287"
+            },
+            {
+              "name": "CPI m/m",
+              "actual": "0.4",
+              "forecast": "0.5",
+              "previous": "0.6",
+              "surprise": -0.1
+            }
+          ],
+          "actual": "0.3"
         }
       ]
     },
@@ -268,7 +302,17 @@
           "also": [
             "Öncü gSYH büyümesi (çeyreklik)"
           ],
-          "ai": "%0,0 aylık beklenti durgunluğa işaret ediyor; zayıf okuma BoE indirim fiyatlamasını artırarak GBPUSD'yi baskılar, FTSE100 zayıf sterlinden destek alabilir."
+          "ai": "%0,0 aylık beklenti durgunluğa işaret ediyor; zayıf okuma BoE indirim fiyatlamasını artırarak GBPUSD'yi baskılar, FTSE100 zayıf sterlinden destek alabilir.",
+          "results": [
+            {
+              "name": "Index of Services",
+              "actual": "0.9",
+              "forecast": "0.5",
+              "previous": "0.9",
+              "surprise": 0.4
+            }
+          ],
+          "actual": "0.9"
         },
         {
           "id": "2026-11-12-EUR-ecb-president-lagarde-speaks",
