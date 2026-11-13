@@ -226,10 +226,21 @@ export default function EventDetail({
           </section>
         )}
 
-        {event.ai && (
+        {event.aiResult && (
           <section className="mt-5 border-l-2 border-l-[var(--violet)] pl-3">
             <h3 className="text-[0.6875rem]" style={{ color: "var(--violet)" }}>
-              Yapay zeka yorumu
+              Ne oldu
+            </h3>
+            <p className="mt-1 text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
+              {event.aiResult}
+            </p>
+          </section>
+        )}
+
+        {event.ai && (
+          <section className="mt-5 border-l-2 border-l-[var(--hairline)] pl-3">
+            <h3 className="text-[0.6875rem] text-[var(--text-faint)]">
+              {event.aiResult ? "Öncesinde beklenen" : "Yapay zeka yorumu"}
             </h3>
             <p className="mt-1 text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
               {event.ai}
