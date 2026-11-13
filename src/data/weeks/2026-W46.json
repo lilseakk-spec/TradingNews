@@ -3,12 +3,12 @@
   "label": "8 – 13 Kasım 2026",
   "start": "2026-11-08",
   "end": "2026-11-13",
-  "updatedAt": "2026-11-13T14:11:12.644Z",
+  "updatedAt": "2026-11-13T14:13:24.674Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-13T12:46:39.343Z"
+    "fetchedAt": "2026-11-13T14:13:13.153Z"
   },
   "ai": {
     "headline": "abd çekirdek tüfe haftanın ekseni, cuma üfe ve opsiyon vadesi",
@@ -207,7 +207,8 @@
               "surprise": -0.1
             }
           ],
-          "actual": "0.3"
+          "actual": "0.3",
+          "aiResult": "Çekirdek TÜFE aylık %0,3 ile %0,2 beklentinin 0,1 puan üstünde geldi; manşet TÜFE ise %0,4 ile %0,5 beklentinin 0,1 puan altında kaldı. Fed'in daha çok izlediği çekirdek tarafındaki sürpriz faiz indirimi beklentilerini zayıflatabilir; bu mantıkla ABD 2 yıllık faizi ve doların (DXY, USD/JPY) yukarı, EUR/USD'nin aşağı yönünü destekler, ancak manşetteki aşağı sapma etkiyi sınırlayabilir ve Nasdaq ile Bitcoin için karışık bir sinyal üretir."
         }
       ]
     },
@@ -312,7 +313,8 @@
               "surprise": 0.4
             }
           ],
-          "actual": "0.9"
+          "actual": "0.9",
+          "aiResult": "Hizmetler endeksi %0,9 ile %0,5 beklentinin 0,4 puan üstünde geldi; elimizde manşet aylık ve çeyreklik GSYH rakamları yok, bu yüzden değerlendirme yalnızca bu ölçüye dayanıyor. Ekonominin en büyük kalemindeki güç, BoE'nin faiz indirimi beklentilerini azaltabilir; bu da mantıksal olarak GBP/USD'de yukarı yönü desteklerken, FTSE 100 için güçlü büyüme ile daha sıkı faiz beklentisi arasında karışık bir sinyaldir."
         },
         {
           "id": "2026-11-12-EUR-ecb-president-lagarde-speaks",

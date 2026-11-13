@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-13T12:47:59.380Z",
+  "updatedAt": "2026-11-13T14:13:14.749Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-13T12:46:40.773Z"
+    "fetchedAt": "2026-11-13T14:13:14.749Z"
   },
   "ai": {
     "headline": "abd perakende ve philly fed dolar ile kripto yönünü belirliyor",
@@ -64,6 +64,7 @@
       "key": "pazartesi",
       "label": "PAZARTESİ",
       "date": "2026-11-16",
+      "focus": "Günü Asya seansında Japonya GSYH açıyor, Çin işsizlik verisi ve NBS açıklaması hemen ardından geliyor. USDJPY'de büyümenin BoJ beklentisine etkisi, AUDUSD'de Çin talep sinyali izlenir; akşam odak Kanada TÜFE'si ile USDCAD'e geçer.",
       "events": [
         {
           "id": "2026-11-16-JPY-gdp-q-q",
@@ -205,13 +206,13 @@
           ],
           "ai": "Beklenti 0.3%, önceki 0%. Sert artış BoC indirim beklentisini zayıflatıp CAD'i güçlendirir; USDCAD aşağı yönlü izlenir."
         }
-      ],
-      "focus": "Günü Asya seansında Japonya GSYH açıyor, Çin işsizlik verisi ve NBS açıklaması hemen ardından geliyor. USDJPY'de büyümenin BoJ beklentisine etkisi, AUDUSD'de Çin talep sinyali izlenir; akşam odak Kanada TÜFE'si ile USDCAD'e geçer."
+      ]
     },
     {
       "key": "sali",
       "label": "SALI",
       "date": "2026-11-17",
+      "focus": "Günü 16:30'daki ABD perakende satışları belirliyor; sabah İngiltere ücret verisi sterlini önden fiyatlıyor. Önce US10Y ve DXY'nin ilk tepkisi, ardından BTCUSD ve XAUUSD'nin bu harekete eşlik edip etmediği izlenir.",
       "events": [
         {
           "id": "2026-11-17-NZD-rbnz-governor-orr-speech",
@@ -336,13 +337,13 @@
           ],
           "ai": "Haftanın ana verisi; beklenti 0.7%, önceki 0.9%. Güçlü veri US10Y ve DXY'yi yükseltir, XAUUSD ve BTCUSD'ye baskı yapar."
         }
-      ],
-      "focus": "Günü 16:30'daki ABD perakende satışları belirliyor; sabah İngiltere ücret verisi sterlini önden fiyatlıyor. Önce US10Y ve DXY'nin ilk tepkisi, ardından BTCUSD ve XAUUSD'nin bu harekete eşlik edip etmediği izlenir."
+      ]
     },
     {
       "key": "carsamba",
       "label": "ÇARŞAMBA",
       "date": "2026-11-18",
+      "focus": "Gün Avrupa enflasyonu üzerine kurulu: 10:00'da İngiltere, 13:00'te Euro Bölgesi TÜFE'si. GBPUSD ve EURUSD'de merkez bankası beklentisi, 18:30'da ise EIA stok verisiyle WTI ve USDCAD izlenir.",
       "events": [
         {
           "id": "2026-11-18-GBP-cpi-y-y",
@@ -463,13 +464,13 @@
           ],
           "ai": "Önceki 4.657M artışın ardından beklenti -0.309M çekiliş. Beklenenden büyük çekiliş WTI ve BRENT'i yükseltir, USDCAD'i aşağı çeker."
         }
-      ],
-      "focus": "Gün Avrupa enflasyonu üzerine kurulu: 10:00'da İngiltere, 13:00'te Euro Bölgesi TÜFE'si. GBPUSD ve EURUSD'de merkez bankası beklentisi, 18:30'da ise EIA stok verisiyle WTI ve USDCAD izlenir."
+      ]
     },
     {
       "key": "persembe",
       "label": "PERŞEMBE",
       "date": "2026-11-19",
+      "focus": "Günü 16:30'da aynı anda yayımlanan Philadelphia Fed ve işsizlik başvuruları belirliyor; sabah Avustralya istihdamı AUDUSD'yi açıyor. İki ABD verisi zıt sinyal verirse US10Y'nin hangisini takip ettiği izlenir.",
       "events": [
         {
           "id": "2026-11-19-AUD-unemployment-rate",
@@ -663,13 +664,13 @@
           ],
           "ai": "Perakende verisini teyit ya da yalanlayacak istihdam sinyali. Başvuru artışı US10Y'yi düşürür; Philly Fed ile birlikte okunmalı."
         }
-      ],
-      "focus": "Günü 16:30'da aynı anda yayımlanan Philadelphia Fed ve işsizlik başvuruları belirliyor; sabah Avustralya istihdamı AUDUSD'yi açıyor. İki ABD verisi zıt sinyal verirse US10Y'nin hangisini takip ettiği izlenir."
+      ]
     },
     {
       "key": "cuma",
       "label": "CUMA",
       "date": "2026-11-20",
+      "focus": "Günü Japonya çekirdek TÜFE'si ve 11:00'deki kripto opsiyon vadesi belirliyor; ABD tarafında veri yok. USDJPY'de BoJ beklentisi, BTCUSD ve ETHUSD'de vade öncesi ile sonrası fiyat davranışı izlenir.",
       "events": [
         {
           "id": "2026-11-20-JPY-core-cpi-y-y",
@@ -721,7 +722,7 @@
           "volatility": 60,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "510,1 mn $ · BTC %14,5 · ETH %9"
+            "value": "514 mn $ · BTC %14,5 · ETH %8,8"
           },
           "source": {
             "label": "OKX opsiyon verisi",
@@ -746,8 +747,7 @@
           ],
           "ai": "Vade öncesi delta hedge akışları BTCUSD ve ETHUSD'yi yüksek açık pozisyonlu kullanım fiyatlarına çekebilir; vade sonrası yön serbestleşir."
         }
-      ],
-      "focus": "Günü Japonya çekirdek TÜFE'si ve 11:00'deki kripto opsiyon vadesi belirliyor; ABD tarafında veri yok. USDJPY'de BoJ beklentisi, BTCUSD ve ETHUSD'de vade öncesi ile sonrası fiyat davranışı izlenir."
+      ]
     }
   ]
 }
