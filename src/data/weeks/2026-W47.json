@@ -3,25 +3,55 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-12T21:15:21.966Z",
+  "updatedAt": "2026-11-13T12:47:59.380Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-12T21:15:21.966Z"
+    "fetchedAt": "2026-11-13T12:46:40.773Z"
   },
   "ai": {
-    "headline": "Takvim ön izlemesi",
-    "thesis": "Gelecek haftanın takvimi şimdiden görülebilsin diye erken çekildi. Saatler kayabilir, haber eklenip çıkabilir. Yorum cuma günü üretilir, kesin takvim pazar sabahı yerine oturur.",
+    "headline": "abd perakende ve philly fed dolar ile kripto yönünü belirliyor",
+    "thesis": "Haftanın merkezinde salı ABD perakende satışları ve perşembe Philadelphia Fed var; iki veri de büyüme beklentisini US10Y üzerinden DXY'ye taşır. Faizin yükselmesi XAUUSD ve BTCUSD gibi getirisi olmayan varlıkların fırsat maliyetini artırır. US500'de ise güçlü büyüme ile yüksek faizin değerlemeye baskısı arasında iki yönlü tepki çıkar. Çarşamba Euro Bölgesi ve İngiltere TÜFE'si DXY'nin ABD dışı bacağını EURUSD ve GBPUSD üzerinden belirler. Cuma opsiyon vadesi, makro yönün BTCUSD fiyatına ne kadar yansıyacağını sınırlayan ikinci katmandır.",
     "regime": {
-      "label": "belirlenmedi",
+      "label": "ABD büyüme verisi faiz kanalıyla dolar ve risk iştahını yönetiyor, Avrupa enflasyonu ve yen ayrı eksenlerde fiyatlanıyor",
       "tone": "karisik"
     },
-    "scenarios": [],
-    "watchlist": [],
-    "risks": [],
-    "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-12T21:15:21.966Z"
+    "scenarios": [
+      {
+        "name": "Soğuyan ABD büyümesi",
+        "trigger": "Çekirdek perakende satışlar 0.7% beklentisinin, Philadelphia Fed 32.2 beklentisinin altında gelir ve işsizlik başvuruları artarsa.",
+        "reaction": "US10Y ve DXY geriler; XAUUSD, BTCUSD ve EURUSD yükselir, USDJPY aşağı döner.",
+        "bias": "yukari"
+      },
+      {
+        "name": "Sıcak ABD büyümesi",
+        "trigger": "Çekirdek perakende satışlar 0.7%, Philadelphia Fed 32.2 beklentisini aşarsa.",
+        "reaction": "US10Y, DXY ve USDJPY yükselir; XAUUSD, XAGUSD ve BTCUSD baskı altına girer, EURUSD geriler.",
+        "bias": "asagi"
+      },
+      {
+        "name": "Beklentiye uyumlu veri",
+        "trigger": "ABD verileri beklentiye yakın gelir ve US10Y'de belirgin bir yön oluşmazsa.",
+        "reaction": "DXY yönünü Euro Bölgesi TÜFE'si belirler; BTCUSD ve ETHUSD cuma opsiyon vadesine kadar dar bantta kalır.",
+        "bias": "notr"
+      }
+    ],
+    "watchlist": [
+      "US10Y",
+      "DXY",
+      "USDJPY",
+      "BTCUSD",
+      "EURUSD",
+      "US500"
+    ],
+    "risks": [
+      "Japonya GSYH ve TÜFE verisinin BoJ beklentisini sert değiştirmesi USDJPY üzerinden carry pozisyonlarını çözerek ABD verisinden bağımsız risk satışı başlatabilir.",
+      "Euro Bölgesi TÜFE'sinin 3.2% beklentisinden belirgin sapması EURUSD üzerinden DXY'yi ABD verisinden ayrıştırarak dolar kanalını bozabilir.",
+      "Cuma vadesi öncesi hedge akışları BTCUSD ve ETHUSD'yi makro veriden koparıp yüksek açık pozisyonlu kullanım fiyatlarına çekebilir."
+    ],
+    "generatedBy": "claude-opus-5-5",
+    "generatedAt": "2026-11-13T12:47:59.380Z"
   },
   "days": [
     {
@@ -72,7 +102,8 @@
             "GSYH fiyat endeksi (yıllık)",
             "GSYH büyümesi (yıllık)",
             "Net Exports Contribution to GDP (çeyreklik)"
-          ]
+          ],
+          "ai": "Beklenti 0%, önceki 0.4%. Zayıf büyüme BoJ normalleşme beklentisini geriletip yeni zayıflatır; USDJPY ve EURJPY yukarı, NIKKEI225 iki yönlü izlenir."
         },
         {
           "id": "2026-11-16-CNY-nbs-press-conference-on-economic-situati",
@@ -104,7 +135,8 @@
               "direction": "volatil",
               "strength": 1
             }
-          ]
+          ],
+          "ai": "Çin ekonomisinin resmi değerlendirmesi. Teşvik sinyali talep kanalıyla AUDUSD ve BRENT'i destekler, sinyal gelmezse AUDUSD baskıda kalır."
         },
         {
           "id": "2026-11-16-CNY-unemployment-rate",
@@ -136,7 +168,8 @@
               "direction": "volatil",
               "strength": 1
             }
-          ]
+          ],
+          "ai": "Çin iç talebinin göstergesi. Yükselen işsizlik emtia talebi beklentisini düşürür; AUDUSD ve BRENT'e aşağı baskı yapar."
         },
         {
           "id": "2026-11-16-CAD-core-cpi-m-m",
@@ -169,9 +202,11 @@
           "also": [
             "TÜFE (aylık)",
             "Çekirdek TÜFE (yıllık)"
-          ]
+          ],
+          "ai": "Beklenti 0.3%, önceki 0%. Sert artış BoC indirim beklentisini zayıflatıp CAD'i güçlendirir; USDCAD aşağı yönlü izlenir."
         }
-      ]
+      ],
+      "focus": "Günü Asya seansında Japonya GSYH açıyor, Çin işsizlik verisi ve NBS açıklaması hemen ardından geliyor. USDJPY'de büyümenin BoJ beklentisine etkisi, AUDUSD'de Çin talep sinyali izlenir; akşam odak Kanada TÜFE'si ile USDCAD'e geçer."
     },
     {
       "key": "sali",
@@ -203,7 +238,8 @@
               "direction": "volatil",
               "strength": 1
             }
-          ]
+          ],
+          "ai": "Faiz patikasına dair doğrudan sinyal. Şahin ton NZDUSD'yi yukarı taşır, etkisi AUDUSD'ye sınırlı yansır."
         },
         {
           "id": "2026-11-17-GBP-unemployment-rate",
@@ -234,7 +270,8 @@
           "also": [
             "Ortalama haftalık kazanç (yıllık)",
             "İstihdam değişimi (3 aylık)"
-          ]
+          ],
+          "ai": "Ücret artışı BoE'nin enflasyon görünümünün çekirdeği. Güçlü kazanç verisi GBPUSD'yi yukarı iter, FTSE100 güçlü sterline ters tepki verebilir."
         },
         {
           "id": "2026-11-17-USD-core-retail-sales-m-m",
@@ -296,9 +333,11 @@
           ],
           "also": [
             "Perakende satışlar (aylık)"
-          ]
+          ],
+          "ai": "Haftanın ana verisi; beklenti 0.7%, önceki 0.9%. Güçlü veri US10Y ve DXY'yi yükseltir, XAUUSD ve BTCUSD'ye baskı yapar."
         }
-      ]
+      ],
+      "focus": "Günü 16:30'daki ABD perakende satışları belirliyor; sabah İngiltere ücret verisi sterlini önden fiyatlıyor. Önce US10Y ve DXY'nin ilk tepkisi, ardından BTCUSD ve XAUUSD'nin bu harekete eşlik edip etmediği izlenir."
     },
     {
       "key": "carsamba",
@@ -333,7 +372,8 @@
           ],
           "also": [
             "TÜFE (aylık)"
-          ]
+          ],
+          "ai": "BoE fiyatlamasının ana girdisi. Yukarı sapma GBPUSD'yi destekler, güçlenen sterlin ihracatçı ağırlıklı FTSE100'ü baskılayabilir."
         },
         {
           "id": "2026-11-18-EUR-cpi-y-y",
@@ -377,7 +417,8 @@
             "TÜFE (aylık)",
             "Çekirdek TÜFE (yıllık)",
             "Çekirdek TÜFE"
-          ]
+          ],
+          "ai": "Beklenti ve önceki 3.2%. Yukarı sapma ECB beklentisini sıkılaştırıp DE10Y ve EURUSD'yi yükseltir, DXY'yi dolaylı yoldan aşağı çeker."
         },
         {
           "id": "2026-11-18-USD-eia-crude-oil-stocks-change",
@@ -419,9 +460,11 @@
           ],
           "also": [
             "EIA Cushing Crude Oil Stocks Change"
-          ]
+          ],
+          "ai": "Önceki 4.657M artışın ardından beklenti -0.309M çekiliş. Beklenenden büyük çekiliş WTI ve BRENT'i yükseltir, USDCAD'i aşağı çeker."
         }
-      ]
+      ],
+      "focus": "Gün Avrupa enflasyonu üzerine kurulu: 10:00'da İngiltere, 13:00'te Euro Bölgesi TÜFE'si. GBPUSD ve EURUSD'de merkez bankası beklentisi, 18:30'da ise EIA stok verisiyle WTI ve USDCAD izlenir."
     },
     {
       "key": "persembe",
@@ -459,7 +502,8 @@
           "also": [
             "İstihdam değişimi",
             "Tam zamanlı istihdam değişimi"
-          ]
+          ],
+          "ai": "Beklenti 4.8%, önceki 4.7%. İşsizlik artışı RBA gevşeme beklentisini büyütür; AUDUSD aşağı, NZDUSD sınırlı aşağı."
         },
         {
           "id": "2026-11-19-EUR-unemployment-rate",
@@ -498,7 +542,8 @@
               "direction": "yukari",
               "strength": 2
             }
-          ]
+          ],
+          "ai": "Beklenti ve önceki 4%. Sürpriz ECB beklentisi üzerinden DE10Y ve EURUSD'ye geçer; etkisi genelde TÜFE'den düşüktür."
         },
         {
           "id": "2026-11-19-USD-philadelphia-fed-manufacturing-index",
@@ -557,7 +602,8 @@
               "direction": "asagi",
               "strength": 1
             }
-          ]
+          ],
+          "ai": "Beklenti 32.2, önceki 20.9; çıta yüksek. Beklenti altı okuma US10Y ve DXY'yi geriletir, XAUUSD ve BTCUSD'yi destekler."
         },
         {
           "id": "2026-11-19-USD-initial-jobless-claims",
@@ -614,9 +660,11 @@
               "direction": "asagi",
               "strength": 1
             }
-          ]
+          ],
+          "ai": "Perakende verisini teyit ya da yalanlayacak istihdam sinyali. Başvuru artışı US10Y'yi düşürür; Philly Fed ile birlikte okunmalı."
         }
-      ]
+      ],
+      "focus": "Günü 16:30'da aynı anda yayımlanan Philadelphia Fed ve işsizlik başvuruları belirliyor; sabah Avustralya istihdamı AUDUSD'yi açıyor. İki ABD verisi zıt sinyal verirse US10Y'nin hangisini takip ettiği izlenir."
     },
     {
       "key": "cuma",
@@ -658,37 +706,8 @@
           ],
           "also": [
             "Çekirdek TÜFE (gıda ve enerji hariç) (yıllık)"
-          ]
-        },
-        {
-          "id": "2026-11-20-GBP-retail-sales-m-m",
-          "time": "10:00",
-          "date": "2026-11-20",
-          "utc": "2026-11-20T07:00:00.000Z",
-          "title": "Perakende satışlar (aylık)",
-          "region": "İngiltere",
-          "currency": "GBP",
-          "category": "buyume",
-          "impact": 2,
-          "volatility": 48,
-          "source": {
-            "label": "Forex Factory takvimi"
-          },
-          "affected": [
-            {
-              "symbol": "GBPUSD",
-              "direction": "yukari",
-              "strength": 3
-            },
-            {
-              "symbol": "FTSE100",
-              "direction": "volatil",
-              "strength": 2
-            }
           ],
-          "also": [
-            "Perakende satışlar (yıllık)"
-          ]
+          "ai": "Beklenti 2.1%, önceki 2.2%. Düşüş BoJ sıkılaştırma beklentisini zayıflatıp USDJPY ve EURJPY'yi yukarı iter, zayıf yen NIKKEI225'i destekler."
         },
         {
           "id": "okx-opsiyon-vadesi-2026-11-20",
@@ -699,10 +718,10 @@
           "region": "Kripto",
           "category": "kripto",
           "impact": 2,
-          "volatility": 57,
+          "volatility": 60,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "463,4 mn $ · BTC %11,6 · ETH %6,8"
+            "value": "510,1 mn $ · BTC %14,5 · ETH %9"
           },
           "source": {
             "label": "OKX opsiyon verisi",
@@ -724,9 +743,11 @@
               "direction": "volatil",
               "strength": 2
             }
-          ]
+          ],
+          "ai": "Vade öncesi delta hedge akışları BTCUSD ve ETHUSD'yi yüksek açık pozisyonlu kullanım fiyatlarına çekebilir; vade sonrası yön serbestleşir."
         }
-      ]
+      ],
+      "focus": "Günü Japonya çekirdek TÜFE'si ve 11:00'deki kripto opsiyon vadesi belirliyor; ABD tarafında veri yok. USDJPY'de BoJ beklentisi, BTCUSD ve ETHUSD'de vade öncesi ile sonrası fiyat davranışı izlenir."
     }
   ]
 }

@@ -3,12 +3,12 @@
   "label": "8 – 13 Kasım 2026",
   "start": "2026-11-08",
   "end": "2026-11-13",
-  "updatedAt": "2026-11-12T21:15:20.350Z",
+  "updatedAt": "2026-11-13T12:46:39.343Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-12T21:15:20.350Z"
+    "fetchedAt": "2026-11-13T12:46:39.343Z"
   },
   "ai": {
     "headline": "abd çekirdek tüfe haftanın ekseni, cuma üfe ve opsiyon vadesi",
@@ -326,43 +326,6 @@
       "date": "2026-11-13",
       "focus": "Günü 11:00 BTC/ETH opsiyon vadesi ile 16:30 ÜFE'nin art arda gelmesi belirliyor. Vade öncesinde BTCUSD ve ETHUSD'nin büyük strike'lara yapışması, vade sonrasında ise çözülen hedge'lerin ÜFE tepkisini büyütüp büyütmediği izlenecek.",
       "events": [
-        {
-          "id": "okx-opsiyon-vadesi-2026-11-13",
-          "time": "11:00",
-          "date": "2026-11-13",
-          "utc": "2026-11-13T08:00:00.000Z",
-          "title": "BTC ve ETH haftalık opsiyon vadesi",
-          "region": "Kripto",
-          "category": "kripto",
-          "impact": 2,
-          "volatility": 69,
-          "metric": {
-            "label": "vadesi dolan açık pozisyon",
-            "value": "882,4 mn $ · BTC %19,4 · ETH %23"
-          },
-          "source": {
-            "label": "OKX opsiyon verisi",
-            "url": "https://www.okx.com"
-          },
-          "affected": [
-            {
-              "symbol": "BTCUSD",
-              "direction": "volatil",
-              "strength": 3
-            },
-            {
-              "symbol": "ETHUSD",
-              "direction": "volatil",
-              "strength": 3
-            },
-            {
-              "symbol": "TOTAL",
-              "direction": "volatil",
-              "strength": 2
-            }
-          ],
-          "ai": "Büyük strike'lardaki pin etkisi vade öncesinde BTCUSD ve ETHUSD'yi sıkıştırır; vade sonrası çözülen hedge'ler 16:30 ÜFE tepkisini büyütebilir."
-        },
         {
           "id": "2026-11-13-USD-core-ppi-m-m",
           "time": "16:30",
