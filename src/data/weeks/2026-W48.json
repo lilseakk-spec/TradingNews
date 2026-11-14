@@ -1,0 +1,1028 @@
+{
+  "id": "2026-W48",
+  "label": "22 – 28 Kasım 2026",
+  "start": "2026-11-22",
+  "end": "2026-11-28",
+  "updatedAt": "2026-11-14T11:55:54.657Z",
+  "preliminary": true,
+  "calendarSource": {
+    "label": "biquote ekonomik takvim (on izleme)",
+    "url": "https://biquote.io/api/calendar",
+    "fetchedAt": "2026-11-14T11:55:54.657Z"
+  },
+  "ai": {
+    "headline": "Takvim ön izlemesi",
+    "thesis": "Gelecek haftanın takvimi şimdiden görülebilsin diye erken çekildi. Saatler kayabilir, haber eklenip çıkabilir. Yorum cuma günü üretilir, kesin takvim pazar sabahı yerine oturur.",
+    "regime": {
+      "label": "belirlenmedi",
+      "tone": "karisik"
+    },
+    "scenarios": [],
+    "watchlist": [],
+    "risks": [],
+    "generatedBy": "bekliyor",
+    "generatedAt": "2026-11-14T11:55:54.657Z"
+  },
+  "days": [
+    {
+      "key": "pazar",
+      "label": "PAZAR",
+      "date": "2026-11-22",
+      "events": []
+    },
+    {
+      "key": "pazartesi",
+      "label": "PAZARTESİ",
+      "date": "2026-11-23",
+      "events": [
+        {
+          "id": "2026-11-23-NZD-core-retail-sales-q-q",
+          "time": "00:45",
+          "date": "2026-11-23",
+          "utc": "2026-11-22T21:45:00.000Z",
+          "title": "Çekirdek perakende satışlar (çeyreklik)",
+          "region": "Yeni Zelanda",
+          "currency": "NZD",
+          "category": "buyume",
+          "impact": 2,
+          "volatility": 48,
+          "forecast": "0.4%",
+          "previous": "0.7%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "NZDUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "AUDUSD",
+              "direction": "volatil",
+              "strength": 1
+            }
+          ],
+          "also": [
+            "Perakende satışlar (çeyreklik)",
+            "Perakende satışlar (yıllık)"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "sali",
+      "label": "SALI",
+      "date": "2026-11-24",
+      "events": [
+        {
+          "id": "2026-11-24-USD-cb-consumer-confidence-index",
+          "time": "18:00",
+          "date": "2026-11-24",
+          "utc": "2026-11-24T15:00:00.000Z",
+          "title": "CB Consumer Confidence Index",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "buyume",
+          "impact": 3,
+          "volatility": 40,
+          "forecast": "91.5",
+          "previous": "91.7",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "carsamba",
+      "label": "ÇARŞAMBA",
+      "date": "2026-11-25",
+      "events": [
+        {
+          "id": "2026-11-25-CAD-boc-governor-macklem-speech",
+          "time": "02:19",
+          "date": "2026-11-25",
+          "utc": "2026-11-24T23:19:00.000Z",
+          "title": "BoC Governor Macklem konuşması",
+          "region": "Kanada",
+          "currency": "CAD",
+          "category": "merkez-banka",
+          "impact": 3,
+          "volatility": 72,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDCAD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US100",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ]
+        },
+        {
+          "id": "2026-11-25-JPY-boj-trimmed-mean-core-cpi-y-y",
+          "time": "08:00",
+          "date": "2026-11-25",
+          "utc": "2026-11-25T05:00:00.000Z",
+          "title": "BoJ Trimmed Mean Core CPI (yıllık)",
+          "region": "Japonya",
+          "currency": "JPY",
+          "category": "enflasyon",
+          "impact": 2,
+          "volatility": 54,
+          "forecast": "2.6%",
+          "previous": "2.5%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDJPY",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "NIKKEI225",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "asagi",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "BoJ Weighted Median Core CPI (yıllık)"
+          ]
+        },
+        {
+          "id": "2026-11-25-EUR-gdp-q-q",
+          "time": "10:00",
+          "date": "2026-11-25",
+          "utc": "2026-11-25T07:00:00.000Z",
+          "title": "GSYH büyümesi (çeyreklik)",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "buyume",
+          "impact": 3,
+          "volatility": 64,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "GSYH büyümesi (yıllık)"
+          ]
+        },
+        {
+          "id": "2026-11-25-USD-core-pce-price-index-m-m",
+          "time": "16:30",
+          "date": "2026-11-25",
+          "utc": "2026-11-25T13:30:00.000Z",
+          "title": "Çekirdek PCE enflasyonu (aylık)",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "enflasyon",
+          "impact": 3,
+          "volatility": 76,
+          "forecast": "0.3%",
+          "previous": "0.3%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
+            }
+          ],
+          "also": [
+            "Çekirdek PCE enflasyonu (yıllık)",
+            "PCE enflasyonu (aylık)",
+            "PCE enflasyonu (yıllık)",
+            "Real PCE (aylık)",
+            "Çekirdek PCE enflasyonu (çeyreklik)",
+            "PCE enflasyonu (çeyreklik)",
+            "Real PCE (çeyreklik)"
+          ]
+        },
+        {
+          "id": "2026-11-25-USD-durable-goods-orders-m-m",
+          "time": "16:30",
+          "date": "2026-11-25",
+          "utc": "2026-11-25T13:30:00.000Z",
+          "title": "Dayanıklı mal siparişleri (aylık)",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "buyume",
+          "impact": 3,
+          "volatility": 70,
+          "forecast": "-0.7%",
+          "previous": "1.8%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
+            }
+          ],
+          "also": [
+            "GSYH büyümesi (çeyreklik)",
+            "GDP Sales (çeyreklik)"
+          ]
+        },
+        {
+          "id": "2026-11-25-USD-initial-jobless-claims",
+          "time": "16:30",
+          "date": "2026-11-25",
+          "utc": "2026-11-25T13:30:00.000Z",
+          "title": "Haftalık işsizlik başvuruları",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "istihdam",
+          "impact": 3,
+          "volatility": 38,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
+            }
+          ]
+        },
+        {
+          "id": "2026-11-25-USD-new-home-sales",
+          "time": "18:00",
+          "date": "2026-11-25",
+          "utc": "2026-11-25T15:00:00.000Z",
+          "title": "Yeni konut satışları",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "buyume",
+          "impact": 3,
+          "volatility": 70,
+          "forecast": "0.739M",
+          "previous": "0.676M",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
+            }
+          ]
+        },
+        {
+          "id": "2026-11-25-USD-dallas-fed-trimmed-mean-pce-inflation-ra",
+          "time": "18:00",
+          "date": "2026-11-25",
+          "utc": "2026-11-25T15:00:00.000Z",
+          "title": "Dallas Fed Trimmed Mean PCE Inflation Rate",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "enflasyon",
+          "impact": 1,
+          "volatility": 47,
+          "forecast": "1.9%",
+          "previous": "2.2%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "DXY",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "EURUSD",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "USDJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "asagi",
+              "strength": 2
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "US10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "asagi",
+              "strength": 1
+            }
+          ]
+        },
+        {
+          "id": "2026-11-25-USD-eia-crude-oil-stocks-change",
+          "time": "18:30",
+          "date": "2026-11-25",
+          "utc": "2026-11-25T15:30:00.000Z",
+          "title": "Ham petrol stokları",
+          "region": "ABD",
+          "currency": "USD",
+          "category": "enerji",
+          "impact": 3,
+          "volatility": 46,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "BRENT",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "USDCAD",
+              "direction": "volatil",
+              "strength": 1
+            },
+            {
+              "symbol": "US500",
+              "direction": "volatil",
+              "strength": 1
+            }
+          ],
+          "also": [
+            "EIA Cushing Crude Oil Stocks Change"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "persembe",
+      "label": "PERŞEMBE",
+      "date": "2026-11-26",
+      "events": [
+        {
+          "id": "2026-11-26-EUR-eu-leaders-summit",
+          "time": "03:00",
+          "date": "2026-11-26",
+          "utc": "2026-11-26T00:00:00.000Z",
+          "title": "EU Leaders Summit",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "jeopolitik",
+          "impact": 3,
+          "volatility": 66,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "VIX",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cuma",
+      "label": "CUMA",
+      "date": "2026-11-27",
+      "events": [
+        {
+          "id": "2026-11-27-JPY-tokyo-cpi-excl-food-and-energy-y-y",
+          "time": "02:30",
+          "date": "2026-11-27",
+          "utc": "2026-11-26T23:30:00.000Z",
+          "title": "Tokyo çekirdek TÜFE (gıda ve enerji hariç) (yıllık)",
+          "region": "Japonya",
+          "currency": "JPY",
+          "category": "enflasyon",
+          "impact": 3,
+          "volatility": 64,
+          "forecast": "2.4%",
+          "previous": "2.6%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "USDJPY",
+              "direction": "asagi",
+              "strength": 3
+            },
+            {
+              "symbol": "NIKKEI225",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "asagi",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "Tokyo çekirdek TÜFE (yıllık)"
+          ]
+        },
+        {
+          "id": "2026-11-27-EUR-eu-leaders-summit",
+          "time": "03:00",
+          "date": "2026-11-27",
+          "utc": "2026-11-27T00:00:00.000Z",
+          "title": "EU Leaders Summit",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "jeopolitik",
+          "impact": 3,
+          "volatility": 66,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "VIX",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ]
+        },
+        {
+          "id": "2026-11-27-EUR-cpi-m-m",
+          "time": "10:45",
+          "date": "2026-11-27",
+          "utc": "2026-11-27T07:45:00.000Z",
+          "title": "TÜFE (aylık)",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "enflasyon",
+          "impact": 2,
+          "volatility": 54,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "HICP enflasyonu (aylık)",
+            "TÜFE (yıllık)",
+            "HICP enflasyonu (yıllık)"
+          ]
+        },
+        {
+          "id": "2026-11-27-EUR-gdp-y-y",
+          "time": "10:45",
+          "date": "2026-11-27",
+          "utc": "2026-11-27T07:45:00.000Z",
+          "title": "GSYH büyümesi (yıllık)",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "buyume",
+          "impact": 2,
+          "volatility": 54,
+          "forecast": "-0.1%",
+          "previous": "-0.1%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "GSYH büyümesi (çeyreklik)"
+          ]
+        },
+        {
+          "id": "okx-opsiyon-vadesi-2026-11-27",
+          "time": "11:00",
+          "date": "2026-11-27",
+          "utc": "2026-11-27T08:00:00.000Z",
+          "title": "BTC ve ETH aylık opsiyon vadesi",
+          "region": "Kripto",
+          "category": "kripto",
+          "impact": 3,
+          "volatility": 85,
+          "metric": {
+            "label": "vadesi dolan açık pozisyon",
+            "value": "739,2 mn $ · BTC %19,2 · ETH %19,6"
+          },
+          "source": {
+            "label": "OKX opsiyon verisi",
+            "url": "https://www.okx.com"
+          },
+          "affected": [
+            {
+              "symbol": "BTCUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "ETHUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "TOTAL",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "BTC.D",
+              "direction": "volatil",
+              "strength": 1,
+              "note": "vade sonrasi rotasyon"
+            }
+          ]
+        },
+        {
+          "id": "2026-11-27-EUR-unemployment-rate",
+          "time": "11:55",
+          "date": "2026-11-27",
+          "utc": "2026-11-27T08:55:00.000Z",
+          "title": "İşsizlik oranı",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "istihdam",
+          "impact": 2,
+          "volatility": 54,
+          "forecast": "6.4%",
+          "previous": "6.4%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "Unemployment Change"
+          ]
+        },
+        {
+          "id": "2026-11-27-EUR-consumer-price-expectations",
+          "time": "13:00",
+          "date": "2026-11-27",
+          "utc": "2026-11-27T10:00:00.000Z",
+          "title": "Consumer Price Expectations",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "enflasyon",
+          "impact": 3,
+          "volatility": 64,
+          "forecast": "41.3",
+          "previous": "33.9",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cumartesi",
+      "label": "CUMARTESİ",
+      "date": "2026-11-28",
+      "events": [
+        {
+          "id": "2026-11-28-TWD-local-elections",
+          "time": "03:00",
+          "date": "2026-11-28",
+          "utc": "2026-11-28T00:00:00.000Z",
+          "title": "Local Elections",
+          "region": "TWD",
+          "currency": "TWD",
+          "category": "jeopolitik",
+          "impact": 2,
+          "volatility": 56,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "XAUUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "VIX",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "USDCHF",
+              "direction": "volatil",
+              "strength": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

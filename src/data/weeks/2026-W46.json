@@ -3,12 +3,12 @@
   "label": "8 – 13 Kasım 2026",
   "start": "2026-11-08",
   "end": "2026-11-13",
-  "updatedAt": "2026-11-13T14:13:24.674Z",
+  "updatedAt": "2026-11-14T11:55:53.329Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-13T14:13:13.153Z"
+    "fetchedAt": "2026-11-14T11:55:53.329Z"
   },
   "ai": {
     "headline": "abd çekirdek tüfe haftanın ekseni, cuma üfe ve opsiyon vadesi",
@@ -173,42 +173,7 @@
           "also": [
             "TÜFE (aylık)"
           ],
-          "ai": "Haftanın ana verisi (beklenti %0,2, önceki %0,3); sapma önce US02Y ve DXY'ye, oradan US100, BTCUSD ve XAUUSD'ye geçer.",
-          "results": [
-            {
-              "name": "Core CPI m/m",
-              "actual": "0.3",
-              "forecast": "0.2",
-              "previous": "0.3",
-              "surprise": 0.1
-            },
-            {
-              "name": "Core CPI n.s.a. m/m",
-              "actual": "0.2",
-              "previous": "0.4"
-            },
-            {
-              "name": "Core CPI",
-              "actual": "339.9",
-              "forecast": "339.796",
-              "previous": "338.896",
-              "surprise": 0.104
-            },
-            {
-              "name": "Core CPI n.s.a.",
-              "actual": "339.921",
-              "previous": "339.287"
-            },
-            {
-              "name": "CPI m/m",
-              "actual": "0.4",
-              "forecast": "0.5",
-              "previous": "0.6",
-              "surprise": -0.1
-            }
-          ],
-          "actual": "0.3",
-          "aiResult": "Çekirdek TÜFE aylık %0,3 ile %0,2 beklentinin 0,1 puan üstünde geldi; manşet TÜFE ise %0,4 ile %0,5 beklentinin 0,1 puan altında kaldı. Fed'in daha çok izlediği çekirdek tarafındaki sürpriz faiz indirimi beklentilerini zayıflatabilir; bu mantıkla ABD 2 yıllık faizi ve doların (DXY, USD/JPY) yukarı, EUR/USD'nin aşağı yönünü destekler, ancak manşetteki aşağı sapma etkiyi sınırlayabilir ve Nasdaq ile Bitcoin için karışık bir sinyal üretir."
+          "ai": "Haftanın ana verisi (beklenti %0,2, önceki %0,3); sapma önce US02Y ve DXY'ye, oradan US100, BTCUSD ve XAUUSD'ye geçer."
         }
       ]
     },
@@ -303,18 +268,7 @@
           "also": [
             "Öncü gSYH büyümesi (çeyreklik)"
           ],
-          "ai": "%0,0 aylık beklenti durgunluğa işaret ediyor; zayıf okuma BoE indirim fiyatlamasını artırarak GBPUSD'yi baskılar, FTSE100 zayıf sterlinden destek alabilir.",
-          "results": [
-            {
-              "name": "Index of Services",
-              "actual": "0.9",
-              "forecast": "0.5",
-              "previous": "0.9",
-              "surprise": 0.4
-            }
-          ],
-          "actual": "0.9",
-          "aiResult": "Hizmetler endeksi %0,9 ile %0,5 beklentinin 0,4 puan üstünde geldi; elimizde manşet aylık ve çeyreklik GSYH rakamları yok, bu yüzden değerlendirme yalnızca bu ölçüye dayanıyor. Ekonominin en büyük kalemindeki güç, BoE'nin faiz indirimi beklentilerini azaltabilir; bu da mantıksal olarak GBP/USD'de yukarı yönü desteklerken, FTSE 100 için güçlü büyüme ile daha sıkı faiz beklentisi arasında karışık bir sinyaldir."
+          "ai": "%0,0 aylık beklenti durgunluğa işaret ediyor; zayıf okuma BoE indirim fiyatlamasını artırarak GBPUSD'yi baskılar, FTSE100 zayıf sterlinden destek alabilir."
         },
         {
           "id": "2026-11-12-EUR-ecb-president-lagarde-speaks",
