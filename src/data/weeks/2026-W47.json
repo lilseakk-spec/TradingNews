@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-15T13:16:32.647Z",
+  "updatedAt": "2026-11-16T13:20:57.788Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-15T13:15:27.510Z"
+    "fetchedAt": "2026-11-16T13:20:57.788Z"
   },
   "ai": {
     "headline": "warsh konuşması ve fed tutanakları dolar ile faiz yönünü belirliyor",
@@ -344,8 +344,8 @@
           "region": "İngiltere",
           "currency": "GBP",
           "category": "merkez-banka",
-          "impact": 3,
-          "volatility": 72,
+          "impact": 2,
+          "volatility": 61,
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -615,10 +615,10 @@
           "region": "Kripto",
           "category": "kripto",
           "impact": 2,
-          "volatility": 60,
+          "volatility": 61,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "557,4 mn $ · BTC %14,6 · ETH %9,1"
+            "value": "575,9 mn $ · BTC %15,2 · ETH %10,3"
           },
           "source": {
             "label": "OKX opsiyon verisi",
