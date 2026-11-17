@@ -306,17 +306,6 @@ const ai: AiCommentary = {
   risks: Array.isArray(parsed.risks) ? parsed.risks : [],
   generatedBy: message.model ?? MODEL,
   generatedAt: new Date().toISOString(),
-  // Tani: brifing uretilemedigi durumlari veriden gorebilmek icin.
-  // Modelin dondugu ust anahtarlar ve brifing girisi sayisi.
-  debug: {
-    keys: Object.keys(parsed).join(","),
-    briefEntries: parsed.eventBriefs ? Object.keys(parsed.eventBriefs).length : 0,
-    firstBriefType: parsed.eventBriefs
-      ? typeof Object.values(parsed.eventBriefs)[0]
-      : "yok",
-    sample: JSON.stringify(Object.values(parsed.eventBriefs ?? {})[0] ?? null).slice(0, 300),
-    stopReason: String(message.stop_reason ?? ""),
-  },
 };
 
 let noted = 0;

@@ -51,14 +51,7 @@
       "Pazartesi Çin perakende verisi ve NBS tonu belirgin zayıf çıkarsa Warsh öncesindeki Asya seansında risk iştahı kırılır ve AUDUSD ile BRENT'te başlayan satış endekslere taşınır."
     ],
     "generatedBy": "claude-opus-5-5",
-    "generatedAt": "2026-11-17T21:04:08.635Z",
-    "debug": {
-      "keys": "headline,thesis,regime,scenarios,watchlist,risks,dayFocus,eventBriefs",
-      "briefEntries": 24,
-      "firstBriefType": "object",
-      "sample": "{\"what\":\"Japonya ekonomisinin bir önceki çeyreğe göre ne kadar büyüdüğünün ilk tahmini; gSYH (gayrisafi yurtiçi hasıla), ülkede üretilen tüm mal ve hizmetlerin toplam değeridir.\",\"why\":\"Beklenti %0.1, önceki %0.3'e göre yavaşlama fiyatlıyor. Veri, BoJ (Japonya Merkez Bankası) faiz kararının büyüme a",
-      "stopReason": "end_turn"
-    }
+    "generatedAt": "2026-11-17T21:04:08.635Z"
   },
   "days": [
     {

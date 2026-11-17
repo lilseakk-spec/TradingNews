@@ -114,8 +114,6 @@ export interface Scenario {
 }
 
 export interface AiCommentary {
-  /** Gecici tani alani: brifing uretimi neden bos dondu. */
-  debug?: Record<string, string | number>;
   headline: string;
   thesis: string;
   regime: { label: string; tone: "risk-on" | "risk-off" | "karisik" };

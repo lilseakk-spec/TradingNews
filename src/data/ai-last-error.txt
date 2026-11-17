@@ -1,2 +1,0 @@
-2026-11-17T20:52:59.364Z  ai-commentary
-stop_reason=max_tokens; JSON yarim kaldi.
