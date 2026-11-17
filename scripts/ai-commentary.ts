@@ -86,6 +86,8 @@ interface EventRef {
 }
 
 const refs: EventRef[] = [];
+/** Brifing yalnizca etkisi anlamli olaylara yazilir; butce ve derinlik oraya gitsin. */
+const briefIds: string[] = [];
 const dayLines: string[] = [];
 
 for (const day of week.days) {
@@ -119,6 +121,7 @@ for (const day of week.days) {
       .filter(Boolean)
       .join(" | ");
     refs.push({ id: e.id, line });
+    if (e.impact >= 2) briefIds.push(e.id);
     dayLines.push(line);
   }
 }
@@ -160,7 +163,9 @@ Bu takvime bakarak asagidaki JSON'u uret:
 
 scenarios tam uc eleman olsun: biri yukari, biri asagi, biri notr.
 dayFocus anahtarlari sunlardan secilecek: ${week.days.filter((d) => d.events.length > 0).map((d) => d.key).join(", ")}
-eventBriefs her olay icin bir giris icersin. Kullanilacak id'ler:
+eventBriefs YALNIZCA asagida listelenen id'ler icin giris icersin. Listede
+olmayan olaylar icin giris yazma. Her giris bir NESNE olsun (duz metin degil):
+what, why, above, below, watch alanlariyla. Kullanilacak id'ler:
 ${refs.map((r) => r.id).join("\n")}`;
 
 if (dry) {
@@ -173,7 +178,7 @@ if (dry) {
 
 interface AiResponse extends Omit<AiCommentary, "generatedBy" | "generatedAt"> {
   dayFocus?: Record<string, string>;
-  eventBriefs?: Record<string, EventBriefOut>;
+  eventBriefs?: Record<string, EventBriefOut | string>;
 }
 
 const client = new Anthropic();
@@ -267,6 +272,7 @@ const ai: AiCommentary = {
 };
 
 let noted = 0;
+let plain = 0;
 let focused = 0;
 const days = week.days.map((day) => {
   const focus = parsed.dayFocus?.[day.key];
@@ -276,6 +282,13 @@ const days = week.days.map((day) => {
     focus: focus ?? day.focus,
     events: day.events.map((e) => {
       const raw = parsed.eventBriefs?.[e.id];
+      // Model bazen nesne yerine tek cumle donduruyor; o zaman eski
+      // bicime dusulur, brifing uydurulmaz.
+      if (typeof raw === "string") {
+        const line = raw.trim();
+        if (line) plain++;
+        return { ...e, ai: line || e.ai, brief: e.brief };
+      }
       const brief =
         raw && raw.what && raw.why && raw.above && raw.below
           ? {
@@ -301,7 +314,10 @@ console.log(`  manset   : ${ai.headline}`);
 console.log(`  rejim    : ${ai.regime.tone} — ${ai.regime.label}`);
 console.log(`  senaryo  : ${ai.scenarios.length}`);
 console.log(`  gun odagi: ${focused}/${week.days.filter((d) => d.events.length > 0).length}`);
-console.log(`  olay notu: ${noted}/${refs.length}`);
+console.log(`  brifing  : ${noted}/${refs.length}` + (plain > 0 ? `  (${plain} tanesi duz metin geldi)` : ""));
+if (noted === 0) {
+  console.warn("  UYARI: hic brifing uretilmedi. Modelin dondugu ust anahtarlar: " + Object.keys(parsed).join(", "));
+}
 const logged = logUsage(weekJob, message.model ?? MODEL, usage.input_tokens, usage.output_tokens, refs.length);
 console.log(`  token    : ${usage.input_tokens} giris, ${usage.output_tokens} cikis`);
 console.log(`  maliyet  : ${logged.cost.toFixed(4)} $`);
