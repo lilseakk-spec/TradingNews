@@ -54,6 +54,14 @@ const weekJob = week.preliminary ? "on-izleme" : "hafta";
 
 // ── Istek metni ─────────────────────────────────────────────────
 
+interface EventBriefOut {
+  what?: string;
+  why?: string;
+  above?: string;
+  below?: string;
+  watch?: string;
+}
+
 const SYSTEM = `Sen bir piyasa yapisi analistisin. Turkiye'deki aktif trader'lar icin haftalik oynaklik brifingi yaziyorsun. Okuyucu kitlen agirlikla kripto ve endeks islemi yapiyor, yaninda forex ve emtia da takip ediyor.
 
 Kurallar:
@@ -63,6 +71,12 @@ Kurallar:
 - Fiyat hedefi, seviye tahmini ya da al/sat onerisi verme. Ne izlenecegini ve neyin tezi bozacagini yaz.
 - Mekanizmayi soyle: hangi veri hangi kanaldan hangi pariteye gecer. "Volatilite artabilir" gibi bos ifade kullanma.
 - Her cumle bir bilgi tasisin. Ayni seyi iki kez soyleme.
+- Olay brifinglerinde YUZEYSEL OLMA. "Volatilite artabilir", "yakindan izlenmeli" gibi
+  bos cumleler yasak. Her alan kendi isini yapsin: what gercekten ne olculdugunu
+  anlatsin (kisaltmalari ac), why bu haftaya ozgu baglami versin, above/below iki
+  yonlu sonucun mekanizmasini somut yazsin.
+- above ve below birbirinin tersi olsun ama ikisi de kendi basina okunabilsin;
+  "tersi olur" deme, mekanizmayi tekrar kur.
 
 Cikti yalnizca gecerli JSON olsun. JSON disinda hicbir metin, kod bloku ya da aciklama yazma.`;
 
@@ -133,12 +147,20 @@ Bu takvime bakarak asagidaki JSON'u uret:
   "watchlist": ["Haftanin en kritik 4-6 sembolu, yalnizca parite sozlugunden"],
   "risks": ["Tezi bozacak 2-3 risk, her biri tek cumle"],
   "dayFocus": { "gun_anahtari": "O gunun odagi, 1-2 cumle. Ilk cumle o gunu neyin belirledigini soylesin, ikincisi hangi paritede ne izlenecegini. Gunun kendi hikayesi olsun, hafta tezini tekrarlamasin. Olaysiz gunler icin bu anahtari hic yazma." },
-  "eventNotes": { "olay_id": "O haber icin tek cumlelik yorum: neden onemli ve hangi paritede izlenir. En fazla 180 karakter." }
+  "eventBriefs": {
+    "olay_id": {
+      "what": "Bu veri NE olcuyor, sade dille. Kisaltmayi ac. Trader olmayan biri de anlasin. 1 cumle.",
+      "why": "Bu hafta NEDEN onemli: hangi baglamda okunacak, onceki veriyle ya da merkez bankasi duruşuyla iliskisi ne. 1-2 cumle.",
+      "above": "Beklentinin USTUNDE gelirse: hangi mekanizmayla hangi pariteye gecer, yon ne. Somut ol.",
+      "below": "Beklentinin ALTINDA gelirse: ayni sekilde mekanizma ve yon.",
+      "watch": "Asil izlenecek detay: alt kalem, revizyon, es zamanli veri ya da bu okumayi bozacak gelisme. 1 cumle."
+    }
+  }
 }
 
 scenarios tam uc eleman olsun: biri yukari, biri asagi, biri notr.
 dayFocus anahtarlari sunlardan secilecek: ${week.days.filter((d) => d.events.length > 0).map((d) => d.key).join(", ")}
-eventNotes her olay icin bir giris icersin. Kullanilacak id'ler:
+eventBriefs her olay icin bir giris icersin. Kullanilacak id'ler:
 ${refs.map((r) => r.id).join("\n")}`;
 
 if (dry) {
@@ -151,7 +173,7 @@ if (dry) {
 
 interface AiResponse extends Omit<AiCommentary, "generatedBy" | "generatedAt"> {
   dayFocus?: Record<string, string>;
-  eventNotes?: Record<string, string>;
+  eventBriefs?: Record<string, EventBriefOut>;
 }
 
 const client = new Anthropic();
@@ -245,9 +267,19 @@ const days = week.days.map((day) => {
     ...day,
     focus: focus ?? day.focus,
     events: day.events.map((e) => {
-      const note = parsed.eventNotes?.[e.id];
-      if (note) noted++;
-      return { ...e, ai: note ?? e.ai };
+      const raw = parsed.eventBriefs?.[e.id];
+      const brief =
+        raw && raw.what && raw.why && raw.above && raw.below
+          ? {
+              what: raw.what.trim(),
+              why: raw.why.trim(),
+              above: raw.above.trim(),
+              below: raw.below.trim(),
+              watch: raw.watch?.trim() || undefined,
+            }
+          : undefined;
+      if (brief) noted++;
+      return { ...e, brief: brief ?? e.brief };
     }),
   };
 });

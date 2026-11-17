@@ -364,8 +364,10 @@ export function ingest(items: RawFeedItem[], opts: IngestOptions = {}): NewsEven
     }
 
     const currency = (item.country ?? "").toUpperCase();
-    const impact = impactFromFeed(item.impact);
-    const match = classify(item.title, currency, impact);
+    const feedImpact = impactFromFeed(item.impact);
+    const match = classify(item.title, currency, feedImpact);
+    // Kendi kuralimiz feed'den yuksek bicmisse rozet onu gosterir.
+    const impact = match.impact;
 
     if (!match.keep || match.volatility < minVolatility) {
       s.lowImpact++;

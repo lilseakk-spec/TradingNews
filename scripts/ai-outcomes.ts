@@ -44,7 +44,7 @@ for (const d of week.days ?? []) {
   for (const e of d.events) {
     if (!e.results?.length) continue;
     if (e.impact < 2) continue;
-    if (e.aiResult && !force) continue;
+    if (e.resultBrief && !force) continue;
     targets.push({ day: d.label ?? d.key, e });
   }
 }
@@ -56,19 +56,30 @@ if (targets.length === 0) {
 
 const SYSTEM = `Sen ekonomik veri aciklamalarini degerlendiren bir analistsin. Okuyucun gun ici islem yapan bir trader.
 
-Her olay icin ne bekleniyordu, ne geldi ve bunun ne anlama geldigini yaz.
+Her olay icin "ne oldu, ne bitti" brifingi yaz. Dort alan:
+
+- headline: Tek cumlede ne oldu. Manset gibi, sayiyi icersin.
+- detail: Sayilarla ne geldi. Hangi olcu, ne kadar sapti, alt kalemler ne dedi.
+  Birden fazla olcu varsa aralarindaki ayrismaya dikkat cek.
+- meaning: Bunun anlami. Hangi mekanizmayla hangi pariteye gecer, hangi tarafi
+  guclendirir. Merkez bankasi beklentisine etkisi varsa soyle.
+- next: Bundan sonra ne izlenecek. Bir sonraki ilgili veri, revizyon riski ya da
+  bu okumayi teyit/iptal edecek gelisme.
 
 Kurallar:
-- Turkce yaz. HER OLAY ICIN EN FAZLA IKI CUMLE.
-- Ilk cumle: hangi olcu beklentinin ne kadar ustunde/altinda kaldi. Sayilari kullan.
-- Ikinci cumle: bunun yonu ne — hangi enstrumanda hangi taraf guclenir, neden.
+- Turkce yaz. Her alan en fazla iki cumle, dolgu yok.
+- YUZEYSEL OLMA. "Piyasa tepki verdi", "izlenmeli" gibi bos ifadeler yasak.
 - FIYATIN NASIL TEPKI VERDIGINI BILMIYORSUN. Elinde fiyat verisi yok.
-  "Altin yukseldi", "dolar deger kazandi" gibi seyler YAZMA. Yalnizca verinin
-  ne soyledigini ve mantiksal yonunu yaz.
-- Surpriz kucukse bunu soyle; her veriden hikaye cikarma.
-- Yatirim tavsiyesi, hedef fiyat ve giris-cikis seviyesi verme.
+  "Altin yukseldi", "dolar deger kazandi" YAZMA. Yalnizca verinin ne soyledigini
+  ve mantiksal yonunu yaz.
+- Surpriz kucukse bunu acikca soyle; her veriden hikaye cikarma.
+- Elinde olmayan olcu varsa (ornegin manset rakami gelmemisse) bunu belirt,
+  tahmin etme.
+- Yatirim tavsiyesi, hedef fiyat ve seviye verme.
 
-Cikti yalnizca gecerli JSON: { "olay_id": "yorum" }. JSON disinda hicbir metin yazma.`;
+Cikti yalnizca gecerli JSON:
+{ "olay_id": { "headline": "...", "detail": "...", "meaning": "...", "next": "..." } }
+JSON disinda hicbir metin yazma.`;
 
 const lines = targets.map(({ day, e }) => {
   const olcu = e.results!.map((r) => {
@@ -144,9 +155,16 @@ const raw = message.content
   .trim();
 
 const json = raw.replace(/^```(?:json)?\s*|\s*```$/g, "");
-let notes: Record<string, string>;
+interface ResultBriefOut {
+  headline?: string;
+  detail?: string;
+  meaning?: string;
+  next?: string;
+}
+
+let notes: Record<string, ResultBriefOut>;
 try {
-  notes = JSON.parse(json) as Record<string, string>;
+  notes = JSON.parse(json) as Record<string, ResultBriefOut>;
 } catch {
   console.error("Yanit JSON olarak okunamadi:\n" + raw.slice(0, 400));
   process.exit(1);
@@ -154,9 +172,14 @@ try {
 
 let yazildi = 0;
 for (const { e } of targets) {
-  const note = notes[e.id];
-  if (typeof note === "string" && note.trim() !== "") {
-    e.aiResult = note.trim();
+  const n = notes[e.id];
+  if (n?.headline && n.detail && n.meaning) {
+    e.resultBrief = {
+      headline: n.headline.trim(),
+      detail: n.detail.trim(),
+      meaning: n.meaning.trim(),
+      next: n.next?.trim() || undefined,
+    };
     yazildi++;
   }
 }

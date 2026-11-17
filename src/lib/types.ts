@@ -28,6 +28,38 @@ export interface AffectedInstrument {
   note?: string;
 }
 
+/**
+ * Olay oncesi brifing.
+ *
+ * Tek cumlelik yorum haberi anlatmiyordu: okuyucu verinin ne oldugunu,
+ * neden bu hafta onemli oldugunu ve iki yonlu sonucun ne anlama
+ * geldigini ayri ayri gormeli.
+ */
+export interface EventBrief {
+  /** Bu veri ne olcuyor, sade dille. */
+  what: string;
+  /** Bu hafta neden onemli, hangi baglamda okunacak. */
+  why: string;
+  /** Beklentinin ustu gelirse: mekanizma ve yon. */
+  above: string;
+  /** Beklentinin alti gelirse: mekanizma ve yon. */
+  below: string;
+  /** Asil izlenecek sey ya da tezi bozacak gelisme. */
+  watch?: string;
+}
+
+/** Olay sonrasi degerlendirme. */
+export interface ResultBrief {
+  /** Tek cumlede ne oldu. */
+  headline: string;
+  /** Sayilarla ne geldi, beklentiden sapma. */
+  detail: string;
+  /** Bunun anlami: hangi kanaldan hangi pariteye gecer. */
+  meaning: string;
+  /** Bundan sonra ne izlenecek. */
+  next?: string;
+}
+
 export interface NewsEvent {
   id: string;
   /** TRT, "15:30". null ise saat belirsiz / gun ici. */
@@ -54,10 +86,14 @@ export interface NewsEvent {
   metric?: { label: string; value: string };
   source?: { label: string; url?: string };
   affected: AffectedInstrument[];
-  /** Tek cumlelik AI yorumu — olay oncesi, ne beklenmeli. */
+  /** Tek cumlelik AI yorumu — olay oncesi. Eski bicim, brief'e birakildi. */
   ai?: string;
-  /** Olay SONRASI yorum: ne bekleniyordu, ne geldi, ne anlama geliyor. */
+  /** Olay oncesi brifing: ne, neden, hangi sonuc ne anlama gelir. */
+  brief?: EventBrief;
+  /** Olay SONRASI yorum. Eski bicim, resultBrief'e birakildi. */
   aiResult?: string;
+  /** Olay sonrasi degerlendirme: ne oldu, ne anlama geliyor, sirada ne var. */
+  resultBrief?: ResultBrief;
 }
 
 export interface DayBlock {

@@ -410,6 +410,8 @@ export const RULES: ImpactRule[] = [
 ];
 
 export interface MatchResult {
+  /** Ekranda gosterilecek etki: feed ile kendi yargimizin yuksegi. */
+  impact: Impact;
   rule?: ImpactRule;
   category: EventCategory;
   volatility: number;
@@ -443,8 +445,22 @@ export function classify(
   // tek dogruluk kaynagi: oradan silinen sembol burada da yok sayilir.
   affected = affected.filter((a) => isTracked(a.symbol));
 
-  // Feed'in etki notu, kuralin oynaklik tabanini agirliklandirir.
-  const feedWeight = feedImpact === 3 ? 1 : feedImpact === 2 ? 0.85 : 0.62;
+  // Feed'in etki notu oynakligi agirliklandirir — ama kendi kuralimiz
+  // varsa onu ezmez. Forex Factory merceginden "Low" olan bir olay bizim
+  // icin yuksek olabilir: ham petrol stoklari dovizde onemsizdir, WTI ve
+  // Brent'te haftanin en sert hareketini yapar. Kural bizim yargimizdir,
+  // feed yalnizca nuans katar.
+  const feedWeight = rule
+    ? feedImpact === 3
+      ? 1
+      : feedImpact === 2
+        ? 0.92
+        : 0.78
+    : feedImpact === 3
+      ? 1
+      : feedImpact === 2
+        ? 0.85
+        : 0.62;
   const volatility = rule
     ? Math.round(rule.volatility * feedWeight)
     : feedImpact === 3
@@ -453,12 +469,21 @@ export function classify(
         ? 45
         : 22;
 
-  const keep =
-    Boolean(rule?.always) ||
-    feedImpact === 3 ||
-    (Boolean(rule?.keep) && feedImpact === 2);
+  // keep isaretli bir kural, feed ne derse desin kalir. Daha once bu
+  // yalnizca feed "Medium" dediginde gecerliydi; "Low" etiketli ama
+  // bizim icin onemli olaylar (petrol stoklari gibi) sessizce dusuyordu.
+  const keep = Boolean(rule?.always) || feedImpact === 3 || Boolean(rule?.keep);
+
+  // Rozet de kendi yargimizi gostersin. Feed'in etiketi tabandir; kendi
+  // kuralimiz daha yuksek bir oynaklik biciyorsa rozet onu yansitir.
+  // Asla dusurmez, yalnizca yukseltir.
+  const derived: Impact = volatility >= 60 ? 3 : volatility >= 36 ? 2 : 1;
+  const impact: Impact = rule
+    ? (Math.max(feedImpact, derived) as Impact)
+    : feedImpact;
 
   return {
+    impact,
     rule,
     category: rule?.category ?? "buyume",
     volatility,

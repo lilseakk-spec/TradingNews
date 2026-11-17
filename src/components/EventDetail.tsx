@@ -8,12 +8,14 @@ import { instrumentName } from "@/lib/instruments";
 import { surpriseLabel } from "@/lib/outcomes";
 import { formatCountdown, nyTime } from "@/lib/clock";
 import { longDate } from "@/lib/weeks";
+import EventFork from "./EventFork";
 
 /**
- * Secili haberin detayi.
+ * Secili haberin brifingi.
  *
- * Listede yalnizca tarama icin gereken alanlar duruyor; derinlik buraya
- * tasindi. Boylece satirlar hafif kaliyor ama bilgi kaybolmuyor.
+ * Sira okuyucunun sorularini takip eder: ne olculuyor, neden onemli,
+ * iki yonlu sonuc ne getirir, ne geldi, ne anlama geldi, sirada ne var.
+ * Liste satirlari tarama icindir; derinlik burada.
  */
 
 const DIRECTION_HEAD: Record<Direction, string> = {
@@ -31,12 +33,30 @@ function Strength({ value }: { value: number }) {
         <span
           key={n}
           className="inline-block h-[3px] w-[5px] rounded-[1px]"
-          style={{
-            background: n <= value ? "var(--text-dim)" : "var(--hairline)",
-          }}
+          style={{ background: n <= value ? "var(--text-dim)" : "var(--hairline)" }}
         />
       ))}
     </span>
+  );
+}
+
+/** Bolum basligi: ince, harf araligi acik, sessiz. */
+function Head({ children, color }: { children: React.ReactNode; color?: string }) {
+  return (
+    <h3
+      className="text-[0.6875rem] tracking-[0.08em] uppercase"
+      style={{ color: color ?? "var(--text-faint)" }}
+    >
+      {children}
+    </h3>
+  );
+}
+
+function Para({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mt-1.5 text-[0.875rem] leading-relaxed text-[var(--text-dim)]">
+      {children}
+    </p>
   );
 }
 
@@ -63,6 +83,9 @@ export default function EventDetail({
 
   const ny = event.utc ? nyTime(event.utc) : null;
   const color = impactColor(event.impact);
+  const brief = event.brief;
+  const result = event.resultBrief;
+  const released = (event.results?.length ?? 0) > 0;
 
   const grouped = ORDER.map((dir) => ({
     dir,
@@ -70,11 +93,6 @@ export default function EventDetail({
       .filter((a) => a.direction === dir)
       .sort((a, b) => b.strength - a.strength),
   })).filter((g) => g.items.length > 0);
-
-  const numbers: [string, string][] = [];
-  if (event.forecast) numbers.push(["beklenti", event.forecast]);
-  if (event.previous) numbers.push(["önceki", event.previous]);
-  if (event.metric) numbers.push([event.metric.label, event.metric.value]);
 
   return (
     <article>
@@ -90,7 +108,8 @@ export default function EventDetail({
         </button>
       </header>
 
-      <div className="px-4 py-4">
+      <div className="px-4 pt-4 pb-6">
+        {/* Zaman ve siddet */}
         <div className="flex items-baseline gap-2.5">
           <span className="t-num text-[2rem] leading-none text-[var(--text)]">
             {event.time ?? "—"}
@@ -99,22 +118,24 @@ export default function EventDetail({
             {ny ? `${ny} NY` : "gün içi"}
           </span>
         </div>
-        {left && (
+        {left && !released && (
           <p className="t-num mt-1.5 text-[0.8125rem]" style={{ color }}>
             {left} kaldı
           </p>
         )}
+        {released && (
+          <p className="mt-1.5 text-[0.75rem] text-[var(--text-faint)]">açıklandı</p>
+        )}
 
-        <h2 className="t-display mt-3 text-[1.25rem] leading-tight text-[var(--text)]">
+        <h2 className="t-display mt-3 text-[1.375rem] leading-[1.15] text-[var(--text)]">
           {event.title}
         </h2>
         <p className="mt-1 text-[0.8125rem] text-[var(--text-dim)]">
           {event.region}
-          {event.currency ? ` · ${event.currency}` : ""} ·{" "}
-          {CATEGORY_TR[event.category]}
+          {event.currency ? ` · ${event.currency}` : ""} · {CATEGORY_TR[event.category]}
         </p>
 
-        <div className="mt-3">
+        <div className="mt-3.5">
           <div className="h-[3px] w-full overflow-hidden rounded-full bg-[var(--hairline)]">
             <div
               className="h-full rounded-full"
@@ -126,30 +147,44 @@ export default function EventDetail({
           </p>
         </div>
 
-        {numbers.length > 0 && (
-          <dl className="mt-4 space-y-1">
-            {numbers.map(([k, v]) => (
-              <div key={k} className="flex items-baseline justify-between gap-3">
-                <dt className="text-[0.75rem] text-[var(--text-faint)]">{k}</dt>
-                <dd className="t-num text-right text-[0.8125rem] text-[var(--text)]">
-                  {v}
-                </dd>
-              </div>
-            ))}
-          </dl>
+        {/* Brifing */}
+        {brief ? (
+          <>
+            <section className="mt-6">
+              <Head>ne ölçülüyor</Head>
+              <Para>{brief.what}</Para>
+            </section>
+
+            <section className="mt-5">
+              <Head>neden önemli</Head>
+              <Para>{brief.why}</Para>
+            </section>
+
+            <EventFork event={event} brief={brief} />
+          </>
+        ) : event.ai ? (
+          <section className="mt-6">
+            <Head color="var(--violet)">yapay zeka yorumu</Head>
+            <Para>{event.ai}</Para>
+          </section>
+        ) : (
+          <p className="mt-6 text-[0.8125rem] text-[var(--text-faint)]">
+            Brifing henüz üretilmedi. Hafta yorumu çalıştığında burası dolar.
+          </p>
         )}
 
+        {/* Gelen degerler */}
         {event.results && event.results.length > 0 && (
-          <section className="mt-5">
-            <h3 className="text-[0.75rem] text-[var(--text-faint)]">Ne geldi</h3>
-            <ul className="mt-1.5 space-y-2">
+          <section className="mt-6">
+            <Head>ne geldi</Head>
+            <ul className="mt-2 space-y-2">
               {event.results.map((r) => {
                 const yon = surpriseLabel(r);
                 const renk =
                   yon === "üstünde"
-                    ? "var(--sage)"
+                    ? "var(--amber)"
                     : yon === "altında"
-                      ? "var(--verm)"
+                      ? "var(--sage)"
                       : "var(--text-dim)";
                 return (
                   <li key={r.name} className="leading-snug">
@@ -175,9 +210,40 @@ export default function EventDetail({
           </section>
         )}
 
+        {/* Sonuc degerlendirmesi */}
+        {result ? (
+          <section className="mt-6 border-l-2 border-l-[var(--violet)] pl-3.5">
+            <Head color="var(--violet)">ne oldu</Head>
+            <p className="mt-1.5 text-[0.9375rem] leading-snug text-[var(--text)]">
+              {result.headline}
+            </p>
+            <Para>{result.detail}</Para>
+            <p className="mt-2.5 text-[0.875rem] leading-relaxed text-[var(--text-dim)]">
+              {result.meaning}
+            </p>
+            {result.next && (
+              <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-[var(--text-faint)]">
+                Sırada: {result.next}
+              </p>
+            )}
+          </section>
+        ) : event.aiResult ? (
+          <section className="mt-6 border-l-2 border-l-[var(--violet)] pl-3.5">
+            <Head color="var(--violet)">ne oldu</Head>
+            <Para>{event.aiResult}</Para>
+          </section>
+        ) : null}
+
+        {brief?.watch && (
+          <section className="mt-6">
+            <Head>izlenecek</Head>
+            <Para>{brief.watch}</Para>
+          </section>
+        )}
+
         {event.also && event.also.length > 0 && (
-          <section className="mt-5">
-            <h3 className="text-[0.75rem] text-[var(--text-faint)]">Aynı anda</h3>
+          <section className="mt-6">
+            <Head>aynı anda</Head>
             <ul className="mt-1.5 space-y-1">
               {event.also.map((t) => (
                 <li key={t} className="text-[0.8125rem] leading-snug text-[var(--text-dim)]">
@@ -189,30 +255,20 @@ export default function EventDetail({
         )}
 
         {grouped.length > 0 && (
-          <section className="mt-5">
-            <h3 className="text-[0.75rem] text-[var(--text-faint)]">
-              Etkilenen pariteler
-            </h3>
+          <section className="mt-6">
+            <Head>etkilenen pariteler</Head>
             <div className="mt-2 space-y-3">
               {grouped.map((g) => (
                 <div key={g.dir}>
-                  <p className="text-[0.6875rem] text-[var(--text-faint)]">
-                    <span aria-hidden className="mr-1">
-                      {DIRECTION_GLYPH[g.dir]}
-                    </span>
-                    {DIRECTION_HEAD[g.dir]}
+                  <p className="text-[0.75rem] text-[var(--text-faint)]">
+                    <span aria-hidden>{DIRECTION_GLYPH[g.dir]}</span> {DIRECTION_HEAD[g.dir]}
                   </p>
                   <ul className="mt-1 space-y-1">
                     {g.items.map((a: AffectedInstrument) => (
-                      <li
-                        key={a.symbol}
-                        className="flex items-center justify-between gap-3"
-                      >
-                        <span className="min-w-0">
-                          <span className="t-num text-[0.8125rem] text-[var(--text)]">
-                            {a.symbol}
-                          </span>
-                          <span className="ml-2 text-[0.75rem] text-[var(--text-faint)]">
+                      <li key={a.symbol} className="flex items-center justify-between gap-3">
+                        <span className="min-w-0 truncate text-[0.8125rem] text-[var(--text-dim)]">
+                          <span className="t-num text-[var(--text)]">{a.symbol}</span>
+                          <span className="ml-1.5 text-[var(--text-faint)]">
                             {instrumentName(a.symbol)}
                           </span>
                         </span>
@@ -226,30 +282,8 @@ export default function EventDetail({
           </section>
         )}
 
-        {event.aiResult && (
-          <section className="mt-5 border-l-2 border-l-[var(--violet)] pl-3">
-            <h3 className="text-[0.6875rem]" style={{ color: "var(--violet)" }}>
-              Ne oldu
-            </h3>
-            <p className="mt-1 text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
-              {event.aiResult}
-            </p>
-          </section>
-        )}
-
-        {event.ai && (
-          <section className="mt-5 border-l-2 border-l-[var(--hairline)] pl-3">
-            <h3 className="text-[0.6875rem] text-[var(--text-faint)]">
-              {event.aiResult ? "Öncesinde beklenen" : "Yapay zeka yorumu"}
-            </h3>
-            <p className="mt-1 text-[0.8125rem] leading-relaxed text-[var(--text-dim)]">
-              {event.ai}
-            </p>
-          </section>
-        )}
-
         {event.source && (
-          <p className="mt-5 text-[0.6875rem] text-[var(--text-faint)]">
+          <p className="mt-6 text-[0.6875rem] text-[var(--text-faint)]">
             kaynak: {event.source.label}
           </p>
         )}

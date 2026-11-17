@@ -1,10 +1,15 @@
 @import "tailwindcss";
 
 /* ──────────────────────────────────────────────────────────────
-   Trading Haber Takvimi — token sistemi
+   Sismograf — token sistemi
    Yon: olcu aleti / sismograf paneli. Slate-indigo govde uzerine
    sicak krem okuma rengi; renk rampasi yalnizca etki siddetini
    tasir, varlik grubu ise seritte "serit/lane" ile kodlanir.
+
+   Koyu varsayilandir. Bu bir islem paneli ve islem panelleri koyu
+   acilir; acik tema gun isigi icin elle secilir, isletim sisteminin
+   tercihi burada devreye girmez. Acik tema serin teknik kagit:
+   sicak krem jenerik duruyordu.
    ────────────────────────────────────────────────────────────── */
 
 @theme {
@@ -43,37 +48,20 @@
   color-scheme: dark;
 }
 
-:root:not([data-theme="dark"]) {
-  @media (prefers-color-scheme: light) {
-    --bg: #f1ece1;
-    --bg-surface: #faf7f0;
-    --bg-raise: #fffdf8;
-    --hairline: #d6cdbb;
-    --text: #18223a;
-    --text-dim: #5c6680;
-    --text-faint: #8b93a6;
-    --sage: #3f8373;
-    --amber: #a8701a;
-    --verm: #be3a28;
-    --violet: #5f46ad;
-    --grid: rgba(24, 34, 58, 0.1);
-    color-scheme: light;
-  }
-}
 
 :root[data-theme="light"] {
-  --bg: #f1ece1;
-  --bg-surface: #faf7f0;
-  --bg-raise: #fffdf8;
-  --hairline: #d6cdbb;
-  --text: #18223a;
-  --text-dim: #5c6680;
-  --text-faint: #8b93a6;
-  --sage: #3f8373;
-  --amber: #a8701a;
-  --verm: #be3a28;
-  --violet: #5f46ad;
-  --grid: rgba(24, 34, 58, 0.1);
+  --bg: #e7eaef;
+  --bg-surface: #f3f5f8;
+  --bg-raise: #fbfcfd;
+  --hairline: #c9d0dc;
+  --text: #121a2c;
+  --text-dim: #566078;
+  --text-faint: #7e879c;
+  --sage: #2f7466;
+  --amber: #96620f;
+  --verm: #b53222;
+  --violet: #513a9e;
+  --grid: rgba(18, 26, 44, 0.09);
   color-scheme: light;
 }
 

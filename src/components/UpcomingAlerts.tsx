@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { NewsEvent } from "@/lib/types";
 import { impactColor, DIRECTION_GLYPH } from "@/lib/labels";
 import { formatCountdown, nyTime } from "@/lib/clock";
+import { sendNotification } from "@/lib/notify";
 import { DAY_META, dayOfWeek, shortDate } from "@/lib/weeks";
 
 /**
@@ -81,22 +82,24 @@ export default function UpcomingAlerts({
       if (fired.current.has(event.id)) continue;
       fired.current.add(event.id);
       setPopup(event);
-      if (typeof Notification !== "undefined" && Notification.permission === "granted") {
-        const body = [
-          `${event.time ?? "gün içi"} TRT${event.utc ? ` · ${nyTime(event.utc)} NY` : ""}`,
-          event.affected
-            .slice(0, 4)
-            .map((a) => `${a.symbol}${DIRECTION_GLYPH[a.direction]}`)
-            .join(" "),
-        ].join("\n");
-        try {
-          new Notification(event.title, { body, tag: event.id });
-        } catch {
-          // Bazi tarayicilar servis worker olmadan reddeder; popup yine cikar.
-        }
-      }
+      sendNotification(event, "yaklasiyor", Math.round(delta / 60_000));
     }
   }, [now, alertsOn, lead, timed]);
+
+  // Sonucu gelmis olaylar icin tek seferlik sonuc bildirimi. Yalnizca
+  // son iki saatte aciklananlar: eski haberle uyandirmanin anlami yok.
+  useEffect(() => {
+    if (now === null || !alertsOn) return;
+    for (const { event, at } of timed) {
+      if (!event.results?.length) continue;
+      const gecen = now - at;
+      if (gecen < 0 || gecen > 2 * 3600_000) continue;
+      const key = `${event.id}-sonuc`;
+      if (fired.current.has(key)) continue;
+      fired.current.add(key);
+      sendNotification(event, "sonuc");
+    }
+  }, [now, alertsOn, timed]);
 
   const enable = useCallback(async () => {
     if (alertsOn) {

@@ -14,12 +14,9 @@ export default function ThemeToggle() {
     } catch {
       saved = null;
     }
-    const initial: Mode =
-      saved === "light" || saved === "dark"
-        ? saved
-        : window.matchMedia("(prefers-color-scheme: light)").matches
-          ? "light"
-          : "dark";
+    // Koyu varsayilandir: bu bir islem paneli. Isletim sisteminin acik
+    // tema tercihi burada devreye girmez; acik temayi kullanici secer.
+    const initial: Mode = saved === "light" || saved === "dark" ? saved : "dark";
     setMode(initial);
     document.documentElement.dataset.theme = initial;
   }, []);

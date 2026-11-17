@@ -71,12 +71,15 @@ jobs:
            steps.sonuc.outputs.results_new == 'true')
         run: node scripts/ai-outcomes.ts
 
-      # Bu haftanın yorumu yalnızca pazar kurulumunda ve elle çalıştırmada.
+      # Bu haftanın yorumu pazar kurulumunda, elle çalıştırmada ve iş
+      # akışı değiştiğinde üretilir. Sonuncusu brifing biçimi değişince
+      # mevcut haftanın da yeni biçime geçmesi için.
       - name: Yorum — bu hafta
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
           steps.hafta.outputs.week_id != '' &&
           (github.event_name == 'workflow_dispatch' ||
+           github.event_name == 'push' ||
            github.event.schedule == '0 6 * * 0')
         run: node scripts/ai-commentary.ts --id ${{ steps.hafta.outputs.week_id }}
 

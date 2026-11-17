@@ -264,10 +264,20 @@ const existing: WeekData | null = fs.existsSync(outFile)
   : null;
 
 const keptNotes = new Map<string, string>();
+const keptBriefs = new Map<string, NonNullable<NewsEvent["brief"]>>();
+const keptResults = new Map<string, NewsEvent["results"]>();
+const keptResultBriefs = new Map<string, NonNullable<NewsEvent["resultBrief"]>>();
+const keptResultNotes = new Map<string, string>();
 const keptFocus = new Map<string, string>();
 for (const day of existing?.days ?? []) {
   if (day.focus) keptFocus.set(day.key, day.focus);
-  for (const e of day.events) if (e.ai) keptNotes.set(e.id, e.ai);
+  for (const e of day.events) {
+    if (e.ai) keptNotes.set(e.id, e.ai);
+    if (e.brief) keptBriefs.set(e.id, e.brief);
+    if (e.results?.length) keptResults.set(e.id, e.results);
+    if (e.resultBrief) keptResultBriefs.set(e.id, e.resultBrief);
+    if (e.aiResult) keptResultNotes.set(e.id, e.aiResult);
+  }
 }
 
 // ── 5. Hafta dosyasini kur ──────────────────────────────────────
@@ -288,7 +298,15 @@ const days: DayBlock[] = [...dayDates]
     manualCount += fromManual.length;
 
     const merged = [...fromFeed, ...fromManual]
-      .map((e) => ({ ...e, ai: e.ai ?? keptNotes.get(e.id) }))
+      // Yorumlar ve gelmis sonuclar takvim yenilense de kalir.
+      .map((e) => ({
+        ...e,
+        ai: e.ai ?? keptNotes.get(e.id),
+        brief: e.brief ?? keptBriefs.get(e.id),
+        results: e.results ?? keptResults.get(e.id),
+        resultBrief: e.resultBrief ?? keptResultBriefs.get(e.id),
+        aiResult: e.aiResult ?? keptResultNotes.get(e.id),
+      }))
       .sort((a, b) => {
         const t = (a.time ?? "99:99").localeCompare(b.time ?? "99:99");
         return t !== 0 ? t : b.volatility - a.volatility;
