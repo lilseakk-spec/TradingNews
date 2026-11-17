@@ -1,0 +1,9 @@
+2026-11-17T20:39:18.297Z  ai-commentary
+uncaught: Streaming is required for operations that may take longer than 10 minutes. See https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript#long-requests for more details
+AnthropicError: Streaming is required for operations that may take longer than 10 minutes. See https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript#long-requests for more details
+    at Anthropic.calculateNonstreamingTimeout (file:///home/runner/work/TradingNews/TradingNews/node_modules/@anthropic-ai/sdk/client.mjs:927:23)
+    at Messages.create (file:///home/runner/work/TradingNews/TradingNews/node_modules/@anthropic-ai/sdk/resources/beta/messages/messages.mjs:43:40)
+    at file:///home/runner/work/TradingNews/TradingNews/scripts/ai-commentary.ts:233:40
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
