@@ -10,6 +10,7 @@ import BreakingWatch from "./BreakingWatch";
 import UpcomingAlerts from "./UpcomingAlerts";
 import AiPanel from "./AiPanel";
 import EventRow from "./EventRow";
+import NowLine from "./NowLine";
 import EventDetail from "./EventDetail";
 import DayNote from "./DayNote";
 
@@ -290,6 +291,15 @@ function DaySection({
   selectedId: string | null;
   onSelect: (id: string) => void;
 }) {
+  // Sunucuda ve ilk cizimde null: saat yalnizca tarayicida bilinir,
+  // aksi halde kurulum anindaki saat HTML'e gomulur.
+  const [nowMs, setNowMs] = useState<number | null>(null);
+  useEffect(() => {
+    setNowMs(Date.now());
+    const id = setInterval(() => setNowMs(Date.now()), 30_000);
+    return () => clearInterval(id);
+  }, []);
+
   if (day.events.length === 0) return null;
   const high = day.events.filter((e) => e.impact === 3).length;
 
@@ -324,15 +334,38 @@ function DaySection({
           </p>
         ))}
 
+      {/*
+        Bugunun blogunda "simdi" cizgisi, gecmis ve gelecek olaylari
+        ayiran yere girer. Boylece nerede durdugumuz listede gorunur.
+      */}
       <div>
-        {day.events.map((e) => (
-          <EventRow
-            key={e.id}
-            event={e}
-            selected={selectedId === e.id}
-            onSelect={() => onSelect(e.id)}
-          />
-        ))}
+        {day.events.map((e, i) => {
+          const at = e.utc ? new Date(e.utc).getTime() : null;
+          const gecti = at !== null && nowMs !== null && at < nowMs;
+          const oncekiAt = i > 0 && day.events[i - 1].utc
+            ? new Date(day.events[i - 1].utc as string).getTime()
+            : null;
+          const oncekiGecti = oncekiAt !== null && nowMs !== null && oncekiAt < nowMs;
+          const cizgi = isToday && nowMs !== null && !gecti && (i === 0 || oncekiGecti);
+          return (
+            <div key={e.id}>
+              {cizgi && <NowLine />}
+              <EventRow
+                event={e}
+                selected={selectedId === e.id}
+                past={gecti}
+                onSelect={() => onSelect(e.id)}
+              />
+            </div>
+          );
+        })}
+        {/* Gunun butun olaylari gectiyse cizgi en alta duser. */}
+        {isToday &&
+          nowMs !== null &&
+          day.events.length > 0 &&
+          day.events.every((e) => e.utc && new Date(e.utc).getTime() < (nowMs as number)) && (
+            <NowLine />
+          )}
       </div>
     </section>
   );

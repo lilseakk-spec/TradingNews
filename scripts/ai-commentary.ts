@@ -1,7 +1,8 @@
 /**
  * Haftanin yapay zeka yorumunu uretir ve hafta dosyasina isler.
  *
- *   node scripts/ai-commentary.ts                 # en yeni haftayi yorumlar
+ *   node scripts/ai-commentary.ts                 # icinde bulunulan hafta
+ *   node scripts/ai-commentary.ts --next           # on izleme haftasi
  *   node scripts/ai-commentary.ts --id 2026-W46
  *   node scripts/ai-commentary.ts --dry           # istek metnini yazar, cagri yapmaz
  *
@@ -19,6 +20,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { logUsage } from "./log-usage.ts";
 import type { AiCommentary, WeekData } from "../src/lib/types.ts";
 import { CATEGORY_TR } from "../src/lib/labels.ts";
+import { activeWeekRange, addDays, trTodayISO, weekRange } from "../src/lib/weeks.ts";
 import { instrumentName } from "../src/lib/instruments.ts";
 import { shortDate } from "../src/lib/weeks.ts";
 
@@ -30,18 +32,20 @@ const args = process.argv.slice(2);
 const dry = args.includes("--dry");
 const idArg = args[args.indexOf("--id") + 1];
 
-function latestWeekId(): string {
-  const files = fs.existsSync(WEEKS_DIR)
-    ? fs.readdirSync(WEEKS_DIR).filter((f) => f.endsWith(".json"))
-    : [];
-  if (files.length === 0) {
-    console.error("Hafta dosyasi yok. Once 'npm run new-week' calistir.");
-    process.exit(1);
-  }
-  return files.sort().reverse()[0].replace(/\.json$/, "");
-}
-
-const weekId = args.includes("--id") && idArg ? idArg : latestWeekId();
+/**
+ * Hangi hafta yorumlanacak.
+ *
+ * Varsayilan ARTIK "en yeni dosya" degil, icinde bulunulan hafta.
+ * Onceki davranis sessiz bir hataya yol aciyordu: on izleme dosyasi
+ * her zaman daha yeni oldugu icin "bu haftanin yorumu" adimi gelecek
+ * haftayi yorumluyor, icinde bulunulan hafta gunlerce guncellenmeden
+ * kaliyordu. Hafta artik takvimden hesaplanir, dosya adlarindan degil.
+ */
+const weekId = args.includes("--id") && idArg
+  ? idArg
+  : args.includes("--next")
+    ? weekRange(addDays(activeWeekRange(trTodayISO()).start, 7)).id
+    : activeWeekRange(trTodayISO()).id;
 const weekFile = path.join(WEEKS_DIR, `${weekId}.json`);
 if (!fs.existsSync(weekFile)) {
   console.error(`Hafta dosyasi bulunamadi: ${weekId}`);

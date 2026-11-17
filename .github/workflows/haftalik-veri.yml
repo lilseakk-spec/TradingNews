@@ -80,21 +80,19 @@ jobs:
         continue-on-error: true
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
-          steps.hafta.outputs.week_id != '' &&
           (github.event_name == 'workflow_dispatch' ||
            github.event_name == 'push' ||
            github.event.schedule == '0 6 * * 0')
-        run: node scripts/ai-commentary.ts --id ${{ steps.hafta.outputs.week_id }}
+        run: node scripts/ai-commentary.ts
 
       # Ön izlemenin yorumu cuma günü üretilir: hafta sonu analizinde hazır.
       - name: Yorum — gelecek hafta
         continue-on-error: true
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
-          steps.onizleme.outputs.week_id != '' &&
           (github.event_name == 'workflow_dispatch' ||
            github.event.schedule == '0 5 * * 5')
-        run: node scripts/ai-commentary.ts --id ${{ steps.onizleme.outputs.week_id }}
+        run: node scripts/ai-commentary.ts --next
 
       # Yorum adimlari patlasa bile cekilen veri kaydedilir: takvim
       # guncellemesini bir AI hatasi yuzunden kaybetmenin anlami yok.
