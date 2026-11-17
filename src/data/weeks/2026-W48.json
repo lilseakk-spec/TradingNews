@@ -3,12 +3,12 @@
   "label": "22 – 28 Kasım 2026",
   "start": "2026-11-22",
   "end": "2026-11-28",
-  "updatedAt": "2026-11-16T13:20:59.322Z",
+  "updatedAt": "2026-11-17T14:06:21.157Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-16T13:20:59.322Z"
+    "fetchedAt": "2026-11-17T14:06:21.157Z"
   },
   "ai": {
     "headline": "Takvim ön izlemesi",
@@ -21,7 +21,7 @@
     "watchlist": [],
     "risks": [],
     "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-16T13:20:59.322Z"
+    "generatedAt": "2026-11-17T14:06:21.157Z"
   },
   "days": [
     {
@@ -66,6 +66,38 @@
           "also": [
             "Perakende satışlar (çeyreklik)",
             "Perakende satışlar (yıllık)"
+          ]
+        },
+        {
+          "id": "2026-11-23-GBP-s-p-global-services-pmi-flash",
+          "time": "12:30",
+          "date": "2026-11-23",
+          "utc": "2026-11-23T09:30:00.000Z",
+          "title": "S&P Global Services PMI Flash",
+          "region": "İngiltere",
+          "currency": "GBP",
+          "category": "buyume",
+          "impact": 3,
+          "volatility": 48,
+          "forecast": "52.5",
+          "previous": "52.8",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "GBPUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "FTSE100",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "S&P Global Manufacturing PMI Flash"
           ]
         }
       ]
@@ -226,6 +258,8 @@
           "category": "buyume",
           "impact": 3,
           "volatility": 64,
+          "forecast": "0.2%",
+          "previous": "0.2%",
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -664,6 +698,43 @@
               "strength": 2
             }
           ]
+        },
+        {
+          "id": "2026-11-26-EUR-ecb-monetary-policy-meeting-accounts",
+          "time": "15:30",
+          "date": "2026-11-26",
+          "utc": "2026-11-26T12:30:00.000Z",
+          "title": "ECB Monetary Policy Meeting Accounts",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "merkez-banka",
+          "impact": 2,
+          "volatility": 71,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ]
         }
       ]
     },
@@ -777,6 +848,8 @@
           "category": "enflasyon",
           "impact": 2,
           "volatility": 54,
+          "forecast": "0.4%",
+          "previous": "0.4%",
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -862,7 +935,7 @@
           "volatility": 87,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "870,4 mn $ · BTC %21,6 · ETH %20,7"
+            "value": "891,3 mn $ · BTC %21,8 · ETH %20,7"
           },
           "source": {
             "label": "OKX opsiyon verisi",

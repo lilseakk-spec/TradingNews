@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-16T13:20:57.788Z",
+  "updatedAt": "2026-11-17T14:06:33.450Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-16T13:20:57.788Z"
+    "fetchedAt": "2026-11-17T14:06:19.605Z"
   },
   "ai": {
     "headline": "warsh konuşması ve fed tutanakları dolar ile faiz yönünü belirliyor",
@@ -99,7 +99,46 @@
             "Trimmed CPI (yıllık)",
             "Common CPI (yıllık)"
           ],
-          "ai": "Beklenti 0.3%, önceki 0.1%; çekirdek ölçüler BoC fiyatlamasını belirler, güçlü veri CAD'i destekleyip USDCAD'yi aşağı iter, WTI ikincil izlenir."
+          "ai": "Beklenti 0.3%, önceki 0.1%; çekirdek ölçüler BoC fiyatlamasını belirler, güçlü veri CAD'i destekleyip USDCAD'yi aşağı iter, WTI ikincil izlenir.",
+          "results": [
+            {
+              "name": "CPI m/m",
+              "actual": "0.2",
+              "forecast": "0",
+              "previous": "0.1",
+              "surprise": 0.2
+            },
+            {
+              "name": "Core CPI m/m",
+              "actual": "0.4",
+              "forecast": "0.3",
+              "previous": "0",
+              "surprise": 0.1
+            },
+            {
+              "name": "Core CPI y/y",
+              "actual": "2",
+              "forecast": "2.1",
+              "previous": "2.2",
+              "surprise": -0.1
+            },
+            {
+              "name": "Common CPI y/y",
+              "actual": "2.5",
+              "forecast": "2.4",
+              "previous": "2.4",
+              "surprise": 0.1
+            },
+            {
+              "name": "Median CPI y/y",
+              "actual": "2",
+              "forecast": "1.9",
+              "previous": "1.9",
+              "surprise": 0.1
+            }
+          ],
+          "actual": "0.2",
+          "aiResult": "Aylık TÜFE yüzde 0.2 ile yüzde 0 olan beklentinin 0.2 puan, çekirdek aylık TÜFE yüzde 0.4 ile 0.1 puan, Common (2.5) ve Median (2.0) yıllık ölçüler 0.1 puan üstünde geldi; yalnızca yıllık çekirdek TÜFE yüzde 2.0 ile 0.1 puan altında kaldı. Genel tablo yukarı yönlü enflasyon sürprizi olduğundan BoC'nin gevşeme alanını daraltır ve CAD lehine okunur; bu da USD/CAD'de aşağı yönlü mantığı destekler, ancak sapmalar küçük ve yıllık çekirdek verinin düşüşü etkiyi sınırlar."
         },
         {
           "id": "2026-11-16-USD-fed-chairman-warsh-speaks",
@@ -295,7 +334,46 @@
           "also": [
             "Perakende satışlar (aylık)"
           ],
-          "ai": "Çekirdek beklenti 0.4%, önceki 0.9%; güçlü tüketim US10Y ve DXY'yi yukarı iter, XAUUSD ve BTCUSD üzerinde baskı yaratır."
+          "ai": "Çekirdek beklenti 0.4%, önceki 0.9%; güçlü tüketim US10Y ve DXY'yi yukarı iter, XAUUSD ve BTCUSD üzerinde baskı yaratır.",
+          "results": [
+            {
+              "name": "Core Retail Sales m/m",
+              "actual": "0.6",
+              "forecast": "0.7",
+              "previous": "0.9",
+              "surprise": -0.1
+            },
+            {
+              "name": "Retail Sales excl. Autos and Gas m/m",
+              "actual": "0.5",
+              "forecast": "0.1",
+              "previous": "0.2",
+              "surprise": 0.4
+            },
+            {
+              "name": "Retail Control m/m",
+              "actual": "0.6",
+              "forecast": "0.3",
+              "previous": "0.1",
+              "surprise": 0.3
+            },
+            {
+              "name": "Retail Sales y/y",
+              "actual": "6.8",
+              "forecast": "6.6",
+              "previous": "6.3",
+              "surprise": 0.2
+            },
+            {
+              "name": "Retail Sales m/m",
+              "actual": "0.2",
+              "forecast": "0.3",
+              "previous": "0.8",
+              "surprise": -0.1
+            }
+          ],
+          "actual": "0.6",
+          "aiResult": "Manşet perakende satışlar yüzde 0.2 ile beklentinin 0.1 puan, çekirdek satışlar yüzde 0.6 ile 0.1 puan altında kaldı; buna karşılık GSYH hesabına giren kontrol grubu yüzde 0.6 ile 0.3 puan, otomobil ve benzin hariç satışlar yüzde 0.5 ile 0.4 puan üstünde geldi. Asıl sinyal veren kalemler güçlü tüketime işaret ettiğinden Fed'in faiz indirimi beklentilerini zayıflatan ve dolar lehine (EUR/USD aşağı, USD/JPY yukarı) okunan bir veri bu; aynı mantıkla altın üzerinde aşağı yönlü baskı oluşturur, manşetteki hafif zayıflık ise etkiyi kısmen dengeler."
         }
       ]
     },
@@ -615,10 +693,10 @@
           "region": "Kripto",
           "category": "kripto",
           "impact": 2,
-          "volatility": 61,
+          "volatility": 62,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "575,9 mn $ · BTC %15,2 · ETH %10,3"
+            "value": "630,7 mn $ · BTC %16,3 · ETH %11,5"
           },
           "source": {
             "label": "OKX opsiyon verisi",
