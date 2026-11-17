@@ -16,6 +16,34 @@
 
 import fs from "node:fs";
 import path from "node:path";
+
+/**
+ * Hata izi.
+ *
+ * Actions kayitlarina erisimimiz yok ve adim continue-on-error oldugu
+ * icin bir hata disaridan "basarili" gorunuyor. Sebep dosyaya yazilir,
+ * commit adimi onu da alir.
+ */
+const ERROR_FILE = path.join(process.cwd(), "src", "data", "ai-last-error.txt");
+function iz(mesaj: string): void {
+  try {
+    fs.mkdirSync(path.dirname(ERROR_FILE), { recursive: true });
+    fs.writeFileSync(ERROR_FILE, `${new Date().toISOString()}  ai-commentary
+${mesaj}
+`, "utf8");
+  } catch {
+    // Yazilamadiysa yapacak bir sey yok.
+  }
+}
+process.on("uncaughtException", (err) => {
+  iz(`uncaught: ${(err as Error).message}
+${(err as Error).stack ?? ""}`.slice(0, 1500));
+  process.exit(1);
+});
+process.on("unhandledRejection", (err) => {
+  iz(`unhandled: ${String(err)}`.slice(0, 1500));
+  process.exit(1);
+});
 import Anthropic from "@anthropic-ai/sdk";
 import { logUsage } from "./log-usage.ts";
 import type { AiCommentary, WeekData } from "../src/lib/types.ts";
@@ -170,7 +198,7 @@ dayFocus anahtarlari sunlardan secilecek: ${week.days.filter((d) => d.events.len
 eventBriefs YALNIZCA asagida listelenen id'ler icin giris icersin. Listede
 olmayan olaylar icin giris yazma. Her giris bir NESNE olsun (duz metin degil):
 what, why, above, below, watch alanlariyla. Kullanilacak id'ler:
-${refs.map((r) => r.id).join("\n")}`;
+${briefIds.map((x) => x).join("\n")}`;
 
 if (dry) {
   console.log("=== SYSTEM ===\n" + SYSTEM + "\n\n=== USER ===\n" + USER);
@@ -222,10 +250,8 @@ try {
 }
 
 if (message.stop_reason === "max_tokens") {
-  console.error(
-    "Yanit token sinirina takildi; JSON yarim kaldi. max_tokens artirilmali ya da" +
-      " brifing uretilecek olay sayisi azaltilmali.",
-  );
+  iz("stop_reason=max_tokens; JSON yarim kaldi.");
+  console.error("Yanit token sinirina takildi; JSON yarim kaldi.");
   process.exit(1);
 }
 
