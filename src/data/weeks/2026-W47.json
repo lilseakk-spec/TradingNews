@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-17T20:07:56.825Z",
+  "updatedAt": "2026-11-17T20:15:29.183Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-17T20:07:54.123Z"
+    "fetchedAt": "2026-11-17T20:15:29.183Z"
   },
   "ai": {
     "headline": "warsh konuşması ve fed tutanakları dolar ile faiz yönünü belirliyor",
@@ -138,8 +138,7 @@
               "previous": "-0.9",
               "surprise": 2.7
             }
-          ],
-          "actual": "-0.6"
+          ]
         },
         {
           "id": "2026-11-16-CNY-nbs-press-conference",
@@ -204,8 +203,7 @@
               "actual": "1",
               "previous": "1.1"
             }
-          ],
-          "actual": "-8.1"
+          ]
         },
         {
           "id": "2026-11-16-CNY-unemployment-rate",
@@ -272,8 +270,7 @@
               "actual": "1",
               "previous": "1.1"
             }
-          ],
-          "actual": "-8.1"
+          ]
         },
         {
           "id": "2026-11-16-CNY-retail-sales-y-y",
@@ -340,8 +337,7 @@
               "actual": "5.3",
               "previous": "5.3"
             }
-          ],
-          "actual": "0.4"
+          ]
         },
         {
           "id": "2026-11-16-CAD-cpi-m-m",
@@ -614,8 +610,7 @@
               "previous": "3.8",
               "surprise": -0.1
             }
-          ],
-          "actual": "156"
+          ]
         },
         {
           "id": "2026-11-17-USD-adp-weekly-employment-change",
@@ -1215,7 +1210,7 @@
           "volatility": 61,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "628,2 mn $ · BTC %16 · ETH %10,9"
+            "value": "628,5 mn $ · BTC %16 · ETH %10,9"
           },
           "source": {
             "label": "OKX opsiyon verisi",
