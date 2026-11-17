@@ -3,55 +3,62 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-17T20:48:09.922Z",
+  "updatedAt": "2026-11-17T21:04:08.635Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-17T20:47:10.496Z"
+    "fetchedAt": "2026-11-17T20:59:02.199Z"
   },
   "ai": {
-    "headline": "warsh konuşması ve fed tutanakları dolar ile faiz yönünü belirliyor",
-    "thesis": "Haftanın merkezinde Pazartesi 20:00'deki Warsh konuşması var; Salı perakende satışları ve Çarşamba gecesi Fed tutanakları bu mesajı ya teyit edecek ya da bozacak. Şahin bir ton önce US10Y'yi ve DXY'yi yükseltir, ardından EURUSD ve XAUUSD'yi aşağı çeker. Yükselen getiri iskonto oranı ve dolar likiditesi kanalıyla US100 ile BTCUSD'yi baskılar. Kripto tarafında Cuma 11:00'deki BTC ve ETH opsiyon vadesi, haftanın makro yönü belirlendikten sonra pozisyona dayalı ek bir hareket katmanı ekliyor.",
+    "headline": "warsh ve fomc tutanakları arasında abd perakende sınavı",
+    "thesis": "Haftanın merkezinde Fed iletişimi var. Pazartesi 20:00'de Başkan Warsh konuşuyor, çarşamba 22:00'de FOMC tutanakları yayımlanıyor. Aradaki salı 16:30 çekirdek perakende satışlar (beklenti %0.4, önceki %0.9), tüketimin Fed'in faiz duruşunu taşıyıp taşımadığını sınayacak. İletim US10Y üzerinden DXY'ye, oradan USDJPY, EURUSD ve XAUUSD'ye geçer. Reel faiz yükselirse US100 iskonto oranı, BTCUSD ise likidite beklentisi kanalıyla baskılanır. Warsh ile tutanaklar aynı yönü gösterirse dolar trendi hafta boyu taşınır. Ayrışırlarsa DXY sıkışır ve kriptoda yön cuma 11:00'deki BTC/ETH opsiyon vadesinin pozisyon akışına kalır.",
     "regime": {
-      "label": "ABD faiz beklentisinin yön verdiği, kripto ve endekslerin dolar fonlama maliyetine duyarlı beklediği bir rejim",
+      "label": "Fed iletişimi ve ABD tüketim verisi yönü netleştirene kadar faiz odaklı, iki yönlü bekleme rejimi",
       "tone": "karisik"
     },
     "scenarios": [
       {
-        "name": "Güvercin Fed",
-        "trigger": "Warsh gevşemeye açık konuşur ve çekirdek perakende satışlar 0.4% beklentisinin altında kalırsa",
-        "reaction": "US10Y ve DXY geriler; EURUSD, XAUUSD, US100 ve BTCUSD yukarı yönlü tepki verir.",
+        "name": "Güvercin Fed hattı",
+        "trigger": "Warsh indirim alanını açık tutar, çekirdek perakende %0.4'ün altında kalır ve tutanaklar ek gevşemeye açık bir komite gösterirse.",
+        "reaction": "US10Y ve DXY geriler; USDJPY aşağı, EURUSD yukarı, XAUUSD düşen reel faizle, US100 ve BTCUSD gevşeme beklentisiyle yükselir.",
         "bias": "yukari"
       },
       {
-        "name": "Şahin teyit",
-        "trigger": "Warsh şahin konuşur, çekirdek perakende 0.4% üzerinde gelir ve tutanaklar sıkı duruşu teyit ederse",
-        "reaction": "US10Y ve DXY yükselir; EURUSD, XAUUSD, US100 ve BTCUSD üzerinde baskı oluşur, USDJPY yukarı yönlü hareket eder.",
+        "name": "Şahin Fed teyidi",
+        "trigger": "Warsh indirim beklentisini geri iter, çekirdek perakende %0.4'ü aşar ve tutanaklar indirime isteksiz bir çoğunluk gösterirse.",
+        "reaction": "US10Y ve DXY yükselir; USDJPY yukarı, EURUSD aşağı, XAUUSD reel faizle, US100 iskonto oranıyla, BTCUSD likidite daralmasıyla baskılanır.",
         "bias": "asagi"
       },
       {
-        "name": "Dengeli mesaj",
-        "trigger": "Warsh yön vermeyen dengeli bir mesaj verir ve perakende satışlar beklentiye yakın gelirse",
-        "reaction": "DXY dar bantta kalır; BTCUSD ve ETHUSD Cuma opsiyon vadesine kadar pozisyon odaklı sıkışık işlem görür.",
+        "name": "Ayrışan Fed sinyali",
+        "trigger": "Warsh ile tutanaklar ters ton taşır ve perakende satışlar beklentiye yakın gelirse.",
+        "reaction": "DXY yatay kalır; yön USDJPY'de cuma Japonya TÜFE'sine, GBPUSD'de çarşamba İngiltere TÜFE'sine, BTCUSD'de cuma opsiyon vadesinin pozisyon akışına kayar.",
         "bias": "notr"
       }
     ],
     "watchlist": [
       "DXY",
       "US10Y",
-      "BTCUSD",
       "US100",
-      "XAUUSD",
-      "EURUSD"
+      "BTCUSD",
+      "USDJPY",
+      "XAUUSD"
     ],
     "risks": [
-      "Warsh faiz patikası yerine kurumsal konulara odaklanırsa Pazartesi yeni fiyatlama oluşmaz ve tez Çarşamba tutanaklarına kayar.",
-      "Tutanakların tonu Warsh mesajıyla çelişirse Pazartesi oluşan US10Y ve DXY hareketi Çarşamba gecesi tersine dönebilir.",
-      "Opsiyon vadesi öncesi hedge çözülmesi BTCUSD ve ETHUSD'de makro yönden bağımsız sert hareket üretebilir."
+      "Warsh ile FOMC tutanakları ters sinyal verirse faiz kanalı bulanıklaşır, DXY'de yön oluşmaz ve US100 ile BTCUSD makro yerine pozisyon akışıyla hareket eder.",
+      "Japonya'da büyüme ve çekirdek TÜFE birlikte güçlü gelirse yen Fed'den bağımsız güçlenir, USDJPY şahin Fed'e rağmen düşer ve yen fonlamalı pozisyonların çözülmesi US100 ile BTCUSD'yi baskılar.",
+      "Pazartesi Çin perakende verisi ve NBS tonu belirgin zayıf çıkarsa Warsh öncesindeki Asya seansında risk iştahı kırılır ve AUDUSD ile BRENT'te başlayan satış endekslere taşınır."
     ],
     "generatedBy": "claude-opus-5-5",
-    "generatedAt": "2026-11-15T13:16:32.647Z"
+    "generatedAt": "2026-11-17T21:04:08.635Z",
+    "debug": {
+      "keys": "headline,thesis,regime,scenarios,watchlist,risks,dayFocus,eventBriefs",
+      "briefEntries": 24,
+      "firstBriefType": "object",
+      "sample": "{\"what\":\"Japonya ekonomisinin bir önceki çeyreğe göre ne kadar büyüdüğünün ilk tahmini; gSYH (gayrisafi yurtiçi hasıla), ülkede üretilen tüm mal ve hizmetlerin toplam değeridir.\",\"why\":\"Beklenti %0.1, önceki %0.3'e göre yavaşlama fiyatlıyor. Veri, BoJ (Japonya Merkez Bankası) faiz kararının büyüme a",
+      "stopReason": "end_turn"
+    }
   },
   "days": [
     {
@@ -64,7 +71,7 @@
       "key": "pazartesi",
       "label": "PAZARTESİ",
       "date": "2026-11-16",
-      "focus": "Günü akşam 20:00'deki Warsh konuşması belirliyor; 16:30'daki Kanada TÜFE'si öncesinde yalnızca CAD tarafını hareketlendirir. Konuşma sonrası US10Y tepkisi ve BTCUSD'nin ABD seansı boyunca bu tepkiyi takip edip etmediği izlenmeli.",
+      "focus": "Gün Asya'da Japonya büyümesi ve Çin verileriyle açılıp akşam Warsh ile kapanıyor; arada 16:30'da Kanada TÜFE var. USDJPY'de sabahki GSYH tepkisinin akşam Warsh'ın faiz mesajıyla teyit mi edildiği yoksa silindi mi izlenecek; USDCAD'de manşetten çok trimmed ve median çekirdek ölçüler belirleyici.",
       "events": [
         {
           "id": "2026-11-16-JPY-prelim-gdp-q-q",
@@ -144,6 +151,13 @@
             "detail": "Manşet q/q beklentiyle aynı (%0), yıllık -%0,1 ile beklenen -%0,3'ün biraz üstünde geldi; deflatör %2,4 ile beklentiyi 0,1 puan aştı. Asıl ayrışma alt kalemlerde: özel sermaye yatırımı -%1,1 beklentiye karşı +%1,6 ile güçlü, net ihracatın katkısı -0,6 puan (beklenti -0,1) ile büyümeyi aşağı çekti.",
             "meaning": "Düz manşetin arkasında iç talep ve yatırım dayanıklı, zayıflık dış talepten geliyor; bu tablo BoJ'un normalleşme gerekçesini zayıflatmaz. Mantıksal yön yen lehine ama sınırlı, çünkü manşette sürpriz yok.",
             "next": "Sermaye yatırımı kalemi, Maliye Bakanlığı'nın kurumsal anketiyle Aralık başındaki revize GSYH'de sık sık sert değişir; bu yüzden %1,6'lık okuma revizyon riski taşıyor. Kasım Tokyo ve ulusal TÜFE ile BoJ'un Aralık toplantısı öncesindeki yetkili açıklamaları, bu okumanın faize yansıyıp yansımayacağını gösterecek."
+          },
+          "brief": {
+            "what": "Japonya ekonomisinin bir önceki çeyreğe göre ne kadar büyüdüğünün ilk tahmini; gSYH (gayrisafi yurtiçi hasıla), ülkede üretilen tüm mal ve hizmetlerin toplam değeridir.",
+            "why": "Beklenti %0.1, önceki %0.3'e göre yavaşlama fiyatlıyor. Veri, BoJ (Japonya Merkez Bankası) faiz kararının büyüme ayağı için haftanın ilk sert göstergesi ve cuma gelecek çekirdek TÜFE ile birlikte okunacak.",
+            "above": "Büyüme %0.1'in üzerinde gelirse BoJ'un faiz artırma alanı genişlemiş sayılır, Japon faizleri yükselir ve yen güçlenir. USDJPY ve EURJPY aşağı yönlenir. NIKKEI225'te güçlü büyüme ile güçlü yenin ihracatçı kârlarına baskısı çekişir.",
+            "below": "Büyüme %0.1'in altında ya da daralmada gelirse BoJ'un faiz artırımını erteleme ihtimali artar ve faiz farkı dolar lehine açık kalır. Zayıflayan yenle USDJPY ve EURJPY yukarı yönlenir. Zayıf yen ihracatçıları desteklediği için NIKKEI225 kur kanalıyla tutunabilir.",
+            "watch": "Özel tüketim kalemi ve aynı anda gelen gSYH fiyat endeksi; manşet zayıf ama fiyat endeksi güçlüyse BoJ okuması enflasyon tarafına kayar ve yen tepkisi söner."
           }
         },
         {
@@ -215,6 +229,13 @@
             "detail": "Sanayi üretimi beklentiye denk (%4,8, öncesi %5,5). Buna karşın perakende satışlar %1,8 beklentinin 1,4 puan, sabit sermaye yatırımı -%6,5 beklentinin 1,6 puan altında kaldı. Üretim tutarken iç talep ve yatırım çöküyor; bu arz-talep makası deflasyonist baskıya işaret eder.",
             "meaning": "Zayıf Çin talebi emtia ve hammadde ihracatçısı Avustralya üzerinden AUD/USD'ye, talep beklentisi kanalıyla da Brent'e aşağı yönlü baskı mantığı taşır. Öte yandan veri ne kadar kötüleşirse PBoC gevşemesi ve mali teşvik beklentisi o kadar artar; bu da etkiyi kısmen dengeleyebilir.",
             "next": "20 Kasım LPR kararı ve Ay sonu resmi PMI'lar ilk sınav olacak. Aralık'taki Merkezi Ekonomik Çalışma Konferansı'ndan gelecek teşvik sinyali, bu zayıflığın politika yanıtıyla karşılanıp karşılanmayacağını belirleyecek."
+          },
+          "brief": {
+            "what": "Çin Ulusal İstatistik Bürosu'nun (NBS) aylık verileri açıkladığı basın toplantısı; sözcü ekonominin gidişatını ve politika desteği ihtiyacını yorumlar.",
+            "why": "Aynı saatte açıklanan perakende satış (beklenti %0.8, önceki %1.1) ve işsizlik verisinin resmi yorumunu sunar. Yavaşlayan iç talebe karşı yetkililerin tonu, ek teşvik beklentisini fiyatlar.",
+            "above": "Sözcü iç talebin toparlandığını ya da ek destek adımlarının geleceğini vurgularsa Çin talebi beklentisi güçlenir. Emtia ihracatçısı Avustralya'nın parasıyla AUDUSD yukarı, petrol talebi kanalıyla BRENT yukarı yönlenir. Asya risk iştahı üzerinden US500 vadelileri desteklenir.",
+            "below": "Sözcü zayıflığı kabul edip teşvik sinyali vermezse Çin iç talebine dair karamsarlık derinleşir. AUDUSD emtia talebi kanalıyla, BRENT düşen talep beklentisiyle aşağı yönlenir. US500 vadelileri Asya seansında risk iştahı kaybıyla baskılanır.",
+            "watch": "Tüketimi destekleme ifadelerinin somut adım içerip içermediği; genel ifadeler piyasada teşvik olarak fiyatlanmaz."
           }
         },
         {
@@ -288,6 +309,13 @@
             "detail": "İşsizlik oranı rakamı elimizde olmadığından değerlendirme yapamıyoruz. Eşzamanlı verilerde perakende %0,4 (beklenti %1,8) ve sabit yatırım -%8,1 (beklenti -%6,5) zayıf, sanayi üretimi ise %4,8 ile beklentiye denk.",
             "meaning": "İşsizlik tarafına dair bir çıkarım yapılamaz. Genel tablo iç talep zayıflığının sürdüğünü gösteriyor; AUD ve emtia açısından mantıksal yön aşağı yönlü.",
             "next": "İşsizlik oranının, özellikle genç işsizliğin ayrıca yayımlanan rakamı teyit edilmeli. Zayıf tüketimin istihdam kaynaklı olup olmadığı ancak bu veriyle anlaşılır."
+          },
+          "brief": {
+            "what": "Çin'in kentsel alanlarında iş arayıp bulamayan işgücünün oranı (anket bazlı kentsel işsizlik).",
+            "why": "Beklenti ve önceki okuma %5.2'de sabit. Perakende satışlarda yavaşlama beklenirken veri, istihdamın tüketimi desteklemeye yetip yetmediğini gösterir.",
+            "above": "İşsizlik %5.2'nin üzerinde gelirse hane gelir beklentisi ve tüketim görünümü zayıflar. AUDUSD Çin talebi kanalıyla, BRENT talep endişesiyle aşağı yönlenir. US500 vadelileri Asya seansında baskılanır; teşvik beklentisi düşüşü sınırlayabilir.",
+            "below": "İşsizlik %5.2'nin altında gelirse iç talebin istihdam zemini güçlü okunur. AUDUSD emtia talebi beklentisiyle yukarı yönlenir, BRENT talep kanalıyla destek bulur. US500 vadelileri Asya risk iştahıyla olumlu açılır.",
+            "watch": "Perakende satışlarla aynı yönü gösterip göstermediği; işsizlik sabitken perakende zayıfsa sorun gelir kaybı değil, harcama isteksizliği olarak okunur."
           }
         },
         {
@@ -361,6 +389,13 @@
             "detail": "Okuma bir önceki %1,1'den de düştü ve beklentiden 1,4 puan saptı. Yılbaşından bu yana büyüme %1,1'den %1,0'a geriledi.",
             "meaning": "Hane tüketimi neredeyse durmuş durumda; bu, Çin'in iç talep kaynaklı toparlanma anlatısını zayıflatıyor ve deflasyon riskini artırıyor. AUD/USD için mantıksal yön aşağı. Tüketime yönelik doğrudan teşvik beklentisi ise güçleniyor.",
             "next": "Aralık başında gelecek Kasım TÜFE ve ÜFE, talep zayıflığının fiyatlara yansıyıp yansımadığını gösterecek. Hükümetin tüketim desteğine dair yeni adım açıklayıp açıklamadığı, bu verinin piyasadaki ağırlığını belirleyecek."
+          },
+          "brief": {
+            "what": "Çin'de perakende mal satışlarının bir yıl önceki aynı aya göre değişimi; hane tüketiminin ana göstergesi.",
+            "why": "Beklenti %0.8, önceki %1.1'den daha fazla yavaşlama öngörüyor. Tüketim artışı sıfıra yaklaşırken bu veri, NBS basın toplantısındaki teşvik tonunun zeminini belirler.",
+            "above": "Satışlar %0.8'in üzerinde gelirse Çin iç talebinin dip yaptığı okunur. Emtia talebine bağlı AUDUSD ve yakıt talebi beklentisiyle BRENT yukarı yönlenir. US500 vadelileri Asya risk iştahıyla destek bulur.",
+            "below": "Satışlar %0.8'in altında gelirse tüketimdeki zayıflamanın derinleştiği okunur. AUDUSD Çin talebi kanalıyla, BRENT talep endişesiyle aşağı yönlenir ve US500 vadelileri baskılanır. Teşvik beklentisi kayıpları kısmen telafi edebilir.",
+            "watch": "NBS sözcüsünün zayıf rakama teşvik vurgusuyla karşılık verip vermediği; kötü veri ile güçlü teşvik sinyali birlikte gelirse AUDUSD'deki ilk düşüş tersine dönebilir."
           }
         },
         {
@@ -435,12 +470,19 @@
               "surprise": 0.1
             }
           ],
-          "aiResult": "Aylık TÜFE yüzde 0.2 ile yüzde 0 olan beklentinin 0.2 puan, çekirdek aylık TÜFE yüzde 0.4 ile 0.1 puan, Common (2.5) ve Median (2.0) yıllık ölçüler 0.1 puan üstünde geldi; yalnızca yıllık çekirdek TÜFE yüzde 2.0 ile 0.1 puan altında kaldı. Genel tablo yukarı yönlü enflasyon sürprizi olduğundan BoC'nin gevşeme alanını daraltır ve CAD lehine okunur; bu da USD/CAD'de aşağı yönlü mantığı destekler, ancak sapmalar küçük ve yıllık çekirdek verinin düşüşü etkiyi sınırlar.",
           "resultBrief": {
             "headline": "Kanada TÜFE aylık %0,2 ile %0 beklentiyi aştı; BoC'nin izlediği çekirdek ölçüler hafif yukarı sürpriz yaptı.",
             "detail": "Manşet aylık %0,2 ve çekirdek aylık %0,4 (beklenti %0,3) beklentinin üstünde geldi. Medyan %2,0 (beklenti %1,9) ve common %2,5 (beklenti %2,4) 0,1 puan yukarıda, ancak çekirdek yıllık %2,0 ile beklentinin 0,1 puan altında kaldı. Trimmed CPI ve manşet yıllık TÜFE veri setimizde yok.",
             "meaning": "Sürprizler 0,1-0,2 puanlık küçük sapmalar; yine de BoC'nin tercih ettiği medyan ve common yukarı yönlü ayrıştı. Bu durum yakın vadeli faiz indirimi fiyatlamasını zayıflatır ve faiz farkı üzerinden USD/CAD için mantıksal yön aşağı. Çekirdek yıllıktaki düşüş bu sinyali sınırlıyor.",
             "next": "Eksik trimmed okuması, medyandaki yükselişi teyit edip etmeyeceği açısından kritik. Ay sonundaki 3. çeyrek GSYH ve Aralık başındaki istihdam verisi, BoC'nin Aralık kararı öncesindeki son girdiler."
+          },
+          "aiResult": "Aylık TÜFE yüzde 0.2 ile yüzde 0 olan beklentinin 0.2 puan, çekirdek aylık TÜFE yüzde 0.4 ile 0.1 puan, Common (2.5) ve Median (2.0) yıllık ölçüler 0.1 puan üstünde geldi; yalnızca yıllık çekirdek TÜFE yüzde 2.0 ile 0.1 puan altında kaldı. Genel tablo yukarı yönlü enflasyon sürprizi olduğundan BoC'nin gevşeme alanını daraltır ve CAD lehine okunur; bu da USD/CAD'de aşağı yönlü mantığı destekler, ancak sapmalar küçük ve yıllık çekirdek verinin düşüşü etkiyi sınırlar.",
+          "brief": {
+            "what": "Kanada'da tüketici fiyatlarının bir önceki aya göre değişimi (TÜFE, tüketici fiyat endeksi). Aynı anda Kanada Merkez Bankası'nın (BoC) takip ettiği median, trimmed ve common çekirdek ölçüler de yayımlanır.",
+            "why": "Beklenti %0.3, önceki %0.1'e göre hızlanma öngörüyor. BoC faiz kararında manşetten çok trimmed ve median yıllık ölçülere baktığı için asıl fiyatlama bu alt göstergelerden gelir.",
+            "above": "TÜFE ve çekirdek ölçüler beklentinin üzerinde gelirse BoC'nin faiz indirme alanı daralır, Kanada faizleri yükselir ve CAD güçlenir. USDCAD aşağı yönlenir; WTI'a geri besleme sınırlı kalır.",
+            "below": "TÜFE %0.3'ün altında gelir ve trimmed ile median ölçüler gerilerse BoC'nin gevşeme beklentisi artar, Kanada faizleri düşer ve CAD zayıflar. USDCAD yukarı yönlenir; akşam Warsh'tan şahin mesaj gelirse dolar ayağıyla yükseliş katlanır.",
+            "watch": "Trimmed ve median yıllık çekirdek ölçülerin yönü; manşet aylık %0.3 gelse bile çekirdekler geriliyorsa USDCAD'deki ilk tepki kalıcı olmaz."
           }
         },
         {
@@ -499,7 +541,14 @@
               "strength": 2
             }
           ],
-          "ai": "Haftanın en yüksek oynaklıklı olayı; faiz patikasına dair mesaj US10Y ve DXY üzerinden BTCUSD, US100 ve XAUUSD'ye geçer."
+          "ai": "Haftanın en yüksek oynaklıklı olayı; faiz patikasına dair mesaj US10Y ve DXY üzerinden BTCUSD, US100 ve XAUUSD'ye geçer.",
+          "brief": {
+            "what": "Fed (ABD Merkez Bankası) Başkanı Kevin Warsh'ın kamuya açık konuşması; faiz patikası ve politika önceliklerine dair doğrudan sinyal kaynağı.",
+            "why": "Salı perakende satışlar ve çarşamba FOMC tutanaklarından önce gelen haftanın ilk Fed sinyali. Başkanın sözü ileriye dönük olduğu için dolar ve faiz fiyatlamasının referans noktasını belirler.",
+            "above": "Warsh enflasyon riskini öne çıkarıp indirim beklentilerini geri iterse US10Y yükselir; faiz farkıyla DXY ve USDJPY yukarı, EURUSD aşağı yönlenir. Artan reel faiz faiz getirmeyen XAUUSD'yi aşağı çeker. US100 yükselen iskonto oranıyla, BTCUSD likidite daralması beklentisiyle baskılanır.",
+            "below": "Warsh indirim alanını açık tutar ya da enflasyonun kontrol altında olduğunu vurgularsa US10Y geriler; DXY ve USDJPY aşağı, EURUSD yukarı yönlenir. Düşen reel faiz XAUUSD'yi destekler. Gevşeyen iskonto oranı US100'ü, likidite beklentisi BTCUSD'yi yukarı taşır.",
+            "watch": "Faiz patikası ile bilanço politikasını ayrı ele alıp almadığı; indirim mesajına bilanço küçültme vurgusu eşlik ederse US10Y'nin uzun ucu düşmeyebilir ve risk varlıklarına geçen rahatlama sınırlı kalır."
+          }
         }
       ]
     },
@@ -507,7 +556,7 @@
       "key": "sali",
       "label": "SALI",
       "date": "2026-11-17",
-      "focus": "Gün 16:30'daki ABD çekirdek perakende satışlarıyla şekilleniyor; Asya seansında Bullock ve Yeni Zelanda enflasyon beklentisi AUDUSD ile NZDUSD'yi önceden hareketlendirir. Önceki 0.9%'dan beklenen 0.4%'e yavaşlamanın gerçekleşip gerçekleşmediği DXY ve XAUUSD tepkisinden okunmalı.",
+      "focus": "Gün ABD tüketimine kilitli: 16:15 ADP haftalık istihdam ve 16:30 çekirdek perakende satışlar, Warsh'ın bir gün önceki mesajını veriyle sınayacak. Gece 01:50 Bullock AUDUSD'ye, 10:00 İngiltere işsizliği GBPUSD'ye erken yön verir; asıl izlenecek US10Y'nin 16:30 tepkisini kapanışa kadar koruyup korumadığı.",
       "events": [
         {
           "id": "2026-11-17-AUD-rba-gov-bullock-speaks",
@@ -545,7 +594,14 @@
               "strength": 1
             }
           ],
-          "ai": "Asya seansında RBA'nın faiz tonunu belirler; şahin ton AUDUSD'yi yukarı iter, risk iştahı kanalıyla US100 ve BTCUSD'ye yansıyabilir."
+          "ai": "Asya seansında RBA'nın faiz tonunu belirler; şahin ton AUDUSD'yi yukarı iter, risk iştahı kanalıyla US100 ve BTCUSD'ye yansıyabilir.",
+          "brief": {
+            "what": "Avustralya Merkez Bankası (RBA) Başkanı Michele Bullock'un konuşması; faiz görünümüne dair yönlendirme.",
+            "why": "Perşembe gelecek işsizlik verisinden önce RBA'nın istihdam ve enflasyon dengesini nasıl gördüğünü gösterir. Pazartesi Çin verisinden sonra AUD'nin iç politika ayağını belirler.",
+            "above": "Bullock enflasyon riskini vurgulayıp indirim beklentisini geri iterse Avustralya faizleri yükselir. AUDUSD yukarı yönlenir, NZDUSD bölgesel korelasyonla destek bulur. Asya seansında yükselen faiz US100 vadelileri ve BTCUSD üzerinde hafif baskı yaratabilir.",
+            "below": "Bullock işgücü piyasasındaki gevşemeyi ya da büyüme riskini öne çıkarırsa indirim fiyatlaması artar. AUDUSD aşağı yönlenir, NZDUSD korelasyonla zayıflar. Asya seansında gevşeme beklentisi US100 vadelileri ve BTCUSD'ye likidite kaynaklı sınırlı destek sağlar.",
+            "watch": "İşgücü piyasasına dair ifadeleri; perşembe 03:30 verisi öncesi verdiği yönlendirme, o verideki AUDUSD tepkisinin boyutunu belirler."
+          }
         },
         {
           "id": "2026-11-17-NZD-inflation-expectations-q-q",
@@ -574,7 +630,14 @@
               "strength": 1
             }
           ],
-          "ai": "Önceki 2.34%; beklentilerdeki yükseliş RBNZ'nin gevşeme alanını daraltır ve NZDUSD'yi destekler, AUDUSD sınırlı etkilenir."
+          "ai": "Önceki 2.34%; beklentilerdeki yükseliş RBNZ'nin gevşeme alanını daraltır ve NZDUSD'yi destekler, AUDUSD sınırlı etkilenir.",
+          "brief": {
+            "what": "Yeni Zelanda Merkez Bankası'nın (RBNZ) iş dünyası ve uzmanlarla yaptığı anketteki iki yıl sonrası enflasyon beklentisi; çeyrekte bir yayımlanır.",
+            "why": "Önceki okuma %2.34, beklenti açıklanmamış. Beklentilerin RBNZ'nin %1-3 hedef bandının orta noktası olan %2'ye çıpalanıp çıpalanmadığı, faiz yolunu doğrudan etkiler.",
+            "above": "Beklenti %2.34'ün üzerine çıkarsa enflasyonun kalıcılaşma riski RBNZ'nin gevşeme alanını daraltır ve Yeni Zelanda faizleri yükselir. NZDUSD yukarı yönlenir, AUDUSD bölgesel korelasyonla sınırlı destek bulur.",
+            "below": "Beklenti %2.34'ün altına inerse hedefe yakınsama RBNZ'ye indirim alanı açar ve Yeni Zelanda faizleri düşer. NZDUSD aşağı yönlenir, AUDUSD bölgesel korelasyonla sınırlı baskı görür.",
+            "watch": "Bir yıllık ve iki yıllık beklentinin aynı yönde hareket edip etmediği; yalnızca kısa vade yükseliyorsa RBNZ bunu geçici sayabilir."
+          }
         },
         {
           "id": "2026-11-17-GBP-unemployment-rate",
@@ -646,6 +709,13 @@
             "detail": "Anket bazlı LFS istihdamı +156 bin (beklenti +25 bin) ve işsizlik oranı %4,6 (beklenti %4,7) güçlü görünüyor. Buna karşın idari kayıtlar ters yönde: HMRC bordroları -34 bin (beklenti +15 bin), işsizlik başvuruları +33,2 bin (beklenti +25,4 bin). Primler dahil ücretler %3,6 ile beklentinin 0,1 puan altında; primsiz düzenli ücret rakamı elimizde yok.",
             "meaning": "Düşük yanıt oranı nedeniyle güvenilirliği sorgulanan LFS ile idari veriler arasındaki ayrışmada BoE, bordro ve ücretlere daha fazla ağırlık veriyor. Bu açıdan veri seti güvercin yönlü ve GBP/USD için mantıksal yön aşağı; manşet işsizlik düşüşü bu sinyali tek başına tersine çevirmez.",
             "next": "Bu hafta gelecek Ekim TÜFE, yavaşlayan ücretlerin hizmet enflasyonuna yansıyıp yansımadığını gösterecek. HMRC'nin ilk tahmini sonraki ay sık revize edildiğinden -34 binlik okumanın kalıcılığı belirsiz."
+          },
+          "brief": {
+            "what": "İngiltere'de iş arayıp çalışmayan işgücünün oranı; üç aylık ortalama olarak ölçülür.",
+            "why": "Beklenti ve önceki okuma %4.7'de sabit. Ertesi gün gelecek TÜFE ile birlikte BoE'nin (İngiltere Merkez Bankası) işgücü gevşemesi ile enflasyon arasındaki dengesini belirleyecek ilk ayak.",
+            "above": "İşsizlik %4.7'nin üzerinde gelirse işgücü piyasasının gevşediği ve BoE'nin indirim alanının genişlediği okunur. Gilt faizleri düşer ve GBPUSD aşağı yönlenir. Zayıf sterlin, döviz geliri yüksek şirketlerin ağırlıkta olduğu FTSE100'ü destekler.",
+            "below": "İşsizlik %4.7'nin altında gelirse işgücü piyasası sıkı okunur ve BoE'nin indirim alanı daralır. Gilt faizleri yükselir ve GBPUSD yukarı yönlenir. Güçlü sterlin, FTSE100 şirketlerinin döviz gelirlerini kur çevrimiyle baskılar.",
+            "watch": "Çarşamba TÜFE ile kesişimi; işsizlik artarken TÜFE %3.6 beklentisini aşarsa BoE için stagflasyon ikilemi doğar ve GBPUSD tepkisi tek yönlü olmaz."
           }
         },
         {
@@ -704,7 +774,14 @@
               "direction": "asagi",
               "strength": 1
             }
-          ]
+          ],
+          "brief": {
+            "what": "Bordro işlem şirketi ADP'nin ABD özel sektör istihdamındaki değişimi haftalık bazda tahmin ettiği öncü gösterge.",
+            "why": "Önceki okuma 19.8 bin, beklenti açıklanmamış. Çekirdek perakende satışlardan 15 dakika önce gelerek Warsh sonrası istihdam tarafının ilk ipucunu verir.",
+            "above": "İstihdam artışı 19.8 binin üzerinde gelirse işgücü piyasası dirençli ve Fed'in indirim aciliyeti düşük okunur. US10Y, DXY ve USDJPY yukarı, EURUSD aşağı yönlenir. XAUUSD ve XAGUSD artan reel faizle düşer; US500 ve BTCUSD faiz baskısıyla zayıflar.",
+            "below": "İstihdam artışı 19.8 binin altında ya da negatif gelirse işgücü piyasasında soğuma ve indirim beklentisi güçlenir. US10Y, DXY ve USDJPY aşağı, EURUSD yukarı yönlenir. XAUUSD ve XAGUSD düşen reel faizle yükselir; US500 ve BTCUSD gevşeme beklentisiyle destek bulur.",
+            "watch": "15 dakika sonraki perakende satışlarla aynı yönü gösterip göstermediği; ayrışırsa ADP'nin etkisi 16:30'da silinir."
+          }
         },
         {
           "id": "2026-11-17-USD-core-retail-sales-m-m",
@@ -805,12 +882,19 @@
               "surprise": -0.1
             }
           ],
-          "aiResult": "Manşet perakende satışlar yüzde 0.2 ile beklentinin 0.1 puan, çekirdek satışlar yüzde 0.6 ile 0.1 puan altında kaldı; buna karşılık GSYH hesabına giren kontrol grubu yüzde 0.6 ile 0.3 puan, otomobil ve benzin hariç satışlar yüzde 0.5 ile 0.4 puan üstünde geldi. Asıl sinyal veren kalemler güçlü tüketime işaret ettiğinden Fed'in faiz indirimi beklentilerini zayıflatan ve dolar lehine (EUR/USD aşağı, USD/JPY yukarı) okunan bir veri bu; aynı mantıkla altın üzerinde aşağı yönlü baskı oluşturur, manşetteki hafif zayıflık ise etkiyi kısmen dengeler.",
           "resultBrief": {
             "headline": "ABD perakende satışları manşette %0,2 ile hafif zayıf, ancak kontrol grubu %0,6 ile beklentinin iki katı.",
             "detail": "Manşet aylık %0,2 (beklenti %0,3) ve otomobil hariç %0,6 (beklenti %0,7) birer onda bir puan altında kaldı. Otomobil ve benzin hariç %0,5 (beklenti %0,1) ve GSYH hesabına giren kontrol grubu %0,6 (beklenti %0,3) belirgin güçlü geldi. Manşet ile otomobil hariç arasındaki fark, otomobil satışlarının aşağı çektiğine işaret ediyor.",
             "meaning": "Manşetteki ıskalar küçük; asıl sinyal çekirdek tüketimin güçlü olması. Bu, 4. çeyrek tüketim tahminlerini yukarı iter ve Fed'in faiz indirimi beklentisini zayıflatır. Getiri kanalıyla dolar lehine, altın aleyhine mantıksal yön oluşur.",
             "next": "Önceki ayın kontrol grubu okumasının (%0,1) revizyonu ve GDPNow güncellemesi, gücün ne kadar kalıcı olduğunu netleştirecek. Ay sonundaki PCE verisi, güçlü tüketimin fiyat baskısına dönüşüp dönüşmediğini gösterecek."
+          },
+          "aiResult": "Manşet perakende satışlar yüzde 0.2 ile beklentinin 0.1 puan, çekirdek satışlar yüzde 0.6 ile 0.1 puan altında kaldı; buna karşılık GSYH hesabına giren kontrol grubu yüzde 0.6 ile 0.3 puan, otomobil ve benzin hariç satışlar yüzde 0.5 ile 0.4 puan üstünde geldi. Asıl sinyal veren kalemler güçlü tüketime işaret ettiğinden Fed'in faiz indirimi beklentilerini zayıflatan ve dolar lehine (EUR/USD aşağı, USD/JPY yukarı) okunan bir veri bu; aynı mantıkla altın üzerinde aşağı yönlü baskı oluşturur, manşetteki hafif zayıflık ise etkiyi kısmen dengeler.",
+          "brief": {
+            "what": "ABD'de otomobil satışları hariç perakende harcamaların bir önceki aya göre değişimi; aynı anda manşet perakende satışlar da açıklanır.",
+            "why": "Önceki %0.9'luk güçlü okumanın ardından beklenti %0.4'e yavaşlama gösteriyor. Warsh konuşmasının ertesi günü, tüketimin Fed'in faiz duruşunu taşıyıp taşımadığını sınayan haftanın en önemli ABD verisi.",
+            "above": "Çekirdek satışlar %0.4'ün üzerinde gelirse güçlü tüketim, enflasyon riski ve indirim gecikmesi olarak okunur. US10Y, DXY ve USDJPY yukarı, EURUSD aşağı yönlenir; XAUUSD ve XAGUSD artan reel faizle düşer. US100 ve BTCUSD faiz kanalıyla zayıflar, US500'de büyüme ile faiz etkisi çekişir.",
+            "below": "Çekirdek satışlar %0.4'ün altında gelirse tüketimdeki soğuma Fed'e indirim alanı açar. US10Y, DXY ve USDJPY aşağı, EURUSD yukarı yönlenir; XAUUSD ve XAGUSD düşen reel faizle yükselir. US100 ve BTCUSD gevşeme beklentisiyle desteklenir, ancak negatif okuma resesyon kaygısıyla US500'ü aşağı çekebilir.",
+            "watch": "Kontrol grubu (otomobil, akaryakıt, yapı malzemesi ve yeme-içme hariç) ile önceki %0.9'un revizyonu; manşet beklentiyi tutsa bile aşağı revizyon tepkiyi tersine çevirebilir."
           }
         }
       ]
@@ -819,7 +903,7 @@
       "key": "carsamba",
       "label": "ÇARŞAMBA",
       "date": "2026-11-18",
-      "focus": "Gün Londra sabahı İngiltere TÜFE'si ve Bailey ile başlayıp gece 22:00'de Fed tutanaklarıyla kapanıyor. Sabah GBPUSD'nin 3.6% beklentisine tepkisi, gece ise tutanaklar sonrası US10Y ve US100 izlenmeli.",
+      "focus": "Haftanın en yoğun günü: 10:00 İngiltere TÜFE ve 10:30 Bailey GBPUSD'yi, 13:00 nihai Euro Bölgesi enflasyonu ve 17:25 Lagarde EURUSD'yi, 22:00 FOMC tutanakları DXY'yi belirler. Tutanaklar ABD kapanışına iki saat kala geldiği için US100 ve BTCUSD'de asıl tepki gece seansına ve Asya'ya taşınabilir.",
       "events": [
         {
           "id": "2026-11-18-GBP-cpi-y-y",
@@ -852,7 +936,14 @@
           "also": [
             "Çekirdek TÜFE (yıllık)"
           ],
-          "ai": "Beklenti 3.6%, önceki 3.5%; beklenti üstü veri BoE indirim fiyatlamasını geri iter ve GBPUSD'yi destekler, FTSE100 güçlü sterlinden olumsuz etkilenebilir."
+          "ai": "Beklenti 3.6%, önceki 3.5%; beklenti üstü veri BoE indirim fiyatlamasını geri iter ve GBPUSD'yi destekler, FTSE100 güçlü sterlinden olumsuz etkilenebilir.",
+          "brief": {
+            "what": "İngiltere'de tüketici fiyatlarının bir yıl önceye göre değişimi (TÜFE); aynı anda enerji, gıda, alkol ve tütün hariç çekirdek TÜFE de açıklanır.",
+            "why": "Beklenti %3.6, önceki %3.5'e göre hızlanma gösteriyor ve %2 hedefin belirgin üstünde. Yarım saat sonra konuşacak Bailey'nin veriyi nasıl yorumlayacağı BoE fiyatlamasını belirler.",
+            "above": "TÜFE %3.6'nın üzerinde gelirse BoE'nin indirim takvimi ötelenir ve gilt faizleri yükselir. GBPUSD yukarı yönlenir. Güçlü sterlin ve yükselen faiz, FTSE100'ü kur çevrimi ve değerleme kanalıyla baskılar.",
+            "below": "TÜFE %3.6'nın altında gelirse BoE'nin indirim alanı genişler ve gilt faizleri düşer. GBPUSD aşağı yönlenir. Zayıf sterlin, döviz geliri yüksek FTSE100 şirketlerinin raporlanan kârlarını kur çevrimiyle destekler.",
+            "watch": "Hizmet enflasyonu; manşet enerji kaynaklı yükselirken hizmetler geriliyorsa BoE bunu geçici sayabilir ve GBPUSD'deki ilk yükseliş Bailey ile geri alınabilir."
+          }
         },
         {
           "id": "2026-11-18-GBP-boe-gov-bailey-speaks",
@@ -890,7 +981,14 @@
               "strength": 2
             }
           ],
-          "ai": "TÜFE'den 30 dakika sonra geliyor; Bailey'nin veriyi nasıl yorumladığı GBPUSD'deki ilk tepkinin kalıcılığını belirler."
+          "ai": "TÜFE'den 30 dakika sonra geliyor; Bailey'nin veriyi nasıl yorumladığı GBPUSD'deki ilk tepkinin kalıcılığını belirler.",
+          "brief": {
+            "what": "İngiltere Merkez Bankası (BoE) Başkanı Andrew Bailey'nin konuşması; faiz görünümüne dair yönlendirme.",
+            "why": "TÜFE açıklamasından 30 dakika sonra geliyor. Veriyi anında yorumlama imkânı olduğundan sabahki GBPUSD hareketini ya teyit eder ya da tersine çevirir.",
+            "above": "Bailey enflasyonun kalıcılığını vurgulayıp indirime temkinli yaklaşırsa gilt faizleri yükselir ve GBPUSD yukarı yönlenir. FTSE100 güçlü sterlin ve faizle baskılanır. Avrupa seansındaki küresel faiz yükselişi US100 vadelileri ve BTCUSD'ye sınırlı baskı olarak yansır.",
+            "below": "Bailey enflasyonun geçici olduğunu ya da işgücü gevşemesini öne çıkarırsa indirim beklentisi artar ve gilt faizleri düşer. GBPUSD aşağı yönlenir, FTSE100 zayıf sterlinle destek bulur. Küresel gevşeme algısı US100 vadelileri ve BTCUSD'ye sınırlı destek verir.",
+            "watch": "TÜFE sürprizine doğrudan atıf yapıp yapmadığı; veriye değinmeden genel çerçeve çizerse GBPUSD TÜFE tepkisini korur."
+          }
         },
         {
           "id": "2026-11-18-EUR-final-core-cpi-y-y",
@@ -932,7 +1030,14 @@
           ],
           "also": [
             "Nihai tÜFE (yıllık)"
-          ]
+          ],
+          "brief": {
+            "what": "Euro Bölgesi'nde enerji, gıda, alkol ve tütün hariç tüketici fiyatlarının yıllık değişiminin nihai okuması; aynı anda nihai manşet TÜFE de açıklanır.",
+            "why": "Beklenti ve önceki okuma %2.5. Öncü tahminin teyidi olduğu için sürpriz alanı dar, ancak aynı akşamki Lagarde konuşmasından önce ECB (Avrupa Merkez Bankası) fiyatlamasının referansını belirler.",
+            "above": "Çekirdek %2.5'in üzerine revize edilirse ECB'nin gevşeme alanı daralır ve DE10Y yükselir. EURUSD ve EURJPY yukarı yönlenir. DAX40 artan faizle değerleme baskısı görür.",
+            "below": "Çekirdek %2.5'in altına revize edilirse ECB'nin indirim beklentisi güçlenir ve DE10Y düşer. EURUSD ve EURJPY aşağı yönlenir. DAX40 düşen faizle değerleme desteği bulur.",
+            "watch": "Hizmet enflasyonu ve öncü tahminden revizyonun büyüklüğü; revizyon yoksa tepki tamamen 17:25'teki Lagarde konuşmasına kalır."
+          }
         },
         {
           "id": "2026-11-18-EUR-ecb-president-lagarde-speaks",
@@ -980,7 +1085,14 @@
               "strength": 2
             }
           ],
-          "ai": "ABD seansı içinde geliyor; ECB patikasına dair sinyal DE10Y ve EURUSD'yi hareket ettirir, tutanaklar öncesinde DXY dengesini etkiler."
+          "ai": "ABD seansı içinde geliyor; ECB patikasına dair sinyal DE10Y ve EURUSD'yi hareket ettirir, tutanaklar öncesinde DXY dengesini etkiler.",
+          "brief": {
+            "what": "Avrupa Merkez Bankası (ECB) Başkanı Christine Lagarde'ın konuşması; faiz görünümü ve enflasyon değerlendirmesi.",
+            "why": "Haftadaki üç Lagarde konuşmasının ilki ve nihai enflasyon verisinden saatler sonra geliyor. Tonu, FOMC tutanaklarından önce EURUSD'nin euro ayağını belirler.",
+            "above": "Lagarde enflasyon risklerini vurgulayıp gevşemeye kapıyı kapatırsa DE10Y yükselir. EURUSD ve EURJPY yukarı yönlenir, DAX40 artan faizle baskılanır. Küresel faiz artışı US100 ve BTCUSD'ye sınırlı baskı olarak yansır.",
+            "below": "Lagarde büyüme risklerini öne çıkarıp ek gevşeme olasılığını açık tutarsa DE10Y düşer. EURUSD ve EURJPY aşağı yönlenir, DAX40 düşen faizle desteklenir. Küresel gevşeme algısı US100 ve BTCUSD'yi sınırlı ölçüde destekler.",
+            "watch": "Konuşma 22:00 tutanaklarından dört buçuk saat önce geliyor; dolar ayağı netleşince EURUSD'nin bu konuşmadaki hareketi geri alınabilir."
+          }
         },
         {
           "id": "2026-11-18-USD-crude-oil-inventories",
@@ -1019,7 +1131,14 @@
               "direction": "volatil",
               "strength": 1
             }
-          ]
+          ],
+          "brief": {
+            "what": "ABD Enerji Bilgi İdaresi'nin (EIA) açıkladığı, ticari ham petrol stoklarının bir haftalık değişimi (milyon varil).",
+            "why": "Önceki haftanın 4.7 milyon varillik artışının ardından beklenti 0.3 milyon varil düşüş. Pazartesi Çin talep verisiyle birlikte petrolün arz-talep okumasını tamamlar.",
+            "above": "Stok değişimi -0.3 milyon varilin üzerinde gelirse, yani düşüş beklenenden az olur ya da stok artarsa arz fazlası okunur. WTI ve BRENT aşağı yönlenir. Petrol ihracatçısı Kanada'nın parası zayıflayınca USDCAD hafif yükselir; US500'de enerji hisseleri baskılanır.",
+            "below": "Stok değişimi -0.3 milyon varilin altında gelirse, yani düşüş beklenenden büyük olursa talep güçlü ya da arz sıkı okunur. WTI ve BRENT yukarı yönlenir. CAD petrol kanalıyla güçlenince USDCAD hafif geriler; US500'de enerji hisseleri destek bulur.",
+            "watch": "Benzin ve distilat stokları ile rafineri kapasite kullanımı; ham petrol stoku düşerken benzin stoku artıyorsa talep okuması zayıflar."
+          }
         },
         {
           "id": "2026-11-18-USD-fomc-meeting-minutes",
@@ -1077,7 +1196,14 @@
               "strength": 1
             }
           ],
-          "ai": "ABD nakit seansı açıkken geliyor; kurul içindeki şahin ton US10Y'yi yükseltip US100 ve BTCUSD'yi baskılar, Warsh mesajını teyit ya da tekzip eder."
+          "ai": "ABD nakit seansı açıkken geliyor; kurul içindeki şahin ton US10Y'yi yükseltip US100 ve BTCUSD'yi baskılar, Warsh mesajını teyit ya da tekzip eder.",
+          "brief": {
+            "what": "Fed'in faiz kararlarını alan Federal Açık Piyasa Komitesi'nin (FOMC) son toplantısındaki tartışmaların ayrıntılı yazılı kaydı.",
+            "why": "Warsh'ın pazartesi konuşması başkanın görüşünü, tutanaklar ise komitenin genel eğilimini gösterir. İkisi arasındaki uyum ya da ayrışma haftanın dolar yönünü belirler.",
+            "above": "Tutanaklar üyelerin çoğunun enflasyon riskini öne çıkarıp indirimlere isteksiz olduğunu gösterirse US10Y, DXY ve USDJPY yukarı, EURUSD aşağı yönlenir. XAUUSD ve XAGUSD artan reel faizle düşer. US100 iskonto oranı, BTCUSD likidite kanalıyla baskılanır.",
+            "below": "Tutanaklar üyelerin büyük kısmının ek indirimlere açık olduğunu gösterirse US10Y, DXY ve USDJPY aşağı, EURUSD yukarı yönlenir. XAUUSD ve XAGUSD düşen reel faizle yükselir. US100 ve BTCUSD gevşeme beklentisiyle desteklenir.",
+            "watch": "Komite içi görüş dağılımı ve bilanço tartışması; tutanaklar Warsh'tan farklı bir ton taşırsa piyasa geriye dönük kayıt yerine başkanın ileriye dönük sözüne daha fazla ağırlık verebilir."
+          }
         }
       ]
     },
@@ -1085,7 +1211,7 @@
       "key": "persembe",
       "label": "PERŞEMBE",
       "date": "2026-11-19",
-      "focus": "ABD verisi olmayan bu gün, Çarşamba gecesi tutanaklara verilen tepkinin kalıcılığını test ediyor; Asya'da Avustralya istihdamı AUDUSD'yi belirliyor. 16:30'daki Lagarde konuşması EURUSD ve DE10Y üzerinden DXY'ye yansıyabilir.",
+      "focus": "Takvimin en sakin günü; 03:30 Avustralya işsizlik ve istihdam değişimi, Bullock'un salı verdiği işgücü yönlendirmesini veriyle test eder. AUDUSD'de tam ve yarı zamanlı istihdam ayrımı izlenecek; 16:30 Lagarde'da ise tutanaklar sonrası EURUSD hareketinin dolardan mı euro'dan mı geldiği ayrıştırılacak.",
       "events": [
         {
           "id": "2026-11-19-AUD-unemployment-rate",
@@ -1118,7 +1244,14 @@
           "also": [
             "İstihdam değişimi"
           ],
-          "ai": "Beklenti 4.7%, önceki 4.7%; oranda yükseliş RBA gevşeme beklentisini artırıp AUDUSD'yi aşağı iter, istihdam değişimi oranla birlikte okunmalı."
+          "ai": "Beklenti 4.7%, önceki 4.7%; oranda yükseliş RBA gevşeme beklentisini artırıp AUDUSD'yi aşağı iter, istihdam değişimi oranla birlikte okunmalı.",
+          "brief": {
+            "what": "Avustralya'da iş arayıp çalışmayan işgücünün oranı; aynı anda bir ayda eklenen istihdam sayısı (istihdam değişimi) da açıklanır.",
+            "why": "Beklenti ve önceki okuma %4.7'de sabit. Bullock'un salı verdiği işgücü piyasası yönlendirmesinin veriyle sınandığı an.",
+            "above": "İşsizlik %4.7'nin üzerinde gelirse işgücü piyasasındaki gevşeme RBA'nın indirim olasılığını artırır ve Avustralya faizleri düşer. AUDUSD aşağı yönlenir, NZDUSD bölgesel korelasyonla zayıflar.",
+            "below": "İşsizlik %4.7'nin altında gelirse işgücü piyasası sıkı okunur, RBA'nın indirim alanı daralır ve Avustralya faizleri yükselir. AUDUSD yukarı yönlenir, NZDUSD bölgesel korelasyonla destek bulur.",
+            "watch": "İstihdam değişiminin tam ve yarı zamanlı dağılımı ile katılım oranı; işsizlik düşerken katılım da düşüyorsa sinyal zayıf okunur."
+          }
         },
         {
           "id": "2026-11-19-EUR-ecb-president-lagarde-speaks",
@@ -1166,7 +1299,14 @@
               "strength": 2
             }
           ],
-          "ai": "Avrupa-ABD seansının tek olayı; ECB mesajı EURUSD ve DE10Y'de yön teyidi verir, EURJPY ve DAX40 ikincil olarak izlenir."
+          "ai": "Avrupa-ABD seansının tek olayı; ECB mesajı EURUSD ve DE10Y'de yön teyidi verir, EURJPY ve DAX40 ikincil olarak izlenir.",
+          "brief": {
+            "what": "ECB Başkanı Lagarde'ın haftadaki ikinci konuşması; para politikası değerlendirmesini sürdürür.",
+            "why": "FOMC tutanaklarının ertesi günü ve ABD tarafında veri yokken geliyor. Bu nedenle günün EURUSD hareketi ağırlıkla euro ayağından okunur.",
+            "above": "Lagarde çarşambaya göre daha şahin bir ton benimserse ECB indirim beklentisi geriler ve DE10Y yükselir. EURUSD ve EURJPY yukarı yönlenir, DAX40 artan faizle baskılanır. Avrupa faizindeki artış US100 ve BTCUSD'ye sınırlı baskı taşır.",
+            "below": "Lagarde çarşambaya göre daha güvercin bir ton benimserse ECB gevşeme beklentisi güçlenir ve DE10Y düşer. EURUSD ve EURJPY aşağı yönlenir, DAX40 düşen faizle desteklenir. Gevşeme algısı US100 ve BTCUSD'ye sınırlı destek verir.",
+            "watch": "Bir gün önceki mesajdan sapma olup olmadığı; aynı mesajın tekrarı fiyatlanmış sayılır ve tepki üretmez."
+          }
         }
       ]
     },
@@ -1174,7 +1314,7 @@
       "key": "cuma",
       "label": "CUMA",
       "date": "2026-11-20",
-      "focus": "Günü 11:00'deki BTC ve ETH haftalık opsiyon vadesi belirliyor; vade öncesi pozisyon kapanışları fiyatı yoğun pozisyon bölgelerine çekebilir. Vade sonrası BTCUSD ve ETHUSD'de yönün netleşip netleşmediği TOTAL ile birlikte izlenmeli.",
+      "focus": "Kapanış yerel verilere ve kripto vadesine kalıyor: 02:30 Japonya çekirdek TÜFE USDJPY'yi, 11:00 BTC/ETH opsiyon vadesi BTCUSD ve ETHUSD'yi, 16:30 Kanada perakende USDCAD'yi belirler. BTCUSD'de vade öncesi yoğun kullanım fiyatlarına yapışma ve 11:00 sonrası serbest kalan hareket izlenecek.",
       "events": [
         {
           "id": "2026-11-20-JPY-national-core-cpi-y-y",
@@ -1208,7 +1348,14 @@
               "direction": "asagi",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "Japonya genelinde taze gıda hariç tüketici fiyatlarının yıllık değişimi (çekirdek TÜFE).",
+            "why": "Beklenti %2.3, önceki %2.1'e göre hızlanma gösteriyor ve BoJ'un %2 hedefinin üstünde. Pazartesi büyüme verisiyle birlikte BoJ faiz artırımı fiyatlamasının ikinci ayağı.",
+            "above": "Çekirdek TÜFE %2.3'ün üzerinde gelirse BoJ'un faiz artırımı olasılığı yükselir, Japon faizleri artar ve yen güçlenir. USDJPY ve EURJPY aşağı yönlenir. Güçlü yen ihracatçı kârlarını baskıladığı için NIKKEI225 zayıflar.",
+            "below": "Çekirdek TÜFE %2.3'ün altında gelirse BoJ'un faiz artırımını erteleme ihtimali artar, Japon faizleri geriler ve yen zayıflar. USDJPY ve EURJPY yukarı yönlenir. Zayıf yen ihracatçıları desteklediği için NIKKEI225 yükselir.",
+            "watch": "Taze gıda ve enerji hariç çekirdek-çekirdek ölçü; hızlanma yalnızca enerjiden geliyorsa BoJ okuması sınırlı kalır."
+          }
         },
         {
           "id": "2026-11-20-GBP-retail-sales-m-m",
@@ -1238,7 +1385,14 @@
               "strength": 2
             }
           ],
-          "ai": "Beklenti 0.0%, önceki -0.4%; zayıf talep BoE gevşeme beklentisini güçlendirir, GBPUSD'de haftanın TÜFE tepkisini dengeleyebilir."
+          "ai": "Beklenti 0.0%, önceki -0.4%; zayıf talep BoE gevşeme beklentisini güçlendirir, GBPUSD'de haftanın TÜFE tepkisini dengeleyebilir.",
+          "brief": {
+            "what": "İngiltere'de perakende satış hacminin bir önceki aya göre değişimi.",
+            "why": "Önceki ayın %-0.4'lük düşüşünün ardından beklenti %0.0 ile durağanlık. Salı işsizlik ve çarşamba TÜFE ile birlikte BoE'nin haftalık resmini tamamlar.",
+            "above": "Satışlar %0.0'ın üzerinde gelirse tüketimin toparlandığı ve BoE'nin indirime acele etmeyeceği okunur. Gilt faizleri yükselir ve GBPUSD yukarı yönlenir. Güçlü sterlin FTSE100'ü kur çevrimiyle baskılar.",
+            "below": "Satışlar %0.0'ın altında gelirse üst üste ikinci daralma tüketim zayıflığını teyit eder ve BoE indirim beklentisi artar. Gilt faizleri düşer ve GBPUSD aşağı yönlenir. Zayıf sterlin FTSE100'ü destekler.",
+            "watch": "Akaryakıt hariç satışlar ve önceki %-0.4'ün revizyonu; aşağı revizyon manşetteki toparlanmayı geçersiz kılabilir."
+          }
         },
         {
           "id": "okx-opsiyon-vadesi-2026-11-20",
@@ -1252,7 +1406,7 @@
           "volatility": 61,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "630,1 mn $ · BTC %16 · ETH %10,9"
+            "value": "630,4 mn $ · BTC %16 · ETH %10,9"
           },
           "source": {
             "label": "OKX opsiyon verisi",
@@ -1275,7 +1429,14 @@
               "strength": 2
             }
           ],
-          "ai": "Vade öncesi delta hedge çözülmesi BTCUSD ve ETHUSD'de makrodan bağımsız hareket üretebilir; vade sonrası TOTAL'da yönün netleşmesi izlenir."
+          "ai": "Vade öncesi delta hedge çözülmesi BTCUSD ve ETHUSD'de makrodan bağımsız hareket üretebilir; vade sonrası TOTAL'da yönün netleşmesi izlenir.",
+          "brief": {
+            "what": "OKX borsasında BTC ve ETH üzerine yazılmış haftalık opsiyon kontratlarının sona erdiği an; vadeye kadar açık kalan pozisyonlar nakit olarak kapanır.",
+            "why": "Fed haftasının sonunda geliyor. Warsh, perakende satışlar ve tutanaklarla oluşan yön, vade öncesinde opsiyon korunma akışlarıyla bastırılabilir ya da vade sonrasında hızlanabilir.",
+            "above": "Spot, açık pozisyonun yoğunlaştığı kullanım fiyatlarının üzerinde vadeye girerse alım opsiyonu satıcılarının korunma amacıyla tuttuğu spot pozisyonlar vade sonrası çözülür. BTCUSD ve ETHUSD'de vade öncesi yükseliş hızlanabilir, 11:00 sonrası korunma satışlarıyla kısa süreli geri çekilme gelebilir. TOTAL bu hareketi izler.",
+            "below": "Spot, yoğun kullanım fiyatlarının altında vadeye girerse satım opsiyonu satıcılarının korunma için açtığı kısa spot pozisyonlar vade sonrası kapanır. BTCUSD ve ETHUSD'de vade öncesi düşüş baskısı artabilir, 11:00 sonrası korunma kapanışlarıyla tepki yükselişi gelebilir. TOTAL bu dalgalanmayı taşır.",
+            "watch": "Vadeden önceki saatlerde spotun yoğun kullanım fiyatına yapışıp yapışmadığı; tek bir borsanın haftalık vadesi olduğundan makro haber akışı vade etkisini kolayca bastırabilir."
+          }
         },
         {
           "id": "2026-11-20-EUR-ecb-president-lagarde-speaks",
@@ -1323,7 +1484,14 @@
               "strength": 2
             }
           ],
-          "ai": "Opsiyon vadesinden 15 dakika sonra geliyor; haftanın üçüncü Lagarde konuşması olarak EURUSD ve DE10Y'de mesaj tutarlılığı izlenir."
+          "ai": "Opsiyon vadesinden 15 dakika sonra geliyor; haftanın üçüncü Lagarde konuşması olarak EURUSD ve DE10Y'de mesaj tutarlılığı izlenir.",
+          "brief": {
+            "what": "ECB Başkanı Lagarde'ın haftadaki üçüncü ve son konuşması.",
+            "why": "Cuma Avrupa seansında, BTC/ETH opsiyon vadesinden 15 dakika sonra geliyor. Hafta kapanışı öncesinde euro pozisyonlarının son ayarına zemin hazırlar.",
+            "above": "Lagarde önceki iki konuşmaya göre şahin tarafa kayarsa DE10Y yükselir. EURUSD ve EURJPY yukarı yönlenir, DAX40 baskılanır. Vade sonrası serbest kalan BTCUSD'de faiz kaynaklı satış baskısı daha kolay yayılabilir.",
+            "below": "Lagarde önceki iki konuşmaya göre güvercin tarafa kayarsa DE10Y düşer. EURUSD ve EURJPY aşağı yönlenir, DAX40 düşen faizle desteklenir. Vade sonrası serbest kalan BTCUSD'de gevşeme algısı yükselişi kolaylaştırabilir.",
+            "watch": "Üç konuşma boyunca tonun tutarlılığı; ton sabit kalırsa EURUSD cuma günü yönünü dolar ayağından ve hafta sonu pozisyon kapanışlarından alır."
+          }
         },
         {
           "id": "2026-11-20-CAD-core-retail-sales-m-m",
@@ -1355,7 +1523,14 @@
           ],
           "also": [
             "Perakende satışlar (aylık)"
-          ]
+          ],
+          "brief": {
+            "what": "Kanada'da otomobil ve parça satıcıları hariç perakende satışların bir önceki aya göre değişimi; aynı anda manşet perakende satışlar da açıklanır.",
+            "why": "Önceki %1.2'nin ardından beklenti %0.7 ile yavaşlama gösteriyor. Pazartesi TÜFE ile birlikte BoC'nin hafta içindeki fiyatlamasını kapatan son veri.",
+            "above": "Satışlar %0.7'nin üzerinde gelirse güçlü iç talep BoC'nin gevşeme alanını daraltır, Kanada faizleri yükselir ve CAD güçlenir. USDCAD aşağı yönlenir; WTI'a geri besleme sınırlı kalır.",
+            "below": "Satışlar %0.7'nin altında gelirse iç talepteki soğuma BoC indirim beklentisini artırır, Kanada faizleri düşer ve CAD zayıflar. USDCAD yukarı yönlenir; WTI aynı anda zayıfsa petrol kanalıyla CAD kaybı derinleşir.",
+            "watch": "Hacim bazlı satışlar; nominal artış fiyat kaynaklıysa ve hacim düşüyorsa güçlü manşet CAD'i taşımaz."
+          }
         }
       ]
     }
