@@ -136,7 +136,10 @@ if (dry) {
 const client = new Anthropic();
 const request = {
   model: MODEL,
-  max_tokens: 32000,
+  // Yuksek caba + yapisal brifing cok dusunme tokeni yakiyor ve bunlar
+  // cikis olarak sayiliyor; 32000'de yanit yarida kesiliyordu. Akis
+  // devrede oldugu icin sure sinirina takilmiyoruz.
+  max_tokens: 64000,
   system: SYSTEM,
   thinking: { type: "adaptive" as const },
   output_config: { effort: "high" as const },
