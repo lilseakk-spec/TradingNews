@@ -115,7 +115,7 @@ if (dry) {
 const client = new Anthropic();
 const request = {
   model: MODEL,
-  max_tokens: 16000,
+  max_tokens: 32000,
   system: SYSTEM,
   thinking: { type: "adaptive" as const },
   output_config: { effort: "high" as const },
@@ -141,6 +141,11 @@ try {
   } else {
     throw err;
   }
+}
+
+if (message.stop_reason === "max_tokens") {
+  console.error("Yanit token sinirina takildi; JSON yarim kaldi.");
+  process.exit(1);
 }
 
 if (message.stop_reason === "refusal") {

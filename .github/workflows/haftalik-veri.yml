@@ -64,6 +64,7 @@ jobs:
 
       # Yeni sonuç geldiğinde yorumla: ne bekleniyordu, ne çıktı.
       - name: Yorum — haber sonrası
+        continue-on-error: true
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
           (github.event_name == 'workflow_dispatch' ||
@@ -75,6 +76,7 @@ jobs:
       # akışı değiştiğinde üretilir. Sonuncusu brifing biçimi değişince
       # mevcut haftanın da yeni biçime geçmesi için.
       - name: Yorum — bu hafta
+        continue-on-error: true
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
           steps.hafta.outputs.week_id != '' &&
@@ -85,6 +87,7 @@ jobs:
 
       # Ön izlemenin yorumu cuma günü üretilir: hafta sonu analizinde hazır.
       - name: Yorum — gelecek hafta
+        continue-on-error: true
         if: >-
           env.ANTHROPIC_API_KEY != '' &&
           steps.onizleme.outputs.week_id != '' &&
@@ -92,7 +95,10 @@ jobs:
            github.event.schedule == '0 5 * * 5')
         run: node scripts/ai-commentary.ts --id ${{ steps.onizleme.outputs.week_id }}
 
+      # Yorum adimlari patlasa bile cekilen veri kaydedilir: takvim
+      # guncellemesini bir AI hatasi yuzunden kaybetmenin anlami yok.
       - name: Değişiklikleri işle
+        if: always()
         run: |
           git config user.name "sismograf"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
