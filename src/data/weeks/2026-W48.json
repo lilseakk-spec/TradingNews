@@ -3,12 +3,12 @@
   "label": "22 – 28 Kasım 2026",
   "start": "2026-11-22",
   "end": "2026-11-28",
-  "updatedAt": "2026-11-17T14:06:21.157Z",
+  "updatedAt": "2026-11-17T20:07:55.732Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-17T14:06:21.157Z"
+    "fetchedAt": "2026-11-17T20:07:55.732Z"
   },
   "ai": {
     "headline": "Takvim ön izlemesi",
@@ -21,7 +21,7 @@
     "watchlist": [],
     "risks": [],
     "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-17T14:06:21.157Z"
+    "generatedAt": "2026-11-17T20:07:55.732Z"
   },
   "days": [
     {
@@ -45,7 +45,7 @@
           "currency": "NZD",
           "category": "buyume",
           "impact": 2,
-          "volatility": 48,
+          "volatility": 52,
           "forecast": "0.4%",
           "previous": "0.7%",
           "source": {
@@ -99,6 +99,44 @@
           "also": [
             "S&P Global Manufacturing PMI Flash"
           ]
+        },
+        {
+          "id": "2026-11-23-EUR-unemployment-rate",
+          "time": "13:00",
+          "date": "2026-11-23",
+          "utc": "2026-11-23T10:00:00.000Z",
+          "title": "İşsizlik oranı",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "istihdam",
+          "impact": 2,
+          "volatility": 50,
+          "previous": "3.4%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ]
         }
       ]
     },
@@ -107,6 +145,45 @@
       "label": "SALI",
       "date": "2026-11-24",
       "events": [
+        {
+          "id": "2026-11-24-EUR-unemployment-rate",
+          "time": "09:00",
+          "date": "2026-11-24",
+          "utc": "2026-11-24T06:00:00.000Z",
+          "title": "İşsizlik oranı",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "istihdam",
+          "impact": 2,
+          "volatility": 50,
+          "forecast": "10.5%",
+          "previous": "10.4%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ]
+        },
         {
           "id": "2026-11-24-USD-cb-consumer-confidence-index",
           "time": "18:00",
@@ -220,7 +297,7 @@
           "currency": "JPY",
           "category": "enflasyon",
           "impact": 2,
-          "volatility": 54,
+          "volatility": 59,
           "forecast": "2.6%",
           "previous": "2.5%",
           "source": {
@@ -417,6 +494,7 @@
           ],
           "also": [
             "GSYH büyümesi (çeyreklik)",
+            "GSYH fiyat endeksi (çeyreklik)",
             "GDP Sales (çeyreklik)"
           ]
         },
@@ -545,8 +623,8 @@
           "region": "ABD",
           "currency": "USD",
           "category": "enflasyon",
-          "impact": 1,
-          "volatility": 47,
+          "impact": 2,
+          "volatility": 59,
           "forecast": "1.9%",
           "previous": "2.2%",
           "source": {
@@ -708,8 +786,8 @@
           "region": "Euro Bölgesi",
           "currency": "EUR",
           "category": "merkez-banka",
-          "impact": 2,
-          "volatility": 71,
+          "impact": 3,
+          "volatility": 77,
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -777,7 +855,9 @@
             }
           ],
           "also": [
-            "Tokyo çekirdek TÜFE (yıllık)"
+            "Tokyo tÜFE (yıllık)",
+            "Tokyo çekirdek TÜFE (yıllık)",
+            "Tokyo CPI s.a. (aylık)"
           ]
         },
         {
@@ -838,18 +918,18 @@
           ]
         },
         {
-          "id": "2026-11-27-EUR-cpi-m-m",
-          "time": "10:45",
+          "id": "2026-11-27-EUR-gdp-yoy",
+          "time": "09:00",
           "date": "2026-11-27",
-          "utc": "2026-11-27T07:45:00.000Z",
-          "title": "TÜFE (aylık)",
+          "utc": "2026-11-27T06:00:00.000Z",
+          "title": "GSYH büyümesi (yıllık)",
           "region": "Euro Bölgesi",
           "currency": "EUR",
-          "category": "enflasyon",
+          "category": "buyume",
           "impact": 2,
-          "volatility": 54,
-          "forecast": "0.4%",
-          "previous": "0.4%",
+          "volatility": 50,
+          "forecast": "1.9%",
+          "previous": "2%",
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -876,9 +956,10 @@
             }
           ],
           "also": [
-            "HICP enflasyonu (aylık)",
-            "TÜFE (yıllık)",
-            "HICP enflasyonu (yıllık)"
+            "Perakende satışlar (aylık)",
+            "GDP Growth Rate YoY Final",
+            "Perakende satışlar (yıllık)",
+            "GDP Growth Rate QoQ Final"
           ]
         },
         {
@@ -891,7 +972,7 @@
           "currency": "EUR",
           "category": "buyume",
           "impact": 2,
-          "volatility": 54,
+          "volatility": 59,
           "forecast": "-0.1%",
           "previous": "-0.1%",
           "source": {
@@ -920,7 +1001,52 @@
             }
           ],
           "also": [
-            "GSYH büyümesi (çeyreklik)"
+            "GSYH büyümesi (çeyreklik)",
+            "Perakende satışlar (yıllık)"
+          ]
+        },
+        {
+          "id": "2026-11-27-EUR-cpi-m-m",
+          "time": "10:45",
+          "date": "2026-11-27",
+          "utc": "2026-11-27T07:45:00.000Z",
+          "title": "TÜFE (aylık)",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "enflasyon",
+          "impact": 2,
+          "volatility": 59,
+          "forecast": "0.4%",
+          "previous": "0.4%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "also": [
+            "TÜFE (yıllık)",
+            "HICP enflasyonu (aylık)",
+            "HICP enflasyonu (yıllık)"
           ]
         },
         {
@@ -935,7 +1061,7 @@
           "volatility": 87,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "891,3 mn $ · BTC %21,8 · ETH %20,7"
+            "value": "897,1 mn $ · BTC %21,5 · ETH %20,2"
           },
           "source": {
             "label": "OKX opsiyon verisi",
@@ -975,7 +1101,7 @@
           "currency": "EUR",
           "category": "istihdam",
           "impact": 2,
-          "volatility": 54,
+          "volatility": 59,
           "forecast": "6.4%",
           "previous": "6.4%",
           "source": {
@@ -1044,6 +1170,50 @@
               "direction": "yukari",
               "strength": 2
             }
+          ],
+          "also": [
+            "Enflasyon oranı (aylık)",
+            "Enflasyon oranı (yıllık)",
+            "Harmonised Inflation Rate YoY Prel"
+          ]
+        },
+        {
+          "id": "2026-11-27-EUR-gdp-growth-rate-yoy",
+          "time": "13:00",
+          "date": "2026-11-27",
+          "utc": "2026-11-27T10:00:00.000Z",
+          "title": "GSYH büyümesi (yıllık)",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "buyume",
+          "impact": 2,
+          "volatility": 50,
+          "forecast": "1.8%",
+          "previous": "1.7%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
           ]
         }
       ]
@@ -1062,8 +1232,8 @@
           "region": "TWD",
           "currency": "TWD",
           "category": "jeopolitik",
-          "impact": 2,
-          "volatility": 56,
+          "impact": 3,
+          "volatility": 61,
           "source": {
             "label": "Forex Factory takvimi"
           },
