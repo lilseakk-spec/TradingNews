@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-17T20:39:15.717Z",
+  "updatedAt": "2026-11-17T20:48:09.922Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-17T20:39:15.717Z"
+    "fetchedAt": "2026-11-17T20:47:10.496Z"
   },
   "ai": {
     "headline": "warsh konuşması ve fed tutanakları dolar ile faiz yönünü belirliyor",
@@ -138,7 +138,13 @@
               "previous": "-0.9",
               "surprise": 2.7
             }
-          ]
+          ],
+          "resultBrief": {
+            "headline": "Japonya 3. çeyrekte çeyreklik %0 büyüdü; beklentiyle aynı, ancak iç talep güçlü, dış ticaret zayıf.",
+            "detail": "Manşet q/q beklentiyle aynı (%0), yıllık -%0,1 ile beklenen -%0,3'ün biraz üstünde geldi; deflatör %2,4 ile beklentiyi 0,1 puan aştı. Asıl ayrışma alt kalemlerde: özel sermaye yatırımı -%1,1 beklentiye karşı +%1,6 ile güçlü, net ihracatın katkısı -0,6 puan (beklenti -0,1) ile büyümeyi aşağı çekti.",
+            "meaning": "Düz manşetin arkasında iç talep ve yatırım dayanıklı, zayıflık dış talepten geliyor; bu tablo BoJ'un normalleşme gerekçesini zayıflatmaz. Mantıksal yön yen lehine ama sınırlı, çünkü manşette sürpriz yok.",
+            "next": "Sermaye yatırımı kalemi, Maliye Bakanlığı'nın kurumsal anketiyle Aralık başındaki revize GSYH'de sık sık sert değişir; bu yüzden %1,6'lık okuma revizyon riski taşıyor. Kasım Tokyo ve ulusal TÜFE ile BoJ'un Aralık toplantısı öncesindeki yetkili açıklamaları, bu okumanın faize yansıyıp yansımayacağını gösterecek."
+          }
         },
         {
           "id": "2026-11-16-CNY-nbs-press-conference",
@@ -203,7 +209,13 @@
               "actual": "1",
               "previous": "1.1"
             }
-          ]
+          ],
+          "resultBrief": {
+            "headline": "Çin'de Ekim verileri talep tarafında sert hayal kırıklığı: perakende yıllık %0,4, sabit yatırım -%8,1.",
+            "detail": "Sanayi üretimi beklentiye denk (%4,8, öncesi %5,5). Buna karşın perakende satışlar %1,8 beklentinin 1,4 puan, sabit sermaye yatırımı -%6,5 beklentinin 1,6 puan altında kaldı. Üretim tutarken iç talep ve yatırım çöküyor; bu arz-talep makası deflasyonist baskıya işaret eder.",
+            "meaning": "Zayıf Çin talebi emtia ve hammadde ihracatçısı Avustralya üzerinden AUD/USD'ye, talep beklentisi kanalıyla da Brent'e aşağı yönlü baskı mantığı taşır. Öte yandan veri ne kadar kötüleşirse PBoC gevşemesi ve mali teşvik beklentisi o kadar artar; bu da etkiyi kısmen dengeleyebilir.",
+            "next": "20 Kasım LPR kararı ve Ay sonu resmi PMI'lar ilk sınav olacak. Aralık'taki Merkezi Ekonomik Çalışma Konferansı'ndan gelecek teşvik sinyali, bu zayıflığın politika yanıtıyla karşılanıp karşılanmayacağını belirleyecek."
+          }
         },
         {
           "id": "2026-11-16-CNY-unemployment-rate",
@@ -270,7 +282,13 @@
               "actual": "1",
               "previous": "1.1"
             }
-          ]
+          ],
+          "resultBrief": {
+            "headline": "Çin kentsel işsizlik oranı veri setimizde yer almıyor; aynı anda açıklanan talep verileri beklentinin belirgin altında.",
+            "detail": "İşsizlik oranı rakamı elimizde olmadığından değerlendirme yapamıyoruz. Eşzamanlı verilerde perakende %0,4 (beklenti %1,8) ve sabit yatırım -%8,1 (beklenti -%6,5) zayıf, sanayi üretimi ise %4,8 ile beklentiye denk.",
+            "meaning": "İşsizlik tarafına dair bir çıkarım yapılamaz. Genel tablo iç talep zayıflığının sürdüğünü gösteriyor; AUD ve emtia açısından mantıksal yön aşağı yönlü.",
+            "next": "İşsizlik oranının, özellikle genç işsizliğin ayrıca yayımlanan rakamı teyit edilmeli. Zayıf tüketimin istihdam kaynaklı olup olmadığı ancak bu veriyle anlaşılır."
+          }
         },
         {
           "id": "2026-11-16-CNY-retail-sales-y-y",
@@ -337,7 +355,13 @@
               "actual": "5.3",
               "previous": "5.3"
             }
-          ]
+          ],
+          "resultBrief": {
+            "headline": "Çin perakende satışları yıllık %0,4'e geriledi; %1,8 beklentinin çok altında.",
+            "detail": "Okuma bir önceki %1,1'den de düştü ve beklentiden 1,4 puan saptı. Yılbaşından bu yana büyüme %1,1'den %1,0'a geriledi.",
+            "meaning": "Hane tüketimi neredeyse durmuş durumda; bu, Çin'in iç talep kaynaklı toparlanma anlatısını zayıflatıyor ve deflasyon riskini artırıyor. AUD/USD için mantıksal yön aşağı. Tüketime yönelik doğrudan teşvik beklentisi ise güçleniyor.",
+            "next": "Aralık başında gelecek Kasım TÜFE ve ÜFE, talep zayıflığının fiyatlara yansıyıp yansımadığını gösterecek. Hükümetin tüketim desteğine dair yeni adım açıklayıp açıklamadığı, bu verinin piyasadaki ağırlığını belirleyecek."
+          }
         },
         {
           "id": "2026-11-16-CAD-cpi-m-m",
@@ -411,7 +435,13 @@
               "surprise": 0.1
             }
           ],
-          "aiResult": "Aylık TÜFE yüzde 0.2 ile yüzde 0 olan beklentinin 0.2 puan, çekirdek aylık TÜFE yüzde 0.4 ile 0.1 puan, Common (2.5) ve Median (2.0) yıllık ölçüler 0.1 puan üstünde geldi; yalnızca yıllık çekirdek TÜFE yüzde 2.0 ile 0.1 puan altında kaldı. Genel tablo yukarı yönlü enflasyon sürprizi olduğundan BoC'nin gevşeme alanını daraltır ve CAD lehine okunur; bu da USD/CAD'de aşağı yönlü mantığı destekler, ancak sapmalar küçük ve yıllık çekirdek verinin düşüşü etkiyi sınırlar."
+          "aiResult": "Aylık TÜFE yüzde 0.2 ile yüzde 0 olan beklentinin 0.2 puan, çekirdek aylık TÜFE yüzde 0.4 ile 0.1 puan, Common (2.5) ve Median (2.0) yıllık ölçüler 0.1 puan üstünde geldi; yalnızca yıllık çekirdek TÜFE yüzde 2.0 ile 0.1 puan altında kaldı. Genel tablo yukarı yönlü enflasyon sürprizi olduğundan BoC'nin gevşeme alanını daraltır ve CAD lehine okunur; bu da USD/CAD'de aşağı yönlü mantığı destekler, ancak sapmalar küçük ve yıllık çekirdek verinin düşüşü etkiyi sınırlar.",
+          "resultBrief": {
+            "headline": "Kanada TÜFE aylık %0,2 ile %0 beklentiyi aştı; BoC'nin izlediği çekirdek ölçüler hafif yukarı sürpriz yaptı.",
+            "detail": "Manşet aylık %0,2 ve çekirdek aylık %0,4 (beklenti %0,3) beklentinin üstünde geldi. Medyan %2,0 (beklenti %1,9) ve common %2,5 (beklenti %2,4) 0,1 puan yukarıda, ancak çekirdek yıllık %2,0 ile beklentinin 0,1 puan altında kaldı. Trimmed CPI ve manşet yıllık TÜFE veri setimizde yok.",
+            "meaning": "Sürprizler 0,1-0,2 puanlık küçük sapmalar; yine de BoC'nin tercih ettiği medyan ve common yukarı yönlü ayrıştı. Bu durum yakın vadeli faiz indirimi fiyatlamasını zayıflatır ve faiz farkı üzerinden USD/CAD için mantıksal yön aşağı. Çekirdek yıllıktaki düşüş bu sinyali sınırlıyor.",
+            "next": "Eksik trimmed okuması, medyandaki yükselişi teyit edip etmeyeceği açısından kritik. Ay sonundaki 3. çeyrek GSYH ve Aralık başındaki istihdam verisi, BoC'nin Aralık kararı öncesindeki son girdiler."
+          }
         },
         {
           "id": "2026-11-16-USD-fed-chairman-warsh-speaks",
@@ -610,7 +640,13 @@
               "previous": "3.8",
               "surprise": -0.1
             }
-          ]
+          ],
+          "resultBrief": {
+            "headline": "İngiltere'de işsizlik %4,6'ya indi, ancak HMRC bordroları -34 bin ile daraldı ve ücret artışı %3,6'ya yavaşladı.",
+            "detail": "Anket bazlı LFS istihdamı +156 bin (beklenti +25 bin) ve işsizlik oranı %4,6 (beklenti %4,7) güçlü görünüyor. Buna karşın idari kayıtlar ters yönde: HMRC bordroları -34 bin (beklenti +15 bin), işsizlik başvuruları +33,2 bin (beklenti +25,4 bin). Primler dahil ücretler %3,6 ile beklentinin 0,1 puan altında; primsiz düzenli ücret rakamı elimizde yok.",
+            "meaning": "Düşük yanıt oranı nedeniyle güvenilirliği sorgulanan LFS ile idari veriler arasındaki ayrışmada BoE, bordro ve ücretlere daha fazla ağırlık veriyor. Bu açıdan veri seti güvercin yönlü ve GBP/USD için mantıksal yön aşağı; manşet işsizlik düşüşü bu sinyali tek başına tersine çevirmez.",
+            "next": "Bu hafta gelecek Ekim TÜFE, yavaşlayan ücretlerin hizmet enflasyonuna yansıyıp yansımadığını gösterecek. HMRC'nin ilk tahmini sonraki ay sık revize edildiğinden -34 binlik okumanın kalıcılığı belirsiz."
+          }
         },
         {
           "id": "2026-11-17-USD-adp-weekly-employment-change",
@@ -769,7 +805,13 @@
               "surprise": -0.1
             }
           ],
-          "aiResult": "Manşet perakende satışlar yüzde 0.2 ile beklentinin 0.1 puan, çekirdek satışlar yüzde 0.6 ile 0.1 puan altında kaldı; buna karşılık GSYH hesabına giren kontrol grubu yüzde 0.6 ile 0.3 puan, otomobil ve benzin hariç satışlar yüzde 0.5 ile 0.4 puan üstünde geldi. Asıl sinyal veren kalemler güçlü tüketime işaret ettiğinden Fed'in faiz indirimi beklentilerini zayıflatan ve dolar lehine (EUR/USD aşağı, USD/JPY yukarı) okunan bir veri bu; aynı mantıkla altın üzerinde aşağı yönlü baskı oluşturur, manşetteki hafif zayıflık ise etkiyi kısmen dengeler."
+          "aiResult": "Manşet perakende satışlar yüzde 0.2 ile beklentinin 0.1 puan, çekirdek satışlar yüzde 0.6 ile 0.1 puan altında kaldı; buna karşılık GSYH hesabına giren kontrol grubu yüzde 0.6 ile 0.3 puan, otomobil ve benzin hariç satışlar yüzde 0.5 ile 0.4 puan üstünde geldi. Asıl sinyal veren kalemler güçlü tüketime işaret ettiğinden Fed'in faiz indirimi beklentilerini zayıflatan ve dolar lehine (EUR/USD aşağı, USD/JPY yukarı) okunan bir veri bu; aynı mantıkla altın üzerinde aşağı yönlü baskı oluşturur, manşetteki hafif zayıflık ise etkiyi kısmen dengeler.",
+          "resultBrief": {
+            "headline": "ABD perakende satışları manşette %0,2 ile hafif zayıf, ancak kontrol grubu %0,6 ile beklentinin iki katı.",
+            "detail": "Manşet aylık %0,2 (beklenti %0,3) ve otomobil hariç %0,6 (beklenti %0,7) birer onda bir puan altında kaldı. Otomobil ve benzin hariç %0,5 (beklenti %0,1) ve GSYH hesabına giren kontrol grubu %0,6 (beklenti %0,3) belirgin güçlü geldi. Manşet ile otomobil hariç arasındaki fark, otomobil satışlarının aşağı çektiğine işaret ediyor.",
+            "meaning": "Manşetteki ıskalar küçük; asıl sinyal çekirdek tüketimin güçlü olması. Bu, 4. çeyrek tüketim tahminlerini yukarı iter ve Fed'in faiz indirimi beklentisini zayıflatır. Getiri kanalıyla dolar lehine, altın aleyhine mantıksal yön oluşur.",
+            "next": "Önceki ayın kontrol grubu okumasının (%0,1) revizyonu ve GDPNow güncellemesi, gücün ne kadar kalıcı olduğunu netleştirecek. Ay sonundaki PCE verisi, güçlü tüketimin fiyat baskısına dönüşüp dönüşmediğini gösterecek."
+          }
         }
       ]
     },
@@ -1210,7 +1252,7 @@
           "volatility": 61,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "631,4 mn $ · BTC %16 · ETH %10,9"
+            "value": "630,1 mn $ · BTC %16 · ETH %10,9"
           },
           "source": {
             "label": "OKX opsiyon verisi",

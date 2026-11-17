@@ -3,12 +3,12 @@
   "label": "22 – 28 Kasım 2026",
   "start": "2026-11-22",
   "end": "2026-11-28",
-  "updatedAt": "2026-11-17T20:39:17.058Z",
+  "updatedAt": "2026-11-17T20:47:12.138Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-17T20:39:17.058Z"
+    "fetchedAt": "2026-11-17T20:47:12.138Z"
   },
   "ai": {
     "headline": "Takvim ön izlemesi",
@@ -21,7 +21,7 @@
     "watchlist": [],
     "risks": [],
     "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-17T20:39:17.058Z"
+    "generatedAt": "2026-11-17T20:47:12.138Z"
   },
   "days": [
     {
@@ -1061,7 +1061,7 @@
           "volatility": 87,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "900,7 mn $ · BTC %21,5 · ETH %20,1"
+            "value": "898,3 mn $ · BTC %21,5 · ETH %20,1"
           },
           "source": {
             "label": "OKX opsiyon verisi",
