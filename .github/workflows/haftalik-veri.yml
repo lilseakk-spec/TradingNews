@@ -26,6 +26,7 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/haftalik-veri.yml"
+      - "scripts/**"
 
 permissions:
   contents: write
