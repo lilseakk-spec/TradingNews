@@ -230,15 +230,19 @@ let message: Anthropic.Message | Anthropic.Beta.BetaMessage;
 try {
   // Guvenlik siniflandiricisi istegi reddederse ayni istek yedek
   // modelde yeniden calisir.
-  message = await client.beta.messages.create({
-    ...request,
-    betas: ["server-side-fallback-2026-06-01"],
-    fallbacks: [{ model: FALLBACK_MODEL }],
-  });
+  // Akis sart: max_tokens yuksek oldugunda SDK, istegin 10 dakikayi
+  // asabilecegini hesaplayip akissiz cagriyi reddediyor.
+  message = await client.beta.messages
+    .stream({
+      ...request,
+      betas: ["server-side-fallback-2026-06-01"],
+      fallbacks: [{ model: FALLBACK_MODEL }],
+    })
+    .finalMessage();
 } catch (err) {
   if (err instanceof Anthropic.BadRequestError) {
     console.warn("Yedek model parametresi reddedildi, sade istekle devam ediliyor.");
-    message = await client.messages.create(request);
+    message = await client.messages.stream(request).finalMessage();
   } else if (err instanceof Anthropic.AuthenticationError) {
     console.error(
       "Kimlik dogrulanamadi. ANTHROPIC_API_KEY tanimla ya da 'ant auth login' ile giris yap.",

@@ -15,6 +15,27 @@
 
 import fs from "node:fs";
 import path from "node:path";
+
+/** Hata izi: adim continue-on-error oldugu icin sebep dosyaya dusmeli. */
+const ERROR_FILE = path.join(process.cwd(), "src", "data", "ai-last-error.txt");
+function iz(mesaj: string): void {
+  try {
+    fs.mkdirSync(path.dirname(ERROR_FILE), { recursive: true });
+    fs.writeFileSync(ERROR_FILE, `${new Date().toISOString()}  ai-outcomes
+${mesaj}
+`, "utf8");
+  } catch {
+    // Yazilamadiysa yapacak bir sey yok.
+  }
+}
+process.on("uncaughtException", (err) => {
+  iz(`uncaught: ${(err as Error).message}`.slice(0, 1200));
+  process.exit(1);
+});
+process.on("unhandledRejection", (err) => {
+  iz(`unhandled: ${String(err)}`.slice(0, 1200));
+  process.exit(1);
+});
 import Anthropic from "@anthropic-ai/sdk";
 import { logUsage } from "./log-usage.ts";
 import { surpriseLabel } from "../src/lib/outcomes.ts";
@@ -126,15 +147,19 @@ console.log(`Model: ${MODEL}  ·  hafta: ${weekId}  ·  ${targets.length} olay`)
 
 let message: Anthropic.Message | Anthropic.Beta.BetaMessage;
 try {
-  message = await client.beta.messages.create({
-    ...request,
-    betas: ["server-side-fallback-2026-06-01"],
-    fallbacks: [{ model: FALLBACK_MODEL }],
-  });
+  // Akis sart: max_tokens yuksek oldugunda SDK, istegin 10 dakikayi
+  // asabilecegini hesaplayip akissiz cagriyi reddediyor.
+  message = await client.beta.messages
+    .stream({
+      ...request,
+      betas: ["server-side-fallback-2026-06-01"],
+      fallbacks: [{ model: FALLBACK_MODEL }],
+    })
+    .finalMessage();
 } catch (err) {
   if (err instanceof Anthropic.BadRequestError) {
     console.warn("Yedek model parametresi reddedildi, sade istekle devam ediliyor.");
-    message = await client.messages.create(request);
+    message = await client.messages.stream(request).finalMessage();
   } else if (err instanceof Anthropic.AuthenticationError) {
     console.error("Kimlik dogrulanamadi. ANTHROPIC_API_KEY tanimla.");
     process.exit(1);
