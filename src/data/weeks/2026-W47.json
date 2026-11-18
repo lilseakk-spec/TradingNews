@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-18T12:43:50.976Z",
+  "updatedAt": "2026-11-18T13:40:12.719Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-18T12:40:26.268Z"
+    "fetchedAt": "2026-11-18T13:40:12.719Z"
   },
   "ai": {
     "headline": "warsh ve fomc tutanakları arasında dolar faizi haftanın ekseni",
@@ -974,7 +974,6 @@
               "surprise": -0.1
             }
           ],
-          "actual": "10.8",
           "resultBrief": {
             "headline": "İngiltere'de girdi ÜFE yıllık %10,8 ile beklentinin (%9,1) çok üstünde geldi; manşet ve çekirdek TÜFE rakamları elimizde yok.",
             "detail": "Girdi ÜFE aylık %2,2 (beklenti %0,8) ile sert sürpriz yaptı, ancak çıktı ÜFE aylık %0,4 (beklenti %0,6), çekirdek çıktı aylık %0,1 (beklenti %0,2) ve yıllık %2,9 (beklenti %3,0) ile beklentinin altında kaldı. Maliyetler hızlanırken üreticiler bunu fiyatlarına yansıtmıyor; girdi ile çıktı arasındaki makas açılıyor.",
@@ -1110,7 +1109,6 @@
               "surprise": 0.8
             }
           ],
-          "actual": "2.6",
           "resultBrief": {
             "headline": "Euro Bölgesi nihai çekirdek TÜFE yıllık %2,6'ya revize edildi; öncü veri ve beklenti %2,5 idi.",
             "detail": "Çekirdek aylık %0,3 ile beklentiyle aynı geldi, yani çekirdekteki revizyon 0,1 puanlık küçük bir yuvarlama farkı düzeyinde. Manşet ölçülerde veri tutarsız görünüyor: aylık TÜFE için beklenti ve önceki değer %3,8 olarak verilmiş, bu aylık bir rakam için makul değil. Yıllık %4,0'ün %3,2 beklentiye karşı sapması da doğrulanmadan esas alınmamalı.",
@@ -1485,7 +1483,7 @@
           "volatility": 62,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "654 mn $ · BTC %16,7 · ETH %12,1"
+            "value": "655,8 mn $ · BTC %16,7 · ETH %12,1"
           },
           "source": {
             "label": "OKX opsiyon verisi",
