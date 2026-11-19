@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-18T13:40:12.719Z",
+  "updatedAt": "2026-11-19T14:07:22.299Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-18T13:40:12.719Z"
+    "fetchedAt": "2026-11-19T14:06:51.875Z"
   },
   "ai": {
     "headline": "warsh ve fomc tutanakları arasında dolar faizi haftanın ekseni",
@@ -1215,6 +1215,50 @@
             "above": "0.4M'nin belirgin üzerindeki stok artışı talebin zayıf ya da arzın bol olduğunu gösterir; WTI ve BRENT düşer, petrol ihracatçısı Kanada'nın para birimi zayıfladığı için USDCAD yükselir, US500'de enerji hisseleri baskılanır.",
             "below": "Stok düşüşü ya da 0.4M'nin altında bir artış talebin arzı karşıladığını gösterir; WTI ve BRENT yükselir, CAD güçlendiği için USDCAD düşer.",
             "watch": "Benzin ve damıtılmış ürün stokları ile rafineri kullanım oranı; ham stok düşerken ürün stokları artıyorsa fiyat tepkisi kalıcı olmaz."
+          },
+          "results": [
+            {
+              "name": "EIA Gasoline Stocks Change",
+              "actual": "5.192",
+              "forecast": "0.139",
+              "previous": "1.799",
+              "surprise": 5.053
+            },
+            {
+              "name": "EIA Crude Oil Stocks Change",
+              "actual": "3.38",
+              "forecast": "-0.309",
+              "previous": "4.657",
+              "surprise": 3.689
+            },
+            {
+              "name": "EIA Distillates Stocks Change",
+              "actual": "1.571",
+              "forecast": "-0.193",
+              "previous": "4.071",
+              "surprise": 1.764
+            },
+            {
+              "name": "EIA Cushing Crude Oil Stocks Change",
+              "actual": "-1.209",
+              "forecast": "0.366",
+              "previous": "0.106",
+              "surprise": -1.575
+            },
+            {
+              "name": "EIA Crude Oil Imports Change",
+              "actual": "-2.155",
+              "forecast": "-1.025",
+              "previous": "0.544",
+              "surprise": -1.13
+            }
+          ],
+          "actual": "5.192",
+          "resultBrief": {
+            "headline": "EIA ham petrol stokları 0,3 milyon varillik düşüş beklentisine karşı 3,38 milyon varil arttı; benzinde 5,19 milyon varillik sert artış geldi.",
+            "detail": "Ham petrol (+3,38M, beklenti -0,31M), benzin (+5,19M, beklenti +0,14M) ve distilat (+1,57M, beklenti -0,19M) stokları beklentinin üzerinde geldi; ham petrolde üst üste ikinci haftalık artış yaşandı. Buna karşılık Cushing stokları artış beklentisine rağmen 1,21M azaldı, ithalat ise beklenenden fazla düşerek -2,155 oldu. Rafineri kullanım oranı ve ihracat verisi elimizde olmadığı için ithalat düşerken ham stokun neden arttığını netleştiremiyoruz.",
+            "meaning": "Ham petrolde ve tüm ürünlerde aynı anda görülen beklenti üstü artış, özellikle benzinde talebin zayıf olduğuna işaret ediyor ve petrol fiyatları açısından ayı yönlü bir tablo çiziyor. Cushing'deki düşüş WTI'yı Brent'e göre kısmen destekleyen tek kalem; zayıf petrol temelleri ise dış ticaret hadleri üzerinden CAD aleyhine, yani USD/CAD için yukarı yönlü bir mantık taşıyor.",
+            "next": "Benzin artışının talepten mi yoksa üretimden mi kaynaklandığını görmek için raporun ima edilen benzin talebi ve rafineri kullanım kalemlerine bakılmalı. Ardından gelecek haftanın API ve EIA verileri ham stok artışının üçüncü haftaya taşınıp taşınmadığını gösterecek; Şükran Günü haftası olduğu için EIA yayın takvimi kayabilir."
           }
         },
         {
@@ -1328,6 +1372,41 @@
             "above": "%4.7'nin üzerindeki işsizlik işgücü piyasasının gevşediğini gösterir ve RBA gevşeme fiyatlamasını artırır; AUDUSD düşer, NZDUSD korelasyonla zayıflar.",
             "below": "%4.7'nin altındaki işsizlik sıkı işgücü piyasasına işaret eder ve RBA'nın indirim alanını daraltır; AUDUSD yükselir, NZDUSD destek bulur.",
             "watch": "Tam zamanlı ile yarı zamanlı istihdam ayrımı ve katılım oranı; artış yarı zamanlıdan geliyorsa güçlü manşet AUDUSD'yi taşımaz."
+          },
+          "results": [
+            {
+              "name": "Employment Change",
+              "actual": "-43.5",
+              "forecast": "19",
+              "previous": "-39.3",
+              "surprise": -62.5
+            },
+            {
+              "name": "Participation Rate",
+              "actual": "66.6",
+              "forecast": "66.9",
+              "previous": "66.8",
+              "surprise": -0.3
+            },
+            {
+              "name": "Unemployment Rate",
+              "actual": "4.9",
+              "forecast": "4.8",
+              "previous": "4.7",
+              "surprise": 0.1
+            },
+            {
+              "name": "Full-Time Employment Change",
+              "actual": "-2.9",
+              "previous": "34.4"
+            }
+          ],
+          "actual": "-43.5",
+          "resultBrief": {
+            "headline": "Avustralya'da istihdam 19 bin artış beklentisine karşı 43,5 bin azaldı, işsizlik oranı %4,9'a yükseldi.",
+            "detail": "İstihdam üst üste ikinci ay daraldı ve iki aylık toplam kayıp yaklaşık 83 bine ulaştı. İşsizlik oranı %4,7'den %4,9'a çıktı (beklenti %4,8); katılım oranı %66,8'den %66,6'ya düşmesine rağmen işsizliğin artması zayıflığın gerçek olduğunu gösteriyor. Tam zamanlı istihdam yalnızca 2,9 bin azaldı, yani kaybın büyük kısmı (~40 bin) yarı zamanlı işlerden geldi; bu ayrıntı tabloyu bir miktar yumuşatıyor.",
+            "meaning": "İşgücü piyasasındaki gevşeme RBA'nın faiz indirimi beklentilerini güçlendiriyor; daralan faiz farkı mantığı AUD/USD için aşağı yönlü baskı anlamına geliyor. NZD/USD'ye etkisi ise bölgesel korelasyon ve risk algısı üzerinden, daha dolaylı ve zayıf şekilde geçer.",
+            "next": "ABS işgücü anketi oynak olduğundan önceki ayın revizyonu ve çalışılan saatler kalemi teyit için kritik; RBA tarafında ise aralık toplantısı öncesi açıklamalar indirim beklentisinin fiyatlanıp fiyatlanmadığını gösterecek. Ay sonundaki aylık TÜFE göstergesi beklenti üstü gelirse bu zayıf istihdam okumasının RBA üzerindeki etkisini dengeleyebilir."
           }
         },
         {
@@ -1480,10 +1559,10 @@
           "region": "Kripto",
           "category": "kripto",
           "impact": 2,
-          "volatility": 62,
+          "volatility": 66,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "655,8 mn $ · BTC %16,7 · ETH %12,1"
+            "value": "774,4 mn $ · BTC %18 · ETH %17,3"
           },
           "source": {
             "label": "OKX opsiyon verisi",
