@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-19T14:07:22.299Z",
+  "updatedAt": "2026-11-20T13:47:03.752Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-19T14:06:51.875Z"
+    "fetchedAt": "2026-11-20T13:46:31.564Z"
   },
   "ai": {
     "headline": "warsh ve fomc tutanakları arasında dolar faizi haftanın ekseni",
@@ -1253,7 +1253,6 @@
               "surprise": -1.13
             }
           ],
-          "actual": "5.192",
           "resultBrief": {
             "headline": "EIA ham petrol stokları 0,3 milyon varillik düşüş beklentisine karşı 3,38 milyon varil arttı; benzinde 5,19 milyon varillik sert artış geldi.",
             "detail": "Ham petrol (+3,38M, beklenti -0,31M), benzin (+5,19M, beklenti +0,14M) ve distilat (+1,57M, beklenti -0,19M) stokları beklentinin üzerinde geldi; ham petrolde üst üste ikinci haftalık artış yaşandı. Buna karşılık Cushing stokları artış beklentisine rağmen 1,21M azaldı, ithalat ise beklenenden fazla düşerek -2,155 oldu. Rafineri kullanım oranı ve ihracat verisi elimizde olmadığı için ithalat düşerken ham stokun neden arttığını netleştiremiyoruz.",
@@ -1401,7 +1400,6 @@
               "previous": "34.4"
             }
           ],
-          "actual": "-43.5",
           "resultBrief": {
             "headline": "Avustralya'da istihdam 19 bin artış beklentisine karşı 43,5 bin azaldı, işsizlik oranı %4,9'a yükseldi.",
             "detail": "İstihdam üst üste ikinci ay daraldı ve iki aylık toplam kayıp yaklaşık 83 bine ulaştı. İşsizlik oranı %4,7'den %4,9'a çıktı (beklenti %4,8); katılım oranı %66,8'den %66,6'ya düşmesine rağmen işsizliğin artması zayıflığın gerçek olduğunu gösteriyor. Tam zamanlı istihdam yalnızca 2,9 bin azaldı, yani kaybın büyük kısmı (~40 bin) yarı zamanlı işlerden geldi; bu ayrıntı tabloyu bir miktar yumuşatıyor.",
@@ -1511,6 +1509,41 @@
             "above": "%2.3'ün üzerindeki enflasyon BoJ faiz artırımı beklentisini öne çeker; Japon faizleri yükselir, yen güçlenir, USDJPY ve EURJPY düşer, NIKKEI225 güçlü yenle baskılanır.",
             "below": "%2.3'ün altındaki enflasyon BoJ'un acele etmeyeceği okumasını destekler; yen zayıflar, USDJPY ve EURJPY yükselir, NIKKEI225 ihracatçı kârlarıyla desteklenir.",
             "watch": "Taze gıda ve enerji hariç çekirdek-çekirdek TÜFE; enerji kaynaklı bir hızlanma BoJ için daha az anlamlı olur."
+          },
+          "results": [
+            {
+              "name": "CPI y/y",
+              "actual": "2.3",
+              "forecast": "1.9",
+              "previous": "2.2",
+              "surprise": 0.4
+            },
+            {
+              "name": "Core CPI y/y",
+              "actual": "2.2",
+              "forecast": "2.1",
+              "previous": "2.2",
+              "surprise": 0.1
+            },
+            {
+              "name": "CPI excl. Food and Energy y/y",
+              "actual": "2.2",
+              "forecast": "2.2",
+              "previous": "2.4",
+              "surprise": 0
+            },
+            {
+              "name": "CPI s.a. m/m",
+              "actual": "0.5",
+              "previous": "0.3"
+            }
+          ],
+          "actual": "2.3",
+          "resultBrief": {
+            "headline": "Japonya'da manşet enflasyon yıllık %2,3 ile %1,9 beklentiyi belirgin aştı, çekirdek ise %2,2'de sınırlı bir sürpriz yaptı.",
+            "detail": "Manşet CPI 0,4 puanla sert yukarı saptı, taze gıda hariç çekirdek ise yalnızca 0,1 puan aştı (2,2 vs 2,1). Gıda ve enerji hariç ölçü beklentiye uyarak %2,4'ten %2,2'ye geriledi, mevsimsellikten arındırılmış aylık artış da %0,3'ten %0,5'e hızlandı; bu ayrışma sürprizin taze gıda ve enerji kaynaklı olduğunu, alttaki fiyat baskısının ise yavaşladığını gösteriyor.",
+            "meaning": "Manşetin %2'nin üzerinde kalması BoJ'un faiz artırımı söylemine destek verir, mantıksal yön de USD/JPY ve EUR/JPY için aşağı, yani yen lehine. Ancak BoJ'un asıl baktığı gıda ve enerji hariç ölçünün yavaşlaması bu desteği sınırlıyor; artırımın zamanlamasını öne çekecek güçte bir veri değil.",
+            "next": "Ay sonundaki Tokyo CPI, gıda ve enerji hariç ölçüdeki yavaşlamanın sürüp sürmediğini ilk gösterecek veri. Aralık BoJ toplantısı öncesinde yetkililerin ücret artışlarına ve hizmet fiyatlarına dair açıklamaları belirleyici olacak."
           }
         },
         {
@@ -1548,50 +1581,50 @@
             "above": "%0.0'ın üzerindeki satışlar hane talebinin toparlandığını gösterir ve BoE'nin indirim gerekçesini zayıflatır; GBPUSD güçlenir, FTSE100 sterlin gücüyle sınırlı kalır.",
             "below": "Negatif bir okuma tüketimin ardı ardına daraldığını gösterir ve BoE indirim beklentisini artırır; GBPUSD zayıflar, zayıf sterlin FTSE100'ü destekler.",
             "watch": "Akaryakıt hariç satışlar ve %-0.4'lük önceki okumanın revizyonu."
-          }
-        },
-        {
-          "id": "okx-opsiyon-vadesi-2026-11-20",
-          "time": "11:00",
-          "date": "2026-11-20",
-          "utc": "2026-11-20T08:00:00.000Z",
-          "title": "BTC ve ETH haftalık opsiyon vadesi",
-          "region": "Kripto",
-          "category": "kripto",
-          "impact": 2,
-          "volatility": 66,
-          "metric": {
-            "label": "vadesi dolan açık pozisyon",
-            "value": "774,4 mn $ · BTC %18 · ETH %17,3"
           },
-          "source": {
-            "label": "OKX opsiyon verisi",
-            "url": "https://www.okx.com"
-          },
-          "affected": [
+          "results": [
             {
-              "symbol": "BTCUSD",
-              "direction": "volatil",
-              "strength": 3
+              "name": "Retail Sales ex Fuel MoM",
+              "actual": "0.9",
+              "forecast": "-0.1",
+              "previous": "-0.9",
+              "surprise": 1
             },
             {
-              "symbol": "ETHUSD",
-              "direction": "volatil",
-              "strength": 3
+              "name": "Retail Sales ex Fuel YoY",
+              "actual": "2.5",
+              "forecast": "1.8",
+              "previous": "0.4",
+              "surprise": 0.7
             },
             {
-              "symbol": "TOTAL",
-              "direction": "volatil",
-              "strength": 2
+              "name": "Retail Sales MoM",
+              "actual": "0.7",
+              "forecast": "0",
+              "previous": "-0.6",
+              "surprise": 0.7
+            },
+            {
+              "name": "Retail Sales YoY",
+              "actual": "2.3",
+              "forecast": "1.7",
+              "previous": "0.4",
+              "surprise": 0.6
+            },
+            {
+              "name": "Public Sector Net Borrowing Ex Banks",
+              "actual": "-17",
+              "forecast": "-18",
+              "previous": "-22.9",
+              "surprise": 1
             }
           ],
-          "ai": "Vade öncesi delta hedge çözülmesi BTCUSD ve ETHUSD'de makrodan bağımsız hareket üretebilir; vade sonrası TOTAL'da yönün netleşmesi izlenir.",
-          "brief": {
-            "what": "BTC ve ETH üzerine yazılmış haftalık opsiyon sözleşmelerinin vadesinin dolması; piyasa yapıcıların bu sözleşmeler için tuttuğu riskten korunma (hedge) pozisyonlarının çözülmesi.",
-            "why": "Vade, Warsh, perakende satışlar ve FOMC tutanaklarından sonra geliyor; haftanın makro yönü kriptoda vadeye kadar strike sıkışmasıyla bastırılmış olabilir.",
-            "above": "Spot, vadeye yoğun alım opsiyonu (call) strike'larının üzerinde girerse, bu call'ları hedge etmek için tutulan spot ve vadeli long pozisyonlar vade sonrası kapanır; BTCUSD ve ETHUSD'de satış baskısı oluşabilir ve TOTAL'a geçer.",
-            "below": "Spot, vadeye yoğun satım opsiyonu (put) strike'larının altında girerse, put'ları hedge eden short pozisyonlar vade sonrası kapanır; BTCUSD ve ETHUSD'de geri alım kaynaklı tepki yükselişi oluşabilir ve TOTAL'a yansır.",
-            "watch": "Vadeden önceki saatlerde spotun en yüksek açık pozisyonlu strike'a çekilip çekilmediği ve vade sonrası ilk saatteki kırılımın yönü."
+          "actual": "0.9",
+          "resultBrief": {
+            "headline": "İngiltere'de akaryakıt hariç perakende satışlar aylık %0,9 arttı, %0,1'lik düşüş beklentisi geniş farkla aşıldı.",
+            "detail": "Akaryakıt hariç aylık %0,9 (beklenti -0,1), manşet aylık %0,7 (beklenti 0) geldi; yıllıkta 2,5 ve 2,3 ile her iki ölçü de beklentinin yaklaşık 0,6-0,7 puan üzerinde. Önceki ayın -0,9'luk düşüşü sonrası artışın bir kısmı toparlanma etkisi; aynı anda açıklanan kamu net borçlanması 17 milyar sterlinle 18 milyar beklentinin biraz altında kaldı, bu küçük bir sapma.",
+            "meaning": "Tüketimin beklenenden güçlü çıkması BoE'nin faiz indirimine acele etmesi gerekmediği görüşünü destekler, mantıksal yön de GBP/USD için yukarı. Borçlanmanın beklentiden biraz düşük gelmesi mali risk primini hafifletir, ancak etkisi perakendenin yanında ikincil kalır.",
+            "next": "Önceki ayın -0,9'luk verisinde revizyon olup olmadığı ve bir sonraki perakende verisi, sıçramanın toparlanmadan mı ibaret yoksa kalıcı mı olduğunu gösterecek. Aralık BoE kararı öncesinde ücret ve hizmet enflasyonu verileri bu okumayı teyit edecek ana ölçüler."
           }
         },
         {
@@ -1686,6 +1719,29 @@
             "above": "%0.7'nin üzerindeki satışlar iç talebin güçlü kaldığını gösterir ve BoC indirim beklentisini zayıflatır; CAD güçlenir, USDCAD düşer.",
             "below": "%0.7'nin altındaki satışlar tüketimin yavaşladığını gösterir ve BoC'ye gevşeme alanı açar; CAD zayıflar, USDCAD yükselir.",
             "watch": "Manşet ile çekirdek arasındaki fark ve Statistics Canada'nın bir sonraki ay için öncü tahmini; manşetteki akaryakıt etkisi WTI fiyat seyriyle bağlantılı."
+          },
+          "results": [
+            {
+              "name": "Core Retail Sales m/m",
+              "actual": "1",
+              "forecast": "-0.2",
+              "previous": "1.2",
+              "surprise": 1.2
+            },
+            {
+              "name": "Retail Sales m/m",
+              "actual": "0.8",
+              "forecast": "-0.2",
+              "previous": "1.2",
+              "surprise": 1
+            }
+          ],
+          "actual": "1",
+          "resultBrief": {
+            "headline": "Kanada'da çekirdek perakende satışlar aylık %1,0 arttı, %0,2'lik düşüş beklentisine karşın güçlü geldi.",
+            "detail": "Çekirdek %1,0 ve manşet %0,8 ile ikisi de -0,2 beklentisini 1 puanın üzerinde aştı ve önceki aydaki %1,2'lik artışın ardından ikinci güçlü ay oldu. Çekirdeğin manşetten yüksek olması otomobil ve akaryakıt kalemlerinin toplamı aşağı çektiğine işaret ediyor; hacim bazlı veri ve StatCan'ın sonraki aya ilişkin öncü tahmini elimizde yok.",
+            "meaning": "Arka arkaya iki güçlü ay, BoC'nin ek indirim gerekçesini zayıflatır, mantıksal yön de USD/CAD için aşağı, yani CAD lehine. CAD petrole de duyarlı olduğundan aynı dönemde WTI'daki oynaklık bu veri kaynaklı sinyalin önüne geçebilir.",
+            "next": "StatCan'ın bir sonraki ay için öncü perakende tahmini, ivmenin sürüp sürmediğini en hızlı gösterecek veri. Ay sonundaki çeyreklik GSYH ve Aralık BoC kararı, tüketim gücünün para politikasına yansıyıp yansımadığını teyit edecek."
           }
         }
       ]
