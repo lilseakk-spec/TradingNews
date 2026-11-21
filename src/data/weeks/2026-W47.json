@@ -3,12 +3,12 @@
   "label": "15 – 20 Kasım 2026",
   "start": "2026-11-15",
   "end": "2026-11-20",
-  "updatedAt": "2026-11-20T13:47:03.752Z",
+  "updatedAt": "2026-11-21T13:14:10.799Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-20T13:46:31.564Z"
+    "fetchedAt": "2026-11-21T13:14:10.799Z"
   },
   "ai": {
     "headline": "warsh ve fomc tutanakları arasında dolar faizi haftanın ekseni",
@@ -1538,7 +1538,6 @@
               "previous": "0.3"
             }
           ],
-          "actual": "2.3",
           "resultBrief": {
             "headline": "Japonya'da manşet enflasyon yıllık %2,3 ile %1,9 beklentiyi belirgin aştı, çekirdek ise %2,2'de sınırlı bir sürpriz yaptı.",
             "detail": "Manşet CPI 0,4 puanla sert yukarı saptı, taze gıda hariç çekirdek ise yalnızca 0,1 puan aştı (2,2 vs 2,1). Gıda ve enerji hariç ölçü beklentiye uyarak %2,4'ten %2,2'ye geriledi, mevsimsellikten arındırılmış aylık artış da %0,3'ten %0,5'e hızlandı; bu ayrışma sürprizin taze gıda ve enerji kaynaklı olduğunu, alttaki fiyat baskısının ise yavaşladığını gösteriyor.",
@@ -1619,7 +1618,6 @@
               "surprise": 1
             }
           ],
-          "actual": "0.9",
           "resultBrief": {
             "headline": "İngiltere'de akaryakıt hariç perakende satışlar aylık %0,9 arttı, %0,1'lik düşüş beklentisi geniş farkla aşıldı.",
             "detail": "Akaryakıt hariç aylık %0,9 (beklenti -0,1), manşet aylık %0,7 (beklenti 0) geldi; yıllıkta 2,5 ve 2,3 ile her iki ölçü de beklentinin yaklaşık 0,6-0,7 puan üzerinde. Önceki ayın -0,9'luk düşüşü sonrası artışın bir kısmı toparlanma etkisi; aynı anda açıklanan kamu net borçlanması 17 milyar sterlinle 18 milyar beklentinin biraz altında kaldı, bu küçük bir sapma.",
@@ -1736,7 +1734,6 @@
               "surprise": 1
             }
           ],
-          "actual": "1",
           "resultBrief": {
             "headline": "Kanada'da çekirdek perakende satışlar aylık %1,0 arttı, %0,2'lik düşüş beklentisine karşın güçlü geldi.",
             "detail": "Çekirdek %1,0 ve manşet %0,8 ile ikisi de -0,2 beklentisini 1 puanın üzerinde aştı ve önceki aydaki %1,2'lik artışın ardından ikinci güçlü ay oldu. Çekirdeğin manşetten yüksek olması otomobil ve akaryakıt kalemlerinin toplamı aşağı çektiğine işaret ediyor; hacim bazlı veri ve StatCan'ın sonraki aya ilişkin öncü tahmini elimizde yok.",
