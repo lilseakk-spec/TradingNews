@@ -3,12 +3,12 @@
   "label": "22 – 27 Kasım 2026",
   "start": "2026-11-22",
   "end": "2026-11-27",
-  "updatedAt": "2026-11-22T13:56:07.461Z",
+  "updatedAt": "2026-11-23T15:41:12.232Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-22T13:52:18.430Z"
+    "fetchedAt": "2026-11-23T15:40:52.520Z"
   },
   "ai": {
     "headline": "çarşamba 16:30 pce-gsyh düğümü, cuma 11:00 kripto opsiyon vadesi",
@@ -103,6 +103,36 @@
             "above": "%0,8'in üzerindeki okuma, iç talebin RBNZ'nin (Yeni Zelanda Merkez Bankası) faiz patikasını yukarı ittiği şeklinde okunur; NZD'nin faiz avantajı genişler, NZDUSD yükselir, AUDUSD bölgesel korelasyonla sınırlı eşlik eder.",
             "below": "%0,8'in altındaki okuma, hanehalkı talebinin zayıfladığını ve RBNZ faiz beklentilerinin aşağı kaydığını gösterir; NZD'nin faiz avantajı daralır, NZDUSD düşer, AUDUSD bölgesel duyarlılıkla hafif geriler.",
             "watch": "Aynı anda açıklanan manşet perakende satışlarla çekirdek arasındaki fark izlenmeli; ayrışma yalnızca akaryakıt ve otomotivden kaynaklanıyorsa fiyatlama çekirdek okumaya göre yapılır."
+          },
+          "results": [
+            {
+              "name": "Core Retail Sales q/q",
+              "actual": "1.4",
+              "forecast": "0.4",
+              "previous": "0.7",
+              "surprise": 1
+            },
+            {
+              "name": "Retail Sales q/q",
+              "actual": "2.2",
+              "forecast": "-0.2",
+              "previous": "-0.5",
+              "surprise": 2.4
+            },
+            {
+              "name": "Retail Sales y/y",
+              "actual": "3.5",
+              "forecast": "3.9",
+              "previous": "3.3",
+              "surprise": -0.4
+            }
+          ],
+          "actual": "1.4",
+          "resultBrief": {
+            "headline": "Yeni Zelanda'da çeyreklik perakende satışlar %2.2 ile -0.2 beklentisini ezdi, çekirdek kalem de %1.4 ile beklentinin 1 puan üstünde geldi.",
+            "detail": "Manşet çeyreklik satışlar önceki -0.5'ten +2.2'ye döndü (beklentiden 2.4 puan sapma), çekirdek satışlar 0.7'den 1.4'e hızlandı; yani güç akaryakıt veya otomotiv gibi oynak kalemlerle sınırlı değil. Buna karşın yıllık büyüme %3.5 ile 3.9 beklentisinin altında kaldı; çeyreklik ivme ile yıllık oran arasındaki bu ayrışma baz etkisine ya da önceki çeyreklerin aşağı revizyonuna işaret edebilir, ancak revizyon verisi elimizde yok.",
+            "meaning": "Hacim bazlı bu veri, 3. çeyrek GSYH'ye hanehalkı tüketiminden güçlü katkı geleceğini ve iç talebin toparlandığını söylüyor; bu da RBNZ'nin gevşeme beklentilerini zayıflatıp faiz farkı kanalıyla NZD/USD için yukarı yönlü mantık üretir. AUD/USD'ye etki dolaylıdır ve yalnızca bölgesel risk iştahı ile NZD korelasyonu üzerinden geçer; Avustralya'ya özgü bir bilgi içermez, bu yüzden yönden çok oynaklık beklenir.",
+            "next": "Okumanın teyidi Aralık ortasındaki 3. çeyrek GSYH verisinde ve RBNZ'nin yaklaşan politika açıklamasında, özellikle iç talep ve faiz patikası tahminlerinde aranacak. Yıllık oranın zayıf kalmasının revizyondan kaynaklandığı ortaya çıkarsa çeyreklik sıçramanın bir kısmı düşük bazdan gelen telafi olarak okunur ve sinyal gücü azalır."
           }
         }
       ]
@@ -745,7 +775,7 @@
           "volatility": 90,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "1,1 mlr $ · BTC %26,2 · ETH %22,7"
+            "value": "1,2 mlr $ · BTC %25,5 · ETH %22,5"
           },
           "source": {
             "label": "OKX opsiyon verisi",
