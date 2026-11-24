@@ -3,12 +3,12 @@
   "label": "22 – 27 Kasım 2026",
   "start": "2026-11-22",
   "end": "2026-11-27",
-  "updatedAt": "2026-11-23T15:41:12.232Z",
+  "updatedAt": "2026-11-24T15:30:08.121Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-23T15:40:52.520Z"
+    "fetchedAt": "2026-11-24T15:30:08.121Z"
   },
   "ai": {
     "headline": "çarşamba 16:30 pce-gsyh düğümü, cuma 11:00 kripto opsiyon vadesi",
@@ -127,7 +127,6 @@
               "surprise": -0.4
             }
           ],
-          "actual": "1.4",
           "resultBrief": {
             "headline": "Yeni Zelanda'da çeyreklik perakende satışlar %2.2 ile -0.2 beklentisini ezdi, çekirdek kalem de %1.4 ile beklentinin 1 puan üstünde geldi.",
             "detail": "Manşet çeyreklik satışlar önceki -0.5'ten +2.2'ye döndü (beklentiden 2.4 puan sapma), çekirdek satışlar 0.7'den 1.4'e hızlandı; yani güç akaryakıt veya otomotiv gibi oynak kalemlerle sınırlı değil. Buna karşın yıllık büyüme %3.5 ile 3.9 beklentisinin altında kaldı; çeyreklik ivme ile yıllık oran arasındaki bu ayrışma baz etkisine ya da önceki çeyreklerin aşağı revizyonuna işaret edebilir, ancak revizyon verisi elimizde yok.",
@@ -638,7 +637,7 @@
           "category": "enflasyon",
           "impact": 2,
           "volatility": 59,
-          "forecast": "2.9%",
+          "forecast": "3.0%",
           "previous": "2.6%",
           "source": {
             "label": "Forex Factory takvimi"
@@ -679,7 +678,7 @@
           "category": "enflasyon",
           "impact": 2,
           "volatility": 50,
-          "forecast": "-0.1%",
+          "forecast": "-0.2%",
           "previous": "0.4%",
           "source": {
             "label": "Forex Factory takvimi"
@@ -775,7 +774,7 @@
           "volatility": 90,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "1,2 mlr $ · BTC %25,5 · ETH %22,5"
+            "value": "1,2 mlr $ · BTC %26,5 · ETH %23,2"
           },
           "source": {
             "label": "OKX opsiyon verisi",

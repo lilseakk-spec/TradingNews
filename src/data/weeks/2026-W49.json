@@ -3,12 +3,12 @@
   "label": "29 Kasım – 4 Aralık 2026",
   "start": "2026-11-29",
   "end": "2026-12-04",
-  "updatedAt": "2026-11-23T15:40:54.144Z",
+  "updatedAt": "2026-11-24T15:30:09.825Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-23T15:40:54.144Z"
+    "fetchedAt": "2026-11-24T15:30:09.825Z"
   },
   "ai": {
     "headline": "Takvim ön izlemesi",
@@ -21,7 +21,7 @@
     "watchlist": [],
     "risks": [],
     "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-23T15:40:54.144Z"
+    "generatedAt": "2026-11-24T15:30:09.825Z"
   },
   "days": [
     {
@@ -778,6 +778,8 @@
           "category": "enflasyon",
           "impact": 3,
           "volatility": 64,
+          "forecast": "3.6%",
+          "previous": "4%",
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -1085,48 +1087,6 @@
           ]
         },
         {
-          "id": "2026-12-02-EUR-gdp-growth-rate-qoq-final",
-          "time": "14:00",
-          "date": "2026-12-02",
-          "utc": "2026-12-02T11:00:00.000Z",
-          "title": "GDP Growth Rate QoQ Final",
-          "region": "Euro Bölgesi",
-          "currency": "EUR",
-          "category": "buyume",
-          "impact": 2,
-          "volatility": 50,
-          "forecast": "5.5%",
-          "previous": "10.2%",
-          "source": {
-            "label": "Forex Factory takvimi"
-          },
-          "affected": [
-            {
-              "symbol": "EURUSD",
-              "direction": "yukari",
-              "strength": 3
-            },
-            {
-              "symbol": "DAX40",
-              "direction": "volatil",
-              "strength": 2
-            },
-            {
-              "symbol": "DE10Y",
-              "direction": "yukari",
-              "strength": 2
-            },
-            {
-              "symbol": "EURJPY",
-              "direction": "yukari",
-              "strength": 2
-            }
-          ],
-          "also": [
-            "GDP Growth Rate YoY Final"
-          ]
-        },
-        {
           "id": "2026-12-02-USD-adp-nonfarm-employment-change",
           "time": "16:15",
           "date": "2026-12-02",
@@ -1397,10 +1357,10 @@
           "region": "Kripto",
           "category": "kripto",
           "impact": 2,
-          "volatility": 56,
+          "volatility": 57,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "402,4 mn $ · BTC %8,4 · ETH %8,4"
+            "value": "398,8 mn $ · BTC %8,7 · ETH %9,2"
           },
           "source": {
             "label": "OKX opsiyon verisi",
@@ -1435,7 +1395,7 @@
           "category": "buyume",
           "impact": 2,
           "volatility": 50,
-          "forecast": "0.2%",
+          "forecast": "0.1%",
           "previous": "0.2%",
           "source": {
             "label": "Forex Factory takvimi"
@@ -1466,6 +1426,35 @@
             "Perakende satışlar (yıllık)",
             "Perakende satışlar (aylık)",
             "GDP Growth Rate YoY Final"
+          ]
+        },
+        {
+          "id": "2026-12-04-GBP-dmp-1y-cpi-expectations",
+          "time": "12:30",
+          "date": "2026-12-04",
+          "utc": "2026-12-04T09:30:00.000Z",
+          "title": "DMP 1Y CPI Expectations",
+          "region": "İngiltere",
+          "currency": "GBP",
+          "category": "enflasyon",
+          "impact": 2,
+          "volatility": 50,
+          "forecast": "3.5%",
+          "previous": "3.4%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "GBPUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "FTSE100",
+              "direction": "volatil",
+              "strength": 2
+            }
           ]
         },
         {
