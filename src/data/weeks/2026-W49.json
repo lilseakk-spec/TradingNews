@@ -3,12 +3,12 @@
   "label": "29 Kasım – 4 Aralık 2026",
   "start": "2026-11-29",
   "end": "2026-12-04",
-  "updatedAt": "2026-11-24T15:30:09.825Z",
+  "updatedAt": "2026-11-25T15:17:14.853Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-24T15:30:09.825Z"
+    "fetchedAt": "2026-11-25T15:17:14.853Z"
   },
   "ai": {
     "headline": "Takvim ön izlemesi",
@@ -21,7 +21,7 @@
     "watchlist": [],
     "risks": [],
     "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-24T15:30:09.825Z"
+    "generatedAt": "2026-11-25T15:17:14.853Z"
   },
   "days": [
     {
@@ -322,6 +322,7 @@
           "category": "enflasyon",
           "impact": 2,
           "volatility": 50,
+          "previous": "3.8%",
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -1357,10 +1358,10 @@
           "region": "Kripto",
           "category": "kripto",
           "impact": 2,
-          "volatility": 57,
+          "volatility": 58,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "398,8 mn $ · BTC %8,7 · ETH %9,2"
+            "value": "406,5 mn $ · BTC %8,8 · ETH %10,3"
           },
           "source": {
             "label": "OKX opsiyon verisi",
