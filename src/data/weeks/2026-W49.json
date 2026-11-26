@@ -3,12 +3,12 @@
   "label": "29 Kasım – 4 Aralık 2026",
   "start": "2026-11-29",
   "end": "2026-12-04",
-  "updatedAt": "2026-11-25T15:17:14.853Z",
+  "updatedAt": "2026-11-26T14:42:26.378Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-25T15:17:14.853Z"
+    "fetchedAt": "2026-11-26T14:42:26.378Z"
   },
   "ai": {
     "headline": "Takvim ön izlemesi",
@@ -21,7 +21,7 @@
     "watchlist": [],
     "risks": [],
     "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-25T15:17:14.853Z"
+    "generatedAt": "2026-11-26T14:42:26.378Z"
   },
   "days": [
     {
@@ -322,6 +322,7 @@
           "category": "enflasyon",
           "impact": 2,
           "volatility": 50,
+          "forecast": "3.8%",
           "previous": "3.8%",
           "source": {
             "label": "Forex Factory takvimi"
@@ -537,6 +538,7 @@
           "category": "enflasyon",
           "impact": 2,
           "volatility": 59,
+          "forecast": "3.7%",
           "previous": "3.7%",
           "source": {
             "label": "Forex Factory takvimi"
@@ -579,6 +581,7 @@
           "category": "buyume",
           "impact": 2,
           "volatility": 44,
+          "forecast": "2.5%",
           "previous": "2.7%",
           "source": {
             "label": "Forex Factory takvimi"
@@ -1088,6 +1091,45 @@
           ]
         },
         {
+          "id": "2026-12-02-EUR-average-weekly-earnings-yoy",
+          "time": "14:00",
+          "date": "2026-12-02",
+          "utc": "2026-12-02T11:00:00.000Z",
+          "title": "Ortalama haftalık kazanç (yıllık)",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "istihdam",
+          "impact": 2,
+          "volatility": 45,
+          "forecast": "4.4%",
+          "previous": "3.9%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ]
+        },
+        {
           "id": "2026-12-02-USD-adp-nonfarm-employment-change",
           "time": "16:15",
           "date": "2026-12-02",
@@ -1157,6 +1199,8 @@
           "category": "enerji",
           "impact": 3,
           "volatility": 46,
+          "forecast": "-0.116M",
+          "previous": "1.109M",
           "source": {
             "label": "Forex Factory takvimi"
           },
@@ -1361,7 +1405,7 @@
           "volatility": 58,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "406,5 mn $ · BTC %8,8 · ETH %10,3"
+            "value": "457,8 mn $ · BTC %8,6 · ETH %11"
           },
           "source": {
             "label": "OKX opsiyon verisi",

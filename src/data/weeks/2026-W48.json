@@ -3,12 +3,12 @@
   "label": "22 – 27 Kasım 2026",
   "start": "2026-11-22",
   "end": "2026-11-27",
-  "updatedAt": "2026-11-25T15:17:56.443Z",
+  "updatedAt": "2026-11-26T14:42:42.314Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-25T15:17:13.164Z"
+    "fetchedAt": "2026-11-26T14:42:24.926Z"
   },
   "ai": {
     "headline": "çarşamba 16:30 pce-gsyh düğümü, cuma 11:00 kripto opsiyon vadesi",
@@ -307,7 +307,6 @@
               "surprise": 0.5
             }
           ],
-          "actual": "0.9",
           "resultBrief": {
             "headline": "Avustralya'da TÜFE takviminde yalnızca İnşaat İşleri verisi geldi: çeyreklik %0,9 ile %0,4 beklentinin üstünde, önceki çeyrekteki -%2,1 düşüşün ardından.",
             "detail": "Elimizde TÜFE (aylık ve yıllık) ve Trimmed Mean CPI rakamları yok, dolayısıyla enflasyon tarafında bir değerlendirme yapılamıyor. Tek ölçü olan Construction Work Done beklentiyi 0,5 puan aştı ve önceki çeyrekteki sert daralmadan pozitif bölgeye geçti.",
@@ -371,7 +370,6 @@
               "surprise": 0
             }
           ],
-          "actual": "1.7",
           "resultBrief": {
             "headline": "BoJ ağırlıklı medyan çekirdek TÜFE yıllık %1,7 ile %1,2 beklentiyi aştı, trimmed mean ise %2,6 ile beklentiye denk geldi.",
             "detail": "Medyandaki 0,5 puanlık sapma büyük görünse de önceki okumaya göre artış yalnızca 0,1 puan (%1,6'dan %1,7'ye). Bu nedenle sürprizin önemli kısmı, önceki değerin altında kalan beklentiden kaynaklanıyor; trimmed mean de %2,5'ten %2,6'ya sınırlı yükseldi.",
@@ -440,7 +438,6 @@
               "surprise": -0.1
             }
           ],
-          "actual": "0.1",
           "resultBrief": {
             "headline": "Almanya'nın üçüncü çeyrek büyümesi nihai veride %0,2'den %0,1'e aşağı revize edildi.",
             "detail": "Çeyreklik büyüme %0,1 ile %0,2 beklentinin, yıllık büyüme %1,2 ile %1,3 beklentinin 0,1 puan altında kaldı. Harcama kırılımı (tüketim, yatırım, net ihracat) elimizde yok, bu yüzden revizyonun hangi kalemden geldiği bilinmiyor.",
@@ -550,7 +547,6 @@
               "surprise": 0.9
             }
           ],
-          "actual": "0.5",
           "resultBrief": {
             "headline": "ABD'de çekirdek PCE aylık %0,3 ile beklentiye denk geldi, ancak yıllık oran %3,3'e çıkarak %3,1 beklentiyi aştı.",
             "detail": "Aylık rakam beklentiye uyarken yıllık oranın 0,2 puan yukarıda gelmesi, önceki ayların yukarı revize edildiğine ya da baz etkisine işaret ediyor; elimizdeki veriyle hangisi olduğu ayrıştırılamıyor. Çeyreklik yıllıklandırılmış %2,5 ile yıllık %3,3 arasındaki fark da son aylardaki ivmenin yıllık ortalamanın altında kaldığını gösteriyor; aynı saatte gelen dayanıklı mallar siparişleri ise manşette %0,2 ile -%0,7 beklentiyi aştı, çekirdekte %0,5 ile %0,8 beklentinin altında kaldı.",
@@ -663,7 +659,6 @@
               "surprise": -0.8
             }
           ],
-          "actual": "4.3",
           "resultBrief": {
             "headline": "ABD üçüncü çeyrek büyümesi öncü veride %3,4'ten %4,3'e güçlü şekilde yukarı revize edildi.",
             "detail": "Nihai satışlar %2,6 ile %1,7 beklentinin üstünde geldi; bu, revizyonun stok değişiminden değil talep tarafından geldiğini gösteriyor. GSYH fiyat endeksi ise %1,9 ile %2,3 beklentinin altında kaldı; ayrıca Q4 yatırım göstergesi olan uçak hariç sivil sermaye malı sevkiyatları %0,6 ile %1,4 beklentinin ve %1,2'lik önceki değerin gerisinde kaldı.",
@@ -742,6 +737,50 @@
             "above": "Beklenenden büyük stok artışı, talebin zayıf ya da arzın bol olduğunu gösterir; WTI ve BRENT düşer, petrol ihracatçısı Kanada'nın ticaret dengesi kanalıyla CAD zayıflar ve USDCAD yükselir, US500'de enerji hisseleri baskılanır.",
             "below": "Beklenenden küçük stok artışı ya da stok düşüşü, arzın sıkılaştığını gösterir; WTI ve BRENT yükselir, CAD güçlenir ve USDCAD düşer, US500'de enerji hisseleri sınırlı destek bulur.",
             "watch": "Benzin ve distilat stokları ile rafineri kapasite kullanımı izlenmeli; ham petrol stok artışı ürün stoklarındaki düşüşle dengeleniyorsa fiyat tepkisi söner."
+          },
+          "results": [
+            {
+              "name": "EIA Crude Oil Imports Change",
+              "actual": "1.893",
+              "forecast": "-0.76",
+              "previous": "-2.155",
+              "surprise": 2.653
+            },
+            {
+              "name": "EIA Distillates Stocks Change",
+              "actual": "0.715",
+              "forecast": "2.181",
+              "previous": "1.571",
+              "surprise": -1.466
+            },
+            {
+              "name": "EIA Gasoline Stocks Change",
+              "actual": "1.733",
+              "forecast": "0.399",
+              "previous": "5.192",
+              "surprise": 1.334
+            },
+            {
+              "name": "EIA Crude Oil Stocks Change",
+              "actual": "1.109",
+              "forecast": "0.353",
+              "previous": "3.38",
+              "surprise": 0.756
+            },
+            {
+              "name": "EIA Cushing Crude Oil Stocks Change",
+              "actual": "-0.534",
+              "forecast": "0.185",
+              "previous": "-1.209",
+              "surprise": -0.719
+            }
+          ],
+          "actual": "1.893",
+          "resultBrief": {
+            "headline": "ABD ham petrol stokları 1,109 milyon varil arttı (beklenti +0,353). Fazlalığın kaynağı ithalattaki 1,893 milyon varillik beklenmedik sıçrama, Cushing'de ise 0,534 milyon varil çekiliş var.",
+            "detail": "Ham petrolde sapma 0,76 milyon varille küçük; ithalat ise beklenen -0,76'ya karşı +1,893 geldi ve yaklaşık 2,65 milyon varillik bu salınım ham petroldeki artışın tamamını açıklıyor. Ürünlerde ayrışma var: benzin +1,733 ile beklentinin (+0,399) belirgin üstünde ama önceki +5,192'den yavaş, distilatlar ise +0,715 ile beklenen +2,181'in altında kaldı.",
+            "meaning": "Ham petroldeki artış talep zayıflığından çok ithalat kaynaklı ve tek haftalık lojistik oynaklık olabilir; benzindeki artış ise WTI ve Brent için daha net bir negatif sinyal. Cushing çekilişi ve sınırlı distilat artışı WTI'nın yakın vadesini destekliyor, bu yüzden petrol üzerinden USD/CAD'e ve S&P 500'ün enerji ayağına geçecek net yön zayıf, rafineri üretimi, toplam üretim ve ima edilen talep verileri elimizde olmadığı için resim eksik.",
+            "next": "Bir sonraki EIA raporunda ithalatın normale dönüp dönmediği izlenecek; dönüş ham petrol stokunda çekilişle bu haftayı tersine çevirir. Şükran Günü haftasına denk gelen ima edilen benzin talebi ile Cushing'deki çekilişin sürüp sürmediği, benzin stok birikiminin talep mi arz mı kaynaklı olduğunu netleştirecek."
           }
         }
       ]
@@ -752,6 +791,63 @@
       "date": "2026-11-26",
       "focus": "Takvimde ABD verisi yok, tek olay 15:30'daki ECB tutanakları; bu nedenle EURUSD'nin yönünü dolar değil Frankfurt söylemi belirler. Tutanaktaki tonun DE10Y'ye, oradan DAX40'a nasıl yansıdığı izlenmeli.",
       "events": [
+        {
+          "id": "2026-11-26-EUR-euro-summit",
+          "time": "12:15",
+          "date": "2026-11-26",
+          "utc": "2026-11-26T09:15:00.000Z",
+          "title": "Euro Summit",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "jeopolitik",
+          "impact": 2,
+          "volatility": 51,
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "XAUUSD",
+              "direction": "volatil",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "XAGUSD",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "WTI",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "VIX",
+              "direction": "volatil",
+              "strength": 2
+            }
+          ]
+        },
         {
           "id": "2026-11-26-EUR-ecb-monetary-policy-meeting-accounts",
           "time": "15:30",
@@ -952,7 +1048,7 @@
           "volatility": 90,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "1,2 mlr $ · BTC %26,3 · ETH %24,5"
+            "value": "1,4 mlr $ · BTC %28,1 · ETH %27,1"
           },
           "source": {
             "label": "OKX opsiyon verisi",

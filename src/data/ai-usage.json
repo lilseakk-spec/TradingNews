@@ -134,6 +134,15 @@
       "outputTokens": 4195,
       "cost": 0.09336,
       "items": 5
+    },
+    {
+      "at": "2026-11-26T14:42:42.315Z",
+      "job": "sonuc",
+      "model": "claude-opus-5-5",
+      "inputTokens": 1169,
+      "outputTokens": 1305,
+      "cost": 0.03078,
+      "items": 1
     }
   ]
 }
