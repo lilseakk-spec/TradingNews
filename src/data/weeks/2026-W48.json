@@ -3,12 +3,12 @@
   "label": "22 – 27 Kasım 2026",
   "start": "2026-11-22",
   "end": "2026-11-27",
-  "updatedAt": "2026-11-26T14:42:42.314Z",
+  "updatedAt": "2026-11-27T14:36:12.114Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-26T14:42:24.926Z"
+    "fetchedAt": "2026-11-27T14:35:25.943Z"
   },
   "ai": {
     "headline": "çarşamba 16:30 pce-gsyh düğümü, cuma 11:00 kripto opsiyon vadesi",
@@ -775,7 +775,6 @@
               "surprise": -0.719
             }
           ],
-          "actual": "1.893",
           "resultBrief": {
             "headline": "ABD ham petrol stokları 1,109 milyon varil arttı (beklenti +0,353). Fazlalığın kaynağı ithalattaki 1,893 milyon varillik beklenmedik sıçrama, Cushing'de ise 0,534 milyon varil çekiliş var.",
             "detail": "Ham petrolde sapma 0,76 milyon varille küçük; ithalat ise beklenen -0,76'ya karşı +1,893 geldi ve yaklaşık 2,65 milyon varillik bu salınım ham petroldeki artışın tamamını açıklıyor. Ürünlerde ayrışma var: benzin +1,733 ile beklentinin (+0,399) belirgin üstünde ama önceki +5,192'den yavaş, distilatlar ise +0,715 ile beklenen +2,181'in altında kaldı.",
@@ -939,6 +938,41 @@
             "above": "%2,9'un üzerindeki okuma, BoJ'nin faiz artırımı beklentisini öne çeker; Japon tahvil getirileri yükselir, faiz farkı daralır, USDJPY ve EURJPY düşer, NIKKEI225 güçlü yenle baskılanır. Yen carry pozisyonlarının çözülmesi BTCUSD gibi kaldıraçlı varlıklara da yansır.",
             "below": "%2,9'un altındaki okuma, beklenen hızlanmanın gerçekleşmediğini gösterir ve BoJ'nin normalleşme beklentisini geri çeker; faiz farkı korunur, USDJPY ve EURJPY yükselir, zayıf yen NIKKEI225'i destekler.",
             "watch": "Taze gıda ve enerji hariç (core-core) okuma izlenmeli; hızlanma yalnızca enerjiden kaynaklanıyorsa BoJ açısından anlamı zayıftır ve yen tepkisi geri alınır."
+          },
+          "results": [
+            {
+              "name": "Tokyo Core CPI y/y",
+              "actual": "2.9",
+              "forecast": "2.8",
+              "previous": "2.6",
+              "surprise": 0.1
+            },
+            {
+              "name": "Tokyo CPI y/y",
+              "actual": "2.8",
+              "forecast": "2.9",
+              "previous": "2.8",
+              "surprise": -0.1
+            },
+            {
+              "name": "Tokyo CPI excl. Food and Energy y/y",
+              "actual": "2.5",
+              "forecast": "2.4",
+              "previous": "2.6",
+              "surprise": 0.1
+            },
+            {
+              "name": "Tokyo CPI s.a. m/m",
+              "actual": "0.3",
+              "previous": "0.5"
+            }
+          ],
+          "actual": "2.9",
+          "resultBrief": {
+            "headline": "Tokyo çekirdek TÜFE %2,9 ile beklenen %2,8'in üzerinde geldi ve %2,6'dan hızlandı, ancak manşet %2,8 ile beklentinin altında kaldı.",
+            "detail": "Taze gıda hariç çekirdek 0,1 puan yukarı sürpriz yaparken manşet %2,8'de sabit kaldı ve %2,9 beklentisini kaçırdı; gıda ve enerji hariç ölçü %2,5 ile beklentiyi 0,1 puan aştı ama %2,6'dan geriledi. Çekirdeğin (%2,9) hem manşetin hem gıda-enerji hariç ölçünün (%2,5) üzerinde olması, artışın büyük kısmının enerjiden geldiğini, taze gıdanın ise aşağı çektiğini gösteriyor; aylık mevsimsellikten arındırılmış artış %0,5'ten %0,3'e yavaşladı.",
+            "meaning": "Sürprizler 0,1 puanlık ve iki yönlü olduğu için net sinyal zayıf: enerji kaynaklı çekirdek yükselişi BoJ'un sıkılaştırma argümanını sınırlı destekliyor, fakat talep kaynaklı enflasyonu gösteren gıda-enerji hariç ölçünün yavaşlaması bunu dengeliyor. Mantıksal yön, USD/JPY ve EUR/JPY için hafif yen lehine ve küçük çaplı; aylık ivme kaybı faiz artırımı beklentisini belirgin biçimde öne çekmeye yetecek güçte değil.",
+            "next": "Aralık ortasında açıklanacak ulusal TÜFE, Tokyo'daki enerji kaynaklı artışın ülke geneline yayılıp yayılmadığını teyit edecek. Aralık BoJ toplantısı öncesinde gelecek yetkili açıklamaları ve ücret göstergeleri, gıda-enerji hariç ölçüdeki gevşemenin önemini belirleyecek."
           }
         },
         {
@@ -988,6 +1022,50 @@
             "above": "-%0,1'in üzerindeki okuma, beklenen fiyat düşüşünün gerçekleşmediğini gösterir ve ECB'nin gevşeme beklentisini geri çeker; DE10Y yükselir, EURUSD ve EURJPY güçlenir, DAX40 faiz kanalıyla baskılanır.",
             "below": "-%0,1'in altındaki okuma, dezenflasyonun derinleştiğini gösterir ve ECB'nin gevşeme fiyatlamasını artırır; DE10Y düşer, EURUSD ve EURJPY zayıflar, DAX40 düşen faizden destek alır.",
             "watch": "İspanya flaş TÜFE ile yön uyumu izlenmeli; iki ülke ters yönde sürpriz yaparsa EURUSD'nin yönü netleşmez ve karar 11:55'teki Almanya işsizlik verisine kalır."
+          },
+          "results": [
+            {
+              "name": "CPI m/m",
+              "actual": "-0.7",
+              "forecast": "0.4",
+              "previous": "0.4",
+              "surprise": -1.1
+            },
+            {
+              "name": "HICP m/m",
+              "actual": "-0.7",
+              "forecast": "0.4",
+              "previous": "0.4",
+              "surprise": -1.1
+            },
+            {
+              "name": "HICP y/y",
+              "actual": "3.2",
+              "forecast": "3.7",
+              "previous": "3.7",
+              "surprise": -0.5
+            },
+            {
+              "name": "CPI y/y",
+              "actual": "2.9",
+              "forecast": "3.3",
+              "previous": "3.4",
+              "surprise": -0.4
+            },
+            {
+              "name": "GDP q/q",
+              "actual": "-0.2",
+              "forecast": "-0.1",
+              "previous": "-0.1",
+              "surprise": -0.1
+            }
+          ],
+          "actual": "-0.7",
+          "resultBrief": {
+            "headline": "Fransa TÜFE aylık %-0,7 ile beklenen %+0,4'ün çok altında geldi; yıllık HICP %3,7'den %3,2'ye geriledi.",
+            "detail": "Aylık hem CPI hem HICP 1,1 puanlık negatif sürprizle %-0,7'ye düştü; yıllık HICP beklentiyi 0,5 puan, yıllık CPI ise 0,4 puan (%2,9 / beklenti %3,3, önceki %3,4) ıskaladı. Alt kalem kırılımı elimizde olmadığından düşüşün enerji, regüle fiyatlar ya da bir defalık bir etkiden mi kaynaklandığı belirlenemiyor; aynı anda açıklanan İspanya öncü TÜFE rakamları da elimizde yok.",
+            "meaning": "Bu büyüklükte bir aşağı sürpriz, Euro Bölgesi öncü HICP beklentilerini aşağı çeker ve ECB'nin şahin duruşunu zayıflatır; mantıksal yön EUR/USD ve EUR/JPY'de euro aleyhine, Alman 10 yıllık tahvil faizinde aşağı yönlüdür. Aynı saatte gelen GDP daralmasıyla birleşince bu, takip listesindeki 'euro yukarı / Bund faizi yukarı' varsayımının tersini işaret ediyor.",
+            "next": "Almanya öncü TÜFE ve Aralık başındaki Euro Bölgesi öncü HICP, düşüşün Fransa'ya özgü olup olmadığını gösterecek; düşüş genelleşirse ECB Aralık toplantısı beklentileri güvercinleşir. Aralık ortasındaki Fransa nihai TÜFE'si, bu kadar sert bir aylık düşüşün revize edilip edilmeyeceği açısından kritik."
           }
         },
         {
@@ -1034,55 +1112,50 @@
             "above": "-%0,1'in üzerindeki, özellikle pozitif bir okuma, teknik resesyon tablosunu bozar ve ECB'nin gevşeme beklentisini azaltır; DE10Y yükselir, EURUSD ve EURJPY güçlenir, DAX40 bölgesel büyüme kanalıyla destek bulur.",
             "below": "-%0,1'den derin bir daralma, resesyonun ağırlaştığını gösterir ve ECB'nin gevşeme beklentisini artırır; DE10Y düşer, EURUSD ve EURJPY zayıflar, DAX40'ta düşen faizin desteği zayıf talebin baskısıyla çatışır.",
             "watch": "Hanehalkı tüketimi ve yatırımın katkısı izlenmeli; daralma dış ticaretten geliyorsa iç talep sağlam kalır ve EUR tepkisi sınırlı olur."
-          }
-        },
-        {
-          "id": "okx-opsiyon-vadesi-2026-11-27",
-          "time": "11:00",
-          "date": "2026-11-27",
-          "utc": "2026-11-27T08:00:00.000Z",
-          "title": "BTC ve ETH aylık opsiyon vadesi",
-          "region": "Kripto",
-          "category": "kripto",
-          "impact": 3,
-          "volatility": 90,
-          "metric": {
-            "label": "vadesi dolan açık pozisyon",
-            "value": "1,4 mlr $ · BTC %28,1 · ETH %27,1"
           },
-          "source": {
-            "label": "OKX opsiyon verisi",
-            "url": "https://www.okx.com"
-          },
-          "affected": [
+          "results": [
             {
-              "symbol": "BTCUSD",
-              "direction": "volatil",
-              "strength": 3
+              "name": "CPI m/m",
+              "actual": "-0.7",
+              "forecast": "0.4",
+              "previous": "0.4",
+              "surprise": -1.1
             },
             {
-              "symbol": "ETHUSD",
-              "direction": "volatil",
-              "strength": 3
+              "name": "HICP m/m",
+              "actual": "-0.7",
+              "forecast": "0.4",
+              "previous": "0.4",
+              "surprise": -1.1
             },
             {
-              "symbol": "TOTAL",
-              "direction": "volatil",
-              "strength": 2
+              "name": "HICP y/y",
+              "actual": "3.2",
+              "forecast": "3.7",
+              "previous": "3.7",
+              "surprise": -0.5
             },
             {
-              "symbol": "BTC.D",
-              "direction": "volatil",
-              "strength": 1,
-              "note": "vade sonrasi rotasyon"
+              "name": "CPI y/y",
+              "actual": "2.9",
+              "forecast": "3.3",
+              "previous": "3.4",
+              "surprise": -0.4
+            },
+            {
+              "name": "GDP q/q",
+              "actual": "-0.2",
+              "forecast": "-0.1",
+              "previous": "-0.1",
+              "surprise": -0.1
             }
           ],
-          "brief": {
-            "what": "Bitcoin ve Ethereum aylık opsiyon sözleşmelerinin vade sonudur; bu saatte açık sözleşmeler nakit olarak uzlaşır ve piyasa yapıcıların opsiyon riskine karşı tuttuğu spot ve vadeli korunma (hedge) pozisyonları çözülür.",
-            "why": "Oynaklık skoru 90 ile haftanın en yüksek riskli olayı. Cuma takvimde ABD verisi olmadığı için BTCUSD'de makro katalizörün yerini pozisyon akışı alır ve çarşamba ABD verisinin yarattığı yön vade öncesi konumlanmayla birleşir.",
-            "above": "Spot, açık pozisyonun yoğunlaştığı kullanım fiyatlarının ve en çok opsiyonun değersiz kaldığı seviyenin (max pain) üzerinde vadeye girerse, vade öncesi hedge akışı fiyatı aşağı, bu yoğunluğa doğru çeker; vade sonrası bu sabitleme kalkınca yön yeniden makro sinyale bağlanır. ETHUSD daha yüksek betayla BTCUSD'den sert hareket eder, TOTAL eşlik eder.",
-            "below": "Spot aynı yoğunluğun altında vadeye girerse, vade öncesi hedge akışı fiyatı yukarı, kullanım fiyatı kümesine doğru çeker; kârda kapanan put'larla korunan pozisyonlar vade sonrası kapanırken kısa pozisyon sıkışması BTCUSD ve ETHUSD'de ani yukarı hareket üretebilir. BTC.D, ETHUSD'nin BTCUSD'ye göre performansıyla ters yönde hareket eder.",
-            "watch": "Vade sonrası ilk saatlerde açık pozisyon (OI) ve fonlama oranları izlenmeli; OI hızla yeniden artıyorsa yeni yönlü pozisyon kuruluyor demektir ve hareket kalıcıdır."
+          "actual": "-0.7",
+          "resultBrief": {
+            "headline": "Fransa GSYH çeyreklik %-0,2 daraldı; beklenen %-0,1'den daha zayıf geldi.",
+            "detail": "Daralma beklentiden 0,1 puan derin; önceki okuma da %-0,1 idi, bu önceki çeyreğe aitse iki çeyrek üst üste daralma, yani teknik resesyon anlamına geliyor. Sürpriz büyüklük olarak küçük; harcama kalemleri kırılımı elimizde yok.",
+            "meaning": "Tek başına 0,1 puanlık sapma sınırlı, ancak aynı anda gelen %-0,7'lik aylık TÜFE ile birlikte Fransa'da hem büyümenin hem fiyat baskısının zayıfladığı bir tablo çiziliyor; bu da ECB'yi güvercin tarafa iter. Mantıksal yön euro aleyhine ve Bund faizleri için aşağı yönlü; DAX açısından zayıf büyüme ile gevşeme beklentisi ters yönde çalışıyor.",
+            "next": "Aralık başındaki Fransa ve Euro Bölgesi imalat/hizmet PMI'ları, daralmanın son çeyreğe taşınıp taşınmadığını gösterecek. Euro Bölgesi GSYH revizyonu ve ECB Aralık projeksiyonları, Fransa zayıflığının bölgesel büyüme tahminine ne ölçüde yansıyacağını belirleyecek."
           }
         },
         {
@@ -1129,6 +1202,43 @@
             "above": "+5 binin üzerindeki artış, işgücü piyasasının hızla bozulduğunu gösterir ve ECB'nin gevşeme beklentisini artırır; DE10Y düşer, EURUSD ve EURJPY zayıflar, iç talep endişesi DAX40'ı baskılar.",
             "below": "+5 binin altındaki artış ya da işsiz sayısında düşüş, işgücü piyasasının dayanıklı kaldığını gösterir ve ECB'nin gevşeme beklentisini geri çeker; DE10Y yükselir, EURUSD ve EURJPY güçlenir, DAX40 iç talep kanalıyla destek bulur.",
             "watch": "Aynı anda açıklanan işsizlik oranı ve önceki ayın revizyonu izlenmeli; manşet beklentiye uygun gelse bile oran yükselirse EUR üzerindeki baskı sürer."
+          },
+          "results": [
+            {
+              "name": "Unemployment Change",
+              "actual": "9",
+              "forecast": "4",
+              "previous": "4",
+              "surprise": 5
+            },
+            {
+              "name": "Unemployment Rate",
+              "actual": "6.4",
+              "forecast": "6.4",
+              "previous": "6.4",
+              "surprise": 0
+            },
+            {
+              "name": "Unemployment n.s.a.",
+              "actual": "2.936",
+              "forecast": "2.91",
+              "previous": "2.955",
+              "surprise": 0.026
+            },
+            {
+              "name": "Unemployment",
+              "actual": "3.025",
+              "forecast": "3.008",
+              "previous": "3.016",
+              "surprise": 0.017
+            }
+          ],
+          "actual": "9",
+          "resultBrief": {
+            "headline": "Almanya'da işsiz sayısı 9 bin arttı; beklenen 4 bin artışın üzerinde, oran ise %6,4'te sabit kaldı.",
+            "detail": "Mevsimsellikten arındırılmış işsiz sayısı 3,025 milyon ile beklenen 3,008 milyonu aştı ve 3 milyonun üzerinde kalmaya devam etti; arındırılmamış seri 2,955'ten 2,936 milyona indi ama 2,91 milyon beklentisinin üstünde kaldı. Oranın değişmemesi, 5 binlik sapmanın küçük olduğunu teyit ediyor.",
+            "meaning": "Bu veri, Fransa'daki zayıf büyüme ve enflasyon verilerine eklenen kademeli bir işgücü piyasası yumuşaması sinyali; tek başına ECB beklentisini değiştirecek büyüklükte değil. Mantıksal yön euro için hafif negatif, Bund faizi için hafif aşağı yönlü.",
+            "next": "Aralık başında açıklanacak Euro Bölgesi işsizlik oranı ve PMI istihdam alt endeksleri, Almanya'daki artışın bölgesel bir eğilim olup olmadığını gösterecek. Aralık ayındaki Federal Çalışma Ajansı verisinde artışın 5 binin üzerinde sürmesi, yumuşama okumasını teyit eder."
           }
         }
       ]

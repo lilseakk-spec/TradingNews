@@ -3,25 +3,55 @@
   "label": "29 Kasım – 4 Aralık 2026",
   "start": "2026-11-29",
   "end": "2026-12-04",
-  "updatedAt": "2026-11-26T14:42:26.378Z",
+  "updatedAt": "2026-11-27T14:41:57.718Z",
   "preliminary": true,
   "calendarSource": {
     "label": "biquote ekonomik takvim (on izleme)",
     "url": "https://biquote.io/api/calendar",
-    "fetchedAt": "2026-11-26T14:42:26.378Z"
+    "fetchedAt": "2026-11-27T14:35:27.414Z"
   },
   "ai": {
-    "headline": "Takvim ön izlemesi",
-    "thesis": "Gelecek haftanın takvimi şimdiden görülebilsin diye erken çekildi. Saatler kayabilir, haber eklenip çıkabilir. Yorum cuma günü üretilir, kesin takvim pazar sabahı yerine oturur.",
+    "headline": "istihdam soğuyor, fiyatlar direniyor: hafta cumaya bağlı",
+    "thesis": "Haftanın merkezinde cuma 16:30 NFP var: 165 binden 37 bine sert yavaşlama beklentisi, salı ve perşembe 70 civarında kalan ISM fiyat endeksi beklentileriyle çelişiyor. Bu çelişki US02Y üzerinden fiyatlanacak; istihdamdaki soğuma Fed indirim fiyatlamasını öne çekerken yüksek fiyat endeksleri ve ücretler bu fiyatlamayı frenliyor, sonuç DXY ve XAUUSD'ye yayılacak. Kontrollü bir soğuma ile birlikte gerileyen fiyat baskısı BTCUSD ve US100 için faiz kanalından destek demek; sıcak ücret ya da fiyat verisi ise iki varlıkta değerleme baskısı yaratır. Avrupa tarafında salı 13:00 TÜFE'nin 4%'ten 3.6%'ya düşüş beklentisi, DXY'nin en büyük bileşeni olan EURUSD'nin yönünü belirliyor.",
     "regime": {
-      "label": "belirlenmedi",
+      "label": "ABD'de soğuyan istihdam ile yüksek seyreden fiyat endeksleri arasında sıkışan, yönü faiz kanalının belirlediği karışık rejim",
       "tone": "karisik"
     },
-    "scenarios": [],
-    "watchlist": [],
-    "risks": [],
-    "generatedBy": "bekliyor",
-    "generatedAt": "2026-11-26T14:42:26.378Z"
+    "scenarios": [
+      {
+        "name": "Ilımlı soğuma",
+        "trigger": "NFP 37 bin civarında ya da altında gelir, ortalama saatlik kazanç yavaşlar ve iki ISM fiyat endeksi de beklentinin altında kalırsa.",
+        "reaction": "US02Y ve DXY aşağı, EURUSD ve XAUUSD yukarı, düşen kısa vadeli faizle BTCUSD ve US100 yukarı.",
+        "bias": "yukari"
+      },
+      {
+        "name": "Sıcak fiyat, sıkı faiz",
+        "trigger": "ADP ve NFP beklentinin belirgin üstünde, ISM fiyat endeksleri 73.2 ve 69.8 beklentilerinin üstünde gelirse.",
+        "reaction": "US02Y ve DXY yukarı, EURUSD ve XAUUSD aşağı, indirim fiyatlaması gerilediği için BTCUSD ve US100 aşağı.",
+        "bias": "asagi"
+      },
+      {
+        "name": "Stagflasyon sıkışması",
+        "trigger": "NFP zayıf gelirken ortalama saatlik kazanç ve ISM fiyat endeksleri yüksek kalırsa.",
+        "reaction": "US02Y istihdam ile ücret arasında yön bulamaz ve DXY dar bantta kalır; XAUUSD destek bulurken BTCUSD ve US100'de verinin ardından gelen ilk hareket geri alınır.",
+        "bias": "notr"
+      }
+    ],
+    "watchlist": [
+      "US02Y",
+      "DXY",
+      "BTCUSD",
+      "US100",
+      "EURUSD",
+      "XAUUSD"
+    ],
+    "risks": [
+      "NFP negatif gelirse piyasa bunu indirim değil resesyon sinyali olarak okur; bu durumda BTCUSD ve US100, düşen US02Y'ye rağmen aşağı gider.",
+      "Salı euro bölgesi TÜFE 3.6% beklentisinin belirgin üstünde gelirse EURUSD yükselişi, ABD verilerinden bağımsız olarak DXY'yi aşağı çeker ve dolar kanalı okumasını bozar.",
+      "Cuma 11:00 opsiyon vadesi öncesindeki pin etkisi BTCUSD'yi dar bantta tutar; vadeden sonra çözülen pozisyonlar NFP tepkisini veri yönünden bağımsız olarak büyütebilir."
+    ],
+    "generatedBy": "claude-opus-5-5",
+    "generatedAt": "2026-11-27T14:41:57.718Z"
   },
   "days": [
     {
@@ -68,7 +98,14 @@
           ],
           "also": [
             "Perakende satışlar (yıllık)"
-          ]
+          ],
+          "brief": {
+            "what": "Japonya'da perakende mağaza satışlarının bir önceki aya göre değişimini ölçer; hane tüketiminin doğrudan göstergesidir.",
+            "why": "Haftanın ilk verisi olarak Asya açılışında 02:50'de çıkıyor; takvimde beklenti verilmediği için tepkiyi, yıllık seriyle birlikte okunan sürprizin yönü belirleyecek.",
+            "above": "Güçlü tüketim BoJ'un (Japonya Merkez Bankası) faiz artırma alanını genişletir ve yen talebini artırır; USDJPY ile EURJPY aşağı gider, güçlenen yen ihracatçı kârlarını sıkıştırdığı için NIKKEI225 baskı görür.",
+            "below": "Zayıf tüketim BoJ'un faiz artırma iştahını azaltır ve yen faiz desteğini kaybeder; USDJPY ile EURJPY yukarı gider, zayıf yen ihracatçı kârlarını desteklediği için NIKKEI225 yukarı eğilim gösterir.",
+            "watch": "Aylık ve yıllık serinin ayrışması önemli; aylık artış yıllık düşüşle birlikte gelirse baz etkisi okunur ve yen tepkisi söner."
+          }
         },
         {
           "id": "2026-11-30-CNY-manufacturing-pmi",
@@ -102,7 +139,14 @@
               "direction": "volatil",
               "strength": 1
             }
-          ]
+          ],
+          "brief": {
+            "what": "Çin'deki imalat şirketlerinin satın alma yöneticilerine yapılan anketten türetilen endekstir (PMI: Satın Alma Yöneticileri Endeksi); 50'nin altı daralmayı gösterir.",
+            "why": "Beklenti 48.6 ile önceki 49.3'ün altında; piyasa daralmanın derinleşmesini fiyatlıyor ve Çin talebi AUD ile petrol için öncü sinyal veriyor.",
+            "above": "48.6 üstü okuma Çin sanayi talebinin beklenenden dirençli olduğunu gösterir; emtia ihracatçısı Avustralya'nın parası güçlenir ve AUDUSD yukarı gider, BRENT talep beklentisiyle destek bulur, US500 küresel büyüme kanalından olumlu etkilenir.",
+            "below": "48.6 altı okuma daralmanın hızlandığını gösterir; Avustralya'nın ihracat talebi beklentisi düşer ve AUDUSD aşağı gider, BRENT talep endişesiyle baskılanır, US500 küresel büyüme kaygısıyla risk iştahı kaybeder.",
+            "watch": "Yeni siparişler ve ihracat siparişleri alt endeksleri belirleyici; manşet sürpriz yapmasa bile sipariş tarafı AUDUSD'nin yönünü belirler."
+          }
         },
         {
           "id": "2026-11-30-EUR-gdp-growth-rate-yoy",
@@ -144,7 +188,14 @@
           ],
           "also": [
             "GSYH büyümesi (çeyreklik)"
-          ]
+          ],
+          "brief": {
+            "what": "Ekonominin ürettiği toplam mal ve hizmet değerinin (GSYH: Gayri Safi Yurt İçi Hasıla) geçen yılın aynı çeyreğine göre değişimini ölçer.",
+            "why": "Takvimde aynı gün farklı beklentilerle birden fazla Euro Bölgesi etiketli GSYH serisi var; 09:00 okuması günün ilk büyüme sinyali ve 1.9% beklentisiyle önceki 1.8%'e göre hafif hızlanmayı fiyatlıyor.",
+            "above": "1.9% üstü büyüme ECB'nin (Avrupa Merkez Bankası) faiz indirme gerekçesini zayıflatır; DE10Y yukarı gider, faiz farkı euro lehine açılır ve EURUSD ile EURJPY yükselir, DAX40 ise güçlü büyüme ile artan faiz arasında iki yönlü kalır.",
+            "below": "1.9% altı okuma beklenen hızlanmayı boşa çıkarır ve ECB'nin gevşeme alanını genişletir; DE10Y aşağı gider, faiz farkı daralır ve EURUSD ile EURJPY düşer, DAX40'ta düşen faizin desteği zayıf büyümeyle dengelenir.",
+            "watch": "Eşzamanlı çeyreklik seri belirleyici; yıllık hızlanma çeyreklik yavaşlamayla birlikte gelirse baz etkisi okunur ve EURUSD tepkisi kalıcı olmaz."
+          }
         },
         {
           "id": "2026-11-30-EUR-retail-sales-m-m",
@@ -186,7 +237,14 @@
           ],
           "also": [
             "Perakende satışlar (yıllık)"
-          ]
+          ],
+          "brief": {
+            "what": "Perakende satış hacminin bir önceki aya göre değişimini ölçer; hane tüketiminin en hızlı göstergesidir.",
+            "why": "Önceki ayki -2%'lik sert düşüşün ardından 0.1% beklenti yalnızca yatay bir toparlanma öngörüyor; veri, tüketimdeki çöküşün tek seferlik mi yoksa kalıcı mı olduğunu gösterecek.",
+            "above": "Güçlü bir toparlanma -2%'lik düşüşün tek seferlik olduğunu doğrular, büyüme beklentisiyle birlikte DE10Y'yi yukarı taşır; EURUSD ve EURJPY yükselir, tüketimle ilişkili şirketler üzerinden DAX40 olumlu etkilenir.",
+            "below": "Negatif okuma tüketimin ikinci ay üst üste daraldığı anlamına gelir ve ECB gevşeme beklentisini artırır; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 düşen faiz ile zayıf talep arasında sıkışır.",
+            "watch": "Önceki -2%'lik okumanın revizyonu önemli; yukarı revize edilirse manşet zayıf gelse bile euro tepkisi sınırlı kalır."
+          }
         },
         {
           "id": "2026-11-30-CHF-gdp-y-y",
@@ -218,7 +276,14 @@
           ],
           "also": [
             "GSYH büyümesi (çeyreklik)"
-          ]
+          ],
+          "brief": {
+            "what": "İsviçre ekonomisinin geçen yılın aynı çeyreğine göre büyümesini ölçer; çeyreklik büyümeyle birlikte yayımlanır.",
+            "why": "Beklenti 2.8%'ten 1.6%'ya belirgin bir yavaşlama öngörüyor; SNB'nin (İsviçre Ulusal Bankası) faizi düşük tutma ve frankı zayıflatma ihtiyacı bu verinin gücüne bağlı.",
+            "above": "1.6% üstü büyüme SNB'nin gevşeme baskısını hafifletir ve frank talebini artırır; USDCHF aşağı gider, XAUUSD'de güvenli liman talebi frankla paylaşıldığı için etki sınırlı kalır.",
+            "below": "1.6% altı yavaşlama SNB'nin gevşek kalma ihtimalini artırır ve frank faiz desteğini kaybeder; USDCHF yukarı gider, XAUUSD'de güvenli liman ile dolar kanalı birbirini dengeler.",
+            "watch": "Çeyreklik büyümenin negatife dönüp dönmediği izlenmeli; daralma sinyali, yıllık rakamdan daha güçlü bir frank satışını tetikler."
+          }
         },
         {
           "id": "2026-11-30-EUR-cpi-m-m",
@@ -265,7 +330,14 @@
             "TÜFE (yıllık)",
             "HICP enflasyonu (aylık)",
             "HICP enflasyonu (yıllık)"
-          ]
+          ],
+          "brief": {
+            "what": "Tüketici fiyat endeksinin (TÜFE) aylık değişimini ölçer; aynı anda HICP (Uyumlaştırılmış Tüketici Fiyat Endeksi) dahil birden fazla enflasyon serisi yayımlanır.",
+            "why": "Beklenti önceki ayla aynı seviyede, 1%; aylık bazda yüksek bir tempo olan bu okuma, salı 13:00'teki ana TÜFE öncesi ilk enflasyon sinyali.",
+            "above": "1% üstü aylık artış fiyat baskısının hızlandığını gösterir; ECB'nin sıkı duruşunun fiyatlanmasıyla DE10Y yukarı gider, EURUSD ve EURJPY yükselir, artan faiz DAX40 değerlemelerini baskılar.",
+            "below": "1% altı okuma fiyat ivmesinin kırıldığını gösterir ve ECB gevşeme fiyatlamasını artırır; DE10Y aşağı gider, EURUSD ile EURJPY düşer, düşen faiz DAX40'ı destekler.",
+            "watch": "HICP ile ulusal TÜFE'nin ayrışması önemli; ECB hedefini HICP üzerinden tanımladığı için kalıcı tepkiyi HICP belirler."
+          }
         },
         {
           "id": "2026-11-30-EUR-gdp-growth-rate-yoy-final",
@@ -309,7 +381,14 @@
             "Perakende satışlar (yıllık)",
             "Perakende satışlar (aylık)",
             "GDP Growth Rate QoQ Final"
-          ]
+          ],
+          "brief": {
+            "what": "Yıllık GSYH büyümesinin kesinleşmiş (final) okumasıdır; öncü tahminin revize edilmiş halidir.",
+            "why": "Final veri genellikle öncü tahminden az sapar; 0.7% beklenti önceki 0.5%'e göre yukarı revizyon öngörüyor ve aynı saatte perakende satışlar da açıklanıyor.",
+            "above": "0.7% üstü revizyon büyüme algısını yükseltir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 kâr beklentisiyle olumlu etkilenir ancak faiz kanalı bu etkiyi sınırlar.",
+            "below": "0.7% altı okuma büyümenin zayıf kaldığını teyit eder; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40'ta düşen faiz ile zayıf büyüme birbirini dengeler.",
+            "watch": "Eşzamanlı perakende satışlar belirleyici; GSYH revizyonu ile tüketim farklı yönleri gösterirse euro tepkisi söner."
+          }
         },
         {
           "id": "2026-11-30-EUR-inflation-rate-yoy-prel",
@@ -353,7 +432,14 @@
             "Harmonised Inflation Rate MoM Prel",
             "Harmonised Inflation Rate YoY Prel",
             "Inflation Rate MoM Prel"
-          ]
+          ],
+          "brief": {
+            "what": "Yıllık enflasyonun öncü (flash) tahminidir; kesin veriden önce yayımlanan ilk okumadır ve aylık ile HICP öncü serileri de aynı anda çıkar.",
+            "why": "3.8%, ECB'nin %2 hedefinin belirgin üstünde; yatay beklenti fiyat baskısının gevşemediğini fiyatlıyor ve okuma, sabahki aylık TÜFE'nin teyidi olarak değerlendirilecek.",
+            "above": "3.8% üstü öncü okuma ECB'nin sıkı kalma beklentisini güçlendirir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 faiz baskısıyla aşağı eğilim gösterir.",
+            "below": "3.8% altı okuma dezenflasyonun başladığını gösterir ve ECB'nin gevşeme alanını açar; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 düşen faizden destek alır.",
+            "watch": "Aylık öncü ve HICP serileri önemli; yıllık manşet yatay kalsa bile aylık ivme düşükse piyasa yavaşlamayı fiyatlar."
+          }
         },
         {
           "id": "2026-11-30-EUR-unemployment-rate",
@@ -392,7 +478,14 @@
               "direction": "yukari",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "İş arayıp bulamayanların toplam işgücü içindeki payını ölçer.",
+            "why": "5.6%'dan 5.7%'ye hafif bir bozulma bekleniyor; aynı saatte öncü enflasyon da açıklandığı için euro tepkisi iki verinin birlikte okunmasına bağlı.",
+            "above": "5.7% üstü işsizlik ücret ve talep baskısının gevşeyeceğini gösterir ve ECB gevşeme fiyatlamasını artırır; DE10Y aşağı gider, EURUSD ile EURJPY düşer.",
+            "below": "5.7% altı işsizlik sıkı bir işgücü piyasasını teyit eder ve ücret kaynaklı enflasyon riski ECB'yi sıkı tutar; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 artan faizle baskı görür.",
+            "watch": "Eşzamanlı öncü enflasyon belirleyici; yüksek enflasyon artan işsizlikle birlikte gelirse piyasa stagflasyon okuması yapar ve euro tepkisi bastırılır."
+          }
         },
         {
           "id": "2026-11-30-CAD-gdp-m-m",
@@ -427,7 +520,14 @@
             "GDP Implicit Price Index (çeyreklik)",
             "GDP Annualized (çeyreklik)",
             "GSYH büyümesi (yıllık)"
-          ]
+          ],
+          "brief": {
+            "what": "Kanada ekonomisinin aylık büyümesini ölçer; aynı anda çeyreklik ve yıllıklandırılmış büyüme ile GSYH zımni fiyat endeksi (ekonomi genelindeki fiyat göstergesi) yayımlanır.",
+            "why": "Beklenti de önceki okuma da 0%; ekonomi yatay seyrediyor ve BoC'nin (Kanada Merkez Bankası) faiz yolu bu durgunluğun derinleşip derinleşmediğine bakacak.",
+            "above": "Pozitif büyüme BoC gevşeme beklentisini azaltır ve CAD faiz desteğiyle güçlenir; USDCAD aşağı gider, WTI'da etki Kanada üretim kanalı üzerinden dolaylı kalır.",
+            "below": "Negatif büyüme durgunluğu daralmaya çevirir ve BoC gevşeme fiyatlamasını artırır; USDCAD yukarı gider, WTI talep algısıyla hafif baskı görür.",
+            "watch": "GSYH zımni fiyat endeksi önemli; yüksek gelirse zayıf büyümeye rağmen BoC sıkı kalır ve CAD satışı sınırlanır."
+          }
         },
         {
           "id": "2026-11-30-USD-mni-chicago-business-barometer",
@@ -486,9 +586,17 @@
               "direction": "asagi",
               "strength": 1
             }
-          ]
+          ],
+          "brief": {
+            "what": "Chicago bölgesindeki şirketlerin satın alma yöneticilerine yapılan iş koşulları anketidir; 50'nin üstü genişlemeyi gösterir.",
+            "why": "Beklenti 55.3'ten 60.9'a sert bir sıçrama öngörüyor; haftanın ilk ABD verisi ve salı ISM imalat öncesinde ABD imalatından gelen ilk sinyal.",
+            "above": "60.9 üstü güçlü genişleme ABD büyüme ve fiyat beklentilerini artırır; US10Y ve DXY yukarı, EURUSD ve XAUUSD aşağı gider, artan faiz BTCUSD ve US500'de değerleme baskısı yaratır.",
+            "below": "60.9 altı okuma beklenen sıçramanın gerçekleşmediğini gösterir; US10Y ve DXY aşağı, EURUSD ve XAUUSD yukarı gider, düşen faiz BTCUSD ve US500'ü destekler.",
+            "watch": "Ödenen fiyatlar alt endeksi kritik; manşet zayıf ama fiyatlar yüksek gelirse faizdeki düşüş sınırlı kalır ve bu, salı ISM fiyat endeksi için önden sinyal olur."
+          }
         }
-      ]
+      ],
+      "focus": "Günü Avrupa'daki büyüme ve öncü enflasyon yığını ile 17:45'te Chicago barometresinin 55.3'ten 60.9'a sıçrama beklentisi belirliyor. Gün içinde EURUSD'de öncü enflasyonun 3.8%'de yatay kalıp kalmadığı, akşam ise US10Y'nin Chicago sürprizine tepkisi izlenecek."
     },
     {
       "key": "sali",
@@ -525,7 +633,14 @@
               "direction": "asagi",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "Japonya'da iş arayıp bulamayanların toplam işgücü içindeki payını ölçer.",
+            "why": "Takvimde beklenti verilmedi; pazartesi açıklanan perakende satışlarla birlikte BoJ'un faiz artırma kapasitesini belirleyen iç talep resmini tamamlıyor.",
+            "above": "Konsensüs üstü işsizlik ücret artışının ve iç talebin zayıflayacağını gösterir, BoJ'un faiz artırma alanı daralır; yen satılır ve USDJPY ile EURJPY yükselir, NIKKEI225 zayıf yenin ihracatçılara sağladığı destekle olumlu etkilenir.",
+            "below": "Konsensüs altı işsizlik sıkı işgücü piyasası üzerinden ücret ve fiyat baskısını teyit eder, BoJ'un faiz artırma beklentisi güçlenir; yen alınır ve USDJPY ile EURJPY düşer, güçlenen yen NIKKEI225'i baskılar.",
+            "watch": "Pazartesi perakende verisiyle tutarlılık önemli; iki veri aynı yönü gösterirse yen hareketi Avrupa seansına taşınır."
+          }
         },
         {
           "id": "2026-12-01-EUR-inflation-rate-yoy-prel",
@@ -568,7 +683,14 @@
           "also": [
             "Harmonised Inflation Rate YoY Prel",
             "Harmonised Inflation Rate MoM Prel"
-          ]
+          ],
+          "brief": {
+            "what": "Yıllık enflasyonun öncü tahminidir; aylık ve yıllık HICP öncü okumalarıyla birlikte yayımlanır.",
+            "why": "13:00'teki ana TÜFE (beklenti 3.6%, önceki 4%) öncesindeki sabah sinyali; 3.7%'lik yatay beklenti, manşette beklenen düşüşün gerçekleşip gerçekleşmeyeceğini test edecek.",
+            "above": "3.7% üstü öncü okuma 13:00'teki düşüş beklentisini zayıflatır ve ECB'nin sıkı kalacağı fiyatlamasını artırır; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 faiz baskısıyla geriler.",
+            "below": "3.7% altı okuma dezenflasyonun hızlandığını gösterir ve 13:00'te düşüş ihtimalini güçlendirir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 düşen faizle destek bulur.",
+            "watch": "Aylık HICP öncü okuması belirleyici; ECB hedefini HICP üzerinden tanımladığı için yıllık manşet yatay kalsa bile aylık HICP ivmesi yönü belirler."
+          }
         },
         {
           "id": "2026-12-01-EUR-retail-sales-yoy",
@@ -607,7 +729,14 @@
               "direction": "yukari",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "Perakende satış hacminin geçen yılın aynı ayına göre değişimini ölçer.",
+            "why": "2.7%'den 2.5%'e hafif bir yavaşlama bekleniyor; aynı saatte öncü enflasyon da açıklandığı için tüketim ile fiyatlar arasındaki denge birlikte okunacak.",
+            "above": "2.5% üstü tüketim talebin fiyatlara rağmen dirençli olduğunu gösterir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40'ta tüketim hisseleri olumlu etkilenir.",
+            "below": "2.5% altı tüketim yüksek fiyatların talebi aşındırdığını gösterir ve ECB gevşeme beklentisini artırır; DE10Y aşağı gider, EURUSD ile EURJPY düşer.",
+            "watch": "Eşzamanlı öncü enflasyon belirleyici; yüksek enflasyon ile zayıf tüketim aynı anda gelirse euro stagflasyon fiyatlamasıyla zayıflar."
+          }
         },
         {
           "id": "2026-12-01-EUR-gdp-growth-rate-yoy-final",
@@ -649,13 +778,66 @@
           ],
           "also": [
             "GDP Growth Rate QoQ Final"
-          ]
+          ],
+          "brief": {
+            "what": "Yıllık GSYH büyümesinin kesinleşmiş okumasıdır; çeyreklik final okumayla birlikte yayımlanır.",
+            "why": "4.1%'den 1.8%'e sert bir yavaşlama zaten fiyatlanmış durumda; final okuma olduğu için sürpriz alanı dar, ancak sapmanın yönü euronun büyüme primini belirleyecek.",
+            "above": "1.8% üstü revizyon yavaşlamanın beklenenden hafif olduğunu gösterir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 büyüme kanalıyla olumlu etkilenir.",
+            "below": "1.8% altı revizyon yavaşlamanın derinleştiğini gösterir ve ECB gevşeme beklentisini artırır; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40'ta düşen faiz ile zayıf büyüme birbirini dengeler.",
+            "watch": "Çeyreklik final okumanın negatife dönüp dönmediği önemli; çeyreklik daralma, yıllık rakamdan daha sert bir euro satışı getirir."
+          }
+        },
+        {
+          "id": "2026-12-01-EUR-inflation-rate-mom-prel",
+          "time": "11:00",
+          "date": "2026-12-01",
+          "utc": "2026-12-01T08:00:00.000Z",
+          "title": "Inflation Rate MoM Prel",
+          "region": "Euro Bölgesi",
+          "currency": "EUR",
+          "category": "enflasyon",
+          "impact": 2,
+          "volatility": 50,
+          "forecast": "0.1%",
+          "previous": "0.3%",
+          "source": {
+            "label": "Forex Factory takvimi"
+          },
+          "affected": [
+            {
+              "symbol": "EURUSD",
+              "direction": "yukari",
+              "strength": 3
+            },
+            {
+              "symbol": "DAX40",
+              "direction": "volatil",
+              "strength": 2
+            },
+            {
+              "symbol": "DE10Y",
+              "direction": "yukari",
+              "strength": 2
+            },
+            {
+              "symbol": "EURJPY",
+              "direction": "yukari",
+              "strength": 2
+            }
+          ],
+          "brief": {
+            "what": "Fiyatların bir önceki aya göre değişiminin öncü tahminidir.",
+            "why": "0.3%'ten 0.1%'e yavaşlama bekleniyor; aylık ivmedeki bu düşüş, 13:00'teki ana TÜFE'de beklenen yıllık gerilemeyle tutarlı.",
+            "above": "0.1% üstü aylık artış fiyat ivmesinin sürdüğünü gösterir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 faiz baskısı altında kalır.",
+            "below": "0.1% altı ya da negatif okuma fiyat ivmesinin söndüğünü gösterir ve ECB gevşeme fiyatlamasını güçlendirir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 olumlu etkilenir.",
+            "watch": "Yavaşlamanın enerji kaynaklı mı yoksa çekirdek kalemlerden mi geldiği önemli; enerji kaynaklı bir düşüş ECB fiyatlamasını sınırlı ölçüde değiştirir."
+          }
         },
         {
           "id": "2026-12-01-EUR-unemployment-rate",
-          "time": "10:30",
+          "time": "11:30",
           "date": "2026-12-01",
-          "utc": "2026-12-01T07:30:00.000Z",
+          "utc": "2026-12-01T08:30:00.000Z",
           "title": "İşsizlik oranı",
           "region": "Euro Bölgesi",
           "currency": "EUR",
@@ -688,46 +870,14 @@
               "direction": "yukari",
               "strength": 2
             }
-          ]
-        },
-        {
-          "id": "2026-12-01-EUR-inflation-rate-mom-prel",
-          "time": "11:00",
-          "date": "2026-12-01",
-          "utc": "2026-12-01T08:00:00.000Z",
-          "title": "Inflation Rate MoM Prel",
-          "region": "Euro Bölgesi",
-          "currency": "EUR",
-          "category": "enflasyon",
-          "impact": 2,
-          "volatility": 50,
-          "forecast": "0.3%",
-          "previous": "0.3%",
-          "source": {
-            "label": "Forex Factory takvimi"
-          },
-          "affected": [
-            {
-              "symbol": "EURUSD",
-              "direction": "yukari",
-              "strength": 3
-            },
-            {
-              "symbol": "DAX40",
-              "direction": "volatil",
-              "strength": 2
-            },
-            {
-              "symbol": "DE10Y",
-              "direction": "yukari",
-              "strength": 2
-            },
-            {
-              "symbol": "EURJPY",
-              "direction": "yukari",
-              "strength": 2
-            }
-          ]
+          ],
+          "brief": {
+            "what": "İş arayıp bulamayanların toplam işgücü içindeki payını ölçer.",
+            "why": "7.3%'ten 7.4%'e hafif bir bozulma bekleniyor; enflasyonun yavaşlaması beklenen bir günde işgücü piyasasındaki gevşeme, ECB'nin gevşeme gerekçesini tamamlar.",
+            "above": "7.4% üstü işsizlik ücret baskısının azalacağını gösterir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40'ta iç talep endişesi öne çıkar.",
+            "below": "7.4% altı işsizlik işgücü piyasasının sıkı kaldığını gösterir ve ECB'nin sıkı duruşunu destekler; DE10Y yukarı gider, EURUSD ve EURJPY yükselir.",
+            "watch": "Önceki 7.3%'lük okumanın revizyonu önemli; yukarı revize edilirse bozulma trendi teyit edilmiş olur."
+          }
         },
         {
           "id": "2026-12-01-EUR-gdp-y-y",
@@ -769,7 +919,14 @@
           ],
           "also": [
             "GSYH büyümesi (çeyreklik)"
-          ]
+          ],
+          "brief": {
+            "what": "Yıllık GSYH büyümesini ölçer; çeyreklik büyümeyle birlikte yayımlanır.",
+            "why": "Beklenti önceki okumayla aynı, 0.8%; bu düşük büyüme seviyesi, 13:00'te enflasyon düşerse ECB gevşeme tezini güçlendirecek zemini oluşturuyor.",
+            "above": "0.8% üstü büyüme gevşeme gerekçesini zayıflatır; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 büyüme kanalından destek bulur.",
+            "below": "0.8% altı büyüme ekonominin durgunluğa yaklaştığını gösterir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 düşen faiz ile zayıf büyüme arasında iki yönlü kalır.",
+            "watch": "Çeyreklik büyümenin işareti önemli; sıfıra yakın ya da negatif bir çeyreklik okuma, euroyu 13:00 TÜFE'ye zayıf bir konumla sokar."
+          }
         },
         {
           "id": "2026-12-01-EUR-cpi-y-y",
@@ -817,7 +974,14 @@
             "CPI excl. Energy and Unprocessed Food (yıllık)",
             "TÜFE",
             "Çekirdek TÜFE"
-          ]
+          ],
+          "brief": {
+            "what": "Tüketici fiyatlarının geçen yılın aynı ayına göre değişimini ölçer; aynı anda çekirdek TÜFE (enerji ve gıda gibi oynak kalemler hariç) ile enerji ve işlenmemiş gıda hariç TÜFE de yayımlanır.",
+            "why": "Haftanın en yüksek oynaklık skoruna (64) sahip Avrupa verisi; 4%'ten 3.6%'ya düşüş beklentisi dezenflasyonu fiyatlıyor ve sonuç, DXY'nin en büyük bileşeni olan EURUSD üzerinden dolar endeksine geçecek.",
+            "above": "3.6% üstü okuma dezenflasyonun beklenenden yavaş ilerlediğini gösterir; ECB'nin sıkı kalacağı fiyatlamasıyla DE10Y yukarı gider, EURUSD ve EURJPY yükselir, euro ağırlığı nedeniyle DXY düşer, DAX40 faiz baskısıyla geriler.",
+            "below": "3.6% altı okuma dezenflasyonun hızlandığını gösterir ve ECB gevşeme fiyatlamasını güçlendirir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DXY yükselir, DAX40 düşen faizle destek bulur.",
+            "watch": "Yıllık çekirdek TÜFE belirleyici; manşet düşerken çekirdek yatay kalırsa ECB fiyatlaması değişmez ve euronun ilk düşüşü geri alınır."
+          }
         },
         {
           "id": "2026-12-01-USD-ism-manufacturing-prices-paid",
@@ -881,7 +1045,14 @@
             "S&P Global Manufacturing PMI",
             "ISM imalat PMI",
             "ISM Manufacturing Employment"
-          ]
+          ],
+          "brief": {
+            "what": "ISM (Institute for Supply Management: Tedarik Yönetimi Enstitüsü) anketinde imalatçıların girdi için ödediği fiyatları ölçen endekstir; 50'nin üstü fiyat artışını gösterir ve aynı anda ISM imalat PMI, istihdam alt endeksi ile S&P Global imalat PMI yayımlanır.",
+            "why": "75.2'den 73.2'ye gerileme beklense de seviye çok yüksek; cuma günkü zayıf istihdam beklentisiyle birlikte okunduğunda, Fed'in enflasyon ile istihdam arasında sıkıştığı tezinin fiyat ayağını oluşturuyor.",
+            "above": "73.2 üstü fiyat baskısı enflasyon beklentisini artırır ve Fed indirim fiyatlamasını geriletir; US10Y ve DXY yukarı, EURUSD ve XAUUSD aşağı gider, BTCUSD ve US500 artan reel faizle baskı görür.",
+            "below": "73.2 altı gerileme girdi maliyetlerinin soğuduğunu gösterir ve indirim fiyatlamasını güçlendirir; US10Y ve DXY aşağı, EURUSD ve XAUUSD yukarı gider, BTCUSD ve US500 düşen faizle destek bulur.",
+            "watch": "Manşet ISM imalat PMI ve istihdam alt endeksi önemli; fiyatlar yüksekken PMI ve istihdam zayıf gelirse stagflasyon okuması hem tahvilde hem hissede satış getirir."
+          }
         },
         {
           "id": "2026-12-01-USD-jolts-job-openings",
@@ -940,9 +1111,17 @@
               "direction": "asagi",
               "strength": 1
             }
-          ]
+          ],
+          "brief": {
+            "what": "JOLTS (Job Openings and Labor Turnover Survey: Açık İş ve İşgücü Devir Anketi) ile ölçülen, ABD'deki doldurulmamış açık iş pozisyonu sayısıdır; işgücü talebini gösterir.",
+            "why": "7.523 milyondan 7.039 milyona, yaklaşık yarım milyonluk bir düşüş bekleniyor; veri, cuma günkü 37 binlik NFP beklentisinin dayandığı işgücü talebi soğuması tezini test edecek.",
+            "above": "7.039 milyon üstü açık iş sayısı talebin dirençli olduğunu gösterir; US10Y ve DXY yukarı, EURUSD ve XAUUSD aşağı gider, BTCUSD ve US500 indirim beklentisinin gerilemesiyle baskı görür.",
+            "below": "7.039 milyon altı okuma işgücü talebinin hızla soğuduğunu gösterir; US10Y ve DXY aşağı, EURUSD ve XAUUSD yukarı gider, BTCUSD ve US500 düşen faizle destek bulur.",
+            "watch": "Verinin bir ay gecikmeli olması önemli; ISM istihdam alt endeksiyle çelişirse piyasa daha güncel olan ISM'i esas alır."
+          }
         }
-      ]
+      ],
+      "focus": "Günü 13:00'te euro bölgesi TÜFE'nin 4%'ten 3.6%'ya düşüş beklentisi ve 17:45'te ISM imalat fiyat endeksi belirliyor. EURUSD'de çekirdek TÜFE'nin manşet düşüşe eşlik edip etmediği, DXY'de ise ISM fiyatlarının 73.2 üstünde kalıp US10Y'yi yukarı itip itmediği izlenecek."
     },
     {
       "key": "carsamba",
@@ -980,7 +1159,14 @@
           "also": [
             "GSYH büyümesi (çeyreklik)",
             "GDP Chain Price Index (çeyreklik)"
-          ]
+          ],
+          "brief": {
+            "what": "Avustralya ekonomisinin yıllık büyümesini ölçer; çeyreklik büyüme ve GSYH zincir fiyat endeksi (ekonomi genelindeki fiyat göstergesi) ile birlikte yayımlanır.",
+            "why": "2.1%'den 1.5%'e yavaşlama bekleniyor; pazartesi Çin PMI'da beklenen daralmanın ardından, AUD üzerindeki dış talep baskısının iç büyümede de karşılık bulup bulmadığını gösterecek.",
+            "above": "1.5% üstü büyüme RBA'nın (Avustralya Merkez Bankası) sıkı kalma alanını korur ve AUD faiz desteği bulur; AUDUSD yukarı gider, NZDUSD bölgesel korelasyonla hafif yükselir.",
+            "below": "1.5% altı büyüme RBA gevşeme fiyatlamasını artırır ve AUD faiz desteğini kaybeder; AUDUSD aşağı gider, NZDUSD korelasyonla hafif düşer.",
+            "watch": "Zincir fiyat endeksi önemli; yüksek gelirse zayıf büyümeye rağmen RBA sıkı kalır ve AUDUSD'deki düşüş sınırlanır."
+          }
         },
         {
           "id": "2026-12-02-CHF-cpi-m-m",
@@ -1010,7 +1196,14 @@
           ],
           "also": [
             "TÜFE (yıllık)"
-          ]
+          ],
+          "brief": {
+            "what": "İsviçre'de tüketici fiyatlarının aylık ve yıllık değişimini ölçer.",
+            "why": "Takvimde beklenti verilmedi; pazartesi açıklanan GSYH ile birlikte SNB'nin faiz ve frank politikasına yön veren ikinci ayak.",
+            "above": "Konsensüs üstü enflasyon SNB'nin gevşeme ihtiyacını azaltır ve frank faiz desteği kazanır; USDCHF aşağı gider, XAUUSD'de güvenli liman talebi frankla paylaşıldığı için etki sınırlı kalır.",
+            "below": "Konsensüs altı enflasyon SNB'nin gevşek kalma ya da frankı zayıflatma ihtimalini artırır; USDCHF yukarı gider, XAUUSD'de etki sınırlı kalır.",
+            "watch": "Yıllık oranın negatif bölgeye geçip geçmediği izlenmeli; deflasyon sinyali SNB müdahale beklentisini güçlendirerek USDCHF'deki yükselişi büyütür."
+          }
         },
         {
           "id": "2026-12-02-EUR-unemployment-change",
@@ -1049,7 +1242,14 @@
               "direction": "yukari",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "Kayıtlı işsiz sayısındaki aylık değişimi ölçer; pozitif değer işsiz sayısının arttığını gösterir (B: bin kişi).",
+            "why": "43.128 binden 24.269 bine yavaşlama bekleniyor; işsizlik artmaya devam ediyor ancak artış hızı düşüyor.",
+            "above": "24.269 bin üstü artış işgücü piyasasının hızla bozulduğunu gösterir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 iç talep endişesiyle baskı görür.",
+            "below": "24.269 bin altı artış bozulmanın yavaşladığını gösterir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 olumlu etkilenir.",
+            "watch": "12:00'deki işsizlik oranı belirleyici; işsiz sayısı ile oranın aynı yönde bozulması euro satışını kalıcı kılar."
+          }
         },
         {
           "id": "2026-12-02-EUR-unemployment-rate",
@@ -1088,7 +1288,14 @@
               "direction": "yukari",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "İş arayıp bulamayanların toplam işgücü içindeki payını ölçer.",
+            "why": "6.3%'ten 6.4%'e bozulma bekleniyor; 11:00'deki işsiz sayısı değişimiyle aynı işgücü resmini tamamlıyor.",
+            "above": "6.4% üstü işsizlik ücret baskısının gevşeyeceğini gösterir ve ECB gevşeme fiyatlamasını artırır; DE10Y aşağı gider, EURUSD ile EURJPY düşer.",
+            "below": "6.4% altı işsizlik işgücü piyasasının dirençli kaldığını gösterir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 artan faiz ile güçlü talep arasında iki yönlü kalır.",
+            "watch": "14:00'teki ortalama kazanç verisi önemli; işsizlik artarken ücretler hızlanırsa ECB fiyatlaması değişmez."
+          }
         },
         {
           "id": "2026-12-02-EUR-average-weekly-earnings-yoy",
@@ -1127,7 +1334,14 @@
               "direction": "yukari",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "Çalışanların haftalık ortalama brüt kazancının yıllık değişimini ölçer; ücret kaynaklı enflasyon baskısının göstergesidir.",
+            "why": "3.9%'dan 4.4%'e hızlanma bekleniyor; işsizlik artarken ücretlerin hızlanması, enflasyonun hizmet ayağının soğumadığına işaret ediyor.",
+            "above": "4.4% üstü ücret artışı hizmet enflasyonu riskini büyütür ve ECB'nin sıkı kalacağı fiyatlamasını güçlendirir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 artan faizle baskı görür.",
+            "below": "4.4% altı ücret artışı fiyat baskısının hafiflediğini gösterir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 düşen faizle destek bulur.",
+            "watch": "Ücret artışının salı açıklanan TÜFE ile karşılaştırılması önemli; ücretler enflasyonun üstünde kalırsa reel gelir artışı tüketimi ve DE10Y'yi destekler."
+          }
         },
         {
           "id": "2026-12-02-USD-adp-nonfarm-employment-change",
@@ -1186,7 +1400,14 @@
               "direction": "asagi",
               "strength": 1
             }
-          ]
+          ],
+          "brief": {
+            "what": "Bordro şirketi ADP'nin (Automatic Data Processing) kendi bordro verilerine dayanarak hesapladığı ABD özel sektör istihdam değişimidir.",
+            "why": "88 binlik beklenti, cuma NFP için beklenen 37 binin belirgin üstünde; iki veri arasındaki fark cuma öncesi pozisyonlanmayı belirleyecek.",
+            "above": "88 bin üstü özel sektör istihdamı NFP'de beklenen sert yavaşlamayı sorgulatır; US10Y ve DXY yukarı, EURUSD ve XAUUSD aşağı gider, BTCUSD ve US500 indirim fiyatlamasının gerilemesiyle baskı görür.",
+            "below": "88 bin altı okuma cuma için zayıf NFP beklentisini güçlendirir; US10Y ve DXY aşağı, EURUSD ve XAUUSD yukarı gider, BTCUSD ve US500 düşen faizle destek bulur.",
+            "watch": "Önceki 86 binlik okumanın revizyonu ve istihdamın sektörel dağılımı önemli; artışın tek bir sektörde yoğunlaşması manşetin gücünü zayıflatır."
+          }
         },
         {
           "id": "2026-12-02-USD-eia-crude-oil-stocks-change",
@@ -1228,9 +1449,17 @@
           ],
           "also": [
             "EIA Cushing Crude Oil Stocks Change"
-          ]
+          ],
+          "brief": {
+            "what": "EIA (Energy Information Administration: ABD Enerji Bilgi İdaresi) verisine göre ABD ticari ham petrol stoklarının haftalık değişimidir; WTI'ın teslim noktası olan Cushing stoklarıyla birlikte yayımlanır.",
+            "why": "Önceki haftaki 1.109 milyon varillik artışın ardından 116 bin varillik hafif bir düşüş bekleniyor; pazartesi Çin PMI'dan gelecek talep sinyaliyle birlikte petrolün haftalık yönünü belirleyecek.",
+            "above": "Beklentinin üstünde bir okuma, yani stoklarda artış, arz fazlası sinyali verir; WTI ve BRENT aşağı gider, petrol gelirleri kanalıyla USDCAD yükselir, US500 enerji hisseleri üzerinden hafif baskı görür.",
+            "below": "Beklentinin altında bir okuma, yani daha derin bir stok düşüşü, talebin arzı aştığını gösterir; WTI ve BRENT yukarı gider, petrol gelirleri kanalıyla USDCAD düşer, US500 enerji hisseleri desteğiyle hafif olumlu etkilenir.",
+            "watch": "Cushing stokları önemli; WTI teslim noktasındaki değişim WTI ile BRENT arasındaki fiyat farkını belirler."
+          }
         }
-      ]
+      ],
+      "focus": "Günü 16:15'teki ADP belirliyor: 88 binlik beklenti ile cuma NFP'nin 37 binlik beklentisi arasındaki makas, cuma öncesi pozisyonlanmanın yönünü veriyor. ADP sonrasında XAUUSD ve BTCUSD'nin faiz tepkisi, 18:30'da EIA sonrasında ise WTI ve BRENT izlenecek."
     },
     {
       "key": "persembe",
@@ -1277,7 +1506,14 @@
           ],
           "also": [
             "GDP Growth Rate YoY Final"
-          ]
+          ],
+          "brief": {
+            "what": "Çeyreklik GSYH büyümesinin kesinleşmiş okumasıdır; yıllık final okumayla birlikte yayımlanır.",
+            "why": "Önceki -0.1%'lik daralmanın ardından 0.2% ile pozitife dönüş bekleniyor; veri, resesyon riskinin uzaklaşıp uzaklaşmadığını teyit edecek.",
+            "above": "0.2% üstü büyüme toparlanmayı güçlendirir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 büyüme kanalıyla olumlu etkilenir.",
+            "below": "0.2% altı, özellikle negatif bir okuma, üst üste ikinci daralma yani teknik resesyon sinyalidir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 kâr beklentileriyle baskı görür.",
+            "watch": "Öncü tahminden sapma önemli; final okuma öncüyle aynı gelirse piyasaya yeni bilgi vermez, ancak revizyon euroyu hareket ettirir."
+          }
         },
         {
           "id": "2026-12-03-EUR-gdp-growth-rate-yoy",
@@ -1319,7 +1555,14 @@
           ],
           "also": [
             "GSYH büyümesi (çeyreklik)"
-          ]
+          ],
+          "brief": {
+            "what": "Yıllık GSYH büyümesini ölçer; çeyreklik büyümeyle birlikte yayımlanır.",
+            "why": "3%'ten 2.5%'e yavaşlama bekleniyor; aynı gün 17:45'teki ABD ISM hizmet verisi öncesinde EURUSD'nin Avrupa ayağını belirleyecek.",
+            "above": "2.5% üstü büyüme euro lehine faiz farkını destekler; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 olumlu etkilenir.",
+            "below": "2.5% altı yavaşlama ECB gevşeme fiyatlamasını artırır; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 düşen faiz ile zayıf büyüme arasında iki yönlü kalır.",
+            "watch": "Çeyreklik büyümenin yıllık okumayla aynı yönde olup olmadığı önemli; ayrışma baz etkisine işaret eder ve tepkiyi sınırlar."
+          }
         },
         {
           "id": "2026-12-03-USD-ism-non-manufacturing-prices-paid",
@@ -1384,9 +1627,17 @@
             "ISM Non-Manufacturing PMI",
             "ISM Non-Manufacturing Employment",
             "ISM Non-Manufacturing Business Activity"
-          ]
+          ],
+          "brief": {
+            "what": "ISM hizmet sektörü anketinde şirketlerin ödediği fiyatları ölçen endekstir; 50'nin üstü fiyat artışını gösterir ve aynı anda ISM hizmet PMI, istihdam ve iş faaliyeti alt endeksleri ile S&P Global hizmet PMI yayımlanır.",
+            "why": "73'ten 69.8'e gerileme bekleniyor; ABD ekonomisinin büyük kısmını oluşturan hizmet sektöründeki fiyat baskısını gösteren bu veri, cuma NFP öncesi enflasyon tarafının son okuması.",
+            "above": "69.8 üstü hizmet fiyatları enflasyonun yapışkan olduğunu teyit eder ve Fed indirim fiyatlamasını geriletir; US10Y ve DXY yukarı, EURUSD ve XAUUSD aşağı gider, BTCUSD ve US500 artan faizle baskı görür.",
+            "below": "69.8 altı gerileme hizmet enflasyonunun soğuduğunu gösterir ve indirim fiyatlamasını güçlendirir; US10Y ve DXY aşağı, EURUSD ve XAUUSD yukarı gider, BTCUSD ve US500 düşen faizle destek bulur.",
+            "watch": "ISM hizmet istihdam alt endeksi kritik; cuma NFP'ye en yakın öncü sinyal olduğu için 37 binlik beklentiyle uyumu pozisyonlanmayı belirler."
+          }
         }
-      ]
+      ],
+      "focus": "Günü 17:45'teki ISM hizmet fiyat endeksi belirliyor: 73'ten 69.8'e gerileme beklentisi taşıyan veri, NFP öncesi enflasyon tarafının son okuması. US10Y ve DXY'nin bu veriye tepkisi, BTCUSD ve US500'ün cumaya hangi faiz zemininde gireceğini gösterecek."
     },
     {
       "key": "cuma",
@@ -1402,10 +1653,10 @@
           "region": "Kripto",
           "category": "kripto",
           "impact": 2,
-          "volatility": 58,
+          "volatility": 60,
           "metric": {
             "label": "vadesi dolan açık pozisyon",
-            "value": "457,8 mn $ · BTC %8,6 · ETH %11"
+            "value": "487,1 mn $ · BTC %11 · ETH %13,9"
           },
           "source": {
             "label": "OKX opsiyon verisi",
@@ -1427,7 +1678,14 @@
               "direction": "volatil",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "OKX borsasındaki BTC ve ETH haftalık opsiyon sözleşmelerinin vadesinin dolmasıdır; vadeyle birlikte piyasa yapıcıların spot piyasada tuttuğu hedge pozisyonları çözülür.",
+            "why": "Vade, NFP'den beş buçuk saat önce doluyor; hedge kaynaklı fiyat sabitlenmesinin kalkması BTCUSD ve ETHUSD'yi 16:30'daki veriye daha serbest bir piyasa yapısıyla sokuyor.",
+            "above": "Spot, vade öncesinde açık pozisyonun yoğunlaştığı kullanım fiyatlarının üstüne çıkarsa ve piyasa yapıcılar kısa gamma konumundaysa, hedge alımları yükselişi hızlandırır; BTCUSD ve ETHUSD yukarı ivmelenir, TOTAL bu hareketi takip eder.",
+            "below": "Spot, açık pozisyonun yoğunlaştığı kullanım fiyatlarının altına inerse ve piyasa yapıcılar kısa gamma konumundaysa, hedge satışları düşüşü hızlandırır; BTCUSD ve ETHUSD aşağı ivmelenir, TOTAL altcoinlerin yüksek betası nedeniyle daha sert düşer.",
+            "watch": "11:00 ile 16:30 arasında fiyatın vade öncesinde sabitlendiği bölgeden kopup kopmadığı izlenmeli; bir kopuş NFP tepkisinin büyüklüğünü artırır."
+          }
         },
         {
           "id": "2026-12-04-EUR-gdp-growth-rate-qoq-final",
@@ -1471,7 +1729,14 @@
             "Perakende satışlar (yıllık)",
             "Perakende satışlar (aylık)",
             "GDP Growth Rate YoY Final"
-          ]
+          ],
+          "brief": {
+            "what": "Çeyreklik GSYH büyümesinin kesinleşmiş okumasıdır; aynı anda perakende satışlar ve yıllık final okuma da yayımlanır.",
+            "why": "0.2%'den 0.1%'e yavaşlama bekleniyor; NFP günü sabahı euro tarafındaki son büyüme verisi olarak EURUSD'nin 16:30 öncesi konumunu belirleyecek.",
+            "above": "0.1% üstü okuma yavaşlamanın sınırlı kaldığını gösterir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 olumlu etkilenir.",
+            "below": "0.1% altı ya da negatif okuma büyümenin durduğunu gösterir; DE10Y aşağı gider, EURUSD ile EURJPY düşer, DAX40 baskı görür.",
+            "watch": "Eşzamanlı perakende satışlar önemli; tüketim ve GSYH birlikte zayıflarsa euro satışı NFP'ye kadar sürer."
+          }
         },
         {
           "id": "2026-12-04-GBP-dmp-1y-cpi-expectations",
@@ -1500,7 +1765,14 @@
               "direction": "volatil",
               "strength": 2
             }
-          ]
+          ],
+          "brief": {
+            "what": "BoE'nin (İngiltere Merkez Bankası) şirket yöneticilerine yaptığı Karar Alıcı Paneli (DMP: Decision Maker Panel) anketinde, bir yıl sonrası için beklenen enflasyonu ölçer.",
+            "why": "3.4%'ten 3.5%'e yükselme bekleniyor; şirketlerin fiyat beklentisi, BoE'nin enflasyon beklentilerinin çıpalanıp çıpalanmadığını izlediği temel göstergelerden biri.",
+            "above": "3.5% üstü beklenti şirketlerin fiyatlama davranışının yapışkan olduğunu gösterir ve BoE'nin sıkı kalacağı fiyatlamasını güçlendirir; GBPUSD yukarı gider, güçlü sterlin ve yüksek faiz FTSE100'ü baskılar.",
+            "below": "3.5% altı beklenti BoE'nin gevşeme alanını açar; GBPUSD aşağı gider, zayıf sterlin döviz geliri yüksek şirketler üzerinden FTSE100'ü destekler.",
+            "watch": "Haftanın tek İngiltere verisi olduğundan GBPUSD'deki hareket, 16:30 NFP'nin dolar tarafındaki etkisiyle hızla silinebilir."
+          }
         },
         {
           "id": "2026-12-04-EUR-retail-sales-m-m",
@@ -1542,7 +1814,14 @@
           ],
           "also": [
             "Perakende satışlar (yıllık)"
-          ]
+          ],
+          "brief": {
+            "what": "Perakende satış hacminin bir önceki aya göre değişimini ölçer; yıllık seriyle birlikte yayımlanır.",
+            "why": "0.1%'den -0.3%'e daralma bekleniyor; haftanın tüketim resmini kapatan bu veri, NFP öncesindeki son Avrupa verisi.",
+            "above": "-0.3% üstü okuma tüketimin beklenen daralmadan kaçındığını gösterir; DE10Y yukarı gider, EURUSD ve EURJPY yükselir, DAX40 olumlu etkilenir.",
+            "below": "-0.3% altı daralma iç talebin hızla zayıfladığını gösterir ve ECB gevşeme beklentisini artırır; DE10Y aşağı gider, EURUSD ile EURJPY düşer.",
+            "watch": "Önceki 0.1%'lik okumanın revizyonu önemli; aşağı revize edilirse tüketim üst üste iki ay daralmış olur."
+          }
         },
         {
           "id": "2026-12-04-USD-nonfarm-payrolls",
@@ -1608,7 +1887,14 @@
             "Ortalama saatlik kazanç (yıllık)",
             "Private Nonfarm Payrolls",
             "U6 Unemployment Rate"
-          ]
+          ],
+          "brief": {
+            "what": "ABD'de tarım dışı sektörlerde bir ayda eklenen istihdam sayısını ölçer (NFP: Nonfarm Payrolls); aynı anda işsizlik oranı, ortalama saatlik kazanç, özel sektör istihdamı ve geniş tanımlı işsizlik oranı (U6) yayımlanır.",
+            "why": "Haftanın en yüksek oynaklık skoruna (92) sahip olay; 165 binden 37 bine sert yavaşlama beklentisi Fed indirim fiyatlamasının merkezinde ve hafta boyunca gelen yüksek ISM fiyat verileriyle birlikte okunacak.",
+            "above": "37 bin üstü istihdam soğuma tezini zayıflatır ve indirim fiyatlamasını geriletir; US02Y ve DXY yukarı gider, faiz farkıyla USDJPY yükselir, EURUSD ve XAUUSD düşer, BTCUSD ve US100 artan kısa vadeli faizle değerleme baskısı görür.",
+            "below": "37 bin altı ya da negatif istihdam soğumanın hızlandığını gösterir ve indirim fiyatlamasını öne çeker; US02Y ve DXY aşağı gider, USDJPY düşer, EURUSD ve XAUUSD yükselir, BTCUSD ve US100 düşen faizle destek bulur, ancak çok zayıf bir okuma büyüme korkusuyla risk satışına dönebilir.",
+            "watch": "Ortalama saatlik kazanç ve önceki 165 binlik okumanın revizyonu belirleyici; zayıf manşet güçlü ücret artışıyla gelirse US02Y'deki düşüş sınırlanır."
+          }
         },
         {
           "id": "2026-12-04-CAD-unemployment-rate",
@@ -1642,9 +1928,17 @@
             "İstihdam değişimi",
             "Tam zamanlı istihdam değişimi",
             "Part-Time Employment Change"
-          ]
+          ],
+          "brief": {
+            "what": "Kanada'da iş arayıp bulamayanların toplam işgücü içindeki payını ölçer; toplam, tam zamanlı ve yarı zamanlı istihdam değişimiyle birlikte yayımlanır.",
+            "why": "6.7%'den 6.5%'e iyileşme bekleniyor ve veri NFP ile aynı saatte çıkıyor; USDCAD'de iki ülkenin istihdam sürprizleri aynı anda fiyatlanacak.",
+            "above": "6.5% üstü işsizlik BoC gevşeme beklentisini artırır ve CAD'yi zayıflatır; USDCAD yukarı gider, WTI'da etki dolaylı kalır.",
+            "below": "6.5% altı işsizlik iç ekonominin toparlandığını gösterir ve BoC'nin gevşeme alanını daraltır; CAD güçlenir ve USDCAD aşağı gider.",
+            "watch": "Tam zamanlı ile yarı zamanlı istihdamın ayrışması önemli; artış yarı zamanlı işlerden geliyorsa CAD tepkisi kısa sürer."
+          }
         }
-      ]
+      ],
+      "focus": "Günü 11:00'deki OKX opsiyon vadesi ve 16:30'daki NFP belirliyor. Vadeden sonra BTCUSD'nin sabitlendiği bölgeden kopup kopmadığı, NFP'de ise ortalama saatlik kazancın US02Y üzerinden US100'e nasıl geçtiği izlenecek."
     }
   ]
 }
