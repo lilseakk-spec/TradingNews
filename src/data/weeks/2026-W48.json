@@ -3,12 +3,12 @@
   "label": "22 – 27 Kasım 2026",
   "start": "2026-11-22",
   "end": "2026-11-27",
-  "updatedAt": "2026-11-27T14:36:12.114Z",
+  "updatedAt": "2026-11-28T13:52:15.324Z",
   "preliminary": false,
   "calendarSource": {
     "label": "Forex Factory haftalik takvim",
     "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "fetchedAt": "2026-11-27T14:35:25.943Z"
+    "fetchedAt": "2026-11-28T13:52:15.324Z"
   },
   "ai": {
     "headline": "çarşamba 16:30 pce-gsyh düğümü, cuma 11:00 kripto opsiyon vadesi",
@@ -967,7 +967,6 @@
               "previous": "0.5"
             }
           ],
-          "actual": "2.9",
           "resultBrief": {
             "headline": "Tokyo çekirdek TÜFE %2,9 ile beklenen %2,8'in üzerinde geldi ve %2,6'dan hızlandı, ancak manşet %2,8 ile beklentinin altında kaldı.",
             "detail": "Taze gıda hariç çekirdek 0,1 puan yukarı sürpriz yaparken manşet %2,8'de sabit kaldı ve %2,9 beklentisini kaçırdı; gıda ve enerji hariç ölçü %2,5 ile beklentiyi 0,1 puan aştı ama %2,6'dan geriledi. Çekirdeğin (%2,9) hem manşetin hem gıda-enerji hariç ölçünün (%2,5) üzerinde olması, artışın büyük kısmının enerjiden geldiğini, taze gıdanın ise aşağı çektiğini gösteriyor; aylık mevsimsellikten arındırılmış artış %0,5'ten %0,3'e yavaşladı.",
@@ -1060,7 +1059,6 @@
               "surprise": -0.1
             }
           ],
-          "actual": "-0.7",
           "resultBrief": {
             "headline": "Fransa TÜFE aylık %-0,7 ile beklenen %+0,4'ün çok altında geldi; yıllık HICP %3,7'den %3,2'ye geriledi.",
             "detail": "Aylık hem CPI hem HICP 1,1 puanlık negatif sürprizle %-0,7'ye düştü; yıllık HICP beklentiyi 0,5 puan, yıllık CPI ise 0,4 puan (%2,9 / beklenti %3,3, önceki %3,4) ıskaladı. Alt kalem kırılımı elimizde olmadığından düşüşün enerji, regüle fiyatlar ya da bir defalık bir etkiden mi kaynaklandığı belirlenemiyor; aynı anda açıklanan İspanya öncü TÜFE rakamları da elimizde yok.",
@@ -1150,7 +1148,6 @@
               "surprise": -0.1
             }
           ],
-          "actual": "-0.7",
           "resultBrief": {
             "headline": "Fransa GSYH çeyreklik %-0,2 daraldı; beklenen %-0,1'den daha zayıf geldi.",
             "detail": "Daralma beklentiden 0,1 puan derin; önceki okuma da %-0,1 idi, bu önceki çeyreğe aitse iki çeyrek üst üste daralma, yani teknik resesyon anlamına geliyor. Sürpriz büyüklük olarak küçük; harcama kalemleri kırılımı elimizde yok.",
@@ -1233,7 +1230,6 @@
               "surprise": 0.017
             }
           ],
-          "actual": "9",
           "resultBrief": {
             "headline": "Almanya'da işsiz sayısı 9 bin arttı; beklenen 4 bin artışın üzerinde, oran ise %6,4'te sabit kaldı.",
             "detail": "Mevsimsellikten arındırılmış işsiz sayısı 3,025 milyon ile beklenen 3,008 milyonu aştı ve 3 milyonun üzerinde kalmaya devam etti; arındırılmamış seri 2,955'ten 2,936 milyona indi ama 2,91 milyon beklentisinin üstünde kaldı. Oranın değişmemesi, 5 binlik sapmanın küçük olduğunu teyit ediyor.",
